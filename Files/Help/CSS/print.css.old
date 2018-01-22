@@ -1,0 +1,178 @@
+/* ------------------------------------------------- */
+/* This CSS file is part of the APLTreeHelp project  */
+/* Author: Kai Jaeger * APL Team Ltd                 */
+/* Project page: http://aplwiki.com/APLTreeHelp      */
+/* Version 1.0 * 2014-08-14                          */
+/*                                                   */
+/* If you know what you are doing you may take a     */
+/* copy of this file, change it and use it with your */
+/* own help project (set printCssFilename for this)  */
+/* ------------------------------------------------- */
+
+html {
+font-family: "Verdana";
+font-size: 9pt;
+}
+h1 {
+padding:0;
+font-family: "APL385 Unicode";
+font-size: 20pt;
+margin-left: 0;
+border: 1pt #f0f0f0;
+font-weight: 900;
+}
+h2 {
+font-family: "Tahoma";
+font-size: 12pt;
+margin: 1em 0 0 0;	
+}
+h3 {
+font-family: "Tahoma";
+font-size: 11pt;
+margin: 1em 0 0 0;
+}
+h4 {
+font-family: "Tahoma";
+font-size: 10pt;
+margin: 1em 0 0 0;
+}
+h5 {
+font-family: "Tahoma";
+font-size: 9pt;
+margin: 1em 0 0 0;
+}
+p {
+margin: 0.5em 5pt 0.5em 0;
+}
+a.also {
+font-family: "APL385 Unicode";
+font-size: 9pt;
+font-weight: 600;
+}
+pre.code {
+font-family: "APL385 Unicode";
+font-size: 9pt;
+background-color: #f0f0f0;
+padding: 0.4em;
+margin:  0.5em;
+}
+p.info {
+font-weight: normal;
+margin-top: 0;
+display: inline;
+padding-right: 30pt;
+}
+p.prefix {
+font-size: xx-small;
+margin-bottom: 0;
+padding-right: 5pt;
+display: inline;
+}
+div#container {
+padding-top: 3pt 5pt 5pt 0;
+margin-left: 0;
+}
+table {
+background-color: #ffe4c4;
+border: solid 1px silver;
+border-collapse: collapse;
+page-break-inside:avoid;
+}
+td {
+padding: .5em 1em;
+border: solid 1px silver;
+}
+td.one {
+width: 2em;
+}
+td.two {
+width: 25em;
+}
+td.three {
+width: 25em;
+}
+span.bold {
+font-weight: bold;
+}
+td.tb1 {
+font-weight: bold;
+border: solid 1px silver;
+border-collapse: collapse;
+}
+table > caption {
+font-size: 9;
+padding-bottom: 2px;
+}
+tr.odd {
+background-color: #F5F5F5;
+}
+div.tabdat {
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+div.tabdat table {
+font-family: "Verdana";
+margin-left: 5pt;
+background-color: #EAEAEA;
+page-break-inside:avoid;
+}
+div.tabdat td {
+font-size: 8pt;
+padding: 0.2em 0.5em;
+}
+div.tabdat p {
+margin: 0 0 5pt 5pt;
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+col.c_001 {width: 20em;}
+col.c_002 {width: 50em;}
+col.c_003 {width: 20em;}
+span.code {
+font-family: "APL385 Unicode";
+padding-left: .25em;
+padding-right: .25em;
+white-space: nowrap;
+}
+span.apl {
+font-family: "APL385 Unicode";
+font-size: 9pt;
+font-weight: 600;
+}
+span.aplheader {
+font-family: "APL385 Unicode";
+font-size: 9pt;
+font-weight: 600;
+}
+span.apl > a {
+}
+a {text-decoration: none;}
+div.namevaluelist {
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+div.namevaluelist table { 
+margin: 0.5em 5pt 0.5em 0;
+background-color: none;
+border: 1px Gray solid;
+page-break-inside:avoid;
+}
+div.namevaluelist td, th {
+font-size: 9pt;
+padding: 0.5em 1em;
+border:0;
+vertical-align:top;
+}
+div.namevaluelist th {
+text-align: left;
+font-weight: bold;
+}
+image {
+margin:10pt;
+display:block;
+}
+a{
+color: black
+}

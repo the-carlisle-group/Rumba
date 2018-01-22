@@ -1,0 +1,10 @@
+ GetConnections←{
+     s←⍵.Connection.Server
+     c←s.Connections.(⍎¨↓⎕NL 9.1)
+     t←1↓∊',',¨c.Name
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←t
+     r
+ }

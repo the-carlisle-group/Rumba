@@ -1,0 +1,30 @@
+ ProcessMultiPartFormDataEach←{
+     ⍝ ⍵ ←→ A boundary section
+     ⍝ ← ←→ Namespace of goodies
+     nl←⎕UCS 13 10
+     k←4⍴nl
+     j←(k⍷⍵)⍳1
+     t←j↑⍵
+     dlb←{(∨\' '≠⍵)/⍵}
+     p←{(~⍵∊nl)⊂⍵}t     ⍝ Not exactly right should look for crlf together!
+     h←2↑¨{(~<\⍵=':')⊂⍵}¨p
+     n←ToLower¨(0⊃¨h)~¨' '
+     v←{⌽dlb⌽dlb ⍵}¨1⊃¨h
+     get←{(n⍳⊂⍵)⊃v,⊂''}
+     d←get'content-disposition'
+     nv←{2↑((~<\⍵='=')⊂⍵),⊂''}¨(';'≠d)⊂d
+     dn←ToLower(0⊃¨nv)~¨' '
+     dv←{1↓¯1↓⍵}¨{⌽dlb⌽dlb ⍵}¨1⊃¨nv
+     getd←{(dn⍳⊂⍵)⊃dv,⊂''}
+     s←⎕NS''
+     s.HeaderNames←n
+     s.HeaderValues←v
+     s.ContentDisposition←d
+     s.ContentDispositionNames←dn
+     s.ContentDispositionValues←dv
+     s.ContentType←get'content-type'
+     s.Name←getd'name'
+     s.FileName←getd'filename'
+     s.Value←¯2↓(4+j)↓⍵
+     s
+ }

@@ -1,0 +1,9 @@
+ dtb←{
+      ⍝ Delete trailing blanks. Accepts scalar, vector and matrix as argument.
+     ⎕IO←1 ⋄ ⎕ML←1
+     (2=|≡⍵):∇¨⍵
+     (1=⍴⍴⍵):⌽{(+/∧\' '=⍵)↓⍵}⌽⍵            ⍝ Vectors (main application)
+     (2=⍴⍴⍵):(-+/∧⌿∧\' '=⌽⍵)↓[2]⍵          ⍝ Matrix
+     (0=⍴⍴⍵):(⎕IO+' '≡⍵)⊃⍵''               ⍝ Scalar
+     'Invalid argument'⎕SIGNAL 11
+ }

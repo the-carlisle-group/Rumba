@@ -1,0 +1,10 @@
+ MergeHeaders←{
+     ⍝ ⍺ ←→ Cached Headers
+     ⍝ ⍵ ←→ New Response Headers
+     ⍝ ← ←→ Merged headers
+     cn cv←↓⍉⊃⍺
+     nn nv←↓⍉⊃⍵
+     i j←cn civ nn
+     cv[i]←nv[j]
+     ↓⍉⊃cn cv
+ }

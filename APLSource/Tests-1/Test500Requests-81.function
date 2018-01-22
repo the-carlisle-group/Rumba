@@ -1,0 +1,8 @@
+ Test500Requests←{
+     n←5⌈⍵
+     c←##.Core.NewClient 0
+     q←##.Core.NewRequest¨n⍴0
+     q.URI←⊂'/HelloWorld'
+     r←c ##.Core.SendAndReceive q
+     0
+ }

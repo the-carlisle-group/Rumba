@@ -1,0 +1,11 @@
+ IsPersistent←{
+     ⍝ ⍵ ←→ MessageSpace
+     ⍝ ← ←→ Boolean
+     ⍝ RFC 7230.6.3
+     c←⍵ GetHeaderValue'Connection'
+     c≡'close':0
+     n←⍵.VersionNumber
+     n≥1.1:1
+     c≡'keep-alive':1
+     0
+ }

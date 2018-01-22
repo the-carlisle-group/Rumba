@@ -1,0 +1,17 @@
+ DefaultResponseHeaders←{
+     ⍝ ⍵ ←→ Response
+     ⍝ ← ←→ ⍵
+     ce←⍵.Chunked
+     h←⊂'Date'(QTSToHTTPDate QTS)
+     h,←⊂'Server' 'Rumba'
+     h,←⍵.Close/⊂'Connection' 'close'
+     h,←(~ce)/⊂'Content-Length'(⍕⍵.ContentLength)
+     h,←ce/⊂'Transfer-Encoding' 'chunked'
+     b←(⍵.ContentLength>0)∧~⍵.Chunked
+     h,←b/⊂'Content-Type'⍵.ContentType
+     h,←(0<≢⍵.Location)/⊂'Location'⍵.Location
+     h,←(0<≢⍵.ETag)/⊂'ETag'⍵.ETag
+     h,←(0≠⍵.LastModified)/⊂'Last-Modified'(FloatToHTTPDate ⍵.LastModified)
+     ⍵.DefaultHeaders←h
+     ⍵
+ }

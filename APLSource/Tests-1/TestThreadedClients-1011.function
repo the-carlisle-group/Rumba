@@ -1,0 +1,10 @@
+ TestThreadedClients←{
+     0
+     s←##.Core.NewServer 0
+     s.Port←9000
+     _←s ##.Core.Start 0
+     r←TestGetRequest&0
+     r←TestGetRequest&0
+     r←TestGetRequest&0
+     0
+ }

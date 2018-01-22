@@ -1,0 +1,8 @@
+ {r}←{lpParms}RunAsAdmin cmd;ShellOpen;handle;lpDirectory;r;show
+ 'ShellOpen'⎕NA'U Shell32.C32|ShellExecute* I <0T <0T <0T <0T I'
+ handle←0
+ lpParms←{0<⎕NC ⍵:⍎⍵ ⋄ ''}'lpParms'
+ lpDirectory←''
+ show←0  ⍝ Hidden window
+ r←ShellOpen handle'RunAs'cmd lpParms lpDirectory show
+ r←42≠r

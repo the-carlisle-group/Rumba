@@ -1,0 +1,14 @@
+ PrepareCachedResponse←{
+     ⍝ ⍵ ←→ Request
+     c←⍵.Connection.Server.Cache
+     i←⍵.CacheIndex
+     c.CacheMatrix[i;c.Hit]+←1
+     cd←c.CacheMatrix[i;]
+     r←NewResponse ⍵
+     r.Compress←0
+     r.UTF8←0
+     r.Headers←c.Headers⊃cd
+     r.Headers,←⊂'age'(⍕⍵.Age)
+     r.Content←c.Content⊃cd
+     r
+ }

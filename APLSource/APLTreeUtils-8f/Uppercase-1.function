@@ -1,0 +1,17 @@
+ array←Uppercase array;ToUpper;⎕ML;⎕IO;length;bool
+ ⎕IO←⎕ML←1
+ :If ~0∊⍴array
+     'ToUpper'⎕NA'I4 USER32.C32|CharUpper',('*A'⊃⍨1+12>{⍎⍵↑⍨¯1+⍵⍳'.'}2⊃'.'⎕WG'APLVersion'),' =0T'
+     :If ~0 1∊⍨≡array
+         length←⍴¨array
+         :Trap 1 10    ⍝ Under extreme conditions this might cause WS FULL or a LIMIT ERROR
+             :If ∨/bool←,(⊂,0)≢¨length
+                 (bool/,array)←(bool/,length)⍴¨↓(ToUpper Trans)↑bool/,array
+             :EndIf
+         :Else
+             array←(ToUpper Trans)¨array
+         :EndTrap
+     :Else
+         array←(ToUpper Trans)array
+     :EndIf
+ :EndIf

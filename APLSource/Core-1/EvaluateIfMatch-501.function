@@ -1,0 +1,13 @@
+ EvaluateIfMatch←{
+     v←⍵ GetHeaderValue'if-match'
+     ⍵.IfMatch←0
+     ⍵.IfMatchExists←0<≢v
+     ~⍵.IfMatchExists:⍵
+     ⍺.StatusCode=404:⍵
+     v≡,'*':⍵⊣⍵.IfMatch←1
+     p←{(~(⍵∊', ')∧~≠\⍵='"')⊂⍵}v
+     sfn←{'W/'≢2↓⍵}
+     e←⍺.ETag
+     ⍵.IfMatch←(sfn e)∧(⊂e)∊(sfn¨p)/p
+     ⍵
+ }

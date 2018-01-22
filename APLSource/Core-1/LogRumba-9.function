@@ -1,0 +1,12 @@
+ LogRumba←{
+     ⍝ ⍺ ←→ Server or Client
+     ⍝ ⍵ ←→ Rumba Log message
+     ⍝ ← ←→ 0
+     t←⍺.LogFileTie
+     ~⍺.LogRumba∧t<0:0
+     ld←LogDate QTS
+     d←'Rumba: ',ld,' ',⍵,⎕UCS 13 10
+     u←⎕UCS'UTF-8'⎕UCS d
+     _←u ⎕NAPPEND t
+     0
+ }

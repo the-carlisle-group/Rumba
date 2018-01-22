@@ -1,0 +1,5 @@
+ Split←{
+     ⎕ML←⎕IO←1
+     ⍺←⎕UCS 13 10 ⍝ Default is CR+LF
+     (⍴,⍺)↓¨⍺{⍵⊂⍨⍺⍷⍵}⍺,⍵
+ }

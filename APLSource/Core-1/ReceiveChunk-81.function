@@ -1,0 +1,10 @@
+ ReceiveChunk←{
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ Token Value ←→ Chunk
+     ⍝ ← ←→ Message
+     m←↑⍺.Messages
+     m.Content←⍵
+     m≢'':m
+     ⍺.Messages←1↓⍺.Messages
+     m
+ }

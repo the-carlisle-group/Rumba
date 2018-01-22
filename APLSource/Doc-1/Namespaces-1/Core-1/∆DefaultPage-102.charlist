@@ -1,0 +1,5 @@
+# Core Namespace
+
+The Core namespace contains allof the primary the functionality for Rumba with the exception of
+HTML and CSS. It is a simple, flat namespace containing only functions and operators.
+

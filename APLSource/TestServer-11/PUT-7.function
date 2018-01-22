@@ -1,0 +1,5 @@
+ PUT←{
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     p≡'Strings':PutString ⍵
+     break
+ }

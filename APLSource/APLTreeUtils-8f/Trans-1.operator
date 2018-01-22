@@ -1,0 +1,12 @@
+ Trans←{⎕IO←1
+      ⍝ This operator can produce a WS FULL that often disappears when →⎕LC is executed.
+      ⍝ Therefore it calles itself via a WS FULL guard but just once.
+     ⍺←0                   ⍝ The default.
+     ⍺:(⍴⍵)⍴2⊃⍺⍺⊂,⍵        ⍝ If ⍺ is true then by now a workspace compaction was performed.
+     1::1 ∇ ⍵              ⍝ In case of a WS FULL call itself with a 1 as left argument.
+     b←,⍵≠⎕UCS 0
+     (0=+/~b):(⍴⍵)⍴2⊃⍺⍺⊂,⍵ ⍝ Does not contain ⎕UCS 0?
+     r←b\2⊃⍺⍺⊂b/,⍵         ⍝ Execute it.
+     ((~b)/r)←⎕UCS 0       ⍝ Bring ⎕UCS 0 back
+     (⍴⍵)⍴r
+ }

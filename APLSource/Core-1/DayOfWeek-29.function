@@ -1,0 +1,7 @@
+ DayOfWeek←{
+     ⍝ ⍵ ←→ date as int in form yyyymmdd
+     s←7|DateToSerial ⍵
+     d←↓7 3⍴'SunMonTueWedThuFriSat'
+     0=≡⍵:s⊃d
+     d[s]
+ }

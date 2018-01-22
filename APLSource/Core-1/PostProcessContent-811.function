@@ -1,0 +1,6 @@
+ PostProcessContent←{
+     ⍝ ⍵ ←→ Request Message
+     ⍵.DesiredMethod←GetDesiredMethod ⍵
+     ⍵.DesiredURL←GetDesiredURL ⍵
+     ⍵
+ }

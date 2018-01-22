@@ -1,0 +1,3 @@
+ UnreservedChars←{
+     ⎕A,(ToLower ⎕A),⎕D,'-._~'
+ }

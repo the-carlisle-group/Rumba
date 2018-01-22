@@ -1,0 +1,8 @@
+# LogRumba Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The LogRumba property specifies whether or not Rumba actions are logged. It defaults to 0.
+

@@ -1,0 +1,9 @@
+ CompressContent←{
+     ⍝ ⍵ ←→ Response
+     ~⍵.Compress:⍵
+     ~⍵.Message.AcceptEncoding.Gzip:⍵
+     0=≢⍵.Content:⍵
+     ⍵.Content←EncodeGzip ⍵.Content
+     ⍵.Headers,←⊂'Content-Encoding' 'gzip'
+     ⍵
+ }

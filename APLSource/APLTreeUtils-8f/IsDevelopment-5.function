@@ -1,0 +1,5 @@
+ r←IsDevelopment;⎕IO;⎕ML
+    ⍝ Returns a one if the function is running under a Dyalog development EXE or DLL.
+ ⎕ML←⎕IO←1
+ r←'Development'≡4⊃'#'⎕WG'APLVersion'
+ r∨←'DLL'≡4⊃'#'⎕WG'APLVersion'   ⍝ May be DLLRT instead!

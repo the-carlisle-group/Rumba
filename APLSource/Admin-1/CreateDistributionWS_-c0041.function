@@ -1,0 +1,11 @@
+ CreateDistributionWS_;pf;wn;_;lx
+ ⍝ Niladic Trad, for acreQLX
+ _←LoadHelp 0
+ pf←ProjectFolder 0
+ wn←pf,'\Rumba.dws'
+ _←#.⎕EX¨'acre' 'Conga' 'acre_Rumba'
+ _←'Conga'#.⎕NS''
+ 'DRC'#.Conga.⎕CY'Conga'
+ ⎕LX←'#.Rumba.Admin.QuadLX 0'
+ _←0 ⎕SAVE wn
+ ⎕OFF

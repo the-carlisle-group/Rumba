@@ -1,0 +1,6 @@
+ ComputeCurrentAge←{
+     ⍝ ⍵ ←→ Initial age, Response time
+     ia rt←⍵
+     ct←QTSToSeconds QTS
+     ia+ct-rt
+ }

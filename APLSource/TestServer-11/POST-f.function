@@ -1,0 +1,5 @@
+ POST←{
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←404
+     r
+ }

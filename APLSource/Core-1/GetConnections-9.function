@@ -1,0 +1,8 @@
+ GetConnections←{
+     ⍝ ⍵ ←→ Server
+     ⍝ ← ←→ Connections
+     cs←⍵.Connections
+     c←ntbs cs.⎕NL 9.1
+     0=≢c:c
+     cs⍎¨c
+ }

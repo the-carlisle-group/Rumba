@@ -1,0 +1,11 @@
+ DisplayRequestResponse←{
+     ⍝ ⍵ ←→ (Response) Message
+     r←⍵
+     m←⍵.Message
+     c←m.Connection
+     s←c.Server
+     ~s.DisplayRequests:0
+     d←BuildMessageDisplay ⍵
+     f←BuildMessageMonitor 0
+     f PutMessage d
+ }

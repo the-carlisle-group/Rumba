@@ -1,0 +1,13 @@
+ PrepareForValidation←{
+     ⍝ ⍵ ←→ Request
+     ⍵.CacheIndex=¯1:0
+     c←⍵.Connection.Server.Cache
+     ch←⊃c.CacheMatrix[⍵.CacheIndex;c.Headers]
+     ts←⎕NS''
+     ts.Headers←ch
+     et←ts GetHeaderValue'etag'
+     ⍵.Headers,←(0<≢et)/⊂'if-non-match'et
+     lm←ts GetHeaderValue'last-modified'
+     ⍵.Headers,←(0<≢et)/⊂'if-modified-since'lm
+     0
+ }

@@ -1,0 +1,14 @@
+ BuildDocPage←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ r ←→ Response
+     h←##.HTML
+     ob←⍎'##.Doc',∊'.',¨2↓⍵.Segments
+     9=⎕NC'ob':BuildDocContents ⍵
+     d←BuildTemplate(↑⌽⍵.Segments)⍵.URI
+     m←↑d h.GetElementsByType'main'
+     cd←ob 0
+     _←m h.Add¨{'p'(1⊃⍵)}¨cd
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r
+ }

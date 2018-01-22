@@ -1,0 +1,11 @@
+# Version
+
+Applies to:{.prefix}
+
+Request{.info}
+
+This property specifies the HTTP version of the request. Normally the value for this property is
+supplied by the Client object. It should only be specified here in the Request object if a
+persistent connection is switching protocols mid stream. It defaults to an empty string which
+indicates that Client.Version should be used which in turn defaults to "HTTP/1.1"
+

@@ -1,0 +1,6 @@
+ SetContentLength←{
+     ⍝ ⍵ ←→ Response
+     ⍵.Chunked:0
+     ⍵.ContentLength←≢⍵.Content
+     0
+ }

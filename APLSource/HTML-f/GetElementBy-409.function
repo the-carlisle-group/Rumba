@@ -1,0 +1,13 @@
+ GetElementBy←{
+     (att v)←⍵
+     done←0
+     r←⍺{done:''
+         0=80|⎕DR ⍺:''
+         e←0≠⍺.⎕NC att
+         n←⍺{⍵:⍺.⍎att ⋄ ''}e
+         n≡⍵:⍺⊣done∨←1
+         ∊⍺.Content ∇¨⊂⍵
+     }v
+     done:↑∊r
+     0
+ }

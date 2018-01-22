@@ -1,0 +1,8 @@
+ BuildProfileDataPage←{
+     r←##.Core.NewResponse ⍵
+     t←∊((⍕⎕PROFILE'data'),⎕UCS 13),⎕UCS 10
+     r.ContentType←'text/plain; charset=utf-8'
+     r.Headers,←⊂'Cache-Control' 'no-store'
+     r.Content←t
+     r
+ }

@@ -1,0 +1,14 @@
+ PickUpstreamConnection←{
+     ⍝ ⍵ ←→ Upstream Server
+     ⍝ NEED TO LIMIT NEW CONNECTIONS AT SOME POINT
+     ⍝ and set timout to a few seconds
+     ⍝ and then regject as too busy.
+     c←0 ⎕TGET ⍵.ConnectionPoolToken
+     1=≢c:c
+     c←NewClient 0
+     c.Buffer←1
+     c.Host←⍵.Host
+     c.Port←⍵.Port
+     c.UpstreamServer←⍵
+     c
+ }

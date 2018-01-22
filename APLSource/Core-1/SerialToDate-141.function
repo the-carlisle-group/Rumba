@@ -1,0 +1,20 @@
+ SerialToDate←{                             ⍝ inv is DateToSerial
+⍝ origin is start of CE - 1 ←→ 0001-01-01 00:00:00
+     d←,⍵-1                                 ⍝ proleptic gregorian days
+     q c o y←0                              ⍝ local
+     q d∘←↓(0,400 100 4 1+.×365 1 ¯1 1)⊤d   ⍝ quadricentennium
+     c d∘←↓(0,100 25 1+.×365 1 ¯1)⊤d        ⍝ century
+     s←c=4                                  ⍝ end of quadricentennium
+     o d∘←↓(0,4 1+.×365 1)⊤d                ⍝ quadrennium
+     y d∘←↓0 365⊤d                          ⍝ year & day
+     s∨←y=4                                 ⍝ end of quadrennium
+     y d+←1+¯1 365×⊂s                       ⍝ end of century/quadricentennium
+     y∘←⊃q c o y+.×400 100 4 1              ⍝ total years
+     l←LeapYear y                           ⍝ leap year
+     m←(1 31 29,10⍴5⍴31 30)/⍳13             ⍝ a year of months
+     d+←l<d>59                              ⍝ skip 29 Feb for non leap-year
+     m∘←m[d]                                ⍝ month
+     n←+\0 0 31 29,10⍴5⍴31 30               ⍝ days to previous month end
+     d-←n[m]                                ⍝ remainder
+     (0≠⍵)×(⍴⍵)⍴100⊥⊃y m d                  ⍝ yyyymmdd
+ }

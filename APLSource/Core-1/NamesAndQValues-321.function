@@ -1,0 +1,9 @@
+ NamesAndQValues←{
+     part←{(⍺≠⍵)⊂⍵}
+     t←','part ⍵
+     rq←2↑¨';'part¨t
+     r←↑¨rq
+     q←{'q='≡2↑⍵:↑1⊃⎕VFI 2↓⍵ ⋄ 1}¨1⊃¨rq
+     g←⍒q
+     (r[g])(q[g])
+ }

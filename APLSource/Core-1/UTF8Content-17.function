@@ -1,0 +1,5 @@
+ UTF8Content←{
+     ~⍵.UTF8:0
+     ⍵.Content←⎕UCS'UTF-8'⎕UCS ⍵.Content
+     ⍵
+ }

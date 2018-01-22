@@ -1,0 +1,66 @@
+ table←{
+     s←⊂{
+         s←⊂'table'
+         ⍝ s,←⊂'padding' '4rem'
+         s,←⊂'margin' '4rem'
+         ⍝ s,←⊂'background-color' 'white'
+         s,←⊂'border-collapse' 'collapse'
+
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'th,td'
+         ⍝ s,←⊂'text-align' 'left'
+         s,←⊂'padding' '.3rem .75rem'
+         s,←⊂'font-weight' 'normal'
+         ⍝ s,←⊂'border' 'none'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'tbody tr:nth-child(even)'
+         s,←⊂'background-color'⍵.NinetyPercentWhite
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'tbody tr:nth-child(odd)'
+         s,←⊂'background-color' 'white'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'tbody tr:hover'
+         s,←⊂'background-color'⍵.LightGray
+         s,←⊂'cursor' 'pointer'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'thead'
+         s,←⊂'word-wrap' 'break-word'
+         s,←⊂'vertical-align' 'bottom'
+         s,←⊂'border-bottom' '1px solid black'
+         ⍝ s,←⊂'background-color' 'red'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'tbody tr'
+         s,←⊂'border-bottom' '1px solid'
+         s,←⊂'border-color'⍵.VeryLightGray
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.nc'
+         s,←⊂'text-align' 'right'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.tc'
+         s,←⊂'text-align' 'left'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'table a'
+         s,←⊂'text-decoration' 'none'
+         s,←⊂'color' 'inherit'
+         s
+     }⍵
+     s
+ }

@@ -1,0 +1,18 @@
+# SendAndReceive Method
+
+Sends request message(s), waits for and returns response message(s).
+
+Applies to:{.prefix}
+
+Client{.info}
+
+~~~
+R←X SendAndReceive Y
+~~~
+
+X is a Client, Y is one or more Requests, R is one or more Messages. The SendAndReceive method
+establishes a connection, sends requests, receives results and closes the connection.
+
+The argument is one or more Requests, and the result is one or more corresponding response
+Messages.  It encapsulates all of the functionality of the Connect, Send, Receive and Close methods.
+

@@ -1,0 +1,14 @@
+ z←Start
+ #.S←z←{
+     s←##.Core.NewServer 0
+     s.Trap←1
+     s.UpstreamServers←##.Core.NewUpstreamServer¨{'localhost'⍵}¨8081+⍳3
+     s.Port←8080
+     s.Folder←'c:\RumbaReverseProxyTest\ReverseProxy8080'
+     s.LogHTTP←1
+     s.LogHTTPToSession←1
+     s.DisplayRequests←0
+     _←s ##.Core.Start 0
+     s
+ }0
+ '⍝ #.S ←→ This is the ProxyServer on port 8080'

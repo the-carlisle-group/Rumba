@@ -1,0 +1,10 @@
+ RunTests←{
+     _←StartTestServer 0
+     f←'T'##.Tests.⎕NL ¯3
+     b←RunTest¨f
+     tf←+/b
+     r←⊂'Tests run: ',⍕≢b
+     r,←⊂'Passed: ',⍕+/~b
+     r,←⊂'Failed: ',⍕+/b
+     ⊃r
+ }

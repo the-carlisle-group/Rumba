@@ -1,0 +1,12 @@
+ UTF8Test2←{
+⍝ Comes with several matrix parameters and queries
+     m←⍵   ⍝ Message
+     r←##.Core.NewResponse m
+     r.StatusCode←200
+     mp←,↑m.MatrixParameters
+     q1←m ##.Core.GetQueryParameter'ä'
+     q2←m ##.Core.GetQueryParameter'öÖü'
+     q3←m ##.Core.GetQueryParameter'Name'
+     r.Content←1↓⊃,/(⎕UCS 10),¨∊¨mp q1 q2 q3
+     r
+ }

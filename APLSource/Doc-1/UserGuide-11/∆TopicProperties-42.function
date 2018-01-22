@@ -1,0 +1,19 @@
+ ∆TopicProperties←{
+⍝ This function is needed by the APLTreeHelp system.
+⍝ You can edit this function from the APLTreeHelp GUI with
+⍝ Crl+Enter on a node in develpment mode.
+⍝ r gets a table with these columns:
+⍝ [;0] namespace or function name.
+⍝ [;1] caption in the tree view. If empty the namespace/fns name is taken.
+⍝ [;2] active flag.
+⍝ [;3] developmentOnly flag; 1=the corresponding node does not show in user mode.
+     r←0 4⍴''
+     r⍪←'Introduction' '' 1 0
+     r⍪←'ServerSideRequestsAndResponses' 'On the Server' 1 0
+     r⍪←'ClientSideRequestsAndResponses' 'On the Client' 1 0
+     r⍪←'BuildingHTMLPages' 'Building HTML Web Pages' 1 0
+     r⍪←'ConditionalRequests' 'Conditional Requests' 1 0
+     r⍪←'StatusCodeRegistry' 'HTTP Status Code Registry' 1 0
+     r⍪←'ToDoList' 'To Do List' 1 0
+     r
+ }

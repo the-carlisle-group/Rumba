@@ -1,0 +1,7 @@
+ FilenameToContentType←{
+     x←↑⌽('.'≠⍵)⊂⍵
+     x≡'js':'text/javascript; charset=utf-8'
+     x≡'css':'text/css; charset=utf-8'
+     x≡'txt':'text/plain; charset=utf-8'
+     ''
+ }

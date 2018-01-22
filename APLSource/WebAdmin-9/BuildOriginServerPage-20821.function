@@ -1,0 +1,18 @@
+ BuildOriginServerPage←{
+     ⍝ ⍵ ←→ Request Message      BuildProfilePage
+     ⍝ r ←→ Response
+     h←##.HTML
+     s←⍵.Connection.Server
+     un←↑⌽⍵.Segments
+     d←BuildTemplate un ⍵.URI
+     me←↑d h.GetElementsByType'main'
+     us←un{(⍵.Name⍳⊂⍺)⊃⍵}s.UpstreamServers
+     fm←me h.NewSectionInfo'Origin Server'
+     f←fm.SectionContent h.NewTextField'Host' 'Host'us.Host
+     f,←fm.SectionContent h.NewTextField'Port' 'Port'(⍕us.Port)
+     f.class←⊂'fieldstyle2'
+     f.Input.readonly←⊂'readonly'
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r
+ }

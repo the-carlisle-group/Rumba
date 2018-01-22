@@ -1,0 +1,12 @@
+ NewSection←{
+     ⍝ ⍺ ←→ Optional Parent
+     ⍝ ⍵ ←→ Caption, Class
+     ⍝ ← ←→ Section
+     ⍺←0
+     s←⍺ NewHTMLElement'section'
+     s.class←1⊃⍵
+     d←s Add'details'
+     _←d Add'summary'(0⊃⍵)
+     s.Panel←d
+     s
+ }

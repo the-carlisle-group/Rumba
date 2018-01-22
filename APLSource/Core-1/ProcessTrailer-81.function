@@ -1,0 +1,11 @@
+ ProcessTrailer←{
+     ⍝ ⍵ ←→ Message
+     nl←⎕UCS 13 10
+     dlb←{(∨\' '≠⍵)/⍵}
+     p←{(~⍵∊nl)⊂⍵}⍵.Trailer
+     t←2↑¨{(~<\⍵=':')⊂⍵}¨p
+     n←ToLower¨(0⊃¨t)~¨' '
+     v←{⌽dlb⌽dlb ⍵}¨1⊃¨t
+     ⍵.Trailers←t{⍺ ⍵}¨v
+     ⍵
+ }

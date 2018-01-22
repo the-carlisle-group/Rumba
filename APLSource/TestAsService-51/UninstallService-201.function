@@ -1,0 +1,8 @@
+ {r}←UninstallService servicename;z;success
+ servicename←GetServiceName servicename
+ ('delete ',servicename)RunAsAdmin'sc'
+ z←⎕CMD'sc query ',servicename
+ success←∨/'The specified service does not exist as an installed service'⍷∊z
+ ⎕←'*** Service ',((~success)/'un'),'successfully removed'
+ r←~success
+⍝Done

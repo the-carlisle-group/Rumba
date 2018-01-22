@@ -1,0 +1,8 @@
+ LogHTTPToSession←{
+    ⍝ ⍺ ←→ Server
+    ⍝ ⍵ ←→ Response
+     ~⍺.LogHTTPToSession:0
+     m←⍵.Message
+     ⎕←⍕⍺.Port':'⍵.StatusCode m.Method m.URI
+     0
+ }

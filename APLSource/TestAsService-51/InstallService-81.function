@@ -1,0 +1,31 @@
+ r←{rf}InstallService servicename;cmd;cl;q;f;z;i;maxWait;success;exe
+⍝ Installs Rumba as a service.
+⍝ If the right argument "servicename" is empty it defaults to the result of fns `DefaultServiceName`.
+⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running service.
+ servicename←GetServiceName servicename
+ rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
+ cl←#.GetCommandLineArgs                    ⍝ Current command line
+ q←{'"',⍵,'"'}                              ⍝ Quote stuff
+ exe←↑cl                                    ⍝ The interpreter
+ exe←(exe↑⍨'Dyalog.exe'{1⍳⍨⍺⍷⍵}exe),'Dyalogrt.exe'
+ cmd←⊂q exe                                 ⍝
+ f←'acre.dws'≡{⍵,(~'.'∊⍵)/'.dws'}{##.Core.ToLower ⍵/⍨~⌽∨\⌽'\'=⍵}⎕WSID
+ cmd,←⊂f⊃(q(↑⎕CMD'cd'),'\..\acre\acre.dws')(1⊃cl)  ⍝ The workspace
+ cmd,←⊂'APL_ServiceInstall=',servicename    ⍝ Tell the interpreter to install the service
+ cmd,←⊂'maxws=32MB'
+ cmd,←⊂'acreload=rumba'                     ⍝ Load acre
+ cmd,←⊂'DYALOG_NOPOPUPS=1'                  ⍝ We don't want the dialog box "You have successfully..."
+ cmd,←rf/⊂'RIDE_INIT=CONNECT:127.0.0.1:4502'⍝ User wants to have a RIDE
+ cmd,←⊂'acreqlx=#.Rumba.TestAsService.LX'   ⍝ latent expression
+ z←⎕CMD(1↓∊' ',¨cmd)''                      ⍝
+ i←0                                        ⍝ Counter
+ maxWait←10                                 ⍝ Wait for a maximum of .. seconds
+ success←0
+ :Repeat
+     ⎕DL 1
+     z←⎕CMD'sc query ',servicename
+     success←+/('SERVICE_NAME: ',servicename)⍷∊z
+ :Until success∨maxWait=i←i+1
+ ⎕←'*** Service ',((~success)/'un'),'successfully installed'
+ r←~success
+⍝Done

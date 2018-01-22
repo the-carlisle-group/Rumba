@@ -1,0 +1,8 @@
+# Port Property (UpstreamServer Object)
+
+Applies to:{.prefix}
+
+UpstreamServer{.info}
+
+The Port property specifies the port of the upstream server.
+

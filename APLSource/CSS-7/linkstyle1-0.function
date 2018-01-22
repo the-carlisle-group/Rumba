@@ -1,0 +1,23 @@
+ linkstyle1←{
+     s←⊂{
+         s←⊂'.links a'
+         s,←⊂'display' 'block'
+         s,←⊂'font-size' '1.5em'
+         s,←⊂'color' 'inherit'
+         ⍝ s,←⊂'margin-bottom' '.1em'
+         s,←⊂'padding' '.25em .5em'
+         s,←⊂'text-decoration' 'none'
+         s,←⊂'border' '1px solid transparent'
+         s,←⊂'border-radius' '.5em'
+         s,←⊂'transition' 'all 1s'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.links a:hover'
+         s,←⊂'background-color' 'white' ⍝ ⍵.VeryLightGray
+         ⍝ s,←⊂'border' '1px solid'
+         s
+     }⍵
+     s
+
+ }

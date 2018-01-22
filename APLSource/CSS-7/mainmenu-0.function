@@ -1,0 +1,29 @@
+ mainmenu←{
+     s←⊂{
+         s←⊂'#mainmenu'
+         s,←⊂'display' 'inline-block'
+         s,←⊂'background-color'⍵.BannerBackgroundColor
+         s,←⊂'padding-left' '2rem'
+         s}⍵
+
+     s,←⊂{
+         s←⊂'#mainmenu>a'
+         s,←⊂'font-family' 'Arial'
+         s,←⊂'font-size' '1.25em'
+         s,←⊂'font-weight' 'bold'
+         s,←⊂'color'⍵.MenuFontColor
+         s,←⊂'padding' '.5em'
+         s,←⊂'text-decoration' 'none'
+         s,←⊂'border' '1px solid transparent'
+         s,←⊂'border-radius' '.75em'
+         s,←⊂'transition' 'all 1s'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'#mainmenu>a:hover'
+         s,←⊂'color' 'white'
+         s,←⊂'border' '1px solid'
+         s
+     }⍵
+     s
+ }

@@ -1,0 +1,14 @@
+# Close Method
+
+Closes a connection.
+
+Applies to:{.prefix}
+
+Client{.info}
+
+~~~
+R←X Close Y
+~~~
+
+X is a Client, Y is 0, R is 0.
+

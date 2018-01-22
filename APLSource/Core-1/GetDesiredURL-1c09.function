@@ -1,0 +1,9 @@
+ GetDesiredURL←{
+     ~⍵.BrowserPost:⍵.URI
+     u1←⍵ GetFormValue'urlpart1'
+     u1≡'':⍵.URI
+     u2←⍵ GetFormValue'urlpart2'
+     ⍵.DesiredURL←u1
+     u2≡'':⍵.URI
+     u1,'/',u2
+ }

@@ -1,0 +1,14 @@
+ TooManyRequests←{
+  ⍝ ⍵ = Connection name to be closed
+  ⍝ ⍺ = Server
+  ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+  ⍝ We are too busy!
+  ⍝ According to the documentation it's okay to just refuse a connection.
+  ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+     s←⍺
+     n←⍵
+     cn←s.Name,'.',n
+     _←⍺ LogRumba'Close connection: ',cn,' (too busy)'
+     _←DRC.Close cn
+     0
+ }

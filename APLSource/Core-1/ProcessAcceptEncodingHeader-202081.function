@@ -1,0 +1,9 @@
+ ProcessAcceptEncodingHeader←{
+     ⍝ ⍵ ←→ Message
+     v←⍵ GetHeaderValue'Accept-Encoding'
+     p←⎕NS''
+     n q←NamesAndQValues v
+     p.(Encoding QValue)←n q
+     p.Gzip←0≠(n⍳⊂'gzip')⊃q,0
+     p
+ }

@@ -1,0 +1,8 @@
+ GetCompressedRequestContent←{
+     ⍝ ⍺ ←→ Request Message
+     ⍝ ⍵ ←→ n/a
+     ⍝ ← ←→ Compresed Content
+     POSSIBLEY OBSOLETE
+     ~⍺.Compress:⍺.Content
+     EncodeGzip ⍺.Content
+ }

@@ -1,0 +1,10 @@
+ OnBlockServer←{
+     ⍝ ⍺ ←→ Server
+     ⍝ ⍵ ←→ DRC.Wait Result
+     s←⍺
+     cn e d←⍵
+     cs←s.Connections
+     0=cs.⎕NC cn:0        ⍝ ExpungeConnection may have terminated this connection
+     c←cs⍎cn
+     e d ⎕TPUT c.Tid      ⍝ WaitForData
+ }

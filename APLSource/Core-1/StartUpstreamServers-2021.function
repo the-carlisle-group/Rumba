@@ -1,0 +1,23 @@
+ StartUpstreamServers←{
+     s←⍵
+     u←s.UpstreamServers
+     n←≢u
+     s.ServerType←2⌊n
+     s.IsCache←0≠s.ServerType
+     s.ServerTypeDesc←s.ServerType⊃'Origin' 'Edge' 'Gateway'
+     n=0:0
+     t←{}&0
+     s.RoundRobinToken←t
+     _←u ⎕TPUT¨t
+     _←s CreateCache 0
+     u.Server←s
+     _←StartUpstreamServer¨u
+     n=1:0
+     c←NewClient¨n⍴0
+     c.Port←u.Port
+     c.Host←u.Host
+     ⍝ c.ClientTimeout← ?   ⍝ Live forever?
+     u.UnsafeConnection←c
+     u.Tid←OriginServerLoop&¨u
+     0
+ }

@@ -1,0 +1,7 @@
+ LogDate←{
+     ⍝ ⍵ ←→ ⎕TS
+     y←⍕↑⍵
+     d h m s←↓'ZI2'⎕FMT 4↑2↓⍵
+     n←(¯1+⍵[1])⊃↓36 3⍴'JanFebMarAprMayJunJulAugSepOctNovDec'
+     '[',d,'/',n,'/',y,':',h,':',m,':',s,' 0000]'
+ }

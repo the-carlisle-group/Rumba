@@ -1,0 +1,6 @@
+ GetServiceName←{
+     0∊⍴⍵:DefaultServiceName
+     ' '∊⍵:'The name of the service must not contain a blank'⎕SIGNAL 11
+     {0::1 ⋄ r←⎕NS'' ⋄ ⍎'0⊣r.',⍵,'←3'}⍵:'Invalid service name'⎕SIGNAL 11
+     ⍵
+ }

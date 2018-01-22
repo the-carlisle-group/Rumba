@@ -1,0 +1,22 @@
+ Start←{
+     ⍝ ⍺ ←→ Server
+     s←⍺
+     _←s HandleStart 0  ⍝ Handle failure!
+     s.Connections←⎕NS''
+     v←⊂'Name's.Name
+     v,←⊂'Port's.Port
+     v,←⊂'Mode' 'Text'
+     v,←⊂'Address's.Address
+     _←1 DRC.Init''
+     _←DRC.Close s.Name
+     rc sn←2↑DRC.Srv v
+     0≠rc:sn ⎕SIGNAL 11
+     s.Name←sn
+     #.onServiceNotification←'OnServiceNotification'⍺
+     _←'#'⎕WS'Event's.QuitEvent 1
+     s.LogFileTie←OpenLogFile ⍺
+     _←s LogRumba'Server started'
+     s.Tid←ServerLoop&s
+     s.StartTime←QTSToSeconds QTS
+     StartUpstreamServers s
+ }

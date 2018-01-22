@@ -1,0 +1,4 @@
+ ToHexadecimal←{                         ⍝ Hexadecimal from decimal.
+     ⍺←2×⌈0.5×1+⌊16⍟1⌈⌈/|,⍵              ⍝ Calc default width.
+     ↓[0]'0123456789ABCDEF'[(⍺/16)⊤⍵]    ⍝ character hex numbers.
+ }

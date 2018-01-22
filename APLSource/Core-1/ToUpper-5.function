@@ -1,0 +1,5 @@
+ ToUpper←{
+     ⍝ ⍵ ←→ Character Array
+     ⍝ ← ←→ Converted to upper case
+     1(819⌶)⍵
+ }

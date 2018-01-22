@@ -1,0 +1,6 @@
+ PickUpstreamServer←{
+     ⍝ ⍵ ←→ (Gateway) Server
+     0=⍵.ServerType:0
+     t←⍵.RoundRobinToken
+     u⊣(u←⎕TGET t)⎕TPUT t
+ }

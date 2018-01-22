@@ -1,0 +1,17 @@
+ Respond←{
+     ⍝ ⍺ ←→ Message
+     ⍝ ⍵ ←→ Status Code, [Inlcude HTML Content 1|0]
+     ⍝ ← ←→ Response
+     c b←2↑⍵
+     r←NewResponse ⍺
+     r.StatusCode←c
+     ~b:r
+     h←##.HTML
+     p←##.Core.GetReasonPhrase r
+     r.ReasonPhrase←p
+     d←h.NewHTMLDocument 0
+     b←d h.Add'body'
+     _←b h.Add'h1'((⍕c),': ',p)
+     r.Content←d
+     r
+ }

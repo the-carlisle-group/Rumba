@@ -1,0 +1,25 @@
+ NewMessage←{
+     ⍝ ⍵ ←→ Client, or a Server connection
+     ⍝ ← ←→ Message
+     m←⎕NS''
+     m.Connection←⍵
+     m.Stream←''
+     m.Header←''
+     m.Content←''
+     m.HeaderComplete←0
+     m.ContentComplete←0
+     m.Chunked←0
+     m.ChunkHeader←''
+     m.ChunkHeaderComplete←0
+     m.Chunk←''
+     m.ChunkComplete←0
+     m.Trailer←''
+     m.Buffer←⍵.Buffer
+     m.HeadRequest←0
+     m.Type←⍵.MessageType
+     m.ResponseSent←0
+     m.AcceptEncoding←⎕NS''
+     m.AcceptEncoding.Gzip←0
+     m.CacheIndex←¯1
+     m
+ }

@@ -1,0 +1,8 @@
+ GetElementsBy←{
+     a v←⍵
+     0=80|⎕DR ⍺:''
+     e←0≠⍺.⎕NC a
+     n←⍺{⍵:⍺.⍎a ⋄ ''}e
+     n≡v:⍺
+     ∊⍺.Content ∇¨⊂⍵
+ }

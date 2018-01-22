@@ -1,0 +1,17 @@
+# Tests Namespace
+
+The Tests namespace contains the test suite for Rumba. Each test is a function that must return 1
+for fail, or 0 for pass. The name of each function should start with "Test". The right argument of
+a test function is not used. The left argument of a test function is optional, and should default
+to zero. It should be used to set the various session logging properties like LogCongaEvents and LogMessages
+
+A test function should throw no output to the session other than what occurs as a result of setting
+logging properties to 1.
+
+A test function can assume that the Rumba test server is up,  running and listening for requests.
+
+Test functions should need no additional resources and make no assumptions about other installed
+software. They may only assume the Rumba Test Server to be up on the same machine.
+
+The test functions are not individually documented.
+

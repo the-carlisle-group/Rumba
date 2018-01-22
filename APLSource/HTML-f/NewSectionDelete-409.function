@@ -1,0 +1,10 @@
+ NewSectionDelete←{
+     ⍝ ⍺ ←→ Optional Parent
+     ⍝ ⍵ ←→ Caption
+     ⍺←0
+     s←⍺ NewSectionForm ⍵'unsafe'
+     f←s.Form
+     _←f NewHiddenInput'httpmethod' 'DELETE'
+     _←f NewCommand'Delete'
+     s
+ }

@@ -1,0 +1,5 @@
+ StyleH2←{
+     s,←⊂'font-size' '200%'
+     s,←⊂'color' '#663366'
+     s
+ }

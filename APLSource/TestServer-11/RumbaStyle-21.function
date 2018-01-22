@@ -1,0 +1,14 @@
+ RumbaStyle←{
+     compose←{
+         n v←↓⍉⊃1↓⍵  ⍝ ,⊂'border' '1px dash'
+
+         p←n{⍺,': ',⍵,';'}¨v
+         ∊(↑⍵),'{',p,'}'
+     }
+     s←⊂reset 0
+     s,←⊂html 0
+     s,←⊂body 0
+     s,←⊂h1 0
+     s,←⊂h2 0
+     ∊compose¨s
+ }

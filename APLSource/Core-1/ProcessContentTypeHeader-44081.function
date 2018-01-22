@@ -1,0 +1,16 @@
+ ProcessContentTypeHeader←{
+     ⍝ ⍵ ←→ Message
+     v←⍵ GetHeaderValue'Content-Type'
+     part←{(⍺≠⍵)⊂⍵}
+     c←';'part v
+     ty st←2↑'/'part↑c
+     s←⎕NS''
+     ⍵.ContentType←s
+     s.ContentType←v
+     s.Type←ty
+     s.Subtype←st
+     ⍝ Clean up!
+     s.Parameters←{0=≢⍵:'' ⋄ n v←↓⍉⊃2↑¨'='part¨⍵ ⋄ n←n~¨' ' ⋄ ↓⍉⊃n v}1↓c
+     ⍵.BrowserPost←(⊂st)∊'x-www-form-urlencoded' 'form-data'
+     ⍵
+ }

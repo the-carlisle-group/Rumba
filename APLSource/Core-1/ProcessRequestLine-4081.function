@@ -1,0 +1,12 @@
+ ProcessRequestLine←{
+     ⍝ ⍵ ←→ Message
+     l←⍵.StartLine
+     m u v←3↑(l≠' ')⊂l
+     ⍵.HeadRequest←m≡'HEAD'
+     ⍵.Safe←(⊂m)∊'HEAD' 'GET'
+     ⍵.Method←⍵.HeadRequest⊃m'GET'
+     ⍵.URI←u
+     ⍵.Version←v
+     ⍵.VersionNumber←↑1⊃⎕VFI↑⌽{('/'≠⍵)⊂⍵}v
+     ⍵
+ }

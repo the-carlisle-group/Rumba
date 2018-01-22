@@ -1,0 +1,8 @@
+ GetStyleSheet←{
+     r←##.Core.NewResponse ⍵
+     ⍝ r.Content←ReadUTF8 ⍵.Connection.Server.Folder,'/css/styles.css'
+     r.Content←##.Style.Build 0
+     r.ContentType←'text/css; charset=utf-8'
+     ⎕←(50↑r.Content),'...'
+     r
+ }

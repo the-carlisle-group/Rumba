@@ -1,0 +1,14 @@
+ OriginServerLoop←{
+     ⍝ ⍵ ←→ Upstream (Origin) Server
+     u←⍵
+     q←⊃⎕TGET ⎕TID
+     c←u.UnsafeConnection
+     _←c Send q
+     r←c Receive 0
+     q.OriginRequestComplete:∇ ⍵
+     ⍝ Note the upstream server here that the request completed on
+     ⍝ Set in the connection
+     q.OriginRequestComplete←1
+     _←r ⎕TPUT q.OriginToken
+     ∇ ⍵
+ }

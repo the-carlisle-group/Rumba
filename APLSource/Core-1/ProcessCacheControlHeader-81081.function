@@ -1,0 +1,15 @@
+ ProcessCacheControlHeader←{
+     ⍝ ⍵ ←→ Message
+     v←ToLower ⍵ GetHeaderValue'cache-control'
+     part←{(⍺≠⍵)⊂⍵}
+     d←','part v
+     t a←↓⍉⊃(2↑¨'='part¨d)~¨¨' '
+     s←⎕NS''
+     s.(Token Argument)←(t~¨' ')a
+     s.(NoCache NoStore Public Private)←'no-cache' 'no-store' 'public' 'private'∊t
+     val←{''≡⍵:¯1 ⋄ ⌊↑1⊃⎕VFI ⍵}
+     s.MaxAge←val(t⍳⊂'max-age')⊃a,⊂''
+     s.SMaxAge←val(t⍳⊂'s-maxage')⊃a,⊂''
+     ⍵.CacheControl←s
+     ⍵
+ }

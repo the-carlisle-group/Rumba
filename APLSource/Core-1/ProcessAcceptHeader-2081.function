@@ -1,0 +1,20 @@
+ ProcessAcceptHeader←{
+     ⍝ ⍵ ←→ Message
+     v←⍵ GetHeaderValue'Accept'
+     p←⎕NS''
+     n q←NamesAndQValues v
+     p.(MediaRange QValue)←n q
+     p
+
+    ⍝ t←(','≠v)⊂v
+⍝     rq←2↑¨{(';'≠⍵)⊂⍵}¨t
+⍝     r←↑¨rq
+⍝     q←{'q='≡2↑⍵:↑1⊃⎕VFI 2↓⍵ ⋄ 1}¨1⊃¨rq
+⍝     g←⍒q
+⍝     p.MediaRange←r[g]
+⍝     p.QValue←q[g]
+⍝
+⍝
+⍝     ⍵.Accept←p
+⍝     ⍵
+ }

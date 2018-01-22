@@ -1,0 +1,12 @@
+ ServeFile←{
+     ⍝ ⍺ ←→ Optional 404 Response
+     ⍝ ⍵ ←→ Request
+     ⍺←⍵ Respond 404 1
+     fn←⍵.Connection.Server.Folder,⍵.URI
+     ~FileExists fn:⍺
+     r←NewResponse ⍵
+     r.UTF8←0
+     r.Content←ReadBytes fn
+     r.ContentType←FilenameToContentType fn
+     r
+ }

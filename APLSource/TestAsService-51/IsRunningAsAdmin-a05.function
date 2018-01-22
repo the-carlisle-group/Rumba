@@ -1,0 +1,6 @@
+ r←IsRunningAsAdmin;IsUserAnAdmin
+⍝ Tells whether the current process runs "as Administrator"
+ :Access Public Shared
+ :Trap r←0
+     r←⍎⎕NA'I Shell32|IsUserAnAdmin'
+ :EndTrap

@@ -1,0 +1,9 @@
+ z←(f TrapRequest)x;t
+⍝ x ←→ Request Message
+⍝ f ←→ OnRequest Function
+ t←x.Connection.Server.Trap
+ :Trap t/0
+     z←f x
+ :Else
+     z←ErrorInApplication x
+ :EndTrap

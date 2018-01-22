@@ -1,0 +1,9 @@
+ OnClientTimeout←{
+    ⍝ ⍵ ←→ Client
+     0=≢⍵.Messages:0
+     ct←0 QTSToSeconds QTS
+     la←0 QTSToSeconds ⍵.LastActivityTime
+     ⍵.ClientTimeout>ct-la:0
+     lm←'Client timed out.'
+     KillClientConnection ⍵ ¯1 lm
+ }

@@ -1,0 +1,16 @@
+ z←Start
+ z←{
+
+     s←##.Core.NewServer 0
+     _←'Strings's.⎕NS''
+     s.OnRequest←'OnRequest'
+     s.OnHeader←'OnRequestHeader'
+     s.Caching←1
+     s.Folder←'c:\RumbaTestServer'
+     s.LogHTTP←1
+     s.LogConga←1
+     s.LogRumba←1
+     s.Context←⎕THIS
+     _←s ##.Core.Start 0
+     s
+ }0

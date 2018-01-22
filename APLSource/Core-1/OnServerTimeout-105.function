@@ -1,0 +1,9 @@
+ OnServerTimeout←{
+     ⍝ ⍺ ←→ Server
+     _←CloseIdleConnections ⍺
+     _←CheckUpstreamHealth ⍺
+     ⍺.OnCongaTimeout≡'':0
+     f←⍺.Context⍎⍺.OnCongaTimeout
+     _←f ⍺
+     0
+ }

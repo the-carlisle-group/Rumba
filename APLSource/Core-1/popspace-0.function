@@ -1,0 +1,5 @@
+ popspace←{                  ⍝ Create space with
+     s←⎕NS''                ⍝ ...names ⍺ and values ⍵
+     0=⍴⍵:s                 ⍝ Nothing
+     s{⍺}⍺ s.{⍎⍺,'←⍵'}¨⍵    ⍝ Populate put
+ }

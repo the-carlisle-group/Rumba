@@ -1,0 +1,23 @@
+# Client Object
+
+The Client object is a client-side object that represents a client connection to a server.
+
+A new client is created using the static →[Methods.NewClient] method. Properties relating to the
+connection, like Host and Port, may then be specified. The →[Methods.Connect] method then
+establishes a connection to the server. The client is then in a listening state, waiting for
+messages from the server.
+
+The →[Methods.Send] method sends requests to the server, and the →[Methods.Receive] method waits
+for responses. Multiple requests may be sent to the server before waiting for responses with
+Receive. This is called "pipelining". The Receive method waits for one message at a time, and
+returns this message. Thus if Send is called 5 times to send 5 messages, Receive should be called
+5 times to  receive the 5 messages. Messages are received in the order they are sent.
+
+The →[Methods.Close] method closes the connection.
+
+The →[Methods.SendAndReceive] method connects, sends, receives and closes the connection all in one
+go. It may take one or more requests as its argument, and will correspondingly return one or more
+messages as its result.
+
+The →[Methods.SendExpect100] method sends a message with the "Expect: 100-continue" header.
+

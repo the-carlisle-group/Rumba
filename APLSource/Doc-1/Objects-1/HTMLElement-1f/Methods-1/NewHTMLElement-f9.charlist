@@ -1,0 +1,10 @@
+# NewHTMLElement Method
+
+~~~
+R←[X] NewHTMLElement Y [Z]
+~~~
+
+This method creates a new HTMLElement object. Y is the type of element to create. Z is optional
+content. Both X and Y are simple text vectors. R is an HTMLElement object. If X is an optional
+HTMLElement or HTMLDocument object. If provided, R is added as a child to X.
+

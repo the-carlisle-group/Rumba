@@ -1,0 +1,9 @@
+# LogMessages Property
+
+Applies to:{.prefix}
+
+Client{.info}
+
+The LogMessages property specifies whether or not received HTTP messages are logged to the APL
+session. It defaults to 0.
+

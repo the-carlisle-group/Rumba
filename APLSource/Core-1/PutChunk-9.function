@@ -1,0 +1,6 @@
+ PutChunk←{
+     ⍝ ⍺ ←→ Response
+     ⍝ ⍵ ←→ Chunk Data
+     ⍺.ContentLength+←≢⍵
+     ⍵ ⎕TPUT ⍺.Message.Tid
+ }

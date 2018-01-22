@@ -1,0 +1,10 @@
+ ProcessTransferEncoding←{
+     ⍝ ⍵ ←→ Message
+     v←⍵ GetHeaderValue'Transfer-Encoding'
+     t←(~v∊', ')⊂v
+     ⍵.TransferEncoding←t
+     ⍵.Chunked←(⊂'chunked')∊t
+     v←⍵ GetHeaderValue'Content-Encoding'
+     ⍵.Gzip←'gzip'≡ToLower v
+     0
+ }

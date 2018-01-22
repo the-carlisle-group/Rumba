@@ -1,0 +1,9 @@
+# StatusCode
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The StatusCode property is the status code on the response line. It is only provided for response
+messages. It is an integer.
+

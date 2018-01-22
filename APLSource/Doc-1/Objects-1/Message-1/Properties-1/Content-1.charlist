@@ -1,0 +1,14 @@
+# Content
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The Content property contains the content of the message. It is a simple character vector. However,
+if the Buffer property for the connection or client is 1, and the message is chunked, then the
+Content property contains only one chunk of the content at any given moment.
+
+The content may or may not be compressed. The →[Gzip] property indicates
+whether or not the content is compressed. Use the →[*.GetUncompressedContent]
+method to retrieve uncompressed content. 
+

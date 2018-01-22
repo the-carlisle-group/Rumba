@@ -1,0 +1,14 @@
+ CloseIdleConnections←{
+     ⍝ ⍵ ←→ Server
+     c←GetConnections ⍵
+     0=≢c:0
+     lr←0 QTSToSeconds¨c.LastReceiveTime
+     ls←0 QTSToSeconds¨c.LastSendTime
+     ct←QTSToSeconds QTS
+     b←⍵.IdleTimeout<ct-lr⌈ls
+     m←c.Messages
+     or←∨/¨1=m.ContentComplete+m.ResponseSent
+     i←b∧~or
+     ~∨/i:0
+     'Idle'∘CloseConnection¨i/c
+ }

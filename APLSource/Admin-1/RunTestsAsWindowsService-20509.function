@@ -1,0 +1,8 @@
+ RunTestsAsWindowsService←{
+⍝ ⍵ is the sum of the following flags:
+⍝   2 = execute the full test suite.
+⍝   4 = allow to RIDE into the running service.
+⍝   8 = print SC (Service Controller) messages to the session.
+⍝   0 = neither of them.
+     (+/⍵)##.TestAsService.Run''
+ }

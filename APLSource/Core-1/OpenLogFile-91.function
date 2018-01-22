@@ -1,0 +1,12 @@
+ OpenLogFile←{
+     ⍝ ⍵ ←→ Server or Client
+     ⍝ ← ←→ Tie Number
+     f←⍵.Folder
+     f≡'':0
+     _←CreateFolder f
+     rf←CreateFolder f,'\Rumba'
+     lf←CreateFolder rf,'\Log'
+     fn←lf,'\log.txt'
+     22::fn ⎕NCREATE 0
+     fn ⎕NTIE 0
+ }

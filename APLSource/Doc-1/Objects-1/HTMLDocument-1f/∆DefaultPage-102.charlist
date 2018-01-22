@@ -1,0 +1,8 @@
+# HTMLDocument Object
+
+The HTMLDocument object represents an HTML document.
+
+An HTMLDocument object is created using the static method →[Methods.NewHTMLDocument]. The
+→[Methods.Add] method adds an HTML element to the document, and returns an HTMLElement object
+representing the element. You can then use Add on this element to add sub elements.
+

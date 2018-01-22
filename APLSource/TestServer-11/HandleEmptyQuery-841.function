@@ -1,0 +1,10 @@
+ HandleEmptyQuery←{
+     m←⍵                        ⍝ Message
+     r←##.Core.NewResponse m
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     q1←m ##.Core.GetQueryParameter'Name'
+     ''≢q1:r  ⍝ No contents: "Name" is missing
+     r.Content←'Found empty "Name"'
+     r
+ }

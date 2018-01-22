@@ -1,0 +1,5 @@
+ EncodeGzip←{            ⍝ Bytes (UTF8 already done if needed)
+     i←⎕UCS ⍵            ⍝ Ints
+     s←i-256×i>127       ⍝ Make 'em signed
+     ⎕UCS 256|1⊃3(219⌶)s ⍝ Compress using gzip, convert to unsigned, make char
+ }

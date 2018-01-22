@@ -1,0 +1,11 @@
+ GatherContent←{
+     ⍝ ⍵ ←→ Message
+     ⍵.ContentComplete:⍵
+     ⍵.Chunked:GatherChunkedContent ⍵
+     l←⍵.ContentLength
+     ⍵.ContentComplete←l≤≢⍵.Stream
+     ~⍵.ContentComplete:⍵
+     ⍵.Content←l↑⍵.Stream
+     ⍵.Stream←l↓⍵.Stream
+     ⍵
+ }

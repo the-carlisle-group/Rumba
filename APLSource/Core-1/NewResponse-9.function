@@ -1,0 +1,19 @@
+ NewResponse←{
+     ⍝ ⍵ ←→ Message
+     r←⎕NS''
+     r.Message←⍵
+     r.StatusCode←200
+     r.ReasonPhrase←''
+     r.ETag←''
+     r.ContentType←'text/html; charset=utf-8'
+     r.Location←''
+     r.LastModified←0
+     r.Content←''
+     r.ContentLength←0
+     r.Chunked←0
+     r.Close←0
+     r.Headers←''
+     r.Compress←1
+     r.UTF8←1
+     r
+ }

@@ -1,0 +1,9 @@
+# Port Property
+
+Applies to:{.prefix}
+
+Client{.info}
+
+The Port property specifies the port that the server is listening on. It defaults to 80. Once the
+connection is made, the Port property is read-only.
+

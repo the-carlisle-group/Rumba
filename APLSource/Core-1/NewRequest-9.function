@@ -1,0 +1,13 @@
+ NewRequest←{
+     ⍝ Public Static Method
+     ⍝ ⍵ ←→ 0
+     ⍝ ← ←→ Request
+     r←⎕NS''
+     r.Version←''
+     r.Method←'GET'
+     r.URI←,'/'
+     r.Headers←''
+     r.Content←''
+     r.Compress←0
+     r
+ }

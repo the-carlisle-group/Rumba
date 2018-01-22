@@ -1,0 +1,6 @@
+ GetTestForm←{
+     h←BuildTestForm 0
+     r←##.Core.NewResponse ⍵
+     r.Content←h
+     r
+ }

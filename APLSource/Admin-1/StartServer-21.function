@@ -1,0 +1,10 @@
+ StartServer←{
+     p←⍵
+     s←##.Core.NewServer 0
+     s.OnStart←p.OnStart
+     s.Folder←p.Folder
+     s.Port←p.Port
+     s.Trap←p.Trap
+     _←s ##.Core.Start 0
+     s
+ }

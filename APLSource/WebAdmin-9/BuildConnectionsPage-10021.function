@@ -1,0 +1,26 @@
+ BuildConnectionsPage←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ r ←→ Response
+     h←##.HTML
+     Add←##.HTML.Add
+     s←⍵.Connection.Server
+     d←BuildTemplate'Connections'⍵.URI
+     c←##.Core.GetConnections s
+     v←⊂'Name'c.Name
+     v,←⊂'Peer Address'(c.PeerAddress)
+     v,←⊂'Connect Time'(⍕¨c.ConnectTime)
+     v,←⊂'Last Receive Time'(⍕¨c.LastReceiveTime)
+     v,←⊂'Last Send Time'(⍕¨c.LastSendTime)
+     v,←⊂'Messages Handled'(⍕¨≢¨c.MessageLog)
+     v,←⊂'Tid'(⍕¨c.Tid)
+     cs←⎕NS¨(≢v)⍴⊂''
+     cs.RowLinks←⊂⍵.URI∘,¨'/',¨c.Name
+     cs.HeaderValue←0⊃¨v
+     cs.BodyValues←1⊃¨v
+     cs.Class←'tc' 'tc' 'tc' 'tc' 'tc' 'nc' 'nc'
+     m←d h.GetElementByType'main'
+     _←m h.NewSectionTable'Connections'cs
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r
+ }

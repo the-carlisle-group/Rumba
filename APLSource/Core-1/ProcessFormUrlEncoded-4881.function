@@ -1,0 +1,12 @@
+ ProcessFormUrlEncoded←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ ....passed through
+     c←⍵ GetUncompressedContent 0
+     n v←↓⍉'&'ParseParameters c
+     0=≢n:⍬
+     p←⎕NS¨(⍴n)⍴⊂''
+     p.Name←n
+     p.Value←v
+     ⍵.ProcessedContent←p
+     ⍵
+ }

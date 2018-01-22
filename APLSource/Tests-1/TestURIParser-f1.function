@@ -1,0 +1,46 @@
+ TestURIParser←{
+     cms←{s←⎕NS'' ⋄ s.URI←⍵ ⋄ s}
+     f←##.Core.ProcessURI
+     ⍝ Test
+     m←cms'/Level1'
+     m←f m
+     m.Path≢'/Level1':1
+     m.Fragment≢'':1
+     m.Segments≢,⊂'Level1':1
+     m.Query≢'':1
+     1≠≢m.MatrixParameters:1
+     0≠≢↑m.MatrixParameters:1
+     0≠≢m.QueryParameters:1
+     ⍝ Test
+     m←cms'/Level1/Level2?qp1=qv1&qp2=qv2#Fragment'
+     m←f m
+     m.Path≢'/Level1/Level2':1
+     m.Segments≢'Level1' 'Level2':1
+     m.Query≢'qp1=qv1&qp2=qv2':1
+     m.Fragment≢'Fragment':1
+     m.QueryParameters≢2 2⍴'qp1' 'qv1' 'qp2' 'qv2':1
+     ⍝ Test
+     m←cms'/Level1;p1=v1/Level2;p1=v1;p2=v2?qp1=qv1'
+     m←f m
+     m.Path≢'/Level1;p1=v1/Level2;p1=v1;p2=v2':1
+     m.Segments≢'Level1' 'Level2':1
+     m.MatrixParameters≢(1 2⍴'p1' 'v1')(2 2⍴'p1' 'v1' 'p2' 'v2'):1
+     ⍝ Test
+     m←cms'/Level%201/Level%7E2'
+     m←f m
+     m.Path≢'/Level%201/Level%7E2':1
+     m.Segments≢'Level 1' 'Level~2':1
+     ⍝ Test unescaped / and ? in query component
+     m←cms'/Seg1?p1=?&p2=/'
+     m←f m
+     m.Query≢'p1=?&p2=/':1
+     m.QueryParameters≢2 2⍴,¨'p1' '?' 'p2' '/':1
+     ⍝ Test unescaped = in a path segment, or in a matrix or query parameter value
+     m←cms'/S=g;mp1==2/S=2?p1=1=2&p2==='
+     m←f m
+     m.Path≢'/S=g;mp1==2/S=2':1
+     m.Segments≢'S=g' 'S=2':1
+     (1 2⍴'mp1' '=2')≢↑m.MatrixParameters:1
+     m.QueryParameters≢2 2⍴'p1' '1=2' 'p2' '==':1
+     0
+ }

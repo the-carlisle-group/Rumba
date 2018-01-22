@@ -1,0 +1,18 @@
+# Chunked
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The Chunked property is a boolean scalar, indicating that the response should be sent using chunked
+transfer encoding. Its default value is 0.
+
+If Chunked is set to 1, then the Content property is ignored, and the content of the response
+should be specified using repeated calls to the PutChunk method of the Message object. Each call
+to PutChunk creates a chunk that will be sent by Rumba as it becomes available.
+
+A final call to PutChunk with an empty string is required to signal the end of the message.
+
+In general, the function that calls PutChunk should be threaded, allowing the Result object to be
+passed immediatly back to Rumba, without having to wait for the content to be completely generated.
+

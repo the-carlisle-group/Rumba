@@ -1,0 +1,10 @@
+# ReasonPhrase
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The ReasonPhrase property is a short description returned in the firt line of the response message.
+It should be specified as a string. If it is an empty string, Rumba supplies the description
+defined by the HTTP Status Code Registry when composing the response. It defaults to an empty string.
+

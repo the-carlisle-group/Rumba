@@ -1,0 +1,5 @@
+ ErrorInConnection←{
+     ⍝ ⍵ ←→ Connection
+     e←'Connection Error: ',⍕2↑⎕DMX.DM
+     e CloseConnection ⍵
+ }

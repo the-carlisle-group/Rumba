@@ -1,0 +1,8 @@
+ EvaluateIfUnmodifiedSince←{
+     v←⍵ GetHeaderValue'if-unmodified-since'
+     ⍵.IfUnmodifiedSinceExists←0<≢v
+     lm←FloatToSeconds ⍺.LastModified
+     ts←HTTPDateToSeconds v
+     ⍵.IfUnmodifiedSince←lm≤ts
+     ⍵
+ }

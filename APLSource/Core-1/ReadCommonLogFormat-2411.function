@@ -1,0 +1,7 @@
+ ReadCommonLogFormat←{
+     b←ReadBytes ⍵
+     v←(~b∊⎕UCS 13 10)⊂b
+     k←~(6↑¨v)∊'Conga:' 'Rumba:'
+     v←k/v
+     ⊃{(~(⍵=' ')∧~≠\⍵∊'[]"')⊂⍵}¨v
+ }

@@ -1,0 +1,18 @@
+ SendAndReceiveUpstream←{
+     s←⍵.Connection.Server
+     q←NewRequest 0
+     q.Method←⍵.Method
+     q.URI←⍵.URI
+     q.Headers←{(~(0⊃¨⍵)∊⊂'connection')/⍵}⍵.Headers
+     q.Content←⍵.Content
+     u←s.UpstreamServers
+     b←(~⍵.Safe)∧s.ServerType=2
+     b:u SendUnsafeUpstream q
+     us←⍵.Connection.UpstreamServer
+     c←PickUpstreamConnection us
+     ⍵.UpstreamConnection←c
+     r←c Receive c Send q
+     r.Chunked:r
+     _←ReplaceUpstreamConnection c
+     r
+ }

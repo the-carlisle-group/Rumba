@@ -1,0 +1,7 @@
+ CheckUpstreamHealth←{
+    ⍝ ⍵ ←→ Server
+     u←⍵.UpstreamServers
+     0=≢u:0
+     _←CheckUpstreamServer¨u
+     0
+ }

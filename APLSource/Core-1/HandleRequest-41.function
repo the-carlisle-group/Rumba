@@ -1,0 +1,20 @@
+ HandleRequest←{
+     ⍝ ⍵ ←→ Message
+     ⍵=0:0
+     m←⍵
+     c←m.Connection
+     s←c.Server
+     m.Tid←⎕TID
+     r←ExecuteRequestHandler m
+     r.Close←~IsPersistent m
+     _←SendResponse r
+     m.ResponseSent←1
+     c.MessageLog,←⊂m.Method m.URI r.StatusCode
+     _←s LogHTTPToSession r
+     _←UpdateStats r
+     _←Log r
+     _←DisplayRequestResponse r
+     r.Close:ExpungeConnection c
+     c.Messages←1↓c.Messages
+     0
+ }

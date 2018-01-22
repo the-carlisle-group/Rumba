@@ -1,0 +1,21 @@
+ GetFromCache←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ Cached Response, or 0
+     ⍝ NB. Do not assign m←c.CacheMatrix for & space!
+     ~⍵.Safe:0
+     ⍵.CacheControl.NoStore:0
+     c←⍵.Connection.Server.Cache
+     b←~c.CacheMatrix[;c.Invalid]
+     i←{⍵/⍳⍴⍵}b∧c.CacheMatrix[;c.URI]∊⊂⍵.URI
+     0=≢i:0
+     kh vh←c.CacheMatrix[↑i;c.KeyHeader c.VaryHeader]
+     sk←⍵.Headers ComputeCacheKey kh vh
+     j←c.CacheMatrix[i;c.SecondaryCacheKey]⍳⊂sk
+     j=≢i:0
+     k←j⊃i
+     ⍵.CacheIndex←k
+     ⍵.Age←ComputeCurrentAge c.CacheMatrix[k;c.InitialAge,c.ResponseTime]
+     ⍵.Fresh←c.CacheMatrix[k;c.FreshnessLifetime]>⍵.Age
+     ~⍵.Fresh:0
+     PrepareCachedResponse ⍵
+ }

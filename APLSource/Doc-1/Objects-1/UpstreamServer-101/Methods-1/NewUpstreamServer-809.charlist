@@ -1,0 +1,13 @@
+# NewUpstreamServer Method
+
+Applies to:{.prefix}
+
+UpstreamServer{.info}
+
+~~~
+R←NewUpstreamServer X
+~~~
+
+The NewServer method creates a new upstream server object. This is a static method requiring no
+left argument. X is 0, R is an UpstreamServer object.
+

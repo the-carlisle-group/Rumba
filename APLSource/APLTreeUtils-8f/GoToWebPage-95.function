@@ -1,0 +1,16 @@
+ {r}←GoToWebPage url;wsh;⎕IO;⎕WX;⎕ML
+    ⍝ Fires up the default browser and goes to "url"
+    ⍝ For displaying a file rather then a url add "file://".
+    ⍝ However, note that "file://" does not work on some systems.
+    ⍝ Examples:
+    ⍝ GoToWebPage 'file:///c:/my.html'
+    ⍝ GoToWebPage 'file://localhost/c:/my.html'
+    ⍝ The two calls are equivalent
+
+ ⎕WX←1 ⋄ ⎕IO←0 ⋄ ⎕ML←3
+ r←⍬
+ :If ~∨/'file://'⍷Lowercase url
+     url←'http://'{((⍺≢Lowercase(⍴⍺)↑⍵)/⍺),⍵}url
+ :EndIf
+ 'wsh'⎕WC'OLEClient' 'WScript.Shell'
+ {}wsh.Run url

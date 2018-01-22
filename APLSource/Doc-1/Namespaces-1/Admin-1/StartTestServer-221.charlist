@@ -1,0 +1,13 @@
+# StartTestServer Function
+
+This function starts the test server up in a new APL process. The Rumba test suite requires a
+server to be up and running, so this function is called before the tests are executed.
+
+When starting the test server manually, in the same process, you should use the
+→[##.TestServer.Start] function in the TestServer namespace.
+
+Note that this function only works when Rumba is being managed by Acre. 
+[What is Acre?](http://aplwiki.com/acre). 
+In a standalone workspace version of Rumba, when Acre is not present, the test
+server must be launched manually by starting another APL session and running →[##.TestServer.Start].
+

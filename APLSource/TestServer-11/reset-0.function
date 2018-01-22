@@ -1,0 +1,6 @@
+ reset←{
+     s←⊂'*'
+     s,←⊂'margin' '0'
+     s,←⊂'padding' '0'
+     s
+ }

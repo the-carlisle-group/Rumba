@@ -1,0 +1,17 @@
+ NewTemplate←{
+     d←NewHTMLDocument 0
+     b←d Add'body'
+     h←b Add'header'
+     l←h Add'div'
+     l.id←'logo'
+     n←h Add'nav'
+     n.id←'mainmenu'
+     _←n NewLink¨⍵.Menu
+     _←h NewBreadCrumbs ⍵.URL
+     _←b Add'main'
+     p←b Add'p'
+     p.class←'forceclear'
+     f←b Add'footer'
+     _←f Add'p'⍵.Footer
+     d
+ }

@@ -1,0 +1,21 @@
+ GatherChunkedContent←{
+     _←GatherChunkHeader ⍵
+     ~⍵.ChunkHeaderComplete:⍵
+     _←GatherChunkData ⍵
+     ~⍵.ChunkComplete:⍵
+     lc←0=⍵.ChunkSize
+     ⍵.ContentLength+←⍵.ChunkSize
+     ⍵.Chunk←''
+     ⍵.ChunkHeader←''
+     ⍵.ChunkComplete←lc
+     ⍵.ChunkHeaderComplete←lc
+     mc←~lc
+     mc∧0<≢⍵.Stream:∇ ⍵
+     mc:⍵
+     _←GatherTrailer ⍵
+     ~⍵.TrailerComplete:⍵
+     ⍵.ContentComplete←1
+     ~⍵.Buffer:⍵
+     _←''⎕TPUT ⎕TID
+     ⍵
+ }

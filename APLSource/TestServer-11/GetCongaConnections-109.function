@@ -1,0 +1,10 @@
+ GetCongaConnections←{
+     s←⍵.Connection.Server
+     n←##.Core.DRC.Names s.Name
+     t←1↓∊',',¨n
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←t
+     r
+ }

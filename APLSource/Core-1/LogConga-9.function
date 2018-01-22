@@ -1,0 +1,10 @@
+ LogConga←{
+     ⍝ ⍺ ←→ Server or Client
+     ⍝ ⍵ ←→ Result of DRC.Wait
+     ⍝ ← ←→ 0
+     t←⍺.LogFileTie
+     ~⍺.LogConga∧t<0:0
+     d←CreateCongaLogEntry ⍵
+     _←d ⎕NAPPEND t
+     0
+ }

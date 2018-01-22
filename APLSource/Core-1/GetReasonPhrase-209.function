@@ -1,0 +1,7 @@
+ GetReasonPhrase←{
+     ⍝ ⍵ ←→ Response
+     ⍝ ← ←→ Reason Phrase
+     ⍵.ReasonPhrase≢'':⍵.ReasonPhrase
+     s←⍵.Message.Connection.Server
+     (s.StatusCodes⍳⍵.StatusCode)⊃s.ReasonPhrases
+ }

@@ -1,0 +1,10 @@
+ ReadUTF8←{
+     ReadAllBytes←{
+         t←⍵ ⎕NTIE 0
+         s←⎕NSIZE t
+         r←⎕NREAD t 80 s 0
+         _←⎕NUNTIE t
+         r
+     }
+     'UTF-8'⎕UCS ⎕UCS ReadAllBytes ⍵
+ }

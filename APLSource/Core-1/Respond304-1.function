@@ -1,0 +1,12 @@
+ Respond304←{
+     ⍝ ⍺ ←→ Message
+     ⍝ ⍵ ←→ HEAD Response
+     ⍝ ← ←→ Response
+     r←NewResponse ⍺
+     r.StatusCode←304
+     r.ReasonPhrase←'Not Modified'
+     h←'Cache-Control' 'Content-Location' 'Expires' 'Vary'
+     r.(ETag LastModified)←⍵.(ETag LastModified)
+     r.Headers←⍺{0=≢⍵:⍵ ⋄ ((0⊃¨⍵)∊⍺)/⍵}⍵.Headers
+     r
+ }

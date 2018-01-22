@@ -1,0 +1,25 @@
+ HandleConditionalRequest←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ 0 for no precondition or precondition passes.
+     ⍝ ← ←→ or Response object for precondition failed
+     ⍝ See RFC 7232
+     hn←0⊃¨⍵.Headers
+     ch←'if-match' 'if-modified-since'
+     ch,←'if-none-match' 'if-unmodified-since'
+     ~∨/ch∊hn:0                       ⍝ No precondition headers
+     om←⍵.Method                      ⍝ Original Method
+     ⍵.Method←'GET'                   ⍝ Swap the method
+     r←ExecuteRequest ⍵
+     ⍵.Method←om                      ⍝ Put original method back
+     sm←(⊂om)∊'GET' 'HEAD'            ⍝ Safe method
+     _←r EvaluateIfMatch ⍵
+     _←r EvaluateIfNoneMatch ⍵
+     _←r EvaluateIfModifiedSince ⍵
+     _←r EvaluateIfUnmodifiedSince ⍵
+     ⍵.IfMatchExists∧~⍵.IfMatch:⍵ Respond 412                                            ⍝ Step 1
+     (~⍵.IfMatchExists)∧⍵.IfUnmodifiedSinceExists∧~⍵.IfUnmodifiedSince:⍵ Respond 412     ⍝ Step 2
+     sm∧⍵.IfNoneMatchExists∧~⍵.IfNoneMatch:⍵ Respond304 r                                ⍝ Step 3
+     (~sm)∧⍵.IfNoneMatchExists∧~⍵.IfNoneMatch:⍵ Respond 412                              ⍝ Step 3.5
+     sm∧(~⍵.IfNoneMatchExists)∧⍵.IfModifiedSinceExists∧~⍵.IfModifiedSince:⍵ Respond304 r ⍝ Step 4
+     0                                                                                   ⍝ Step 6
+ }

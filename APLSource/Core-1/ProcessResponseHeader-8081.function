@@ -1,0 +1,16 @@
+ ProcessResponseHeader←{
+     ⍝ ⍵ ←→ Message
+     ⍝ ← ←→ Message
+     ⍝ RFC 7230 3.3.3
+     ⍵.Type≢'Response':⍵
+     _←ProcessResponseLine ⍵
+     _←ProcessContentTypeHeader ⍵
+     _←ProcessCacheControlHeader ⍵
+     ⍵.Date←HTTPDateToSeconds ⍵ GetHeaderValue'date'
+     ⍵.Age←↑1⊃⎕VFI ⍵ GetHeaderValue'age'
+     c←⍵.Request.Method≡'HEAD'
+     c∨←⍵.StatusClass=1
+     c∨←⍵.StatusCode∊204 304
+     ⍵.ContentComplete←c
+     ⍵
+ }

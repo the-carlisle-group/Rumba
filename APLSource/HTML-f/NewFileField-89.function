@@ -1,0 +1,11 @@
+ NewFileField←{
+     ⍺←0
+     n←⍵
+     d←⍺ NewHTMLElement'div'
+     d.class←'fieldstyle3'     ⍝  ##.CSS.fieldstyle3   Need a new class here, or nothing!
+     i←d Add'input'
+     i.name←n
+     i.type←'file'
+     d.Input←i
+     d
+ }

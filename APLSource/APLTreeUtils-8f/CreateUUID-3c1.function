@@ -1,0 +1,5 @@
+ R←CreateUUID;∆UuidCreate;⎕ML;⎕IO
+ ⎕ML←⎕IO←1
+ '∆UuidCreate'⎕NA'I RPCRT4|UuidCreate >{I1[4] I1[2] I1[2] I1[2] I1[6]}'
+ R←2⊃∆UuidCreate 1
+ R←'0123456789ABCDEF{-'[1+∊16 17 17 17 17,¨∊¨⍉¨16 16∘⊤¨R],'}'

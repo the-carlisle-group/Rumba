@@ -1,0 +1,13 @@
+ BuildDocContents←{
+     h←##.HTML
+     ns←⍎'##.Doc',∊'.',¨2↓⍵.Segments
+     c←(↓ns.⎕NL 9 3)~¨' '
+     s←⍵.Connection.Server
+     d←BuildTemplate(↑⌽⍵.Segments)⍵.URI
+     m←↑d h.GetElementsByType'main'
+     v←⍵.URI∘,¨'/',¨c
+     _←m h.NewSectionLinks'Topics'(↓⍉⊃c v)
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r
+ }

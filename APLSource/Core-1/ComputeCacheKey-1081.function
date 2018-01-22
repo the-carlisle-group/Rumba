@@ -1,0 +1,40 @@
+ ComputeCacheKey←{
+     ⍝ ⍺ ←→ Request Headers
+     ⍝ ⍵ ←→ 2 things: Response Key Header Value, Vary Header Value
+     ⍝ ← ←→ Secondary Cache Key
+     part←{⍺←',' ⋄ (⍺≠⍵)⊂⍵}
+     getheader←{n v←↓⍉⊃⍺
+         i←n⍳⊂⍵
+         i⊃v,⊂''
+     }
+
+
+     ⍝ User Vary for now,simplistically:
+     vh←1⊃⍵
+     0=≢vh:''
+     1↓∊',',¨getheader¨part vh
+
+     ⍝ Ignore Key for now.
+     ⍝ ↓↓↓↓↓↓
+     ProcessKeyParameter←{
+         hl←⍺                          ⍝ Header list
+         p←⍵                           ⍝ Parameter
+         pn pv←'='part p               ⍝ Parameter name and value Split on =
+         0=≢hl:'none'
+         pn≡'match':⍕(⊂pv)∊hl          ⍝ '0' or '1'
+         pn≡'substr':⍕∨/∊pv⍷⊃hl        ⍝ '0' or '1'
+         pn≡'div':
+         pn≡'param':
+         pn≡'partition':
+     }
+     ProcessKeyItem←{                  ⍝ 'hname;p1=a;p2=b'
+         s←';'part ⍵                   ⍝ Split on semicolon
+         hn p←(↑s)(1↓s)                ⍝ Header name, parameters
+         hv←⍺ getheader hn             ⍝ Header value
+         0=≢p:hv                       ⍝ No parameters
+         hl←part hv                    ⍝ Header list
+         ∊(hl∘ProcessKeyParameter¨p),¨'⎕'
+     }
+     kl←part 0⊃⍵                       ⍝ Key list
+     ∊⍺∘ProcessKeyItem¨kl
+ }

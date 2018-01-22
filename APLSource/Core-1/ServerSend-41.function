@@ -1,0 +1,10 @@
+ ServerSend←{
+     ⍝ ⍺ ←→ Connection
+     ⍝ ⍵ ←→ Data,Close
+     d c←⍵
+     s←⍺.Server
+     n←s.Name,'.',⍺.Name
+     _←DRC.Send n d c
+     ⍺.LastSendTime←QTS
+     0
+ }

@@ -1,0 +1,15 @@
+ Receive←{
+     ⍝ Public Instance Method
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ 0
+     ⍝ ← ←→ Message
+     tv←⊃⎕TGET ⍺.Tid
+     tv≡¯1:'Client timed out'⎕SIGNAL 345
+     tv≡¯2:'Server closed connection'⎕SIGNAL 345
+     tv≡¯3:'Conga error'⎕SIGNAL 345
+     tv≢⍺.Tid:⍺ ReceiveChunk tv
+     m←↑⍺.Messages
+     ⍺.Messages←1↓⍺.Messages
+     m.ResponseTime←QTSToSeconds QTS
+     m
+ }

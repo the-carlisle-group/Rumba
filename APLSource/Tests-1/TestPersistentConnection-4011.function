@@ -1,0 +1,16 @@
+ TestPersistentConnection←{
+     ⍺←0
+     c←##.Core.NewClient 0
+     c.LogCongaEvents←⍺
+     c.LogMessages←⍺
+     _←c ##.Core.Connect 0            ⍝ Not really needed.
+     q←##.Core.NewRequest 0           ⍝
+     _←c ##.Core.Send q               ⍝
+     r←c ##.Core.Receive 0            ⍝ Wait for a response
+     c.State≠1:1                      ⍝ Connection still open
+     _←c ##.Core.Send q               ⍝ Send it again over same connection
+     r2←c ##.Core.Receive 0           ⍝ Wait for a response
+     c.State≠1:1
+     _←c ##.Core.Close 0
+     0
+ }

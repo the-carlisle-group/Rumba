@@ -1,0 +1,9 @@
+# Headers
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The headers property is vector of two-item vectors containing the names and values of the headers
+in the message.
+

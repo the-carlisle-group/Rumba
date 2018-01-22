@@ -1,0 +1,6 @@
+ StartTestServer←{
+     _←StartProcess'#.Rumba.TestServer.Start'
+     ⎕←'Waiting 5 seconds for server to start...'
+     _←⎕DL 5
+     0
+ }

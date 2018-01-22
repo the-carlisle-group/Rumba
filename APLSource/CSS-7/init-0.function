@@ -1,0 +1,32 @@
+ init←{
+     s←⊂{
+         s←⊂'*'
+         s,←⊂'margin' '0'
+         s,←⊂'padding' '0'
+         s,←⊂'box-sizing' 'border-box'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'html'
+         s,←⊂'font-family' 'Arial'
+         s,←⊂'position' 'relative'     ⍝ For sticky footer
+         s,←⊂'min-height' '100%'       ⍝ ... this too
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'body'
+         s,←⊂'margin'('0 0 6em 0') ⍝ 6em is height of footer
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'main'
+         s,←⊂'padding' '1rem 3rem'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.forceclear'
+         s,←⊂'clear' 'both'
+         s
+     }⍵
+     s
+ }

@@ -1,0 +1,10 @@
+ {z}←ServerLoop x
+ ⍝ ⍵ ←→ a Server space
+ :Trap x.Trap/0
+     z←{
+         _←ServerWait ⍵
+         ∇ ⍵
+     }x
+ :Else
+     ErrorInRumba x
+ :EndTrap

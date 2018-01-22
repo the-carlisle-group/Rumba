@@ -1,0 +1,14 @@
+# PutChunk Method
+
+Applies to:{.prefix}
+
+Response{.info}
+
+~~~
+R←X PutChunk Y
+~~~
+
+X is a Response, Y is a character vector containing the chunk data, R is 0. The PutChunk method
+places a chunk in the Response object content buffer.
+
+

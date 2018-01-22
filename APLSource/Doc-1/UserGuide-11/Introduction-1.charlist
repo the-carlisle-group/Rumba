@@ -1,0 +1,53 @@
+# Introduction
+
+## What Rumba Is
+
+Rumba is an HTTP/1.1 toolkit implemented in Dyalog APL that sits on top of Conga, a Dyalog APL
+interprocess communication tool. Rumba handles all of the details of composing, parsing, sending
+and receiving HTTP messages on both the client and server sides. It is designed to allow the APL
+programmer to easily expose a Dyalog application via an HTTP API.
+
+Rumba can be an origin server or function as an edge server or as a gateway, or reverse proxy.
+As an origin server, Rumber responds to HTTP requests. As an edge server, Rumba acts as 
+cache, and forwards requests to an origin server. As a reverse proxy, or load balancer,
+Rumba also acts as a cache, and forwards requests to an array of upstream servers. 
+In addition, this provides for active replication. 
+
+## The General Idea
+
+On the server side, Rumba is a web server that delivers HTTP messages to the APL programmer in an
+easily digestible form. The APL programmer provides a callback function to handle all requests to
+the server. The server provides a Rumba Message object as the right argument to this function. The
+function is tasked with analyzing the message and returning a Rumba response object. The server
+then composes the HTTP message and sends it back to the client.
+
+On the client side, Rumba provides a Client object that represents a connection, and a Request
+object that represents a request. The client object sends requests over the connection to the
+server and in addition accumulates Rumba Message objects that the server sends in response.
+
+The client and server sides of Rumba converse only via HTTP, and thus have no knowledge that there
+may be Rumba on both sides. The client and server functionality of Rumba may be used together or independently.
+
+## Building Web Sites
+
+Rumba has a suite of HTML and CSS functions that make it simple to build web pages.
+
+## The Rumba Web Administrator
+
+The Rumba server comes with a built-in administrative website accessible under "/Rumba" In addition
+to providing administrative services for the Rumba server, this website acts as an example of how
+to implement a Rumba website.
+
+## Functions and Objects
+
+Rumba is delivered as a set of functions in a few namespaces. Implicit in the design of these
+functions is an object model, which is explicitly documented. Each public method of the model is
+implemented as a function that takes the instance of the object as its left argument. The
+"objects" are simple un-named namespaces, not official instances of Dyalog classes.
+
+While certain functions in the Rumba core namespace are meant to be public facing, all of the
+functions are designed to be useful on their own. For example, some functions take a Rumba object
+as an argument, use a few of its properties, and inject a few more properties into the same
+object. Because the "object" is just a simple namespace, these functions may be used as utilities
+by simply constructing a namespace with the necessary values, without having to drag around an
+entire object model of class definitions.

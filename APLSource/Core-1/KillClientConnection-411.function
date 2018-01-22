@@ -1,0 +1,8 @@
+ KillClientConnection←{
+     ⍝ ⍵ ←→ Client, Reason Code, Log Message
+     c r m←⍵
+     _←c LogRumba c.Name,': ',m
+     _←r ⎕TPUT ⎕TID
+     ⎕TKILL ⎕TID
+     0
+ }

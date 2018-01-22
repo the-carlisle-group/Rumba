@@ -1,0 +1,12 @@
+ ProcessMultiPartFormData←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ Passed through
+     ⍝ Establishes ⍵.ProcessedContent
+     c←⍵ GetUncompressedContent 0
+     pn pv←↓⍉⊃⍵.ContentType.Parameters
+     b←'--',(pn⍳⊂'boundary')⊃pv
+     p←{(2+≢b)↓⍵}¨b{⎕ML←1 ⋄ (⍺⍷⍵)⊂⍵}c
+     v←ProcessMultiPartFormDataEach¨p
+     ⍵.ProcessedContent←v
+     ⍵
+ }

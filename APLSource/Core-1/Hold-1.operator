@@ -1,0 +1,4 @@
+ z←x(f Hold)y
+ :Hold x
+     z←f y
+ :End

@@ -1,0 +1,15 @@
+ ClientWait←{
+     ⍝ ⍵ ←→ Client Connection
+     r←DRC.Wait ⍵.Name ⍵.CongaTimeout
+     _←⍵ LogConga r
+     rc←↑r
+     rc=100:OnClientTimeout ⍵
+     rc=1010:KillClientConnection ⍵ ¯3 'Lost Connection (1010).'
+     rc≢0:KillClientConnection ⍵ ¯3('Lost Connection (',(⍕rc),')')
+     ⍵.LastActivityTime←QTS
+     (e d)←r[2 3]
+     1119≡d:KillClientConnection ⍵ ¯2 'Server closed (1119).'
+     b←~(⊂e)∊'Block' 'BlockLast'
+     b:KillClientConnection ⍵ ¯3('Conga Error: ',e)
+     ⍵ OnBlockClient e d
+ }

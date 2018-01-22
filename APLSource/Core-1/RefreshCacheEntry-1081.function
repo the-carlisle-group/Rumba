@@ -1,0 +1,16 @@
+ RefreshCacheEntry←{     ⍝ UpdateCacheEntry, a better name?
+     ⍝ ⍺ ←→ Request
+     ⍝ ⍵ ←→ (Upstream) response
+     ⍝ RFC 7234 4.3.4
+     i←⍺.CacheIndex
+     i=¯1:0
+     c←⍺.Connection.Server.Cache
+     c.CacheMatrix[i;c.Invalid]←1
+     ⍵.StatusCode≠304:0
+     ch←i⊃c.CacheMatrix[;c.Headers]
+     mh←ch MergeHeaders ⍵.Headers
+     fl←ComputeFreshnessLifetime ⍵
+     ia←ComputeInitialAge ⍵
+     c.CacheMatrix[i;c.Headers c.Invalid c.InitialAge c.FreshnessLifetime]←mh 0 ia fl
+     PrepareCachedResponse ⍺
+ }

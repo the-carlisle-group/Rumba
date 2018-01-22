@@ -1,0 +1,13 @@
+ NewSectionCreate←{
+     ⍝ ⍺ ←→ Optional Parent Element
+     ⍝ ⍵ ←→ Class, target URL (parent)
+     ⍺←0
+     s←⍺ NewSectionForm('Create ',0⊃⍵)'action safe'
+     f←s.Form
+     _←f NewHiddenInput'httpmethod' 'PUT'
+     _←f NewHiddenInput'urlpart1'(1⊃⍵)
+     _←f NewHiddenInput'_Class'(0⊃⍵)
+     _←f NewTextField'urlpart2' 'Name' ''
+     _←f NewCommand'Create'
+     s
+ }

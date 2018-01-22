@@ -1,0 +1,9 @@
+# Host Property
+
+Applies to:{.prefix}
+
+Client{.info}
+
+The Host property specifies the host that the client will connect to. It is specified before the
+client connects to the server. Once the connection is made, the Host property is read-only.
+

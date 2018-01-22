@@ -1,0 +1,9 @@
+# Context Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The Context property specifies a namespace or object instance in which the →[OnRequest] call back
+function should execute.
+

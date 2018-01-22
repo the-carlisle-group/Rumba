@@ -1,0 +1,10 @@
+ SendChunkedResponse←{
+     ⍝ ⍺ ←→ Message
+     ⍝ ⍵ ←→ Response
+     h←ComposeResponse ⍵
+     c←⍺.Connection
+     _←c ServerSend h 0
+     _←SendChunk ⍺
+     nl←⎕UCS 13 10
+     c ServerSend nl ⍵.Close
+ }

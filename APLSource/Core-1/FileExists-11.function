@@ -1,0 +1,6 @@
+ FileExists←{
+     c←⎕NS''
+     t←'Scripting.FileSystemObject'
+     _←'c'⎕WC'OLECLIENT't
+     c.FileExists ⍵
+ }

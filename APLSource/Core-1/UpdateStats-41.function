@@ -1,0 +1,17 @@
+ UpdateStats←{
+     ⍝ ⍵ ←→  Response
+     r←⍵
+     m←⍵.Message
+     c←m.Connection
+     s←c.Server
+     p←s.Stats
+     p.CacheHits+←m.CacheIndex≥0
+     p.SafeRequests+←m.Safe
+     p.UnsafeRequests+←~m.Safe
+     p.GETs+←m.Method≡'GET'
+     p.HEADs+←m.Method≡'HEAD'
+     p.POSTs+←m.Method≡'POST'
+     p.PUTs+←m.Method≡'PUT'
+     p.DELETEs+←m.Method≡'DELETE'
+     0
+ }

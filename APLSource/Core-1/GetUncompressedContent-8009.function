@@ -1,0 +1,7 @@
+ GetUncompressedContent←{
+     ⍝ ⍺ ←→ Message (of type Request or Response)
+     ⍝ ⍵ ←→ n/a
+     ⍝ ← ←→ uncompressed content
+     ~⍺.Gzip:⍺.Content
+     DecodeGzip ⍺.Content
+ }

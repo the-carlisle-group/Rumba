@@ -1,0 +1,4 @@
+ ReplaceUpstreamConnection←{
+     ⍝ ⍵ ←→ Upstream Connection
+     ⍵ ⎕TPUT ⍵.UpstreamServer.ConnectionPoolToken
+ }

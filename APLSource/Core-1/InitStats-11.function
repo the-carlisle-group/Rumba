@@ -1,0 +1,12 @@
+ InitStats←{
+     s←⎕NS''
+     s.CacheHits←0
+     s.SafeRequests←0
+     s.UnsafeRequests←0
+     s.GETs←0
+     s.HEADs←0
+     s.POSTs←0
+     s.PUTs←0
+     s.DELETEs←0
+     s
+ }

@@ -1,0 +1,14 @@
+ NewHTMLDocument←{
+     h←Add'html'
+     h.Class←'HTMLDocument'
+     h._Class←'HTMLDocument'
+     h.lang←'en'
+     hd←h Add'head'
+     l←hd Add'link'
+     l.rel←'stylesheet'
+     l.type←'text/css'
+     l.href←'/Rumba/CSS/Default'
+     mt←hd Add'meta'
+     mt.charset←'utf-8'
+     h
+ }

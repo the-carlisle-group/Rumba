@@ -1,0 +1,5 @@
+ DecodeGzip←{                     ⍝ ⍵ are bytes
+     i←⎕UCS ⍵                     ⍝
+     s←i-256×i>127                ⍝ Make them signed
+     ⎕UCS 256|¯3(219⌶)s           ⍝ Bytes
+ }

@@ -1,0 +1,23 @@
+ NewClient←{
+    ⍝ Public Static Method
+    ⍝ ⍵ ←→ 0
+    ⍝ ← ←→ Client
+     c←⎕NS''
+     c.Version←'HTTP/1.1'
+     c.Host←'localhost'
+     c.Port←8080
+     c.CongaTimeout←5000 ⍝ Milli-seconds
+     c.ClientTimeout←30  ⍝ Seconds
+     c.Name←''
+     c.State←0
+     c.LastActivityTime←0
+     c.LogConga←0
+     c.LogHTTP←0
+     c.LogRumba←0
+     c.Buffer←0
+     c.Messages←''
+     c.Class←'Client'
+     c.MessageType←'Response'
+     c.Folder←''
+     c
+ }

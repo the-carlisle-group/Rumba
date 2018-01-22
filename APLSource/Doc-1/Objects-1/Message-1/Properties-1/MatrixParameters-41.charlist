@@ -1,0 +1,10 @@
+# MatrixParameters
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The MatrixParameters property is a vector of 2-column matrices, each matrix containing the matrix
+parameter names and values associated with the corresponding path segment. The names and values
+are percent-decoded. It is only provided for request messages.
+

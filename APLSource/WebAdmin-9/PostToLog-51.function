@@ -1,0 +1,11 @@
+ PostToLog←{
+     n v←{⍵.Name ⍵.Value}⍵.ProcessedContent
+     s←⍵.Connection.Server
+     exists←{(⊂⍵)∊n}
+     ~exists'Archive':⍵ Respond 400
+     _←##.Core.ArchiveLog s
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←303
+     r.Location←⍵.URI
+     r
+ }

@@ -1,0 +1,6 @@
+ BuildBreadCrumbs←{
+     h←##.HTML
+     b←⍺ h.GetElementById'breadcrumbs'
+     h.AddBreadCrumbs
+
+ }

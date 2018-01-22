@@ -1,0 +1,8 @@
+ UTF8Test1←{
+⍝ We just send back the Path we've got
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←⍵.Path
+     r
+ }

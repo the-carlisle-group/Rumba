@@ -1,0 +1,12 @@
+ GetElementByName←{
+     done←0
+     r←⍺{done:''
+         0=80|⎕DR ⍺:''
+         e←0≠⍺.⎕NC'name'
+         n←⍺{⍵:⍺.name ⋄ ''}e
+         n≡⍵:⍺⊣done∨←1
+         ∊⍺.Content ∇¨⊂⍵
+     }⍵
+     done:↑∊r
+     0
+ }

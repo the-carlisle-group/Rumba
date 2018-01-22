@@ -1,0 +1,3 @@
+ r←QTS
+ ⍝ ← ←→ UTC. The server's local time should be set to UTC.
+ r←⎕TS

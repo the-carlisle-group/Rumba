@@ -1,0 +1,6 @@
+ GetDesiredMethod←{
+     ~⍵.BrowserPost:⍵.Method
+     m←⍵ GetFormValue'httpmethod'
+     m≡'':⍵.Method
+     m
+ }

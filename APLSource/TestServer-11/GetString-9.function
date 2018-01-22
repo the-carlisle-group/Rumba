@@ -1,0 +1,11 @@
+ GetString←{
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     s←⍵.Connection.Server
+     v←s.Strings⍎n
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←v
+     r.Headers←⊂'Content-Type' 'text/plain'
+     r
+ }

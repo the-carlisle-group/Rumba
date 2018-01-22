@@ -1,0 +1,7 @@
+﻿:Namespace
+    CaseCode←'On'
+    Load←''
+    Open←''
+    ProjectSpace←'#.CarlisleGroup.Rumba'
+    StartUp←''
+:EndNamespace

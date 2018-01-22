@@ -1,0 +1,16 @@
+ GatherResponseMessage←{
+     ⍝ ⍺ ←→  Datablock
+     ⍝ ⍵ ←→  Message
+     ⍝ ← ←→  0
+     ⍵.Stream,←⍺
+     0=≢⍵.Stream:0
+     _←GatherHeader ⍵
+     ~⍵.HeaderComplete:0
+     _←GatherContent ⍵
+     ~⍵.ContentComplete:0
+     _←⎕TPUT ⎕TID
+     c←⍵.Connection
+     0=≢⍵.Stream:0
+     n←(1+c.Messages⍳⍵)⊃c.Messages
+     ⍵.Stream ∇ n
+ }

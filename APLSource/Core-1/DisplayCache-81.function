@@ -1,0 +1,6 @@
+ DisplayCache←{
+     s←⍵
+     c←s.Cache
+     v←c.CacheMatrix[;c.URI c.Hit c.ResponseTime c.Invalid c.FreshnessLifetime c.InitialAge]
+     'URI' 'Hit' 'ResponseTime' 'Invalid' 'FreshnessLifetime' 'InitialAge'⍪v
+ }

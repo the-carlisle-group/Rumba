@@ -1,0 +1,15 @@
+ SendChunk←{
+     ⍝ ⍵ ←→ Message
+     ⍝ ← ←→ 0
+     nl←⎕UCS 13 10
+     c←⊃⎕TGET ⍵.Tid
+     t←⎕UCS'UTF-8'⎕UCS c
+     s←≢t
+     hs←{(~∧\'0'=⍵)/⍵}↑ToHexadecimal s
+     hs←(s=0)⊃hs'0'
+     d←hs,nl,t,(s≠0)/nl
+     c←⍵.Connection
+     _←c ServerSend d 0
+     s=0:0
+     ∇ ⍵
+ }

@@ -1,0 +1,9 @@
+# LogConga Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The LogConga property specifies whether or not Conga events on the server are logged. It defaults
+to 0.
+

@@ -1,0 +1,10 @@
+ ChunkedTest1←{
+     r←##.Core.NewResponse ⍺
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Chunked←1
+     r.Headers←⊂'Content-Type' 'text/plain'
+     ⍺.HeadRequest:r
+     _←r CreateChunkedContent&0
+     r
+ }

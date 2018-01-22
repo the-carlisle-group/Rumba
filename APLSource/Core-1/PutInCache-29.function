@@ -1,0 +1,24 @@
+ PutInCache←{
+    ⍝ ⍺ ←→ Request Message
+    ⍝ ⍵ ←→ Response Message
+     ~⍺.Safe:⍵
+     ⍵.StatusCode≠200:⍵
+     ⍵.Chunked:⍵ ⍝ For now!
+     ⍺.CacheControl.NoStore:⍵
+     ⍵.CacheControl.NoStore:⍵
+     ⍵.CacheControl.Private:⍵
+     fl←ComputeFreshnessLifetime ⍵
+     ia←ComputeInitialAge ⍵
+     vh←⍵ GetHeaderValue'vary'
+     kh←⍵ GetHeaderValue'key'
+     sk←⍺.Headers ComputeCacheKey kh vh
+     ⍵.KeyHeader←kh
+     ⍵.VaryHeader←vh
+     ⍵.SecondaryCacheKey←sk
+     c←⍺.Connection.Server.Cache
+     ⍝ Remove Age header before putting in cache
+
+     e←⍺.URI ⍵.SecondaryCacheKey ⍵.KeyHeader ⍵.VaryHeader ⍵.Headers ⍵.Content 0 ⍵.ResponseTime 0 fl ia
+     c.CacheMatrix←c.CacheMatrix⍪e
+     ⍵
+ }

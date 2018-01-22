@@ -1,0 +1,14 @@
+ Respond←{
+     ⍝ ⍺ ←→ Message
+     ⍝ ⍵ ←→ Status Code
+     ⍝ ← ←→ Response
+     h←##.HTML
+     r←⍺ ##.Core.Respond ⍵
+     p←##.Core.GetReasonPhrase r
+     r.ReasonPhrase←p
+     d←BuildTemplate'' ''
+     m←d h.GetElementByType'main'
+     _←m h.Add'h1'((⍕⍵),': ',p)
+     r.Content←d
+     r
+ }

@@ -1,0 +1,19 @@
+ r←reportFlag(fns Retry)(cmd maxWait);i;z;flag
+ r←0
+ reportFlag←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'reportFlag'
+ i←0
+ :Repeat
+     z←⎕CMD cmd
+     flag←fns z
+     :If reportFlag
+         ⎕←⍪z
+     :EndIf
+     :If 0=flag
+         :If maxWait<i←i+1
+             flag←1
+             r←1
+         :Else
+             ⎕DL 1
+         :EndIf
+     :EndIf
+ :Until flag

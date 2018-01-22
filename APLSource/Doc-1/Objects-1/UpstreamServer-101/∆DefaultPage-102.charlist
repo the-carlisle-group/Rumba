@@ -1,0 +1,11 @@
+# UpstreamServer Object
+
+The server object represents an upstream server.
+
+An UpStreamServer object is created using the static →[Methods.NewUpstreamServer] method. The
+→[Properties.Host] property specifies the IP address of the upstream server. The
+→[Properties.Port] propert specifies the port number of the upstream server.
+
+One or more UpstreamServer objects are created and assigned to the
+→[##.Server.Properties.UpstreamServers] property to define the roll of the server.
+

@@ -1,0 +1,10 @@
+ GetFileNames←{
+     ⍺←0
+     t←'Scripting.FileSystemObject'
+     c←0 ⋄ _←'c'⎕WC'OLECLIENT't
+     d←c.GetFolder ⍵
+     f←⌷d.Files
+     0=≢f:''
+     ⍺:f.Name
+     f.Path
+ }

@@ -1,0 +1,10 @@
+# ContentType
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The ContentType property specifies the value for the Content-Type header to be included in the
+response. It defaults to 'text/html; charset=utf-8' Rumba adds the Content-Type header only if
+there is actual content in the response.
+

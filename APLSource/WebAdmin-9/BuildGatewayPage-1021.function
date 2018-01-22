@@ -1,0 +1,24 @@
+ BuildGatewayPage←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ r ←→ Response
+     h←##.HTML
+     s←⍵.Connection.Server
+     d←BuildTemplate'Gateway'⍵.URI
+     m←↑d h.GetElementsByType'main'
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     s.ServerType=0:r⊣m h.Add'h1' 'N/A'
+     n←s.UpstreamServers.Name
+     l←n{⍺('/Rumba/Gateway/',⍵)}¨n
+     _←m h.NewSectionLinks'Origin Servers'l
+     cn←'URI' 'SecondaryCacheKey'
+     cn,←'VaryHeader' 'Hit' 'ResponseTime' 'Invalid'
+     cn,←'FreshnessLifetime' 'InitialAge'
+     i←s.Cache⍎¨cn
+     cs←⎕NS¨(≢cn)⍴⊂''
+     cs.HeaderValue←cn
+     cs.BodyValues←↓⍉⍕¨s.Cache.CacheMatrix[;i]
+     cs.Class←'tc' 'tc' 'tc' 'nc' 'nc' 'nc' 'tc' 'nc'
+     ts←m h.NewSectionTable'Cache'cs
+     r
+ }

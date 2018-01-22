@@ -1,0 +1,14 @@
+ GatherChunkData←{
+     ⍝ ⍵ ←→ Message
+     ⍵.ChunkComplete:⍵
+     d←⍵.Stream
+     lc←⍵.ChunkSize=0
+     s←2+⍵.ChunkSize
+     ⍵.ChunkComplete←lc∨s≤≢⍵.Stream
+     ~⍵.ChunkComplete:⍵
+     ⍵.Chunk←⍵.ChunkSize⍴⍵.Stream
+     ⍵.Stream←(s×~lc)↓⍵.Stream
+     ⍵.Buffer∧~lc:⍵.Chunk ⎕TPUT ⎕TID
+     ⍵.Content,←⍵.Chunk
+     ⍵
+ }

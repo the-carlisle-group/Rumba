@@ -1,0 +1,6 @@
+ StyleH1←{
+     s,←⊂'h1'                 ⍝ Selector
+     s,←⊂'font-size' '300%'   ⍝ Params....
+     s,←⊂'color' '#663366'
+     s
+ }

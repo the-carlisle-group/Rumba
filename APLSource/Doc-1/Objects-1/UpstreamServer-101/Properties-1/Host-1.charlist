@@ -1,0 +1,8 @@
+# Host Property (UpstreamServer Object)
+
+Applies to:{.prefix}
+
+UpstreamServer{.info}
+
+The Host property specifies the host of the upstream server.
+

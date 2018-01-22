@@ -1,0 +1,7 @@
+ body←{
+     s←⊂'body'
+     s,←⊂'width' '80%'
+     s,←⊂'margin' '0 auto'
+     s,←⊂'background-color' 'WhiteSmoke'
+     s
+ }

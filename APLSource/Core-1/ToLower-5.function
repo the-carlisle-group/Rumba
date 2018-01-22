@@ -1,0 +1,5 @@
+ ToLower←{
+     ⍝ ⍵ ←→ Character Array
+     ⍝ ← ←→ Converted to lower case
+     (819⌶)⍵
+ }

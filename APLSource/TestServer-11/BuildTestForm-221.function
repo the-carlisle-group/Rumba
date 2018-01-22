@@ -1,0 +1,35 @@
+ BuildTestForm←{
+⍝ Build a test page that exercises Rumba HTML Form features.
+     d←##.Core.BuildHTMLTemplate 0
+     me←1 2⊃d.Content.Content ⍝ Should be  d GetElement 'main'
+     me.Element≢'main':.
+
+     f←me ##.Core.Add'form'
+⍝ Add a "field set" (maybe our own name "fieldsection'?)
+     p←⎕NS''
+     p.Description←'Data Source'
+     p.Name←'DatabaseName' 'TableName' 'AsOf'
+     p.Label←'Name of Database:' 'Name of Table:' 'Run Query As Of:'
+     p.Type←'text' 'text' 'date'
+     p.Options←'' '' ''
+     p.Value←'' '' ''
+     p.ReadOnly←0 1 0
+     p.Table←0
+     fs←f ##.Core.AddFieldSet p
+
+     d
+
+⍝ Now do same thing but make it a table.
+     p.Description←'Same fields but as table!'
+     p.Table←1
+     f ##.Core.AddFieldSet p
+
+⍝ AddFieldSet returns top level element
+⍝ could be <fieldset> or <details> or <div>' or anything
+⍝ we shoud be able to get fs GetElementById, byName, by etc ''
+⍝ and poke in specific attributes if necessary!
+
+
+⍝ Add a button for posting!
+     d
+ }

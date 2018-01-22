@@ -1,0 +1,3 @@
+ ToDecimal←{
+     ⍉16⊥'0123456789abcdef'⍳⍉⊃ToLower ⍵
+ }

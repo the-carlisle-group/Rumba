@@ -1,0 +1,8 @@
+ QTSToHTTPDate←{
+     0=↑⍵:''
+     y←⍕↑⍵
+     d h m s←↓'ZI2'⎕FMT 4↑2↓⍵
+     dw←DayOfWeek 0 100 100⊥3↑⍵
+     n←(¯1+⍵[1])⊃↓36 3⍴'JanFebMarAprMayJunJulAugSepOctNovDec'
+     dw,', ',d,' ',n,' ',y,' ',h,':',m,':',s,' GMT'
+ }

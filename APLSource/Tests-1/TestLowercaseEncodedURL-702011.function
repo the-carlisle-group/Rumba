@@ -1,0 +1,7 @@
+ TestLowercaseEncodedURL←{
+     reserved←##.Core.((GenDelims 0(,SubDelims 0)))
+     ENCODED←##.Core.PercentEncode reserved
+     encoded←##.Core.ToLower ENCODED
+     reserved≢##.Core.PercentDecode encoded:1
+     0
+ }

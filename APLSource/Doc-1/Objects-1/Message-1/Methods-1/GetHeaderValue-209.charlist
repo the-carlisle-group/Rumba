@@ -1,0 +1,19 @@
+# GetHeaderValue
+
+Returns the value of a specific header field.
+
+Applies to:{.prefix}
+
+Message{.info}
+
+~~~
+R←X GetHeaderValue Y
+~~~
+
+X is a Message, Y is a string containing the header name, R is a string containing the
+corresponding header value. If the header name does not exist, the method returns an empty vector.
+
+Note that this function returns the entire header value as a simple string. Header values may be
+quite complex. Many headers are automatically processed by Rumba, and the results provided as
+properties of the Message object.
+

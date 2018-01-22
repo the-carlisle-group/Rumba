@@ -1,0 +1,11 @@
+ HelloWorld←{
+     d←⍵ ##.Core.GetQueryParameter'Delay'
+     d←5⌊0⌈↑1⊃⎕VFI(⍕d),' 0'
+     _←⎕DL d
+     r←##.Core.NewResponse ⍵
+     r.Headers,←⊂'cache-control' 'max-age=120'
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←⍵.URI
+     r
+ }

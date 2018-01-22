@@ -1,0 +1,16 @@
+ BuildLogPage←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ r ←→ Response
+     h←##.HTML
+     s←⍵.Connection.Server
+     d←BuildTemplate'Log'⍵.URI
+     m←↑d h.GetElementsByType'main'
+     fn←¯4↓¨1 ##.Core.GetFileNames s.Folder,'/Rumba/Log'
+     l←fn{⍺('/Rumba/Log/',⍵)}¨fn
+     _←m h.NewSectionLinks'Log Files'l
+     s←m h.NewSectionForm'Archive current log file' 'safe'
+     _←s.Form h.NewCommand'Archive' 'Archive'
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r
+ }

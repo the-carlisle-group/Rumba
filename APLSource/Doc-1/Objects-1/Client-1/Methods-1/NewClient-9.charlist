@@ -1,0 +1,15 @@
+# NewClient Method
+
+Creates a new client object.
+
+Applies to:{.prefix}
+
+→[##.##.Client]{.info}
+
+~~~
+R←NewClient X
+~~~
+
+The NewClient method creates a new client object. This is a static method requiring no left
+argument. X is 0, R is client object. A client is not connected until the Connect method is called.
+

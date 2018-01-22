@@ -1,0 +1,8 @@
+ GetConnection←{
+     ⍝ ⍺ ←→ Server
+     ⍝ ⍵ ←→ Connection Name
+     ⍝ ← ←→ Connection (space)
+     cs←⍺.Connections
+     0=cs.⎕NC ⍵:0
+     cs⍎⍵
+ }

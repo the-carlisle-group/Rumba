@@ -1,0 +1,15 @@
+# GetQueryParameter
+
+Returns the value of a specific query parameter.
+
+Applies to:{.prefix}
+
+Message{.info}
+
+~~~
+R←X GetQueryParameter Y
+~~~
+
+X is a Message, Y is a string containing the query parameter name, R is a string containing the
+corresponding parameter value. If the parameter name does not exist, the method returns an empty vector.
+

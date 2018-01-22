@@ -1,0 +1,12 @@
+ ProcessRequestHeader←{
+     ⍝ ⍵ ←→ Message
+     ⍵.Type≢'Request':⍵
+     _←ProcessRequestLine ⍵
+     _←ProcessURI ⍵
+     _←ProcessContentTypeHeader ⍵
+     _←ProcessCacheControlHeader ⍵
+     ⍵.Expect100←'100-continue'≡⍵ GetHeaderValue'Expect'
+     ⍵.AcceptEncoding←ProcessAcceptEncodingHeader ⍵
+     ⍵.Accept←ProcessAcceptHeader ⍵
+     ⍵
+ }

@@ -1,0 +1,11 @@
+ Add←{
+     ⍺←⎕THIS
+     ⍺=0:⍵
+     9=⎕NC'⍵':⍵⊣⍺.Content,←⍵
+     e t←(2=≡⍵)⊃(⍵'')⍵
+     e≡'':⍺⊣⍺.Content,←⊂t
+     s←NewHTMLElement e t
+     0=⍺.⎕NC'Content':s
+     ⍺.Content,←s
+     s
+ }

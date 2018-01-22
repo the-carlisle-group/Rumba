@@ -1,0 +1,9 @@
+# StatusCode
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The StatusCode property is the 3 digit numeric code to be returned in the first line of the
+response message. It should be specified as an integer. It defaults to 200.
+

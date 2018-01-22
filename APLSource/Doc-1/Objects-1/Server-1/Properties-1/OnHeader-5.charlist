@@ -1,0 +1,27 @@
+# OnHeader Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The OnHeader property specifies a call back function to be called when the header of a message is
+complete. This is used when it is possible to formulate a response without having to read the
+entire message. In addition, it allows for action to be taken when the request contains an
+"Expect" header with the value "100-continue".
+
+This function is expected to exist in the namespace or object instance defined by the →[Context]
+property. This callback may be the name of a method of some class.
+
+The right argument to the function is a →[##.##.Message] object provided by the server. The result
+of the callback must be a →[##.##.Response] object or 0.
+
+If the result of the callback is 0, and if the request message contains an "Expect" header with the
+value "100-continue", then Rumba will immediately send a 100 (Continue) response, and resume
+waiting for the content of the message, calling the OnRequest handler when the message is
+complete. If the result is 0 and there is no "Expect" header, Rumba continues to gather the
+content of the message, and will call the OnRequest handler when the message is complete. In
+either of these cases, the connection will be closed or not, depending on the usual rules.
+
+If the result is a Response object, then Rumba will not wait for the rest of the message, and will
+immediately send the response back to the client. Rumba will then close the connection.
+

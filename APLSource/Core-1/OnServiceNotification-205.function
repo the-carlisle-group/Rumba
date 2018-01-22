@@ -1,0 +1,18 @@
+ OnServiceNotification←{
+     ⍝ ⍺ ←→ Server
+     ⍝ ⍵ ←→ Event Message                 ⍝ CheckServiceNotification
+     f←{2 ⎕NQ'.' 'SetServiceState'⍵}      ⍝ for setting state
+     sa ss←⍵[2 3]                         ⍝ Action, State
+     p←sa=2                               ⍝ Pause
+     c←sa=3                               ⍝ Continue
+     s←sa=1                               ⍝ Stop
+     d←sa=5                               ⍝ Shutdown
+     ~∨/p c s d:f ss                      ⍝ Send it back
+     ⍺.Paused←p∨s∨d                       ⍝ Pause if pause or stop or shutdown
+     _←⎕DL 10×s                           ⍝ Wait 10 seconds in case of Stop
+     ss[3 4 5 6]×←~s                      ⍝ If stop, zero out
+     ss[1]←p c(s∨d)/7 4 1                 ⍝ Set
+     _←f ss                               ⍝ Send it back
+     s:⎕NQ'#'⍺.QuitEvent                  ⍝ Exit DQ!
+     0
+ }

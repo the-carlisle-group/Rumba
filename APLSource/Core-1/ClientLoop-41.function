@@ -1,0 +1,6 @@
+ ClientLoop←{
+     ⍝ ⍵ ←→ Connection Space
+     _←ClientWait ⍵
+     ⍵.State≠1:z←0
+     ∇ ⍵
+ }

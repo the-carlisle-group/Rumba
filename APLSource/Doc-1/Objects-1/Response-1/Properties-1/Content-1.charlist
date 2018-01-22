@@ -1,0 +1,12 @@
+# Content
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The Content property is a simple character vector of content, if any, to be returned in the
+message. It may also be set to an HTMLDocument object, which Rumba will compose before sending.
+Its default value is an empty character vector. If the →[Chunked] property is set to 1, then the
+content property should not be set; in this case the →[##.Methods.PutChunk] method should be used
+to provide content.
+

@@ -1,0 +1,5 @@
+ RunTest←{
+     b←##.Tests⍎⍵,' 0'
+     ⎕←⍵,': ',b⊃'Passed' '*** Failed ***'
+     b
+ }

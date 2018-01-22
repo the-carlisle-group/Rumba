@@ -1,0 +1,10 @@
+ Send503ServiceUnavailable←{
+     ⍝ ⍵ ←→ Message
+     r←NewResponse ⍵
+     r.StatusCode←503
+     wp←##.HTML.NewHTMLDocument 0
+     _←wp.Add'h1' '503 : Service Unavailable'
+     r.Content←wp
+     r.Close←1
+     SendResponse r
+ }

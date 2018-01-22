@@ -1,0 +1,16 @@
+ CreateLogEntry←{
+     ⍝ ⍵ ←→ Response
+     m←⍵.Message
+     c←m.Connection
+     s←c.Server
+     t←c.PeerAddress                     ⍝ IP Address
+     t,←' -'                             ⍝ machine id
+     t,←' -'                             ⍝ user
+     t,←' ',LogDate QTS                  ⍝ Date and Time
+     t,←' "',m.StartLine,'"'             ⍝ Request line
+     t,←' ',⍕⍵.StatusCode                ⍝ Status code
+     nh←~m.HeadRequest
+     t,←' ',⍕nh×⍵.ContentLength          ⍝ Size
+     t,←⎕UCS 13 10
+     t
+ }

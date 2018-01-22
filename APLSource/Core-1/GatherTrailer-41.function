@@ -1,0 +1,14 @@
+ GatherTrailer←{
+     nl←⎕UCS 13 10
+     d←⍵.Stream
+     nt←nl≡2↑d
+     b←(nl,nl)⍷d
+     ⍵.TrailerComplete←nt∨1∊b
+     ~⍵.TrailerComplete:⍵
+     ⍵.Stream←(2×nt)↓⍵.Stream
+     nt:⍵
+     t r←(1++\<\b)⊂d
+     ⍵.Trailer←t
+     ⍵.Stream←4↓r
+     ProcessTrailer ⍵
+ }

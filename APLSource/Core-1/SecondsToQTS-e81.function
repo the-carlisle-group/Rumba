@@ -1,0 +1,7 @@
+ SecondsToQTS←{
+     ⍝ ⍵ ←→ Seconds since 0
+     ⍝ ← ←→ ⎕TS (6 element)
+     n h m s←0 24 60 60⊤⍵
+     d←SerialToDate n
+     (0 100 100⊤d),h m s
+ }

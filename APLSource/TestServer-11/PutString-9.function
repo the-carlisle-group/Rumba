@@ -1,0 +1,9 @@
+ PutString←{
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     s←⍵.Connection.Server
+     _←n{s.Strings⍎⍺,'←⍵'}⍵.Content
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←201
+     r.ReasonPhrase←'Created'
+     r
+ }

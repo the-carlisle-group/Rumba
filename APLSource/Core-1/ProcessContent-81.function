@@ -1,0 +1,10 @@
+ ProcessContent←{
+     ⍝ ⍵ ←→ Request Message
+     c←⍵.Content
+     0=≢c:⍵
+     ct←⍵.ContentType
+     t←⍵.ContentType.(Type Subtype)
+     t≡'application' 'x-www-form-urlencoded':ProcessFormUrlEncoded ⍵
+     t≡'multipart' 'form-data':ProcessMultiPartFormData ⍵
+     ⍵
+ }

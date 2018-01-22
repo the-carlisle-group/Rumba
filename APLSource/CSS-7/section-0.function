@@ -1,0 +1,71 @@
+ section←{
+     s←⊂{s←⊂'section'
+         s,←⊂'border-radius' '1.67rem'
+         s,←⊂'margin' '.5rem'
+         s,←⊂'display' 'inline-block'
+         s,←⊂'min-width' '35rem'
+         s,←⊂'float' 'left'
+         s,←⊂'clear' 'left'
+         s}⍵
+     s,←⊂{s←⊂'.sectioncontent'
+         ⍝ s,←⊂'position' 'relative'
+         s,←⊂'padding' '1rem 3rem 1rem 3rem'
+         s}⍵
+     ⍝s,←⊂{s←⊂'section>details'
+⍝
+⍝         s
+⍝     }⍵
+     s,←⊂{s←⊂'section>details>summary'
+         s,←⊂'border-radius' '1.67rem'
+         s,←⊂'outline-style' 'none'
+         s,←⊂'cursor' 'pointer'
+         s,←⊂'font-family' 'Arial'
+         s,←⊂'font-size' '1.5em'
+         s,←⊂'font-weight' 'bold'
+         s,←⊂'padding' '1.25rem 3rem'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'section>details[open]>summary'
+         s,←⊂'border-radius' '1.67rem 1.67rem 0 0'
+         s,←⊂'border-width' '0 0 .2em 0'
+         s,←⊂'border-style' 'solid'
+         s,←⊂'border-color'⍵.VeryLightGray
+         s
+     }⍵
+
+     s,←⊂{
+         s←⊂'.links'
+         s,←⊂'background-color'⍵.Color1
+         s
+     }⍵
+
+     s,←⊂{
+         s←⊂'.safe'
+         s,←⊂'background-color'⍵.Color2
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.unsafe'
+         s,←⊂'background-color'⍵.Color3
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.info'
+         s,←⊂'background-color'⍵.Color4
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.propertysheet'
+         s,←⊂'background-color'⍵.Color2
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.tablesection'
+         s,←⊂'border' '3px solid'
+         s,←⊂'border-color'⍵.EightyPercentWhite
+
+         s
+     }⍵
+     s
+ }

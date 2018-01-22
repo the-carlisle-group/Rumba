@@ -1,0 +1,10 @@
+ GetConditionalUnChanged←{
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←⍵.URI
+     r.ETag←'"19991231.235959"'
+     r.LastModified←19991231.235959
+     r.Content←⍵.URI
+     r
+ }

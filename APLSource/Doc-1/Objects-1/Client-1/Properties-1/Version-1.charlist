@@ -1,0 +1,8 @@
+# Version Property
+
+Applies to:{.prefix}
+
+Client{.info}
+
+The Version property specifies the HTTP version that the client adheres to. It defaults to "HTTP/1.1"
+

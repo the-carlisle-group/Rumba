@@ -1,0 +1,11 @@
+ dmb←{
+      ⍝ delete leading, trailing and multiple blanks from scalar or vector.
+     ⍺←' '
+     ⎕ML←⎕IO←1
+     ~0 1∊⍨≡⍵:∇¨⍵
+     2=⍴⍴⍵:Mix ∇¨↓⍵
+     (,⍺)≡,⍵:''
+     w←1↓¯1↓⍺{⍵/⍨~(2⍴⍺)⍷⍵}⍺,⍵,⍺
+     (0=⍴⍴⍵)∧1=⍴w:⍬⍴⍵
+     w
+ }

@@ -1,0 +1,79 @@
+ logo←{
+     s←⊂{s←⊂'#logo'
+         s,←⊂'background-color'⍵.BannerBackgroundColor
+         s,←⊂'display' 'inline-block'
+         s,←⊂'font-family' 'Francois One' ⍝  'Arial Black'
+         s,←⊂'position' 'relative'
+         ⍝ s,←⊂'font-style' 'bold'
+         s,←⊂'font-size' '4em'
+         ⍝ s,←⊂'color' 'hsla(100, 35%, 35%, 1)'
+
+         ⍝ s,←⊂'padding-top' '1rem'
+         s,←⊂'padding-left' '3rem'
+         s,←⊂'padding-bottom' '2rem'
+         ⍝s,←⊂'margin-top' '1rem'
+⍝         s,←⊂'margin-left' '3rem'
+⍝         s,←⊂'margin-right' '2rem'
+⍝         s,←⊂'margin-bottom' '1rem'
+
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.logoletterleft'
+         s,←⊂'display' 'inline-block'
+         s,←⊂'transform' 'rotate(-2deg)'
+         s,←⊂'margin-left' '-.25em'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.logoletterright'
+         s,←⊂'display' 'inline-block'
+         s,←⊂'transform' 'rotate(2deg)'
+         s,←⊂'margin-left' '-.25em'
+         s
+     }⍵
+
+     s,←⊂{
+         s←⊂'.logolettergreen'
+         s,←⊂'color'⍵.Color1
+         s
+     }⍵
+
+     s,←⊂{
+         s←⊂'.logoletterblue'
+         s,←⊂'color'⍵.Color2
+         s
+     }⍵
+
+     s,←⊂{
+         s←⊂'.logoletterred'
+         s,←⊂'color'⍵.Color3
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.logoletteryellow'
+         s,←⊂'color'⍵.Color4
+         s
+     }⍵
+
+
+     s,←⊂{
+         s←⊂'#logo>p'
+         s,←⊂'position' 'absolute'
+         s,←⊂'top' '4.5rem'
+         ⍝ s,←⊂'left' '4rem'        ⍝ For FlipDB
+         ⍝ s,←⊂'left' '-.5rem'
+         s,←⊂'color'⍵.LightGray
+         s,←⊂'font-style' 'none'
+         s,←⊂'font-family' 'Arial'
+         s,←⊂'font-weight' 'bold'
+         s,←⊂'font-size' '1rem'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.flipdbsublogo'
+         s,←⊂'left' '7rem'
+         s
+     }⍵
+     s
+ }

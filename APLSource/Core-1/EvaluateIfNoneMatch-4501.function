@@ -1,0 +1,13 @@
+ EvaluateIfNoneMatch←{
+     v←⍵ GetHeaderValue'if-none-match'
+     ⍵.IfNoneMatch←1
+     ⍵.IfNoneMatchExists←0<≢v
+     ~⍵.IfNoneMatchExists:⍵
+     ⍺.StatusCode=404:⍵
+     v≡,'*':⍵⊣⍵.IfNoneMatch←0
+     p←{(~(⍵∊', ')∧~≠\⍵='"')⊂⍵}v
+     wfn←{(2×'W/'≡2↑⍵)↓⍵}
+     e←{(↑⍵∊'W"'):⍵ ⋄ '"',⍵,'"'}⍺.ETag
+     ⍵.IfNoneMatch←~(⊂wfn e)∊wfn¨p
+     ⍵
+ }

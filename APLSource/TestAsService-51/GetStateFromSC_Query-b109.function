@@ -1,0 +1,12 @@
+ GetStateFromSC_Query←{
+⍝ ⍵: output from something like ⎕CMD 'sc query foo'
+⍝ ← the value of the key word
+⍝ Example:
+⍝ GetStateFromSC_Query
+     A←#.Rumba.APLTreeUtils
+     b←∨/¨'STATE'∘⍷¨⍵
+     0=+/b:''
+     st←(b⍳1)⊃⍵
+     0∊⍴st:''
+     1⊃' 'A.Split A.dmb 1⊃':'A.Split st
+ }

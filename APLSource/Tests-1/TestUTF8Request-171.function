@@ -1,0 +1,21 @@
+ TestUTF8Request←{
+     c←##.Core.NewClient 0
+     q←##.Core.NewRequest 0
+     path1←'%C3%A4%C3%84%C3%B6%C3%96%C3%BC%C3%9C%C3%9F'  ⍝ äÄöÖüÜß
+     mp←'%C3%A4%C3%84' '%C3%B6%C3%96%C3%BC%C3%9C%C3%9F'  ⍝ äÄ öÖüÜß
+     query1←'%C3%A4' '%2D%C3%84%3B'                      ⍝ ä -Ä;
+     query2←'%C3%B6%C3%96%C3%BC' '%C3%9C%C3%9F'          ⍝ öÖü Üß
+     query3←'Name' 'Kai%20J%C3%A4ger'                    ⍝ Kai Jäger
+     q.URI←'/',path1
+     q.URI,←';',↑{⍺,'=',⍵}/mp
+     q.URI,←'?',↑{⍺,'=',⍵}/query1
+     q.URI,←'&',↑{⍺,'=',⍵}/query2
+     q.URI,←'&',↑{⍺,'=',⍵}/query3
+     r←c ##.Core.SendAndReceive q
+     mp2 q2_1 q2_2 q2_3←(⎕UCS 10){(⍵≠⍺)⊂⍵}'UTF-8'⎕UCS ⎕UCS GetContent r
+     mp2≢⊃,/##.Core.PercentDecode∊mp:1
+     (##.Core.PercentDecode 1⊃query1)≢q2_1:1
+     (##.Core.PercentDecode 1⊃query2)≢q2_2:1
+     (##.Core.PercentDecode 1⊃query3)≢q2_3:1
+     0
+ }

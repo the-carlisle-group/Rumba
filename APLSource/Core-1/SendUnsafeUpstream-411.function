@@ -1,0 +1,9 @@
+ SendUnsafeUpstream←{
+     ⍝ ⍺ ←→ Upstream servers
+     ⍝ ⍵ ←→ Request
+     ⍵.OriginRequestFailed←0
+     ⍵.OriginRequestComplete←0
+     ⍵.OriginToken←{}&0
+     _←⍵ ⎕TPUT¨⍺.Tid
+     ⊃⎕TGET ⍵.OriginToken
+ }

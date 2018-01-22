@@ -1,0 +1,17 @@
+ WaitForData x;_
+ x.Tid←⎕TID
+ ⍝ x ←→ Connection
+ :Trap x.Server.Trap/0
+     _←{
+         e d←⊃⎕TGET ⍵.Tid
+         d≡1119:'1119'CloseConnection ⍵
+         e≢'Block':e CloseConnection ⍵
+         ⍵.LastReceiveTime←QTS
+         m←↑⌽⍵.Messages
+         cm←d GatherRequestMessage m
+         _←HandleRequest¨cm
+         ∇ ⍵
+     }x
+ :Else
+     _←ErrorInConnection x
+ :EndTrap

@@ -1,0 +1,11 @@
+ Run←{
+     s←#.Rumba.Core.NewServer 0
+     s.Folder←'c:\DYNA2016'
+     s.LogHTTP←1
+     s.Context←⎕THIS
+     s.OnRequest←'OnRequest2'
+     s.DisplayRequests←1
+     s.Trap←0
+     _←s #.Rumba.Core.Start 0
+     s
+ }

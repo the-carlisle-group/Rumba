@@ -1,0 +1,16 @@
+ StartUpstreamServer←{
+     ⍝ ⍵ ←→ Upstream Server
+     u←⍵
+     n←3
+     c←NewClient¨n⍴3
+     c.Buffer←1
+     c.Port←u.Port
+     c.Host←⊂u.Host
+     c.UpstreamServer←u
+     _←c Connect¨0
+     u.ConnectionPool←c
+     t←{}&0
+     u.ConnectionPoolToken←t
+     _←c ⎕TPUT¨t
+     0
+ }

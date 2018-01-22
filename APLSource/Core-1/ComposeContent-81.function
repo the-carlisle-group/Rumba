@@ -1,0 +1,6 @@
+ ComposeContent←{
+    ⍝ ⍵ ←→ Response
+     9≠⍵.⎕NC'Content':⍵
+     ⍵.Content←##.HTML.Compose ⍵.Content
+     ⍵
+ }

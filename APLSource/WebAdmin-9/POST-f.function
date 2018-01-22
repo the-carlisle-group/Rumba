@@ -1,0 +1,6 @@
+ POST←{
+     u←⍵.URI
+     u≡'/Rumba/Profile':PostToProfile ⍵
+     u≡'/Rumba/Log':PostToLog ⍵
+     ⍵ ##.Core.Respond 404
+ }

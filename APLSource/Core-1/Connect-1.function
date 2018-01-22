@@ -1,0 +1,16 @@
+ Connect←{
+     ⍝ Public Instance Method
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ 0
+     ⍝ ← ←→ 0
+     ⍺.State=1:0
+     rc←DRC.Init''
+     rc cn←2↑DRC.Clt''⍺.Host ⍺.Port'Text'
+     rc≠0:⎕SIGNAL/CongaError rc
+     ⍺.Name←cn
+     ⍺.LogFileTie←OpenLogFile ⍺
+     _←⍺ LogRumba'Connect'
+     ⍺.Tid←ClientLoop&⍺
+     ⍺.State←1
+     0
+ }

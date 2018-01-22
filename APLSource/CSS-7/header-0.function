@@ -1,0 +1,7 @@
+ header←{
+     s←⊂{s←⊂'header'
+         s,←⊂'background-color'⍵.BannerBackgroundColor
+         ⍝ s,←⊂'padding-bottom' '1em'
+         s}⍵
+     s
+ }

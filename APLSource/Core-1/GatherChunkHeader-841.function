@@ -1,0 +1,15 @@
+ GatherChunkHeader←{
+     ⍝ ⍵ ← Message
+     ⍵.ChunkHeaderComplete:⍵
+     d←⍵.Stream
+     0=≢d:⍵
+     nl←⎕UCS 13 10
+     b←nl⍷d
+     ⍵.ChunkHeaderComplete←1∊b
+     ~⍵.ChunkHeaderComplete:⍵
+     h r←(1++\<\b)⊂d
+     ⍵.ChunkHeader←h
+     ⍵.Stream←2↓r
+     _←ProcessChunkHeader ⍵
+     ⍵
+ }

@@ -1,0 +1,28 @@
+# Trap Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The Trap property specifies whether or not Rumba traps errors in a development environment. It
+defaults to 1.  In a runtime environment, errors are always trapped, regardless of value of the
+Trap property.
+
+Rumba traps errors at three levels. At the lowest level, Rumba traps all errors in the →[OnRequest]
+callback function. This is an application error; an error trapped here is a bug in the
+application, not in Rumba. In this case, Rumba responds to the request with a 500 (Server Error).
+
+At the next level, Rumba traps any error that occurs in a connection thread. An error here is a bug
+in Rumba and is called a connection error. In this case, Rumba also sends a 500 (Server Error) but
+closes the connection as well.
+
+At the third and highest level, Rumba traps any error in the main server wait loop. An error here
+is also a bug in Rumba. In this case, Rumba shuts down.
+
+In all cases, Rumba logs the event if the →[LogRumba] property is set to 1.
+
+Note that in the case of an appliction error, no additional information. about the error is sent to
+the client. However, the application programmer is free to implement a global trap at the top of
+the OnRequest callback, creating a response and supplying  more detail about the error. Rumba will
+not recognize this as an application error, and will not log the event automatically.
+

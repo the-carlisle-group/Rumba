@@ -1,0 +1,7 @@
+ Send100Continue←{
+     ⍝ ⍵ ←→ Message
+     r←NewResponse ⍵
+     r.StatusCode←100
+     r.ReasonPhrase←'Continue'
+     SendResponse r
+ }

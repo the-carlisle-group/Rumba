@@ -1,0 +1,8 @@
+ HandleRequest←{
+     ⍝ ⍵ ←→ Request Message
+     m←⍵.DesiredMethod
+     m≡'GET':GET ⍵
+     m≡'POST':POST ⍵
+     m≡'DELETE':DELETE ⍵
+     ⍵ Respond 405 1
+ }

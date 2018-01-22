@@ -1,0 +1,12 @@
+ PutMessage←{
+     f d←⍺ ⍵
+     m←1000
+     s←f.Session
+     t←s.Text,d
+     t←(-m⌊↑⍴t)↑t
+     s.Text←t
+     n←≢t
+     q←≢d
+     _←{s.SelText←⍵ ⍵ ⋄ ⎕DL 0}¨(n-⌽⍳q){⍺ ⍵}¨7
+     1:z←0
+ }

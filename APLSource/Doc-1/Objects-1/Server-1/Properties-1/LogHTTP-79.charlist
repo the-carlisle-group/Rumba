@@ -1,0 +1,10 @@
+# LogHTTP Property
+
+Applies to:{.prefix}
+
+Server{.info}
+
+The LogHTTP property specifies the logging level of HTTP requests. If 0, (the default), no HTTP
+logging is done. If 1, requests are logged using the common log format. If 2, the entire request
+and response is logged. This latter is useful for producing documentation.
+

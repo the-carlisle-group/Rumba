@@ -1,0 +1,11 @@
+ CreateChunkedContent←{
+     ⍝ ⍺ ←→ Response
+     ⍝ _←⎕DL 1
+     _←⍺ ##.Core.PutChunk'This'
+     ⍝ _←⎕DL 1
+     _←⍺ ##.Core.PutChunk' is a '
+     ⍝ _←⎕DL 1
+     _←⍺ ##.Core.PutChunk'chunked message'
+     _←⍺ ##.Core.PutChunk''          ⍝ Must have to end the message
+     0
+ }

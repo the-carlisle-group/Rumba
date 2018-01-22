@@ -1,0 +1,7 @@
+ ExpungeConnection←{
+     ⍝ ⍵ ←→ Connection
+     s←⍵.Server
+     _←s.Connections.⎕EX ⍵.Name
+     _←⎕TKILL ⍵.Tid
+     0
+ }

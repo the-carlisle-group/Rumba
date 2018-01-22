@@ -1,0 +1,8 @@
+ CreateFullLogEntry←{
+     ⍝ ⍵ ←→ Response
+     m←⍵.Message
+     nl←⎕UCS 13 10
+     q←m.Header,nl,nl,m.Content
+     r←ComposeResponse ⍵
+     q,nl,nl,r,nl
+ }

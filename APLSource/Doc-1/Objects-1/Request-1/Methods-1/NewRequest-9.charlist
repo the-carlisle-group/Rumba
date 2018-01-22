@@ -1,0 +1,13 @@
+# NewRequest Method
+
+Applies to:{.prefix}
+
+Request{.info}
+
+~~~
+R←NewRequest X
+~~~
+
+The NewRequest method creates a new request object. This is a static method requiring no left
+argument. R is a request object. X is ignored.
+

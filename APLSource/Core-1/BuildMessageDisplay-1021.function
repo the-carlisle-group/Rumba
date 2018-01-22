@@ -1,0 +1,15 @@
+ BuildMessageDisplay←{
+     r←⍵
+     m←⍵.Message
+     c←m.Connection
+     t←⊂' IP Address: ',c.PeerAddress
+     t,←⊂' Request: ',m.StartLine
+     t,←⊂' Computed content length: ',⍕≢m.Content
+     t,←⊂⍕⊃m.Headers
+     t,←⊂''
+     t,←⊂' Response: ',r.ComposedStartLine
+     t,←⊂⍕⊃r.ComposedHeaders
+     d←↓0 1 0 disp⍪t
+     d,←''(50⍴⊂'*')''
+     d
+ }

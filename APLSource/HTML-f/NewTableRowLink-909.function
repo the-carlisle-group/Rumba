@@ -1,0 +1,6 @@
+ NewTableRowLink←{
+     tr←⍺ Add NewHTMLElement'tr'
+     td←tr Add¨(≢⍵)⍴⊂'td'
+     _←td NewLink¨⍵
+     tr
+ }

@@ -1,0 +1,9 @@
+ ReceiveLoop←{
+     ⍝ ⍺ ←→ Connection
+     ⍝ ⍵ ←→ Downstream Response
+     m←⍺ Receive 0
+     _←⍵ PutChunk m.Content
+     m.Content≢'':⍺ ∇ ⍵
+     _←ReplaceUpstreamConnection ⍺
+     0
+ }

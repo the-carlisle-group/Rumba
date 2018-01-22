@@ -1,0 +1,12 @@
+# Start Method
+
+Applies to:{.prefix}
+
+Server{.info}
+
+~~~
+R←X Start Y
+~~~
+
+The Start method starts up a server. X is a server, Y is 0, R is 0.
+

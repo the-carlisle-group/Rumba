@@ -1,0 +1,17 @@
+ PostToProfile←{
+     n v←↓⍉⍵.ProcessedContent
+     t←(n⍳⊂'timer')⊃v,⊂'CPU'
+     exists←{(⊂⍵)∊n}
+     cs ct←2↑⎕PROFILE'state'
+     _←{
+         exists'ProfileClear':⎕PROFILE'clear'
+         (exists'ProfileOn')∧ct≡t:⎕PROFILE'start't
+         exists'ProfileOn':(⎕PROFILE'start't)⊣⎕PROFILE'clear'
+         exists'ProfileOff':⎕PROFILE'stop'
+         0
+     }0
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←303
+     r.Location←⍵.URI
+     r
+ }

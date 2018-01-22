@@ -1,0 +1,18 @@
+ FindPathTo←{
+      ⍝ ⍵ is the name of a script (namespace, interface or class).
+      ⍝ Tries to find ⍵ in:
+      ⍝ 1. The same namespace ⎕THIS is coming from
+      ⍝ 2. The namespace where the class (if instanciated) comes from
+      ⍝ 3. In #
+      ⍝ 4. Where it was called from (NOT the same as 1 and 2)
+      ⍝ If it fails to find ⍵, an empty string is returned.
+     ⎕IO←1 ⋄ ⎕ML←1
+     base←⎕THIS.##                        ⍝ were are we coming from?
+     base{11::0 ⋄ 9=⍺.⎕NC ⍵}⍵:base        ⍝ Is it in that namespace?
+     base←{11::⍬ ⋄ (1⊃∊⎕CLASS ⍵).##}⍵     ⍝ Where stems the class from?
+     base{11::0 ⋄ 9=⍺.⎕NC{Last ⍵}⍕1⊃⊃⎕CLASS ⍵}⍵:base  ⍝ Is it in that namespace?
+     9={11::0 ⋄ #.⎕NC ⍵}⍵:#               ⍝ Is it in root?
+     path←1⊃⎕RSI~⎕THIS                    ⍝ From where got we called?
+     0<path.⎕NC ⍵:path                    ⍝ May be it's there?
+     ''                                   ⍝ Give up
+ }

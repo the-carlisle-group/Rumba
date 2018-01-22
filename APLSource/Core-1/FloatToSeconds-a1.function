@@ -1,0 +1,3 @@
+ FloatToSeconds←{
+     QTSToSeconds FloatToQTS ⍵
+ }

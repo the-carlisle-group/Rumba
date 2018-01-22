@@ -1,0 +1,7 @@
+ ProcessChunkHeader←{
+     ⍝ ⍵ ←→ Message
+     h←⍵.ChunkHeader
+     hs ce←2↑(h≠';')⊂h
+     ⍵.ChunkSize←ToDecimal hs
+     ⍵
+ }

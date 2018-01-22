@@ -1,0 +1,29 @@
+ BuildProfilePage←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ r ←→ Response
+     h←##.HTML
+     s←⍵.Connection.Server
+     d←BuildTemplate'Profile'⍵.URI
+     me←↑d ##.HTML.GetElementsByType'main'
+     ps pt←2↑⎕PROFILE'state'
+     on←'active'≡ps
+     ct←(0=≢pt)⊃pt'CPU'
+     f←me h.NewSectionForm'Clear Profile Data' 'unsafe'
+     _←f.Form h.NewCommand'ProfileClear' 'Clear Profile Data'
+     fm←me h.NewSectionInfo'Profiling Status'
+     f←fm.SectionContent h.NewTextField'CurrentStatus' 'Profiling Status'(on⊃'Off' 'On')
+     f,←fm.SectionContent h.NewTextField'CurrentTimer' 'Timer'ct
+     f.class←⊂'fieldstyle2'
+     f.Input.readonly←⊂'readonly'
+     fm←me h.NewSectionForm('Turn Profiling ',on⊃'On' 'Off')'safe'
+     lb←fm.Form h.NewListbox'Timer' 'Timer'ct('CPU' 'Elapsed' 'None')
+     ⍝ _←fm h.Add lb
+     _←fm.Form h.NewCommand('Profile',on⊃'On' 'Off')('Turn Profiling ',on⊃'On' 'Off')
+     l←⊂'Profile Date' 'Data'
+     l,←⊂'Profile Tree' 'Tree'
+     _←me h.NewSectionLinks'Links'l
+     r←##.Core.NewResponse ⍵
+     r.Content←d
+     r.Headers,←⊂'Cache-Control' 'no-store'
+     r
+ }

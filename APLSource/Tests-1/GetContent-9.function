@@ -1,0 +1,3 @@
+ GetContent←{
+     ⍵ ##.Core.GetUncompressedContent 0
+ }

@@ -1,0 +1,45 @@
+ r←{length}FormatDateTime ts;ts2;formatstring;bool;⎕IO;⎕ML;buffer
+⍝ Format the right argument (defaults to ⎕TS if empty) as a string with:
+⍝ 'YYYY-MM-DD HH:MM:SS.MILLISECOND
+⍝ If the right argument has not 7 but 6 or 3 elements, formatting is done accordingly.
+⍝ Via the left argument the length of the right argument can be set to _
+⍝ ⍬, 3, 6 or 7; default is 6; ⍬ Accepts any length of the right argument which is 3,6 or 7.
+⍝ If the right argument is a simple vector, a string is returned.
+⍝ If it is a matrix, a matrix is returned.
+ ⎕IO←⎕ML←1
+ :If ⍬≡length←{2=⎕NC ⍵:⍎⍵ ⋄ 6}'length'
+     length←''⍴¯1↑⍴ts
+ :EndIf
+ :If ~0∊⍴ts
+     :If 2=⍴⍴ts
+         buffer←{⍵/⍨0<⊃∘⍴¨⍵~¨⊂' ' 0}↓ts
+         'Invalid right argument: must be integer'⎕SIGNAL 11/⍨163≠∪⎕DR¨buffer
+         'Invalid right argument: must not be negative'⎕SIGNAL 11/⍨∨/¯1∊¨×¨buffer
+         'Invalid right argument: must be simple'⎕SIGNAL 11/⍨1≠∪≡¨buffer
+     :Else
+         'Invalid right argument: must be integer'⎕SIGNAL 11/⍨163≠⎕DR ts
+         'Invalid right argument: must not be negative'⎕SIGNAL 11/⍨¯1∊×,ts
+         'Invalid right argument: must be simple'⎕SIGNAL 11/⍨1≠≡ts
+     :EndIf
+ :EndIf
+ :If 2=⍴⍴ts
+     ts2←length↑[2]ts
+ :Else
+     ts2←,[0.5]length↑{0∊⍴⍵:⎕TS ⋄ ts}ts
+ :EndIf
+ :Select First length
+ :Case 3
+     formatstring←'ZI4,<->,ZI2,<->,ZI2'
+ :CaseList 6 7
+     formatstring←'ZI4,<->,ZI2,<->,ZI2,< >,ZI2,<:>,ZI2,<:>,ZI2'
+ :Else
+     'Invalid left argument'⎕SIGNAL 11
+ :EndSelect
+ bool←(ts2∨.≠' ')∧ts2∨.≠0
+ r←bool⍀formatstring ⎕FMT(6⌊length)↑[2]bool⌿ts2
+ :If 7=2⊃⍴ts2
+     r←⊃(↓r),¨{0=⍵:'' ⋄ 0∊⍴⍵~' ':'' ⋄ '.',⍕⍵}¨ts2[;7]
+ :EndIf
+ :If 2≠⍴⍴ts
+     r←,r
+ :EndIf

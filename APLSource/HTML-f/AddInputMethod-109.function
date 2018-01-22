@@ -1,0 +1,8 @@
+ AddInputMethod←{
+     i←⍺ Add'input'
+     i.type←'hidden'
+     i.name←'httpmethod'
+     i.readonly←'readonly'
+     i.value←⍵
+     i
+ }

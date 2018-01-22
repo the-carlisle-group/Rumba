@@ -1,0 +1,3 @@
+ r←IsUnicode
+    ⍝ Return a 1 if running under Dyalog Unicode
+ r←80=⎕DR' '

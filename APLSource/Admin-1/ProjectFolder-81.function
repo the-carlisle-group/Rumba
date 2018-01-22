@@ -1,0 +1,5 @@
+ ProjectFolder←{
+     0=#.⎕NC'acre_Rumba':{¯1↓(⌽∨\⌽⍵='\')/⍵}⎕WSID
+     ai←#.acre_Rumba
+     ¯1↓(ai.Data'').codepath
+ }

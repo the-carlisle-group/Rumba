@@ -1,0 +1,12 @@
+ BuildTemplate←{
+     pn pu←⍵
+     h←##.HTML
+     p←⎕NS''
+     p.URL←pu
+     p.Menu←BuildMenu 0
+     p.Footer←'Rumba - Copyright 2016 The Carlisle Group'
+     d←h.NewTemplate p
+     l←d h.GetElementById'logo'
+     _←l BuildLogo 0
+     d
+ }

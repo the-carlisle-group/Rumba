@@ -1,0 +1,10 @@
+# Server Object
+
+The server object represents a server.
+
+A server object is created using the static →[Methods.NewServer] method. Various properties may
+then be specified. The →[Properties.OnRequest] property specifies the function to be called for
+each request received by the server. The →[Methods.Start] method starts up the server, listening
+on the specified port.
+
+

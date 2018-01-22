@@ -1,0 +1,7 @@
+ html←{
+     s←⊂'html'
+     ⍝ s,←⊂'margin' '0'
+     ⍝ s,←⊂'padding' '0'
+     s,←⊂'background-color' 'DarkCyan'
+     s
+ }

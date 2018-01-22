@@ -1,0 +1,9 @@
+ GetHeaderValue←{
+     ⍝ ⍺ ←→ Message Space
+     ⍝ ⍵ ←→ Header name
+     ⍝ ← ←→ Header value
+     2=⎕NC'⍺':⍺
+     n v←↓⍉⊃⍺.Headers
+     i←n⍳⊂ToLower ⍵
+     i⊃v,⊂''
+ }

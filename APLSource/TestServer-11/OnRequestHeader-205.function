@@ -1,0 +1,9 @@
+ OnRequestHeader←{
+     ⍝ ⍵ ←→ Message
+     ml←1000000
+     ⍵.ContentLength≤ml:0
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←413
+     r.ReasonPhrase←'Payload Too Large'
+     r
+ }

@@ -1,0 +1,5 @@
+ PingServer←{
+     rc←##.Tests.TestPingServer ⍬
+     ⎕←rc⊃'Server has answered' 'No answer from the server'
+     rc
+ }

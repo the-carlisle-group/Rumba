@@ -1,0 +1,10 @@
+ ComputeFreshnessLifetime←{
+    ⍝ ⍵ ←→ Response Message
+    ⍝ ⍺ ←→ Freshness Lifetime in delta seconds.
+    ⍝ RFC7234 4.2.1. Caclulating Freshness Lifetime
+     ¯1<z←⍵.CacheControl.SMaxAge:z
+     ¯1<z←⍵.CacheControl.MaxAge:z
+     ex←HTTPDateToSeconds ⍵ GetHeaderValue'expires'
+     ex>0:ex-⍵.Date
+     0
+ }

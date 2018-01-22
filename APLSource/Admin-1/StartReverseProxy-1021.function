@@ -1,0 +1,9 @@
+ StartReverseProxy←{
+     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8081'
+     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8082'
+     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8083'
+     _←StartProcess'#.Rumba.TestReverseProxy.Start'
+     ⎕←'Waiting 5 seconds for server to start...'
+     _←⎕DL 5
+     0
+ }

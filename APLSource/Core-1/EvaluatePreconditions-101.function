@@ -1,0 +1,15 @@
+ EvaluatePreconditions←{
+      ⍝ ⍵ ←→ Request Message
+      ⍝ ⍺ ←→ GET or HEAD Response
+      ⍝ ← ←→ ⍵
+     hn←1⊃¨⍵.Headers
+     ch←'if-match' 'if-modified-since' 'if-none-match' 'if-unmodified-since'
+     ⍵.(IfMatchExists IfModifiedSinceExists IfNoneMatchExists IfUnmodifiedSinceExists)←ch∊hn
+     i←hn⍳ch
+
+     _←EvaluateIfMatch ⍵
+     _←EvaluateIfNoneMatch ⍵
+     _←EvaluateIfModifiedSince ⍵
+     _←EvaluateIfUnmodifiedSince ⍵
+     ⍵
+ }

@@ -1,0 +1,28 @@
+ fieldstyle2←{
+     s←⊂{
+         s←⊂'.fieldstyle2'
+         s,←⊂'border-bottom' '1px dotted'
+         s,←⊂'position' 'relative'
+         s,←⊂'margin' '2rem 0 2rem 0'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.fieldstyle2 label'
+         s,←⊂'font-weight' 'bold'
+         s,←⊂'font-size' '1.25rem'
+         s
+     }⍵
+     s,←⊂{
+         s←⊂'.fieldstyle2 input'
+         s,←⊂'position' 'absolute'
+         s,←⊂'right' '0'
+         s,←⊂'background-color' 'inherit'
+         s,←⊂'font-size' '1.25rem'
+         s,←⊂'font-family' 'APL385 Unicode'
+         s,←⊂'text-align' 'right'
+         s,←⊂'border' 'none'
+         s
+     }⍵
+
+     s
+ }

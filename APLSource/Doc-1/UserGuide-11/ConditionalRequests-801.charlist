@@ -1,0 +1,36 @@
+# Conditional Requests
+
+Rumba supports conditional requests as defined in RFC 7232. It is up to the application developer
+to provide values for the →[##.Objects.Response.Properties.ETag] and
+→[##.Objects.Response.Properties.LastModified] properties in a Rumba responses to GET and HEAD
+requests. Rumba will then create ETag and LastModified headers in the response. Both headers
+should be provided if possible.
+
+If an ETag is included in the response, clients may then send If-Match and If-None-Match headers in
+subsequent requests. If Last-Modified is included in the response, then subsequent client requests
+may include If-Modified-Since or If-Unmodified-Since headers.
+
+An If-Match header included in a request specifies that the request should only be executed if the
+value of the header (presumably a previously received ETag) matches the current ETag of the
+resource. If not, then a 412 - Precondidtion Failed response is generated. However, a 2XX 
+(Successful) response may be sent by Rumba if it can determine that the request would change the
+state to what it already is - that is have no effect. This header is generally used with PUT,
+DELETE and POST.
+
+An If-None-Match header included in a request specifies that the request should only be executed if
+the value (or values) in the header do not match the current ETag of the resource. This is mostly
+used for GET requests. In other words "GET this resource only if it has changed since I last
+retreived it." If the method is GET and the precondition fails (the resouce is not changed), a 304-
+Not Modified is result. Other methods will return 412 - Precondition Failed.
+
+An If-Modified-Since header has a date value, and specifies that the request (usually a GET) should
+only be executed if the resource's modification date is after the supplied date. This is analogous
+to If-None-Match and ETag - in other words, perform the GET only if the resource has changed.
+
+An If-Unmodified-Since header also has date value, and specifies that the request should only be
+executed if the resource's modfication date has is on or before the supplied date. This is
+analogous to If-Match with an ETag.
+
+If more than one of these four headers is sent in a request, there are precedence rules defined in
+RFC 7232 that Rumba adheres to.
+

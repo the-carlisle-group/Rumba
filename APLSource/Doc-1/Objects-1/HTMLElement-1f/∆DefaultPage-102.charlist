@@ -1,0 +1,9 @@
+# HTMLElement Object
+
+The HTMLElement object represents an HTML Element.
+
+An HTMLElement object is created using the →[Methods.Add] method. This Add method adds an HTML
+element to an HTMLDocument or to an HTMLElement. and returns an HTMLElement object representing
+the element. You can use Add on this element to add sub elements. Element attributes may be
+specified by assigning a value to the attribute name in the object.
+

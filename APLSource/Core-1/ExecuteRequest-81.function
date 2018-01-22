@@ -1,0 +1,6 @@
+ ExecuteRequest←{
+⍝ ⍵ ←→ Request Message
+     s←⍵.Connection.Server
+     f←s.Context⍎s.OnRequest
+     f TrapRequest ⍵
+ }

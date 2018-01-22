@@ -1,0 +1,9 @@
+ ReadUTF8←{
+     t←⍵ ⎕NTIE 0
+     n←⎕NSIZE t
+     b←⎕NREAD t 83,n,0
+     _←⎕NUNTIE t
+     b+←256×b<0
+     b←(3×239 187 191≡3↑b)↓b      ⍝ drop a potential UTF-8 marker
+     'UTF-8'⎕UCS b
+ }

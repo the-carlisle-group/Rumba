@@ -1,0 +1,8 @@
+# Fragment
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The Fragment property is the fragment component of the URI. It is only provided for request messages.
+

@@ -1,0 +1,10 @@
+ GetFormValue←{
+     ⍝ ⍺ ←→ Message Space
+     ⍝ ⍵ ←→ Form input name
+     ⍝ ← ←→ Form input value
+     c←⍺.ProcessedContent
+     0=≢c:''
+     n←c.Name
+     v←c.Value
+     (n⍳⊂⍵)⊃v,⊂''
+ }

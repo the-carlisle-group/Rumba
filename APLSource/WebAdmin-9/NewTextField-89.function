@@ -1,0 +1,12 @@
+ NewTextField←{
+     n c v←⍵
+     d←NewHTMLElement'div'
+     d.class←'fieldstyle1'
+     l←d Add'label'c
+     i←d Add'input'
+     i.name←n
+     i.type←'text'
+     i.value←v
+     d.Input←i
+     d
+ }

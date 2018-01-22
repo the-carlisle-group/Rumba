@@ -1,0 +1,8 @@
+ DateToSerial←{                             ⍝ inv is SerialToDate
+     ⍝ origin is start of CE - 1 ←→ 0001-01-01 00:00:00 (gregorian)
+     y m d←↓⌊0 100 100⊤,⍵                   ⍝ separate years months & days
+     Y←{(⍵×365)+(⌊⍵÷4)-(⌊⍵÷100)-⌊⍵÷400}y-1  ⍝ days for full years
+     M←(+\0 0 31 28,10⍴5⍴31 30)[m]          ⍝ days to previous month end
+     M←M+(m>2)∧LeapYear y                   ⍝ + leap day after Feb
+     (0≠⍵)×(⍴⍵)⍴Y+M+d                       ⍝ total proleptic gregorian days
+ }

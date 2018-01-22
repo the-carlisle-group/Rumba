@@ -1,0 +1,13 @@
+ DefaultRequestHeaders←{
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ Request
+     ⍝ ← ←→ ⍵
+     h←⊂'Host'⍺.Host
+     h,←⊂'Accept' '*/*'
+     h,←⍵.Compress/⊂'Content-Encoding' 'gzip'
+     h,←⊂'Accept-Encoding' 'gzip'
+     pm←(⊂⍵.Method)∊'PUT' 'POST'
+     h,←pm/⊂'Content-Length'(⍕≢⍵.CompressedContent)
+     ⍵.DefaultHeaders←h
+     ⍵
+ }

@@ -1,0 +1,22 @@
+ TestChunkedHeadRequest←{
+     ⍺←0
+     c←##.Core.NewClient 0
+     c.LogCongaEvents←⍺
+     q←##.Core.NewRequest 0
+     q.Method←'HEAD'
+     q.URI←'/ChunkedTest1'
+     _←c ##.Core.Send q
+     r←c ##.Core.Receive 0
+
+     q2←##.Core.NewRequest 0
+     q2.Method←'GET'
+     q2.URI←'/ChunkedTest1'
+     _←c ##.Core.Send q2
+     r2←c ##.Core.Receive 0
+
+     _←c ##.Core.Close 0
+     r.Content≢'':1
+     r2.Content≢'This is a chunked message':1
+     r.Headers≢r2.Headers:1
+     0
+ }

@@ -1,0 +1,8 @@
+ EvaluateIfModifiedSince←{
+     v←⍵ GetHeaderValue'if-modified-since'
+     ⍵.IfModifiedSinceExists←0<≢v
+     lm←FloatToSeconds ⍺.LastModified
+     ts←HTTPDateToSeconds v
+     ⍵.IfModifiedSince←lm>ts
+     ⍵
+ }

@@ -1,0 +1,7 @@
+ RunTestSuite←{
+     f←##.Core.ntbs ##.Tests.⎕NL 3
+     f~←⊂'Test_ServerShutdown'  ⍝ Don't run this when server is running as a service
+     noOf←+/##.Admin.RunTest¨f
+     ⎕←'*** ',(⍕noOf),' test case',((1<noOf)/'s'),' failed.'
+     ⍬
+ }

@@ -1,0 +1,10 @@
+# URI
+
+Applies to:{.prefix}
+
+Message{.info}
+
+The URI property is the URI on the request line, and is only provided for request messages. The URI
+is parsed into its various components →[Path] , →[Query], and →[Fragment]. The Path component is
+further parsed into →[Segments] and →[MatrixParameters]. The Query component is parsed into →[QueryParameters].
+

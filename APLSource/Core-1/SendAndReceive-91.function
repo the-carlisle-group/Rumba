@@ -1,0 +1,13 @@
+ SendAndReceive←{
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ Request(s)
+     ⍝ ← ←→ Message(s)
+     _←⍺ Connect 0           ⍝ Ensure connected
+     l←↑⌽⍵                   ⍝ Last Messasge
+     cc←'Connection' 'close' ⍝ ... no more
+     l.Headers,←⊂cc          ⍝ ... let server know
+     _←⍺ Send¨⍵              ⍝ Pipeline requests
+     r←⍺ Receive¨⍵           ⍝ Wait for all
+     _←⍺ Close 0             ⍝ Close connection
+     r
+ }

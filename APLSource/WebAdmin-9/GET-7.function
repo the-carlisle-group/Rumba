@@ -1,0 +1,19 @@
+ GET←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ Response
+     u←⍵.URI
+     u≡'/Rumba':BuildHomePage ⍵
+     u≡'/Rumba/Log':BuildLogPage ⍵
+     u≡'/Rumba/Profile':BuildProfilePage ⍵
+     u≡'/Rumba/Profile/Data':BuildProfileDataPage ⍵
+     u≡'/Rumba/Profile/Tree':BuildProfileTreePage ⍵
+     u≡'/Rumba/CSS/Default':GetStyleSheet ⍵
+     u≡'/Rumba/Connections':BuildConnectionsPage ⍵
+     u≡'/Rumba/Gateway':BuildGatewayPage ⍵
+     'Rumba' 'Connections'≡2↑⍵.Segments:BuildConnectionPage ⍵
+     'Rumba' 'Documentation'≡2↑⍵.Segments:BuildDocPage ⍵
+     'Rumba' 'Log'≡2↑⍵.Segments:BuildLogFilePage ⍵
+     'Rumba' 'Gateway'≡2↑⍵.Segments:BuildOriginServerPage ⍵
+     r←⍵ Respond 404
+     r ##.Core.ServeFile ⍵
+ }

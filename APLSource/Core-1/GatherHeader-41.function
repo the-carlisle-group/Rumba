@@ -1,0 +1,15 @@
+ GatherHeader←{
+     ⍝ ⍵ ←→ Message
+     ⍵.HeaderComplete:⍵
+     d←⍵.Stream
+     nl←⎕UCS 13 10
+     b←(nl,nl)⍷d
+     ⍵.HeaderComplete←1∊b
+     ~⍵.HeaderComplete:⍵
+     h r←(1++\<\b)⊂d
+     ⍵.Header←h
+     ⍵.Stream←4↓r
+     _←ProcessHeader ⍵
+     _←HandleHeader ⍵
+     ⍵
+ }

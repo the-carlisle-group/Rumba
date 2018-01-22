@@ -1,0 +1,17 @@
+ ComposeResponse←{
+     ⍝ ⍵ ←→ Response
+     ⍝ ← ←→ Text
+     m←⍵.Message
+     s←m.Connection.Server
+     nl←⎕UCS 13 10
+     _←SetContentLength ⍵
+     _←DefaultResponseHeaders ⍵
+     h←ComposeHeaders ⍵
+     rp←GetReasonPhrase ⍵
+     t←s.Version
+     t,←' ',⍕⍵.StatusCode
+     t,←' ',rp
+     ⍵.ComposedStartLine←t
+     nh←~m.HeadRequest
+     t,h,nl,nl,nh/⍵.Content
+ }

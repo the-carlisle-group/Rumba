@@ -1,0 +1,6 @@
+ NewLink←{
+     ⍺←0
+     l←⍺ NewHTMLElement'a'(0⊃⍵)
+     l.href←1⊃⍵
+     l
+ }

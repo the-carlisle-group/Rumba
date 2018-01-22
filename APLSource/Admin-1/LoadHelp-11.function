@@ -1,0 +1,19 @@
+ LoadHelp←{
+     9=⎕NC'#.Markdown2Help':0
+     wf←ProjectFolder 0
+     rf←wf,'\Files\AdminResources'
+     ws←rf,'\Markdown2Help.dws'
+     _←{6::0 ⋄ '#.Markdown2Help'#.⎕CY ws}0
+
+     ⍝ _←{0::0 ⋄ '#.APLTreeUtils'#.⎕CY ws}0
+     ⍝ _←{0::0 ⋄ '#.Markdown2Help'#.⎕CY ws}0
+     _←{0::0 ⋄ '#.MarkAPL'#.⎕CY ws}0
+
+
+     0=#.Markdown2Help.⎕NC'HelpForms':0
+
+
+
+     _←{⍵.⎕EX ⍵.⎕NL 9}#.Markdown2Help.HelpForms
+     0
+ }

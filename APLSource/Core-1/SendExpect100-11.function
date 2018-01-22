@@ -1,0 +1,19 @@
+ SendExpect100←{
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ Request
+     ⍝ ← ←→ Message (Response)
+     _←⍺ Connect 0
+     0≠≢⍺.Messages:'Unreceived messages in queue'⎕SIGNAL 444
+     ⍵.Headers,←⊂'Expect' '100-continue'
+     h b←⍺ ComposeRequest ⍵
+     m←NewMessage¨⍺ ⍺
+     m.Request←⍵
+     ⍺.Messages,←m
+     ⍺.Expect100←1              ⍝ For timeout,
+     rc←DRC.Send ⍺.Name h 0
+     m←⍺ Receive 0
+     ⍺.Expect100←0              ⍝ For timeout
+     m.StatusCode≠100:m⊣⍺.Messages←''
+     rc←DRC.Send ⍺.Name b 0
+     ⍺ Receive 0
+ }

@@ -1,0 +1,11 @@
+ TestEmptyQueryParm←{
+     c←##.Core.NewClient 0
+     q←##.Core.NewRequest 0
+     path←'EmptyQuery'
+     query←'Name='
+     q.URI←'/',path,';',query
+     q.Method←'GET'
+     r←c ##.Core.SendAndReceive q
+     'Found empty "Name"'≢GetContent r:1
+     0
+ }

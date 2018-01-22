@@ -1,0 +1,7 @@
+ GMT
+⍝ ← ←→ GMT
+ ←_UTCOffset
+ ⎕UTC 
+
+
+ SecondStamp

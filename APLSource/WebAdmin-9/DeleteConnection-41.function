@@ -1,0 +1,11 @@
+ DeleteConnection←{
+     s←⍵.Connection.Server
+     cn←2⊃⍵.Segments
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←303
+     r.Location←'/Rumba/Connections'
+     cs←s ##.Core.GetConnection cn
+     cs=0:r
+     _←##.Core.CloseConnection cs
+     r
+ }

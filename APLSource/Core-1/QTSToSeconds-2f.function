@@ -1,0 +1,8 @@
+ QTSToSeconds←{
+     ⍝ ⍵ ←→ ⎕TS
+     ⍝ ← ←→ Seconds since 0
+     d←0 100 100⊥3↑⍵
+     n←DateToSerial d
+     v←86400 3600 60 1
+     0 24 60 60⊥n,3↑3↓⍵
+ }

@@ -1,0 +1,9 @@
+ NewUpstreamServer←{
+     h p←⍵
+     s←⎕NS''
+     s.Port←p
+     s.Host←h
+     s.Name←'Server-',h,'-',⍕p
+     s.Healthy←0
+     s
+ }

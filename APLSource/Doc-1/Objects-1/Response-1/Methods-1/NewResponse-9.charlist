@@ -1,0 +1,13 @@
+# NewResponse Method
+
+Applies to:{.prefix}
+
+Response{.info}
+
+~~~
+R←NewResponse X
+~~~
+
+The NewResponse method creates a new response object. This is a static method requiring no left
+argument. X is a Message object, R is a response object.
+

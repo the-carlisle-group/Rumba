@@ -1,0 +1,15 @@
+ ProcessURI←{
+     ⍝ ⍵ ←→ Message
+     u←⍵.URI
+     i j←u⍳'?#'
+     ⍵.Path←(i⌊j)↑u
+     ⍵.Query←(0⌈j-i+1)↑(i+1)↓u
+     ⍵.Fragment←(j+1)↓u
+     s←{('/'≠⍵)⊂⍵}⍵.Path
+     k←s⍳¨';'
+     ⍵.Segments←PercentDecode¨k↑¨s
+     m←(k+1)↓¨s
+     ⍵.MatrixParameters←ParseParameters¨m
+     ⍵.QueryParameters←'&'ParseParameters ⍵.Query
+     ⍵
+ }

@@ -1,0 +1,10 @@
+ ComputeInitialAge←{
+   ⍝ ⍵ ←→ Response Message
+   ⍝ ← ←→ Corrected Initial Age
+   ⍝ RFC 7234 4.2.3.
+     a←⍵.Age
+     d←⍵.Date
+     q←⍵.RequestTime
+     r←⍵.ResponseTime
+     (0⌈r-d)⌈a+r-q
+ }

@@ -1,0 +1,18 @@
+ StartProcess←{
+     ⍝ ⍵ ←→ ie. '#.Rumba.TestServer.Start'
+     0=#.⎕NC'acre_Rumba':0              ⍝ Not without acre
+     lx←⍵                               ⍝ Quad LX
+     cl←#.GetCommandLineArgs            ⍝ Current command line
+     q←{'"',⍵,'"'}                      ⍝ Quote stuff
+     nl←⊂q 0⊃cl                         ⍝ APL exe
+     f←'acre.dws'≡{⍵,(~'.'∊⍵)/'.dws'}{##.Core.ToLower ⍵/⍨~⌽∨\⌽'\'=⍵}⎕WSID
+     wsid←f⊃('..\acre\acre.dws')(1⊃cl)  ⍝
+     nl,←⊂q wsid                        ⍝ acre workspace
+     nl,←⊂'acreload=rumba'              ⍝ Load acre
+     nl,←⊂'acreqlx=',lx                 ⍝ latent expression
+     nl,←⊂'maxws=2g'                    ⍝
+     z←⎕CMD(1↓∊' ',¨nl)''               ⍝
+     ⍝ ⎕←'Waiting 5 seconds for server to start...'
+     ⍝ _←⎕DL 5                          ⍝
+     0                                  ⍝
+ }

@@ -1,0 +1,9 @@
+ GetQueryParameter←{
+     ⍝ ⍺ ←→ Message Space
+     ⍝ ⍵ ←→ Query parameter name
+     ⍝ ← ←→ Query parameter value
+     0=≢⍺.QueryParameters:''
+     n v←↓⍉⍺.QueryParameters
+     i←n⍳⊂,⍵
+     i⊃v,⊂''
+ }

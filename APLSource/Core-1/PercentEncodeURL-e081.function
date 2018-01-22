@@ -1,0 +1,6 @@
+ PercentEncodeURL←{
+     OBSOLETE
+     ⍝ Cant do this!!
+     d←(GenDelims 0),SubDelims 0
+     d PercentEncode ⍵
+ }

@@ -1,0 +1,11 @@
+# Method Property
+
+Applies to:{.prefix}
+
+Request{.info}
+
+This method specifies the HTTP method of the request. It may be GET, HEAD, POST, PUT, DELETE,
+OPTIONS or TRACE.
+
+It defaults to GET.
+

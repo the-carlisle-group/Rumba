@@ -1,0 +1,7 @@
+ ReadBytes←{
+     t←⍵ ⎕NTIE 0
+     n←⎕NSIZE t
+     b←⎕NREAD t 80,n,0
+     _←⎕NUNTIE t
+     b
+ }

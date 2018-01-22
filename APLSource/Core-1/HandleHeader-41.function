@@ -1,0 +1,14 @@
+ HandleHeader←{
+     ⍝ ⍵ ← Message
+     ⍵.Type≢'Request':0
+     s←⍵.Connection.Server
+     s.Paused:Send503ServiceUnavailable ⍵
+     s.OnHeader≡'':0
+     f←s.Context⍎s.OnHeader
+     r←f ⍵
+     e←⍵.Expect100
+     e∧r=0:Send100Continue ⍵
+     r=0:0
+     r.Close←1
+     SendResponse r
+ }

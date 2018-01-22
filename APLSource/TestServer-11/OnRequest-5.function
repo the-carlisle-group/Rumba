@@ -1,0 +1,5 @@
+ OnRequest←{
+     ⍝ ⍵ ←→ Message
+     m←⍵.Method
+     ⍎m,' ⍵'
+ }

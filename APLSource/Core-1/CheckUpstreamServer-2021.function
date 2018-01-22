@@ -1,0 +1,11 @@
+ CheckUpstreamServer←{
+    ⍝ ⍵ ←→ Upstream Server
+                            ⍝ Is the server there?
+                            ⍝ If not, take it out of service
+     c←⍵.ConnectionPool     ⍝ Are all connections still open?
+     _←c Connect¨0          ⍝ Ensure all open
+                            ⍝ If error, could a connection not be in the pool?
+                            ⍝ ie, not replaced with ⎕TPUT
+                            ⍝ Can we check and replace?
+     0
+ }

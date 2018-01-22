@@ -1,0 +1,11 @@
+ InvalidateCacheEntry←{
+     ⍝ ⍺ ←→ Request
+     ⍝ ⍵ ←→ (Upstream) Response
+     ⍝ RFC 7234 4.4. Invalidation
+     ⍺.Safe:0
+     ~⍵.StatusClass∊2 3:0
+     c←⍺.Connection.Server.Cache
+     b←c.CacheMatrix[;c.URI]∊⊂⍺.URI
+     c.CacheMatrix[b/⍳⍴b;c.Invalid]←1
+     0
+ }

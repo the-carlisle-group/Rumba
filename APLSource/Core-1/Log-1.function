@@ -1,0 +1,11 @@
+ Log←{
+     ⍝ ⍵ ←→ Response
+     s←⍵.Message.Connection.Server
+     t←s.LogFileTie
+     l←s.LogHTTP
+     ∨/0=t,l:0
+     f←{⍵ ⎕NAPPEND ⍺}
+     l=1:t f CreateLogEntry ⍵
+     l=2:t f CreateFullLogEntry ⍵
+     0
+ }

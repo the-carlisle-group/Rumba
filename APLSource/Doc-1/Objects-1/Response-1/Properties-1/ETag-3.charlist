@@ -1,0 +1,22 @@
+# ETag
+
+Applies to:{.prefix}
+
+Response{.info}
+
+The ETag property is a simple string that Rumba will use as a value for the ETag header in the
+response. It must be double quoted. For example:
+
+~~~
+r.ETag←'"abc1"'
+~~~
+
+To provide a weak ETag you must double quote the string, and then prefix with W/.For example:
+
+~~~
+r.ETag←'W/"abc1"'
+~~~
+
+If the property is an empty string (the default), Rumba will not include an ETag header in the
+composed response.
+

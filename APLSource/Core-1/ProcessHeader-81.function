@@ -1,0 +1,17 @@
+ ProcessHeader←{
+     ⍝ ⍵ ←→ Header
+     nl←⎕UCS 13 10
+     dlb←{(∨\' '≠⍵)/⍵}
+     p←{(~⍵∊nl)⊂⍵}⍵.Header
+     ⍵.StartLine←↑p
+     h←2↑¨{(~<\⍵=':')⊂⍵}¨1↓p
+     n←ToLower¨(0⊃¨h)~¨' '
+     v←{⌽dlb⌽dlb ⍵}¨1⊃¨h
+     i←n⍳⊂'content-length'
+     l←↑1⊃⎕VFI i⊃v,⊂'0'
+     ⍵.ContentLength←l
+     ⍵.Headers←n{⍺ ⍵}¨v
+     _←ProcessTransferEncoding ⍵
+     _←ProcessResponseHeader ⍵
+     ProcessRequestHeader ⍵
+ }

@@ -1,0 +1,10 @@
+ ComposeHeaders←{
+     ⍝ ⍵ ←→ Request or Response
+     ⍝ ← ←→ Char vec
+     nl←⎕UCS 13 10
+     dh←⍵.DefaultHeaders
+     n v←↓⍉⊃⍵.Headers,dh
+     u←(n⍳n)=⍳⍴n
+     ⍵.ComposedHeaders←(u/n){⍺ ⍵}¨u/v
+     ∊(u/n){nl,⍺,': ',⍵}¨u/v
+ }

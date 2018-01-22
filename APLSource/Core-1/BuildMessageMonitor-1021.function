@@ -1,0 +1,14 @@
+ BuildMessageMonitor←{
+     n←'fmMessageMonitor'
+     9=⎕NC n:⍎n
+     f←⍎n ⎕WC'form'
+     f.Caption←'Rumba Message Monitor'
+     s←⍎'Session'f.⎕WC'Edit'('Style' 'Multi')('HScroll' ¯1)('VScroll' ¯1)
+     s.FCol←255 255 255
+     s.BCol←0 0 0
+     s.FontObj←⎕SE.FontObj
+     s.Posn←0 0
+     s.Size←100 100
+     s.Text←''
+     f
+ }

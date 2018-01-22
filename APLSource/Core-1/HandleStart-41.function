@@ -1,0 +1,6 @@
+ HandleStart←{
+     s←⍺
+     f←⍺.OnStart
+     f≡'':0
+     (⍎f)⍺
+ }

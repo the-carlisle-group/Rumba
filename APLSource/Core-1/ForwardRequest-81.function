@@ -1,0 +1,27 @@
+ ForwardRequest←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ Response
+     r←GetFromCache ⍵
+     r≠0:r
+     _←PrepareForValidation ⍵
+     ur←SendAndReceiveUpstream ⍵
+     r←⍵ RefreshCacheEntry ur
+     r≠0:r
+     _←⍵ InvalidateCacheEntry ur
+     _←⍵ PutInCache ur
+     r←NewResponse ⍵
+     r.Chunked←ur.Chunked
+     r.ContentType←''
+     r.Compress←0
+     r.UTF8←0
+     r.StatusCode←ur.StatusCode
+     r.Headers←ur.Headers
+     r.Content←ur.Content
+     ~ur.Chunked:r
+     r.Content←''
+     _←r PutChunk ur.Content
+     ur.Content≡'':r
+     uc←⍵.UpstreamConnection
+     _←uc ReceiveLoop&r
+     r
+ }

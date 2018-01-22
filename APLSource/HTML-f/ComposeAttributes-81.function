@@ -1,0 +1,10 @@
+ ComposeAttributes←{
+     n←##.Core.ntbs ⍵.⎕NL 2.1
+     k←~(↑¨n)∊⎕A,'_'
+     ~∨/k:''
+     m←k/n
+     qt←{'"',⍵,'"'}
+     v←⍵⍎¨m
+     m←{b←⍵='_' ⋄ r←⍵ ⋄ (b/r)←'-' ⋄ r}¨m
+     ⊃,/m{' ',⍺,'=',qt ⍵}¨v
+ }

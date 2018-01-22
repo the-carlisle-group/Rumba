@@ -1,0 +1,12 @@
+ NewSectionLinks←{
+     ⍺←0
+     c l←⍵
+     s←⍺ NewSection c'links'
+     s.class←'links'
+     n←s.Panel Add'nav'
+     n.class←'sectioncontent'
+     0=≢l:n
+     _←n NewLink¨l
+     s.SectionContent←n
+     s
+ }

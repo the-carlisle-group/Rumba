@@ -1,0 +1,8 @@
+ ErrorInApplication←{
+     ⍝ ⍵ ←→ (Request) Message
+     ⍝ ← ←→ Response
+     s←⍵.Connection.Server
+     e←'Application Error: ',⍕2↑⎕DMX.DM
+     _←s LogRumba e
+     ⍵ Respond 500 1
+ }

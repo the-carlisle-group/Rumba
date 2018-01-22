@@ -1,0 +1,9 @@
+ ArchiveLog←{
+    ⍝ ⍵ ←→ Server
+     lf←⍵.Folder,'\Rumba\Log'
+     an←lf,'\log',(⍕100⊥6↑⎕TS),'.txt'
+     _←⎕FUNTIE an ⎕NRENAME ⍵.LogFileTie
+     fn←lf,'\log.txt'
+     ⍵.LogFileTie←fn ⎕NCREATE 0
+     0
+ }

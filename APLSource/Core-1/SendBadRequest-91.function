@@ -1,0 +1,9 @@
+ SendBadRequest←{
+⍝ ⍵ ←→ Message
+     r←NewResponse ⍵
+     r.Message.Tid←⎕TID
+     r.Close←1
+     r.StatusCode←400
+     r.Content←↑⎕DM
+     SendResponse r
+ }

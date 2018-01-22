@@ -1,0 +1,6 @@
+# Start Function
+
+The Start function starts up the test server in the current process. To start the test server up in
+a new process, which is critical for running automated tests, use the →[##.Admin.StartTestServer]
+method of the Admin namespace.
+

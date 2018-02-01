@@ -1,6 +1,7 @@
  StartProcess←{
      ⍝ ⍵ ←→ ie. '#.Rumba.TestServer.Start'
-     0=#.⎕NC'acre_Rumba':0              ⍝ Not without acre
+     ⍝ THIS WONT WORK - need to redo.....
+
      lx←⍵                               ⍝ Quad LX
      cl←#.GetCommandLineArgs            ⍝ Current command line
      q←{'"',⍵,'"'}                      ⍝ Quote stuff

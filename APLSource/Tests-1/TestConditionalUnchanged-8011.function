@@ -11,7 +11,7 @@
      q2←##.Core.NewRequest 0
      q2.URI←'/ConditionalUnchanged'
      q2.Method←'GET'
-     q2.Headers,←⊂'If-None-Match'(r #.Rumba.Core.GetHeaderValue'ETag')
+     q2.Headers,←⊂'If-None-Match'(r ##.Core.GetHeaderValue'ETag')
      r2←c2 ##.Core.SendAndReceive q2
      r2.StatusCode≠304:1
      r2.ReasonPhrase≢'Not Modified':1
@@ -21,7 +21,7 @@
      q3←##.Core.NewRequest 0
      q3.URI←'/ConditionalUnchanged'
      q3.Method←'GET'
-     q3.Headers,←⊂'If-Match'(r #.Rumba.Core.GetHeaderValue'ETag')
+     q3.Headers,←⊂'If-Match'(r ##.Core.GetHeaderValue'ETag')
      r3←c3 ##.Core.SendAndReceive q3
      r3.StatusCode≠200:1
      '/ConditionalUnchanged'≢GetContent r3:1
@@ -30,7 +30,7 @@
      q4←##.Core.NewRequest 0
      q4.URI←'/ConditionalUnchanged'
      q4.Method←'GET'
-     q4.Headers,←⊂'If-Modified-Since'(r #.Rumba.Core.GetHeaderValue'Last-Modified')
+     q4.Headers,←⊂'If-Modified-Since'(r ##.Core.GetHeaderValue'Last-Modified')
      r4←c4 ##.Core.SendAndReceive q4
      r4.StatusCode≠304:1
      r4.ReasonPhrase≢'Not Modified':1
@@ -40,7 +40,7 @@
      q5←##.Core.NewRequest 0
      q5.URI←'/ConditionalUnchanged'
      q5.Method←'GET'
-     q5.Headers,←⊂'If-Unmodified-Since'(r #.Rumba.Core.GetHeaderValue'Last-Modified')
+     q5.Headers,←⊂'If-Unmodified-Since'(r ##.Core.GetHeaderValue'Last-Modified')
      r5←c5 ##.Core.SendAndReceive q5
      r5.StatusCode≠200:1
      '/ConditionalUnchanged'≢GetContent r5:1

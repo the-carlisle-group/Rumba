@@ -1,7 +1,7 @@
 ﻿:Namespace
     CaseCode←'On'
     Load←''
-    Open←''
+    Open←'Conga' 'AcreTools'
     ProjectSpace←'#.CarlisleGroup.Rumba'
     StartUp←''
 :EndNamespace

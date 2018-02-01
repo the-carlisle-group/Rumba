@@ -1,5 +1,7 @@
  RunTests←{
-     _←StartTestServer 0
+     ⍝ This must be done manually for now
+     ⍝ _←StartTestServer 0
+
      f←'T'##.Tests.⎕NL ¯3
      b←RunTest¨f
      tf←+/b

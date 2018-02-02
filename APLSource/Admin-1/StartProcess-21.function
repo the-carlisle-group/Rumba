@@ -1,5 +1,5 @@
  StartProcess←{
-     ⍝ ⍵ ←→ ie. '#.Rumba.TestServer.Start'
+     ⍝ ⍵ ←→ ie. '#.CarlisleGroup.Rumba.TestServer.Start'
      ⍝ THIS WONT WORK - need to redo.....
 
      lx←⍵                               ⍝ Quad LX

@@ -10,7 +10,5 @@
      r←0 4⍴''
      r⍪←'UserGuide' 'User Guide' 1 0
      r⍪←'Objects' '' 1 0
-     r⍪←'Namespaces' '' 1 0
-     r⍪←'Functions' '' 1 0
      r
  }

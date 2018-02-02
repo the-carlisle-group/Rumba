@@ -1,3 +1,5 @@
- z←StartOrigin8082
- #.S←StartOrigin 8082 'c:\RumbaReverseProxyTest\Origin8082'
- '⍝ #.S ←→ This is Origin Server on port 8082'
+ StartOrigin8082←{
+     #.S←StartOrigin 8082 'c:\RumbaReverseProxyTest\Origin8082'
+     ⎕←'⍝ #.S ←→ This is Origin Server on port 8082'
+     1
+ }

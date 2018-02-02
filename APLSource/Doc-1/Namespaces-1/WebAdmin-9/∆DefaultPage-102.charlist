@@ -1,6 +1,0 @@
-# WebAdmin Namespace
-
-The WebAdmin namespace contains the Rumba Server Administrator website. This is a complete Rumba
-website in its own right. In addition to providing administrative services to a Rumba server,  it
-acts as an example for building your own Rumba website, service or API.
-

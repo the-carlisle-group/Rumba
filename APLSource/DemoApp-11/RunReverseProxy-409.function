@@ -6,6 +6,6 @@
      s.Folder←'c:\ReverseProxyTest\ReverseProxy8080'
      s.LogHTTP←1
      s.DisplayRequests←1
-     _←s #.Rumba.Core.Start 0
+     _←s ##.Core.Start 0
      s
  }

@@ -1,9 +1,11 @@
  StartReverseProxy←{
-     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8081'
-     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8082'
-     _←StartProcess'#.Rumba.TestReverseProxy.StartOrigin8083'
-     _←StartProcess'#.Rumba.TestReverseProxy.Start'
-     ⎕←'Waiting 5 seconds for server to start...'
+     f←#.CarlisleGroup.AcreTools.RunInProcess
+     p←#.CarlisleGroup.Rumba
+     _←p f'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8081'
+     _←p f'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8082'
+     _←p f'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8083'
+     _←p f'#.CarlisleGroup.Rumba.TestReverseProxy.Start'
+     ⎕←'Waiting 5 seconds for servers to start...'
      _←⎕DL 5
      0
  }

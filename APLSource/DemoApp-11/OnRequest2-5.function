@@ -1,7 +1,7 @@
  OnRequest2←{
-     r←#.Rumba.Core.NewResponse ⍵
-     d←#.Rumba.HTML.NewHTMLDocument 0
-     _←d #.Rumba.HTML.Add'h1' 'Hello World!'
+     r←##.Core.NewResponse ⍵
+     d←##.HTML.NewHTMLDocument 0
+     _←d ##.HTML.Add'h1' 'Hello World!'
      r.Content←d
      r
  }

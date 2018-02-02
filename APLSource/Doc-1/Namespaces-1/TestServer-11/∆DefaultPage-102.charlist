@@ -1,7 +1,0 @@
-# TestServer Namespace
-
-The TestServer namespace contains functions that implement a simple Rumba server for testing
-purposes. It also provides an example of how to implement a Rumba server.
-
-This server is used in many of the Rumba tests in the Tests namepace.
-

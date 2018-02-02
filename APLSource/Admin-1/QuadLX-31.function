@@ -3,10 +3,10 @@
      t,←⊂'⍝ ****** Welcome to Rumba ******'
      t,←⊂'⍝ ******************************'
      t,←⊂'⍝ For documentation:'
-     t,←⊂'      #.Rumba.Admin.StartHelp 0'
+     t,←⊂'      #.CarlisleGroup.Rumba.Admin.StartHelp 0'
      t,←⊂'⍝ To start the test server:'
-     t,←⊂'      #.Rumba.TestServer.Start 0'
+     t,←⊂'      #.CarlisleGroup.Rumba.TestServer.Start 0'
      t,←⊂'⍝ To run the tests (do this in a second Rumba/APL session):'
-     t,←⊂'      #.Rumba.Admin.RunTests 0'
+     t,←⊂'      #.CarlisleGroup.Rumba.Admin.RunTests 0'
      ⊃t
  }

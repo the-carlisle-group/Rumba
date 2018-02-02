@@ -1,5 +1,5 @@
  OnRequest←{
-     r←#.Rumba.Core.NewResponse ⍵
+     r←##.Core.NewResponse ⍵
      r.Content←'Hello World'
      r
  }

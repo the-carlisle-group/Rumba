@@ -1,0 +1,18 @@
+ GetCongaDllPath←{
+     ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+     ⍝ will be cahnged with next acre release
+     _←{
+         9=⎕NC'##.AcreConfig':0
+         ##.##.AcreTools.SetAcreConfig''
+     }''
+     ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+
+     path←##.AcreConfig.ProjectFolder,'Files/'
+     bit64←'64'≡¯2↑0⊃#.APLVersion
+     dllPath←path,'conga30',bit64⊃'.dll' '_64.dll'
+     sslPath←path,'conga30ssl',bit64⊃'32.dll' '64.dll'
+     ~⎕NEXISTS path:⎕SIGNAL⊂('EN' 22)('Message'('Rumba Files directory missing: ',path))
+     ~⎕NEXISTS dllPath:⎕SIGNAL⊂('EN' 22)('Message'('Conga dll missing: ',path))
+     ~⎕NEXISTS sslPath:⎕SIGNAL⊂('EN' 22)('Message'('Conga SSL dll missing: ',path))
+     path
+ }

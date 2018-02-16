@@ -4,7 +4,8 @@
      ⍝ ⍵ ←→ 0
      ⍝ ← ←→ 0
      ⍺.State=1:0
-     rc←DRC.Init''
+     path←GetCongaDllPath''
+     ##.DRC←path ##.Conga.Init''
      rc cn←2↑DRC.Clt''⍺.Host ⍺.Port'Text'
      rc≠0:⎕SIGNAL/CongaError rc
      ⍺.Name←cn

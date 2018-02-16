@@ -7,7 +7,8 @@
      v,←⊂'Port's.Port
      v,←⊂'Mode' 'Text'
      v,←⊂'Address's.Address
-     _←1 DRC.Init''
+     path←GetCongaDllPath''
+     ##.DRC←path ##.Conga.Init''
      _←DRC.Close s.Name
      rc sn←2↑DRC.Srv v
      0≠rc:sn ⎕SIGNAL 11

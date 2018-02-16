@@ -1,6 +1,5 @@
  z←Start
  z←{
-
      s←##.Core.NewServer 0
      _←'Strings's.⎕NS''
      s.OnRequest←'OnRequest'

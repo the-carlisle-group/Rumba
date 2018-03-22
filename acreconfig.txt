@@ -3,5 +3,6 @@
     Load←''
     Open←'Conga' 'AcreTools'
     ProjectSpace←'#.CarlisleGroup.Rumba'
+    RuntimeSpaces←'CSS' 'Core' 'HTML' 'QuadVariables' 'WebAdmin'
     StartUp←''
 :EndNamespace

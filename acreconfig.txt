@@ -2,7 +2,7 @@
     CaseCode←'On'
     Load←''
     Open←'Conga' 'AcreTools'
-    ProjectSpace←'#.CarlisleGroup.Rumba'
-    RuntimeSpaces←'CSS' 'Core' 'HTML' 'QuadVariables' 'WebAdmin'
+    ProjectSpace←'#.CarlisleGroup.Rumba'    
+    DevelopmentSpaces←'APLTreeUtils' 'Admin' 'DemoApp' 'Doc' 'TestAsService' 'TestReverseProxy' 'TestServer' 'Tests'
     StartUp←''
 :EndNamespace

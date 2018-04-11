@@ -3,10 +3,12 @@
      ⍝ ← ←→ Tie Number
      f←⍵.Folder
      f≡'':0
+     fixPath←{{'/'=¯1↑⍵:¯1↓⍵ ⋄ ⍵}'/'@('\'=⊢)⍵}
+     f←fixPath f
      _←CreateFolder f
-     rf←CreateFolder f,'\Rumba'
-     lf←CreateFolder rf,'\Log'
-     fn←lf,'\log.txt'
+     rf←CreateFolder f,'/Rumba'
+     lf←CreateFolder rf,'/Log'
+     fn←lf,'/log.txt'
      22::fn ⎕NCREATE 0
      fn ⎕NTIE 0
  }

@@ -1,0 +1,4 @@
+:Class QuadVars
+    ##.⎕IO←0
+    ##.⎕ml←3
+:EndClass

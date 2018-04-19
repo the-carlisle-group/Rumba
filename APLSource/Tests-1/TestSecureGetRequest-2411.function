@@ -1,0 +1,18 @@
+ TestSecureGetRequest←{
+     _←##.Core.InitConga''
+     ##.Conga.X509Cert.LDRC←##.DRC
+     c←##.Core.NewClient 0
+     c.Port←443
+     c.Secure←1
+     c.Host←'www.carlislegroup.com'
+     c.TLSFlag←32
+     c.X509←⎕NEW ##.Conga.X509Cert
+     c.(LogConga LogHTTP LogRumba)←1
+     q←##.Core.NewRequest 0
+     r←c ##.Core.SendAndReceive q
+     r.ContentLength≠≢r.Content:1
+     q.URI←'/Admin'
+     r←c ##.Core.SendAndReceive q
+     r.ContentLength≠≢r.Content:1
+     0
+ }

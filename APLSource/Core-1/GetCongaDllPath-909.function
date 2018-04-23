@@ -1,0 +1,5 @@
+ GetCongaDllPath←{
+     path←##.AcreConfig.ProjectFolder,'Files/'
+     path,←0⊃'.'⎕WG'APLVersion'
+     path
+ }

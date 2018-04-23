@@ -1,0 +1,23 @@
+ z←StartSecure
+ z←{
+     pp←##.AcreConfig.ProjectFolder,'Files/'
+     _←##.⎕EX'DRC'
+     _←##.Core.InitConga''
+     _←##.DRC.SetProp'.' 'RootCertDir'(pp,'TestCertificates/ca')
+     s←##.Core.NewServer 0
+     _←'Strings's.⎕NS''
+     s.OnRequest←'OnRequest'
+     s.OnHeader←'OnRequestHeader'
+     s.Caching←0
+     s.LogHTTP←1
+     s.LogConga←1
+     s.LogRumba←1
+     s.Context←⎕THIS
+     s.DisplayRequests←1
+     s.Port←443
+     s.Secure←1
+     s.X509←↑##.Conga.X509Cert.ReadCertFromFile pp,'TestCertificates/server/server-cert.pem'
+     s.X509.KeyOrigin←'DER'(pp,'TestCertificates/server/server-key.pem')
+     _←s ##.Core.Start 0
+     s
+ }0

@@ -1,13 +1,14 @@
  Start←{
      ⍝ ⍺ ←→ Server
      s←⍺
+     _←InitConga''
      _←s HandleStart 0  ⍝ Handle failure!
      s.Connections←⎕NS''
      v←⊂'Name's.Name
      v,←⊂'Port's.Port
      v,←⊂'Mode' 'Text'
      v,←⊂'Address's.Address
-     _←1 DRC.Init''
+     v←s{0=⍺.Secure:⍵ ⋄ ⍵,('X509'⍺.X509)('SSLValidation'⍺.TLSFlag)}v
      _←DRC.Close s.Name
      rc sn←2↑DRC.Srv v
      0≠rc:sn ⎕SIGNAL 11

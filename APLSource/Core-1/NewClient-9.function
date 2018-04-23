@@ -19,5 +19,9 @@
      c.Class←'Client'
      c.MessageType←'Response'
      c.Folder←''
+     c.Secure←0
+     c.TLSFlag←0
+     c.TLSPriority←'NORMAL:!CTYPE-OPENPGP'
+     c.X509←⍬
      c
  }

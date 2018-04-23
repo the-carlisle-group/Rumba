@@ -1,8 +1,4 @@
  CreateFolder←{
-     c←⎕NS''
-     t←'Scripting.FileSystemObject'
-     _←'c'⎕WC'OLECLIENT't
-     c.FolderExists ⍵:⍵
-     f←c.CreateFolder ⍵
+     ok←1 ⎕MKDIR ⍵
      ⍵
  }

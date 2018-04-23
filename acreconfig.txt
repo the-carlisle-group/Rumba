@@ -1,7 +1,8 @@
 ﻿:Namespace
     CaseCode←'On'
+    KeepHistory←'Off'    
     Load←''
-    Open←'Conga' 'AcreTools'
+    Open←'AcreTools'
     ProjectSpace←'#.CarlisleGroup.Rumba'    
     DevelopmentSpaces←'APLTreeUtils' 'Admin' 'DemoApp' 'Doc' 'TestAsService' 'TestReverseProxy' 'TestServer' 'Tests'
     StartUp←''

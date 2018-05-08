@@ -29,7 +29,7 @@
      s.UpstreamServers←⍬
      s.Stats←InitStats 0
      s.Secure←0
-     s.X509←⍬
+     s.X509←0
      s.TLSFlag←64
      s
  }

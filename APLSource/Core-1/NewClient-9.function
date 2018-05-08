@@ -20,8 +20,8 @@
      c.MessageType←'Response'
      c.Folder←''
      c.Secure←0
-     c.TLSFlag←0
+     c.TLSFlag←32                          ⍝ 32=Do not validate Certs
      c.TLSPriority←'NORMAL:!CTYPE-OPENPGP'
-     c.X509←⍬
+     c.X509←0
      c
  }

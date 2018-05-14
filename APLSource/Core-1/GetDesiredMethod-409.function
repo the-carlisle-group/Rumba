@@ -1,5 +1,6 @@
  GetDesiredMethod←{
      ~⍵.BrowserPost:⍵.Method
+     0=⍵.ContentLength:⍵.Method
      m←⍵ GetFormValue'httpmethod'
      m≡'':⍵.Method
      m

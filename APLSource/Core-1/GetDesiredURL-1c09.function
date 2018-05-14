@@ -1,5 +1,6 @@
  GetDesiredURL←{
      ~⍵.BrowserPost:⍵.URI
+     0=⍵.ContentLength:⍵.URI
      u1←⍵ GetFormValue'urlpart1'
      u1≡'':⍵.URI
      u2←⍵ GetFormValue'urlpart2'

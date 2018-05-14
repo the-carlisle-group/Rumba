@@ -3,7 +3,7 @@
      pp←##.AcreConfig.ProjectFolder,'Files/'
      _←##.⎕EX'DRC'
      _←##.Core.InitConga''
-     _←##.DRC.SetProp'.' 'RootCertDir'(pp,'TestCertificates/ca')
+ ⍝    _←##.DRC.SetProp'.' 'RootCertDir'(pp,'TestCertificates/ca')
      s←##.Core.NewServer 0
      _←'Strings's.⎕NS''
      s.OnRequest←'OnRequest'

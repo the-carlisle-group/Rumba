@@ -3,6 +3,7 @@
     ⍝ ⍵ ←→ Response
      ~⍺.LogHTTPToSession:0
      m←⍵.Message
-     ⎕←m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.URI
+     ts←#.CarlisleGroup.Rumba.Core.QTSToHTTPDate ⎕TS
+     ⎕←ts,': ',m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.URI
      0
  }

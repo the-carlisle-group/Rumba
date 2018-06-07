@@ -6,27 +6,18 @@ Getting current file RecordSet.
 Starting script: 20180601100640
 Starting wizard
 Getting current file RecordSet.
-Current File path: C:\Users\Norbert Jurkiewicz\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\AUFNB11N\CORRESPONDENT Update.cas
 
 Starting script: 20180601100714
 Starting wizard
 Getting current file RecordSet.
-Current File path: C:\Users\Norbert Jurkiewicz\Desktop\CORRESPONDENT Update.cas
 
 Starting script: 20180601100809
 Starting Wizard
 Getting current file RecordSet.
-Current File path: C:\Users\Norbert Jurkiewicz\Desktop\CORRESPONDENT Update.cas
-Folder Directory: F:\SM\Portfolio Monitoring\Flow Pipeline Management\LOCK REPORT_STAGING
 
 Starting script: 20180601101152
 Starting Wizard
 Getting current file RecordSet.
-Current File path: C:\Users\Norbert Jurkiewicz\Desktop\CORRESPONDENT Update.cas
-Folder Directory: F:\SM\Portfolio Monitoring\Flow Pipeline Management\LOCK REPORT_STAGING
-
 Starting script: 20180601101254
 Starting Wizard
 Getting current file RecordSet.
-Current File path: C:\Users\Norbert Jurkiewicz\Desktop\CORRESPONDENT Update.cas
-Folder Directory: F:\SM\Portfolio Monitoring\Flow Pipeline Management\LOCK REPORT_STAGING

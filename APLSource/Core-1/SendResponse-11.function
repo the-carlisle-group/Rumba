@@ -1,5 +1,6 @@
  SendResponse←{
      ⍝ ⍵ ← Response
+     ⍵.IsFile:SendFile ⍵
      m←⍵.Message
      c←m.Connection
      s←c.Server

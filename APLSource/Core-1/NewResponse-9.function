@@ -15,5 +15,7 @@
      r.Headers←''
      r.Compress←1
      r.UTF8←1
+     r.IsFile←0
+     r.FilePath←''
      r
  }

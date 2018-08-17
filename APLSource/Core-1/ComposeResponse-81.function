@@ -3,7 +3,6 @@
      ⍝ ← ←→ Text
      m←⍵.Message
      s←m.Connection.Server
-     nl←CRLF
      _←SetContentLength ⍵
      _←DefaultResponseHeaders ⍵
      h←ComposeHeaders ⍵
@@ -13,5 +12,5 @@
      t,←' ',rp
      ⍵.ComposedStartLine←t
      nh←~m.HeadRequest
-     t,h,nl,nl,nh/⍵.Content
+     t,h,CrLf,CrLf,nh/⍵.Content
  }

@@ -1,6 +1,6 @@
  ReadCommonLogFormat←{
      b←ReadBytes ⍵
-     v←(~b∊CRLF)⊂b
+     v←(~b∊CrLf)⊂b
      k←~(6↑¨v)∊'Conga:' 'Rumba:'
      v←k/v
      ⊃{(~(⍵=' ')∧~≠\⍵∊'[]"')⊂⍵}¨v

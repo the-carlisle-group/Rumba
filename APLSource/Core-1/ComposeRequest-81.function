@@ -1,14 +1,13 @@
  ComposeRequest←{
      ⍝ ⍺ ←→ Client
      ⍝ ⍵ ←→ Request
-     nl←CRLF
      t←⍵.Method
      t,←' ',EncodeBlanks ⍵.URI
      t,←' ',⍺.Version{⍵≡'':⍺ ⋄ ⍵}⍵.Version
      ⍵.CompressedContent←(EncodeGzip⍣⍵.Compress)⍵.Content
      _←⍺ DefaultRequestHeaders ⍵
      h←ComposeHeaders ⍵
-     rh←t,h,nl,nl
+     rh←t,h,CrLf,CrLf
      rb←⍵.CompressedContent
      rh rb
  }

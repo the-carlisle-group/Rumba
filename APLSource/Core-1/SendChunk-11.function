@@ -1,13 +1,12 @@
  SendChunk←{
      ⍝ ⍵ ←→ Message
      ⍝ ← ←→ 0
-     nl←CRLF
      c←⊃⎕TGET ⍵.Tid
      t←⎕UCS'UTF-8'⎕UCS c
      s←≢t
      hs←{(~∧\'0'=⍵)/⍵}↑ToHexadecimal s
      hs←(s=0)⊃hs'0'
-     d←hs,nl,t,(s≠0)/nl
+     d←hs,CrLf,t,(s≠0)/CrLf
      c←⍵.Connection
      _←c ServerSend d 0
      s=0:0

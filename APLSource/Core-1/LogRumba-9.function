@@ -5,7 +5,7 @@
      t←⍺.LogFileTie
      ~⍺.LogRumba∧t<0:0
      ld←LogDate QTS
-     d←'Rumba: ',ld,' ',⍵,CRLF
+     d←'Rumba: ',ld,' ',⍵,CrLf
      u←⎕UCS'UTF-8'⎕UCS d
      _←u ⎕NAPPEND t
      0

@@ -1,8 +1,7 @@
  ProcessTrailer←{
      ⍝ ⍵ ←→ Message
-     nl←CRLF
      dlb←{(∨\' '≠⍵)/⍵}
-     p←{(~⍵∊nl)⊂⍵}⍵.Trailer
+     p←{(~⍵∊CrLf)⊂⍵}⍵.Trailer
      t←2↑¨{(~<\⍵=':')⊂⍵}¨p
      n←ToLower¨(0⊃¨t)~¨' '
      v←{⌽dlb⌽dlb ⍵}¨1⊃¨t

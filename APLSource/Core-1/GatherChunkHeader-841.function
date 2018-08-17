@@ -3,8 +3,7 @@
      ⍵.ChunkHeaderComplete:⍵
      d←⍵.Stream
      0=≢d:⍵
-     nl←CRLF
-     b←nl⍷d
+     b←CrLf⍷d
      ⍵.ChunkHeaderComplete←1∊b
      ~⍵.ChunkHeaderComplete:⍵
      h r←(1++\<\b)⊂d

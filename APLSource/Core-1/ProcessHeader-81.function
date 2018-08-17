@@ -1,8 +1,7 @@
  ProcessHeader←{
      ⍝ ⍵ ←→ Header
-     nl←CRLF
      dlb←{(∨\' '≠⍵)/⍵}
-     p←{(~⍵∊nl)⊂⍵}⍵.Header
+     p←{(~⍵∊CrLf)⊂⍵}⍵.Header
      ⍵.StartLine←↑p
      h←2↑¨{(~<\⍵=':')⊂⍵}¨1↓p
      n←ToLower¨(0⊃¨h)~¨' '

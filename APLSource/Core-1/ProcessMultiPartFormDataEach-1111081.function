@@ -1,12 +1,11 @@
  ProcessMultiPartFormDataEach←{
      ⍝ ⍵ ←→ A boundary section
      ⍝ ← ←→ Namespace of goodies
-     nl←CRLF
-     k←4⍴nl
+     k←4⍴CrLf
      j←(k⍷⍵)⍳1
      t←j↑⍵
      dlb←{(∨\' '≠⍵)/⍵}
-     p←{(~⍵∊nl)⊂⍵}t     ⍝ Not exactly right should look for crlf together!
+     p←{(~⍵∊CrLf)⊂⍵}t     ⍝ Not exactly right should look for crlf together!
      h←2↑¨{(~<\⍵=':')⊂⍵}¨p
      n←ToLower¨(0⊃¨h)~¨' '
      v←{⌽dlb⌽dlb ⍵}¨1⊃¨h

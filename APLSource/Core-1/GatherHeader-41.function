@@ -2,8 +2,7 @@
      ⍝ ⍵ ←→ Message
      ⍵.HeaderComplete:⍵
      d←⍵.Stream
-     nl←CRLF
-     b←(nl,nl)⍷d
+     b←(CrLf,CrLf)⍷d
      ⍵.HeaderComplete←1∊b
      ~⍵.HeaderComplete:⍵
      h r←(1++\<\b)⊂d

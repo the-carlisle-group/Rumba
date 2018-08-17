@@ -1,8 +1,7 @@
  CreateFullLogEntry←{
      ⍝ ⍵ ←→ Response
      m←⍵.Message
-     nl←CRLF
-     q←m.Header,nl,nl,m.Content
+     q←m.Header,CrLf,CrLf,m.Content
      r←ComposeResponse ⍵
-     q,nl,nl,r,nl
+     q,CrLf,CrLf,r,CrLf
  }

@@ -7,7 +7,6 @@
      s←c.Server
      n←s.Name,'.',c.Name
      ⍵.ContentLength←2 ⎕NINFO ⍵.FilePath
-     nl←CRLF
 
      _←DefaultResponseHeaders ⍵
      h←ComposeHeaders ⍵
@@ -18,7 +17,7 @@
      t,←' ',rp
      ⍵.ComposedStartLine←t
      nh←~m.HeadRequest
-     res←t,h,nl,nl
+     res←t,h,CrLf,CrLf
 
      _←DRC.Send n(res ⍵.FilePath)⍵.Close
      c.LastSendTime←QTS

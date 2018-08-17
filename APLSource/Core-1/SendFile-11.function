@@ -7,7 +7,7 @@
      s←c.Server
      n←s.Name,'.',c.Name
      ⍵.ContentLength←2 ⎕NINFO ⍵.FilePath
-     nl←⎕UCS 13 10
+     nl←CRLF
 
      _←DefaultResponseHeaders ⍵
      h←ComposeHeaders ⍵

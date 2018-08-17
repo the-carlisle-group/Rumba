@@ -1,7 +1,7 @@
  SendChunk←{
      ⍝ ⍵ ←→ Message
      ⍝ ← ←→ 0
-     nl←⎕UCS 13 10
+     nl←CRLF
      c←⊃⎕TGET ⍵.Tid
      t←⎕UCS'UTF-8'⎕UCS c
      s←≢t

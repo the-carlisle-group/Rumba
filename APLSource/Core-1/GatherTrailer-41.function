@@ -1,5 +1,5 @@
  GatherTrailer←{
-     nl←⎕UCS 13 10
+     nl←CRLF
      d←⍵.Stream
      nt←nl≡2↑d
      b←(nl,nl)⍷d

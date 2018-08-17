@@ -1,7 +1,13 @@
  FilenameToContentType←{
-     x←↑⌽('.'≠⍵)⊂⍵
-     x≡'js':'text/javascript; charset=utf-8'
-     x≡'css':'text/css; charset=utf-8'
-     x≡'txt':'text/plain; charset=utf-8'
-     ''
+     6::{
+         fp←##.AcreConfig.ProjectFolder,'Assets/mime.csv'
+         data←(0⊃⎕CSV fp ⍬ ⍬ 1)[;1 2]
+         ⎕THIS._getMimeTypeIndex←data[;1]∘⍳
+         ⎕THIS._MimeTypes←data[;0]
+         FilenameToContentType ⍵
+     }⍵
+     x←⊆(819⌶)2⊃⎕NPARTS ⍵
+     index←_getMimeTypeIndex x
+     index=≢_MimeTypes:'text/plain'
+     index⊃_MimeTypes
  }

@@ -11,6 +11,6 @@
      t,←' ',⍕⍵.StatusCode                ⍝ Status code
      nh←~m.HeadRequest
      t,←' ',⍕nh×⍵.ContentLength          ⍝ Size
-     t,←⎕UCS 13 10
+     t,←CRLF
      t
  }

@@ -1,7 +1,7 @@
  ComposeRequest←{
      ⍝ ⍺ ←→ Client
      ⍝ ⍵ ←→ Request
-     nl←⎕UCS 13 10
+     nl←CRLF
      t←⍵.Method
      t,←' ',EncodeBlanks ⍵.URI
      t,←' ',⍺.Version{⍵≡'':⍺ ⋄ ⍵}⍵.Version

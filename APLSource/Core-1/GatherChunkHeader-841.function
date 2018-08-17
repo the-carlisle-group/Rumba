@@ -3,7 +3,7 @@
      ⍵.ChunkHeaderComplete:⍵
      d←⍵.Stream
      0=≢d:⍵
-     nl←⎕UCS 13 10
+     nl←CRLF
      b←nl⍷d
      ⍵.ChunkHeaderComplete←1∊b
      ~⍵.ChunkHeaderComplete:⍵

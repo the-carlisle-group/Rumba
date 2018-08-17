@@ -1,7 +1,7 @@
  ProcessMultiPartFormDataEach←{
      ⍝ ⍵ ←→ A boundary section
      ⍝ ← ←→ Namespace of goodies
-     nl←⎕UCS 13 10
+     nl←CRLF
      k←4⍴nl
      j←(k⍷⍵)⍳1
      t←j↑⍵

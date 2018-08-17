@@ -2,7 +2,7 @@
      ⍝ ⍵ ←→ Message
      ⍵.HeaderComplete:⍵
      d←⍵.Stream
-     nl←⎕UCS 13 10
+     nl←CRLF
      b←(nl,nl)⍷d
      ⍵.HeaderComplete←1∊b
      ~⍵.HeaderComplete:⍵

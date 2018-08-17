@@ -1,7 +1,7 @@
  ComposeHeaders←{
      ⍝ ⍵ ←→ Request or Response
      ⍝ ← ←→ Char vec
-     nl←⎕UCS 13 10
+     nl←CRLF
      dh←⍵.DefaultHeaders
      n v←↓⍉⊃⍵.Headers,dh
      u←(n⍳n)=⍳⍴n

@@ -3,7 +3,7 @@
      ⍝ ← ←→ Text
      m←⍵.Message
      s←m.Connection.Server
-     nl←⎕UCS 13 10
+     nl←CRLF
      _←SetContentLength ⍵
      _←DefaultResponseHeaders ⍵
      h←ComposeHeaders ⍵

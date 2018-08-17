@@ -4,7 +4,7 @@
      rc←↑⍵
      rc=100:''
      t←'Conga: '
-     nl←⎕UCS 13 10
+     nl←CRLF
      (rc≠0)∨(4≠≢⍵):t,(⍕⍵),nl
      d←3⊃⍵
      1119≡d:t,(⍕⍵),nl

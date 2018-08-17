@@ -5,6 +5,6 @@
      c←⍺.Connection
      _←c ServerSend h 0
      _←SendChunk ⍺
-     nl←⎕UCS 13 10
+     nl←CRLF
      c ServerSend nl ⍵.Close
  }

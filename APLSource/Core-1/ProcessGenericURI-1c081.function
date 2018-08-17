@@ -15,6 +15,7 @@
      ha←'//'≡2↑hp
      a p←{~ha:''hp ⋄ f(1+∨\'/'=⍵)⊂⍵}2↓hp
      s.(Authority Path)←a p
+     s.Path←(-('/'=¯1↑s.Path))↓s.Path   ⍝ drop trailing slash
      m←(1+a⍳'@')×'@'∊a
      s.UserInfo←(m-1)↑a
      s.(Host Port)←f{(':'≠⍵)⊂⍵}m↓a

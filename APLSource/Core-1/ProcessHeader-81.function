@@ -1,6 +1,6 @@
  ProcessHeader←{
      ⍝ ⍵ ←→ Header
-     nl←⎕UCS 13 10
+     nl←CRLF
      dlb←{(∨\' '≠⍵)/⍵}
      p←{(~⍵∊nl)⊂⍵}⍵.Header
      ⍵.StartLine←↑p

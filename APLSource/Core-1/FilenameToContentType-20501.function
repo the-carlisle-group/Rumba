@@ -2,7 +2,7 @@
      6::{
          fp←##.AcreConfig.ProjectFolder,'Assets/mime.csv'
          data←(0⊃⎕CSV fp ⍬ ⍬ 1)[;1 2]
-         ⎕THIS._getMimeTypeIndex←data[;1]∘⍳
+         ⎕THIS._getMimeTypeIndex←data[;1]∘⍳  ⍝ create hashed lookup table
          ⎕THIS._MimeTypes←data[;0]
          FilenameToContentType ⍵
      }⍵

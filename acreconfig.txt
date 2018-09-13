@@ -6,4 +6,5 @@
     ProjectSpace←'#.CarlisleGroup.Rumba'    
     DevelopmentSpaces←'APLTreeUtils' 'Admin' 'DemoApp' 'Doc' 'TestAsService' 'TestReverseProxy' 'TestServer' 'Tests'
     StartUp←''
+    Version←'1.0.0'
 :EndNamespace

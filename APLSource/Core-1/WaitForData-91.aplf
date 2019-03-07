@@ -1,4 +1,5 @@
  WaitForData x;_
+ ⎕TNAME←'Rumba Wait For Data'
  x.Tid←⎕TID
  ⍝ x ←→ Connection
  :Trap x.Server.Trap/0

@@ -5,6 +5,6 @@
      q.URI←'/HelloWorld'
      r←c ##.Core.SendAndReceive q
      r.Content≢'':1
-     r.ContentLength≠31:1 ⍝ Compressed Length!
+     r.ContentLength≠≢q.URI:1 ⍝ Compressed Length!
      0
  }

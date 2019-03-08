@@ -15,8 +15,8 @@
          ⍙naedfns←⍬
          dllname←'I4 "',LibPath,filename,'"|'
 
-         ⍙naedfns,←⊂'⍙CallR'⎕NA dllname,'Call& <0T1 <0T1 =Z <U',⍕4×1+bit64   ⍝ No left arg
-         ⍙naedfns,←⊂'⍙CallRL'⎕NA dllname,'Call& <0T1 <0T1 =Z <Z'             ⍝ Left input
+         ⍙naedfns,←⊂'⍙CallR'⎕NA dllname,'Call <0T1 <0T1 =Z <U',⍕4×1+bit64   ⍝ No left arg
+         ⍙naedfns,←⊂'⍙CallRL'⎕NA dllname,'Call <0T1 <0T1 =Z <Z'             ⍝ Left input
          ⍙naedfns,←⊂'⍙CallRnt'⎕NA dllname,'Call <0T1 <0T1 =Z <U',⍕4×1+bit64  ⍝ No left arg
          ⍙naedfns,←⊂'⍙CallRLR'⎕NA dllname,'Call1& <0T1 <0T1 =Z >Z'           ⍝ Left output
          ⍙naedfns,←⊂'KickStart'⎕NA dllname,'KickStart& <0T1'

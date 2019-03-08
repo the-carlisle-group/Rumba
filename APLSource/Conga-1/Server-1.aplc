@@ -99,7 +99,7 @@
                   :Case 'Error'
                       (⍎obj).onError obj data
                       Remove obj  
-                  :Case 'Close'
+                  :Case 'Closed'
                       (⍎obj).onClose obj data
                       Remove obj  
                   :Case 'Receive'

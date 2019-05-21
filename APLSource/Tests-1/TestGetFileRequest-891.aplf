@@ -4,6 +4,8 @@
      q.URI←'/FileDownload'
      r←c ##.Core.SendAndReceive q
      r.ContentType.ContentType≢'text/plain':1
-     r.ContentLength≠1293:1
+     path←##.AcreConfig.ProjectFolder,'Assets/Developement/samplefile.txt'
+     ~⎕NEXISTS path:1
+     r.ContentLength≠2 ⎕NINFO path:1
      0
  }

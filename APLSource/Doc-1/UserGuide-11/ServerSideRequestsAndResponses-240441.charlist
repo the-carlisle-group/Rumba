@@ -6,12 +6,12 @@ The NewServer function creates a new server:
       s←NewServer 0
 ~~~
 
-The server may be started up at this point, and will respond to adminstrative requests, but usually
+The server may be started up at this point, and will respond to administrative requests, but usually
 some properties will be set to configure its operation. For example, the Folder property specifies
 where files and subfolders will be stored:
 
 ~~~
-      s.Folder←'c:\MyRumbaServer'
+      s.Folder←'c:MyRumbaServer'
 ~~~
 
 The LogHTTP property can turn logging on:
@@ -33,7 +33,7 @@ The Start method starts the Server listening on the default port:
 ~~~
 
 Implementing a website or HTTP API in Rumba requires writing the OnRequest callback function. This
-function must return a Rumba Response object. Rumba suppplies the right argument which is the
+function must return a Rumba Response object. Rumba supplies the right argument which is the
 request message. The simplest implementation of this function might be:
 
 ~~~
@@ -64,8 +64,8 @@ appropriate response. Consider a simple web site which responds only to a GET on
      }
 ~~~
 
-Any non-trivial website or API will generally perform a detailed analyis of the request message,
-and the OnRequest callback will need to delegate work to a heirarchy of sub-functions in order to
+Any non-trivial website or API will generally perform a detailed analysis of the request message,
+and the OnRequest callback will need to delegate work to a hierarchy of sub-functions in order to
 stay manageable and maintainable. It is useful to first break out requests by method type:
 
 ~~~

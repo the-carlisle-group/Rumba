@@ -8,7 +8,7 @@ and receiving HTTP messages on both the client and server sides. It is designed 
 programmer to easily expose a Dyalog application via an HTTP API.
 
 Rumba can be an origin server or function as an edge server or as a gateway, or reverse proxy.
-As an origin server, Rumber responds to HTTP requests. As an edge server, Rumba acts as 
+As an origin server, Rumba responds to HTTP requests. As an edge server, Rumba acts as 
 cache, and forwards requests to an origin server. As a reverse proxy, or load balancer,
 Rumba also acts as a cache, and forwards requests to an array of upstream servers. 
 In addition, this provides for active replication. 

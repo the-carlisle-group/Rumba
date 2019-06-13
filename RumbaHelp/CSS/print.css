@@ -1,12 +1,12 @@
 /* -------------------------------------------------- */
-/* This CSS file is part of the Markdown2Help project */
+/* This CSS file is part of the Laguntza project */
 /* Author: Kai Jaeger * APL Team Ltd                  */
-/* Project page: http://aplwiki.com/Markdown2Help     */
-/* Version 1.0 * 2014-08-14                           */
+/* Project page: http://aplwiki.com/Laguntza     */
+/* Version 1.1 * 2017-01-04                           */
 /*                                                    */
 /* If you know what you are doing you may take a      */
 /* copy of this file, change it and use it with your  */
-/* own help project (set printCssFilename for this)   */
+/* own help project (set cssPrintFilename for this)   */
 /* -------------------------------------------------- */
 
 html {
@@ -61,19 +61,18 @@ font-weight: 600;
 pre {
 padding: 5pt 2pt;
 margin: 5pt!important;
-white-space: pre-wrap;
+white-space: pre;
 border: 1pt silver solid;
 font-family: "APL385 Unicode", monospace;
 font-weight: 800;
 display: block;
 }
 pre > code {
-font-family: "APL385 Unicode", monospace;
-font-weight: 800;
 line-height: 1.2;
 margin: 0;
 padding: 0 3pt;
 display: block;
+white-space: inherit;
 }
 ul, ol pre {
 margin: 10pt 0!important;
@@ -102,6 +101,12 @@ border: solid 1pt silver;
 border-collapse: collapse;
 page-break-inside:avoid;
 }
+li > table , img, blockquote {
+margin-left:0;
+}
+li > p > img {
+margin-left:0;
+}
 td {
 padding: .5em 1em;
 border: solid 1pt silver;
@@ -128,6 +133,16 @@ margin: 1.5em 10pt;
 }
 dt {
 font-weight: bold;
-}
 margin-top: 1em;
 margin-bottom: 0.5em;
+}
+ul#mainmenu {
+display: none;
+}
+table#table_index {
+page-break-inside: auto;
+font-size: 9pt;
+}
+table#table_index th, td {
+padding: 2pt 4pt;
+}

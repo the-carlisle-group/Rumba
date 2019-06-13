@@ -1,6 +1,16 @@
  InitConga←{
-     9=⎕NC'##.DRC':0
-     path←GetCongaDllPath''
+⍝ ⍵ might be empty or a path pointing to a folder that hosts the Conga DLLs needed by Rumba.
+⍝ If it is empty it is assumed that the workspace holds Rumba as an acre project.
+⍝ If this does not suit your needs you may specify the folder in question as ⍵. More often
+⍝ than not this will be the current directory; specify .\ for that.
+⍝ Optional ⍺ (default=0) can be used to enforce Conga to be initialised.
+⍝ Normally this is done only once: when `Rumba.DRC` exists the process is not repeated.
+⍝ By specifying a 1 as ⍺ you can enforce that.
+     ⍺←0
+     enforceCongaInit←⍺
+     ~(⊂enforceCongaInit)∊0 1:'Invalid ⍺: must be boolean'⎕SIGNAL 11
+     (enforceCongaInit=0)∧9=⎕NC'##.DRC':0
+     path←GetCongaDllPath ⍵
      ##.DRC←path ##.Conga.Init''
      ##.Conga.X509Cert.LDRC←##.DRC
      0

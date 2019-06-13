@@ -1,0 +1,9 @@
+Rumba is a lightweight implementation of the HTTP protocol.
+
+It can act as both, a client and a server.
+
+In order to get help on Rumba run:
+
+```
+      Admin.StartHelp ⍬ 
+```

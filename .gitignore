@@ -1,4 +1,6 @@
+.gitignore
 .acre/
 dist/
 Assets/Runtime/LocallyDerived/
 RumbaHelp/Markdown2Help.dcf
+Make/

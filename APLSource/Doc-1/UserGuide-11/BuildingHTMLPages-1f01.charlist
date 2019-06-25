@@ -3,7 +3,7 @@
 Rumba provides two objects for building web pages: HTMLDocument and HTMLElement. In addition there
 are various functions and methods for manipulating HTML documents and for adding common widgets
 (like an input and label combination) to a page. These widgets are simply functions that call
-HTMLElement, set various attributes, in order to build up commonly occuring patterns in web page
+HTMLElement, set various attributes, in order to build up commonly occurring patterns in web page
 design. All HTML related functions are in the Rumba.HTML namespace.
 
 To create a document, use the NewHTMLDocument function:
@@ -49,7 +49,7 @@ A stand-alone element may be added to the document or other element using the Ad
 ~~~
 
 The NewHTMLElement function can create a new element and add it to an existing element or document
-by poviding a left argument:
+by providing a left argument:
 
 ~~~
       p4←d NewHTMLElement 'p' 'This is a paragraph.'
@@ -77,7 +77,7 @@ example the NewLink function takes a URL and a description for a right argument:
 ~~~
 
 The result a widget function is the widget's top-level element. For example, the NewTextField
-function returns a div that encapulates an input and a label. Widgets will often set pointers to
+function returns a div that encapsulates an input and a label. Widgets will often set pointers to
 elements of interest, insulating the programmer from changes. The result of NewTextField has an
 Input property which points to the input element of the widget.
 

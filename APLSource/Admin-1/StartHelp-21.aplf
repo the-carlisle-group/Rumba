@@ -1,8 +1,8 @@
  StartHelp←{
      _←LoadHelp 0
      hc←'Rumba Help'
-     hs←#.Markdown2Help
-     p←#.Markdown2Help.CreateParms ⍬
+     hs←#.Laguntza
+     p←#.Laguntza.CreateParms ⍬
      p.helpAbout←'Rumba Help System'
      p.helpCaption←hc
      p.regPath←''

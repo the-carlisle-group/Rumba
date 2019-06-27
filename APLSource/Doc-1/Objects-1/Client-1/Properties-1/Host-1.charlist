@@ -7,5 +7,4 @@ Client{.info}
 The Host property specifies the host that the client will connect to. It needs to be specified before the
 client connects to the server. Once the connection is made, the Host property is read-only.
 
-If the property is not set Rumba will extract the host name from the URL.
-
+This property defaults to localhost.

@@ -4,8 +4,8 @@
     ⍝ ← ←→ Client
      c←⎕NS''
      c.Version←'HTTP/1.1'
-     c.Host←'localhost'
-     c.Port←8080
+     c.Host←''
+     c.Port←443
      c.CongaTimeout←5000 ⍝ Milli-seconds
      c.ClientTimeout←30  ⍝ Seconds
      c.Name←''
@@ -19,7 +19,7 @@
      c.Class←'Client'
      c.MessageType←'Response'
      c.Folder←''
-     c.Secure←0
+     c.Secure←1
      c.TLSFlag←32                          ⍝ 32=Do not validate Certs
      c.TLSPriority←'NORMAL:!CTYPE-OPENPGP'
      c.X509←0

@@ -1,5 +1,6 @@
  ClientLoop←{
      ⍝ ⍵ ←→ Connection Space
+     ⎕TNAME←'Rumba Client Loop'
      _←ClientWait ⍵
      ⍵.State≠1:z←0
      ∇ ⍵

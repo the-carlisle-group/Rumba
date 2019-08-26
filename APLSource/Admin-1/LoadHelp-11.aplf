@@ -1,7 +1,7 @@
  LoadHelp←{
      9=⎕NC'#.Laguntza':0
      wf←ProjectFolder 0
-     rf←wf,'Files\AdminResources'
+     rf←wf,'\Assets\Runtime\AdminResources'
      ws←rf,'\Laguntza.dws'
      _←{6::0 ⋄ '#.Laguntza'#.⎕CY ws}0
      _←{0::0 ⋄ '#.APLTreeUtils'#.⎕CY ws}0

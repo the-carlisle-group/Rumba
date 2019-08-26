@@ -6,7 +6,7 @@
      p.helpAbout←'Rumba Help System'
      p.helpCaption←hc
      p.regPath←''
-     p.folderName←(ProjectFolder 0),'RumbaHelp'
+     p.folderName←(ProjectFolder 0),'Assets/Runtime/LocallyDerived/RumbaHelp'
      p.source←##.Doc
      hf←1 hs.New p
      1:r←hf  ⍝ Make it shy

@@ -8,10 +8,7 @@
 ⍝ ⎕signal/CongaError rc
      rc←⍵
      se←345     ⍝ Error to be signalled
-     row←##.Conga.ErrorTable[;0]⍳rc
-     row=↑⍴##.Conga.ErrorTable:'Unknown Conga Error'se
-     (abbr long)←##.Conga.ErrorTable[row;1 2]
+     (abbr long)←(##.DRC.Error rc)[1 2]
      0∊⍴long:abbr se
-⍝     (3↓¯3↓long)se
      long se
  }

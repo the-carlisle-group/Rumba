@@ -1,3 +1,0 @@
-:Namespace QuadVars
-    ##.(⎕ml ⎕io)←1
-:EndNamespace

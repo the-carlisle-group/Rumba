@@ -1,5 +1,6 @@
  GetCongaDllPath←{
      path←##.AcreConfig.ProjectFolder,'Assets/Runtime/'
      path,←0⊃'.'⎕WG'APLVersion'
+     ~⎕NEXISTS path:('Folder not accessible: ',path)⎕SIGNAL 22
      path
  }

@@ -1,6 +1,6 @@
  InitConga←{
      9=⎕NC'##.DRC':0
-     vm←'DyalogV',4↑1⊃#.APLVersion
+     vm←'DyalogV',4↑1⊃GetAPLVersion''
      cp←##.AcreConfig.ProjectFolder,'Assets/Runtime/',vm,'/conga.dws'
      0=⎕NEXISTS cp:('Conga.dws is not accessible: ',cp)⎕SIGNAL 11
      _←##.⎕CY cp

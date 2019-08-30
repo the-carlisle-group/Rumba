@@ -1,0 +1,3 @@
+ GetAPLVersion←{
+     '#'⎕WG'APLVersion'
+ }

@@ -1,10 +1,8 @@
  TestSecureGetRequest←{
      _←##.Core.InitConga''
-     ##.Conga.X509Cert.LDRC←##.DRC
      c←##.Core.NewClient 0
      c.Port←443
      c.Secure←1
-     c.X509←⎕NEW ##.Conga.X509Cert
      c.Host←'www.carlislegroup.com'
      q←##.Core.NewRequest''
      r←c ##.Core.SendAndReceive q

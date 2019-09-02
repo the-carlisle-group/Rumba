@@ -1,7 +1,7 @@
  RunTests←{
      ⍝ This must be done manually for now
      ⍝ _←StartTestServer 0
-
+     _←##.Core.InitConga''
      f←'T'##.Tests.⎕NL ¯3
      b←RunTest¨f
      tf←+/b

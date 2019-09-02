@@ -1,6 +1,8 @@
  z←Start
  z←{
+     _←##.Core.InitConga''
      s←##.Core.NewServer 0
+     s.Port←443
      _←'Strings's.⎕NS''
      s.OnRequest←'OnRequest'
      s.OnHeader←'OnRequestHeader'
@@ -9,6 +11,12 @@
      s.LogHTTP←1
      s.LogConga←1
      s.LogRumba←1
+     s.LogHTTPToSession←1
+     s.Secure←1
+     x509←⎕NEW ##.DRC.X509Cert
+     tf←##.AcreConfig.ProjectFolder,'Assets/Runtime/TestCertificates/server/'
+     s.X509←0⊃x509.ReadCertFromFile tf,'localhost-cert.pem'
+     s.X509.KeyOrigin←'DER'(tf,'localhost-key.pem')
      s.Context←⎕THIS
      _←s ##.Core.Start 0
      s

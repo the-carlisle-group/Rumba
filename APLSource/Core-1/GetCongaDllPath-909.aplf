@@ -1,6 +1,5 @@
  GetCongaDllPath←{
-     vm←'DyalogV',4↑1⊃GetAPLVersion''
-     path←##.AcreConfig.ProjectFolder,'Assets/Runtime/',vm
+     path←##.AcreConfig.ProjectFolder,'Assets/Runtime/Conga'
      ~⎕NEXISTS path:('Folder not accessible: ',path)⎕SIGNAL 22
      path
  }

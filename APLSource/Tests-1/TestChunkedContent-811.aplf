@@ -1,7 +1,7 @@
  TestChunkedContent←{
      ⍺←0
      c←##.Core.NewClient 0
-     c.Folder←'c:\RumbaTestClient'
+     c.Folder←GetTestDir,'/RumbaTestClient'
      c.LogConga←1
      c.LogRumba←1
      q←##.Core.NewRequest 0

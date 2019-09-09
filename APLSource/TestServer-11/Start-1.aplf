@@ -7,7 +7,7 @@
      s.OnRequest←'OnRequest'
      s.OnHeader←'OnRequestHeader'
      s.Caching←1
-     s.Folder←(739⌶0),'/RumbaTestServer'
+     s.Folder←##.Tests.GetTestDir,'/RumbaTestServer'
      s.LogHTTP←1
      s.LogConga←1
      s.LogRumba←1

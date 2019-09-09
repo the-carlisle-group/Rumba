@@ -1,8 +1,5 @@
  InitConga←{
      9=⎕NC'##.DRC':0
-     cp←##.AcreConfig.ProjectFolder,'Assets/Runtime/Conga/conga.dws'
-     0=⎕NEXISTS cp:('Conga.dws is not accessible: ',cp)⎕SIGNAL 11
-     _←##.⎕CY cp
      path←GetCongaDllPath''
      ##.DRC←path ##.Conga.Init''
      ##.Conga.X509Cert.LDRC←##.DRC

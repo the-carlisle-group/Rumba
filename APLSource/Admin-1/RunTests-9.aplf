@@ -1,6 +1,8 @@
  RunTests←{
-     ⍝ This must be done manually for now
-     ⍝ _←StartTestServer 0
+ ⍝ Run this in a different session (must be done manually for now)
+ ⍝ #.CarlisleGroup.Rumba.TestServer.Start ⍬
+ ⍝ Note that function the function `Test_ServerShutdown` is part of the test
+ ⍝ suite and will be executed as the last test due to the "_" its name.
      _←##.Core.InitConga''
      f←'T'##.Tests.⎕NL ¯3
      b←RunTest¨f

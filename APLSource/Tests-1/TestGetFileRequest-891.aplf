@@ -6,6 +6,6 @@
      r.ContentType.ContentType≢'text/plain':1
      path←##.AcreConfig.ProjectFolder,'Assets/Development/samplefile.txt'
      ~⎕NEXISTS path:1
-     (0⊃⎕NGET path)≢r.Content:1     ⍝ local and remote content does not match
+     r.Content≢##.Core.ReadUTF8 path:1     ⍝ local and remote content does not match
      0
  }

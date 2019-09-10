@@ -1,9 +1,0 @@
- r←ReadBytesAs8BitSignedIntegersFromFile filename;No;Size;⎕IO;⎕ML
-     ⍝ Read contents of "filename" as 8-bit signed integers.
- :Access Public Shared
- ⎕IO←1 ⋄ ⎕ML←3
- filename~←'"'
- No←filename ⎕NTIE 0,66
- Size←⎕NSIZE No
- r←⎕NREAD No,83,Size,0
- ⎕NUNTIE No

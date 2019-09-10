@@ -2,7 +2,7 @@
      ⍝ ⍵ ←→ Response
      ⍝ ← ←→ ⍵
      ce←⍵.Chunked
-     h←⊂'Date'(QTSToHTTPDate QTS)
+     h←⊂'Date'(GetCurrentUTCHttpDate'')
      h,←⊂'Server' 'Rumba'
      h,←⍵.Close/⊂'Connection' 'close'
      h,←(~ce)/⊂'Content-Length'(⍕⍵.ContentLength)

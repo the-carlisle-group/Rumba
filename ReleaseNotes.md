@@ -1,4 +1,7 @@
-# Rumba Release 0.1.4                    
+# Rumba Release 0.1.5                    
+1. Add Dev Folder param to acre config
+
+# Rumba Release 0.1.4 2019-09-28 03:08:27
 1. Add URL to acre config file
 2. Removed redundant APLTreeUtils and stopped using NGET to read text due to normalizaion of line feeds
 3. Default header Date and log entries now gets a true UTC time from conga

@@ -1,4 +1,7 @@
-# Rumba Release 0.1.5                    
+# Rumba Release 0.1.6                    
+1. Update acre config file
+
+# Rumba Release 0.1.5 2019-10-09 13:39:51
 1. Add Dev Folder param to acre config
 
 # Rumba Release 0.1.4 2019-09-28 03:08:27

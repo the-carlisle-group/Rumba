@@ -10,5 +10,5 @@ Content-Length headers should not be provided here; Rumba adds these by default.
 
 The Content-Encoding header should not be provided if →[Compress] is set to 1.
 
-If not provided in the Headers property, the "Accept" header defaults to "\*/\*".
+If not provided in the Headers property, the "Accept" header defaults to "\\*/\\*".
 

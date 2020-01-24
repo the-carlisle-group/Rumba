@@ -14,5 +14,5 @@ to PutChunk creates a chunk that will be sent by Rumba as it becomes available.
 A final call to PutChunk with an empty string is required to signal the end of the message.
 
 In general, the function that calls PutChunk should be threaded, allowing the Result object to be
-passed immediatly back to Rumba, without having to wait for the content to be completely generated.
+passed immediately back to Rumba, without having to wait for the content to be completely generated.
 

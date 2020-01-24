@@ -19,7 +19,7 @@ DELETE and POST.
 
 An If-None-Match header included in a request specifies that the request should only be executed if
 the value (or values) in the header do not match the current ETag of the resource. This is mostly
-used for GET requests. In other words "GET this resource only if it has changed since I last
+used for GET requests. In other words, "GET this resource only if it has changed since I last
 retrieved it." If the method is GET and the precondition fails (the resource is not changed), a 304-
 Not Modified is result. Other methods will return 412 - Precondition Failed.
 
@@ -31,6 +31,6 @@ An If-Unmodified-Since header also has date value, and specifies that the reques
 executed if the resource's modification date has is on or before the supplied date. This is
 analogous to If-Match with an ETag.
 
-If more than one of these four headers is sent in a request, there are precedence rules defined in
+If more than one of these four headers are sent in a request, there are precedence rules defined in
 RFC 7232 that Rumba adheres to.
 

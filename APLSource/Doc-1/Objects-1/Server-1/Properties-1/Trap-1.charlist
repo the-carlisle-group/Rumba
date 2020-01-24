@@ -21,7 +21,7 @@ is also a bug in Rumba. In this case, Rumba shuts down.
 
 In all cases, Rumba logs the event if the →[LogRumba] property is set to 1.
 
-Note that in the case of an appliction error, no additional information. about the error is sent to
+Note that in the case of an application error, no additional information. about the error is sent to
 the client. However, the application programmer is free to implement a global trap at the top of
 the OnRequest callback, creating a response and supplying  more detail about the error. Rumba will
 not recognize this as an application error, and will not log the event automatically.

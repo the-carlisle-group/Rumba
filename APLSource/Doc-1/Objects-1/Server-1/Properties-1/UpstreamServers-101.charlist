@@ -16,11 +16,13 @@ If there are two or more upstream servers specified, then the server will be a l
 will also function as a reverse proxy cache. In addition, the upstream servers provide active
 replication. In this case requests are forwarded to one or all of the upstream servers depending
 on the HTTP method. Safe methods (GET and HEAD) are forwarded to only one of the specified
-upstream servers, providing load balancing.  A simple round robin selection technique is used to
-pick the upstream server for a specfic request. Unsafe methods are forwarded to all upstream
+upstream servers, providing load balancing.  
+
+A simple round robin selection technique is used to
+pick the upstream server for a specific request. Unsafe methods are forwarded to all upstream
 servers in exactly the same order, providing active replication. Note that each upstream server
 processes unsafe methods in the same order, but not necessarily at the same time. Thus the
-upstream servers are eventually consistant.
+upstream servers are eventually consistent.
 
 Note that upstream servers (just like downstream clients or servers) may or may not be Rumba servers.
 

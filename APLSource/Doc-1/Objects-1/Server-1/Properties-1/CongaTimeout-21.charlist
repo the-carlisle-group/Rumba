@@ -5,7 +5,7 @@ Applies to:{.prefix}
 Server{.info}
 
 The CongaTimeout property specifies the number of milliseconds at which the Conga wait should
-timeout and the server should perform house keeping. The default value is 5000 (5 seconds).
+timeout and the server should perform housekeeping. The default value is 5000 (5 seconds).
 
 At each timeout, in addition to Rumba's built-in housekeeping,  Rumba executes the
 →[OnCongaTimeout] callback. This function may do additional, application specific housekeeping.

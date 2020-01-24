@@ -8,11 +8,11 @@ The Folder property specifies a folder to hold any files or subfolders related t
 the server. Upon starting Rumba creates this folder if it does not exist.
 
 Under this folder, Rumba creates a /Rumba folder to hold all Rumba specific subfolders and files.
-inlcuding the /Log folder to contain log files.
+including the /Log folder to contain log files.
 
 Rumba will never delete this folder, and it is the natural place for the developer to put any
 server related files, appropriately organized into  various subfolders.
 
 The default value for Folder is the empty string, and in this case no folder is created or
-accessed. In addtion, there will be no logging of server requests.
+accessed. In addition, there will be no logging of server requests.
 

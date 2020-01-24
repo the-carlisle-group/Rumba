@@ -1,4 +1,4 @@
-# On the Server: Handling Requests and Constructing Responses
+# On the Server:<<br>>Handling Requests and Constructing Responses
 
 The NewServer function creates a new server:
 
@@ -82,7 +82,7 @@ stay manageable and maintainable. It is useful to first break out requests by me
 ~~~
 
 Each of these subfunctions GET, POST, PUT and DELETE, will then analyze the remainder of the
-request including the URL, headers, and content, to whatever degree neccessary, in order to
+request including the URL, headers, and content, to whatever degree necessary, in order to
 construct a response. This will usually require many more subfunctions to stay manageable.
 
 The result of the →[##.Objects.Server.Properties.OnRequest] callback must be a

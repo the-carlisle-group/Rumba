@@ -1,6 +1,6 @@
  z←Start
  z←{
-     _←##.Core.InitConga''
+     _←1 ##.Core.InitConga''
      s←##.Core.NewServer 0
      s.Port←443
      _←'Strings's.⎕NS''

@@ -1,20 +1,26 @@
  Run←{
-⍝ Installs Rumba as a service named "Rumba_Test_Service" in case the right
-⍝ argument is empty. The service is then:
-⍝ * Started.
-⍝ * Pinged.
-⍝ * Paused.
-⍝ * Continued.
-⍝ * The test or the test suite are executed.
-⍝ * Shut down.
-⍝ * De-installed.
+⍝ Installs Rumba as a service named "Rumba_Test_Service" in case ⍵ is empty.
+⍝ The service is then:
+⍝ * started
+⍝ * pinged
+⍝ * paused
+⍝ * continued
+⍝ * the test or the test suite are executed
+⍝ * shut down
+⍝ * de-installed
+⍝
 ⍝ ⍺ is the sum of the following flags (default is 0):
-⍝   2 = execute the full test suite.
-⍝   4 = Allow to RIDE into the running service
-⍝   8 = Print SC messages to the session
+⍝ *  2 = execute the full test suite.
+⍝ *  4 = Allow to RIDE into the running service
+⍝ *  8 = Print SC messages to the session
+⍝ * 16 = Initialize Conga no matter what (needed in case a WS is loaded that already contains the DRC namespace)
+⍝
+⍝ ⍵ is 1 which enforced Conga to be re-initialized
+⍝
 ⍝ ← is 1 for failure and 0 otherwise.
      ⍺←0
-     (FULL RIDE REPORT_SC_MSG)←3↑1↓⌽(10⍴2)⊤+/⍺
+     Encode2Flags←{1↓⌽(10⍴2)⊤+/⍵}
+     (FULL RIDE REPORT_SC_MSG INIT_CONGA)←4↑Encode2Flags ⍺
      servicename←GetServiceName ⍵
      z←⎕CMD'sc query ',servicename
      f←0=+/'The specified service does not exist as an installed service.'⍷∊z
@@ -24,6 +30,7 @@
      Check←{'RUNNING'≡GetStateFromSC_Query ⍵}
      rc←REPORT_SC_MSG(Check Retry)('sc query ',servicename)5
      rc:1⊣⎕←'Service did not start'
+     _←INIT_CONGA ##.Core.InitConga''
      _←FULL{⍺:RunTestSuite ⍵ ⋄ PingServer ⍬}⍬
      _←('pause ',servicename)RunAsAdmin'sc'
      Check←{(⊂GetStateFromSC_Query ⍵)∊('PAUSED' 'PAUSE_PENDING')}

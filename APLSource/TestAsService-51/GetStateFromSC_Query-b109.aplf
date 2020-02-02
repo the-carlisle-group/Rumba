@@ -3,7 +3,7 @@
 ⍝ ← the value of the key word
 ⍝ Example:
 ⍝ GetStateFromSC_Query
-     A←#.Rumba.APLTreeUtils
+     A←#.CarlisleGroup.Rumba.APLTreeUtils
      b←∨/¨'STATE'∘⍷¨⍵
      0=+/b:''
      st←(b⍳1)⊃⍵

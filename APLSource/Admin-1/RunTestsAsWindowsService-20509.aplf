@@ -3,6 +3,9 @@
 ⍝   2 = execute the full test suite.
 ⍝   4 = allow to RIDE into the running service.
 ⍝   8 = print SC (Service Controller) messages to the session.
+⍝  16 = Enforce initialisation of Conga (default=1)
 ⍝   0 = neither of them.
-     (+/⍵)##.TestAsService.Run''
+     flags←⍵
+     flags←{0=≢⍵:16 ⋄ ⍵}flags
+     (+/flags)##.TestAsService.Run''
  }

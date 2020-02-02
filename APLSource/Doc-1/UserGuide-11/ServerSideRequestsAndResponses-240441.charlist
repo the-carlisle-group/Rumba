@@ -40,7 +40,7 @@ request message. The simplest implementation of this function might be:
       OnRumbaRequest←{
           ⍝ ⍵ ←→ (Request) Message
           ⍝ ← ←→ Response
-          r←#.Rumba.Core.NewResponse ⍵
+          r←#.Carlisle.Rumba.Core.NewResponse ⍵
           r.Content←'Hello World'
           r
      }
@@ -55,9 +55,9 @@ appropriate response. Consider a simple web site which responds only to a GET on
       OnRumbaRequest←{
           ⍝ ⍵ ←→ (Request) Message
           ⍝ ← ←→ Response
-          ⍵.URL≢'/HelloWorld':⍵ #.Rumba.Core.Respond 404
-          r←#.Rumba.Core.NewResponse ⍵
-          d←#.Rumba.HTML.NewHTMLDocument 0
+          ⍵.URL≢'/HelloWorld':⍵ Rumba.Core.Respond 404
+          r←#.Carlisle.Rumba.Core.NewResponse ⍵
+          d←#.Carlisle.Rumba.HTML.NewHTMLDocument 0
           _←d.Add'h1' 'Hello world!'
           r.Content←d
           r
@@ -77,7 +77,7 @@ stay manageable and maintainable. It is useful to first break out requests by me
           m≡'POST':POST ⍵
           m≡'PUT':PUT ⍵
           m≡'DELETE':DELETE ⍵
-          ⍵ #.Rumba.Core.SendResponse 404
+          ⍵ Rumba.Core.SendResponse 404
      }
 ~~~
 

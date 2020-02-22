@@ -3,7 +3,7 @@
     ⍝ ⍵ ←→ Response
      ~⍺.LogHTTPToSession:0
      m←⍵.Message
-     ts←#.CarlisleGroup.Rumba.Core.GetCurrentUTCHttpDate''
+     ts←GetCurrentUTCHttpDate''
      ⎕←ts,': ',m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.URI
      0
  }

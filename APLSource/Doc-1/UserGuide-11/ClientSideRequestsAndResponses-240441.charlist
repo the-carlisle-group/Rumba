@@ -3,16 +3,16 @@
 The NewClient function creates a new client:
 
 ~~~
-     c←##.Core.NewClient 0
+     c←NewClient 0
 ~~~
 
 The NewRequest function creates a new request:
 
 ~~~
-     q←##.Core.NewRequest 0
+     q←NewRequest 0
 ~~~
 
-Starting from three of possible RESTful commands are discussed: GET, HEAD and POST.
+Starting from here three of the possible RESTful commands are discussed: GET, HEAD and POST.
 
 ## GET
 
@@ -27,7 +27,7 @@ The method does not need to be specified if it is "GET" because that is the defa
 Once the URI is specified the request can be send with SendAndReceive; the client c and the request q are passed as arguments:
 
 ~~~
-     r←c ##.Core.SendAndReceive q
+     r←c SendAndReceive q
      r.StatusCode
 200
 ~~~   
@@ -45,7 +45,7 @@ The GetContent function collects and returns the response from the server.
 We need a new request:
 
 ~~~
-     q←##.Core.NewRequest 0
+     q←NewRequest 0
 ~~~
 
 Because it is not a "GET" (the default) we must specify the method:
@@ -63,7 +63,7 @@ The URI is mandatory:
 Sending the request and retrieving the response:
 
 ~~~
-     r←c ##.Core.SendAndReceive q
+     r←c SendAndReceive q
      r.StatusCode
 200
      ⎕←r.Content
@@ -72,7 +72,7 @@ Sending the request and retrieving the response:
 ## POST
 
 ~~~
-    q←##.Core.NewRequest 0
+    q←NewRequest 0
 ~~~
 
 Because it is not a "GET" (the default) we must specify the method:
@@ -96,7 +96,7 @@ A PUT requires data to be send as content:
 Sending the request and retrieving the response:
 
 ~~~
-     r←c ##.Core.SendAndReceive q
+     r←c SendAndReceive q
      r.StatusCode
 201 
 ~~~

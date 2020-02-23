@@ -1,0 +1,7 @@
+[DATA]:index=''
+
+# Secure
+
+Boolean that defaults to 0. Set this to enforce secure connections (hhtps).
+
+Note that if this is 1 then →[X509] must be set.

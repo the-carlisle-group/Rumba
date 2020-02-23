@@ -1,6 +1,7 @@
  r←{rf}StartTestServer dummy;LXwas;WSIDwas;tempWSID;cl;q;exe;cmd;_
 ⍝ Starts a separate instance of Dyalog and starts a test server within that instance.
 ⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running service.
+⍝ *** For a RIDE the Conga DLLs must be available in the TEMP directory!
 ⍝ *** This function temporarily changes ⎕lX and ⎕WSID.
  rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
  r←1
@@ -20,7 +21,7 @@
  cmd,←⊂q tempWSID                           ⍝ The workspace
  cmd,←⊂'maxws=32MB'
  cmd,←⊂'DYALOG_NOPOPUPS=1'                  ⍝ We don't want the dialog box "You have successfully..." nor any other
- cmd,←rf/⊂'RIDE_INIT=CONNECT:127.0.0.1:4502'⍝ User wants to have a RIDE
+ cmd,←rf/⊂'RIDE_INIT=SERVE:127.0.0.1:4502'  ⍝ User wants to have a RIDE
  _←⎕CMD(1↓∊' ',¨cmd)''                      ⍝
  ⎕←'*** Test server successfully started'
  r←0

@@ -1,6 +1,7 @@
  z←Start
  z←{
      _←1 ##.Core.InitConga''
+     rc←{3502⌶1}⍣(∨/'RIDE_INIT=SERVE:'⍷2 ⎕NQ #'GetCommandLine')⊣⍬ ⍝ Enable Ride when it was specified on command line
      s←##.Core.NewServer 0
      s.Port←443
      _←'Strings's.⎕NS''

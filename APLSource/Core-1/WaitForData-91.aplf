@@ -15,4 +15,5 @@
      }x
  :Else
      _←ErrorInConnection x
+     x.Connection.Server.Stats.OnConnectionErrors+←1
  :EndTrap

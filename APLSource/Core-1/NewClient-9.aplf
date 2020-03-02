@@ -22,6 +22,6 @@
      c.Secure←1
      c.TLSFlag←32                           ⍝ 32=Do not validate Certs
      c.TLSPriority←'NORMAL:!CTYPE-OPENPGP'
-     c.X509←⎕NEW ##.Conga.X509Cert          ⍝ Default to anonymous client cets
+     c.X509←⎕NEW ##.Conga.X509Cert          ⍝ Defaults to anonymous client Cert
      c
  }

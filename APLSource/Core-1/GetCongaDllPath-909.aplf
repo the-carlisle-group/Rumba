@@ -3,5 +3,4 @@
      path←⍵{0≠≢⍺:⍺ ⋄ ⍵}path
      ~⎕NEXISTS path:('Folder not accessible: ',path)⎕SIGNAL 22
      path
-
  }

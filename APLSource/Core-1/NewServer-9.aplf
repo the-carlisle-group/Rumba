@@ -16,6 +16,7 @@
      s.LogConga←0
      s.LogHTTPToSession←0
      s.LogFileTie←0
+     s.LogFolder←''
      s.MaxNoOfThreads←1000
      sc rf←StatusCodeRegistry 0
      s.StatusCodes←sc
@@ -29,7 +30,10 @@
      s.UpstreamServers←⍬
      s.Stats←InitStats 0
      s.Secure←0
-     s.X509←0
+     s.X509←0               ⍝ Now deprecated: use PublicCertFile, PrivateKeyFile and CertType instead
+     s.PublicCertFile←''
+     s.PrivateKeyFile←''
+     s.CertType←''          ⍝ DER or PEM
      s.TLSFlag←64
      s
  }

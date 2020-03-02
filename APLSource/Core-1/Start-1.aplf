@@ -8,7 +8,16 @@
      v,←⊂'Port's.Port
      v,←⊂'Mode' 'Text'
      v,←⊂'Address's.Address
-     v←s{0=⍺.Secure:⍵ ⋄ ⍵,('X509'⍺.X509)('SSLValidation'⍺.TLSFlag)}v
+     v←s{0=⍺.Secure:⍵ ⋄ 0≡⍺.X509:⍵ ⋄ ⍵,('X509'⍺.X509)('SSLValidation'⍺.TLSFlag)}v   ⍝ Supported for the time being but deprecated
+     X509←s∘{
+         0=⍺.Secure:⍵
+         0∊≢¨⍺.(PublicCertFile PrivateKeyFile CertType):⍵
+         x509←⎕NEW ##.DRC.X509Cert
+         x509←0⊃x509.ReadCertFromFile ⍺.PublicCertFile
+         x509.KeyOrigin←s.(CertType PrivateKeyFile)
+         ⍵,('X509'x509)('SSLValidation'⍺.TLSFlag)
+     }
+     v←X509 v
      _←DRC.Close s.Name
      rc sn←2↑DRC.Srv v
      cs←##.DRC.Error rc

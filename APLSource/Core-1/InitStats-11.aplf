@@ -8,5 +8,7 @@
      s.POSTs←0
      s.PUTs←0
      s.DELETEs←0
+     s.OnRequestErrors←0
+     s.OnConnectionErrors←0
      s
  }

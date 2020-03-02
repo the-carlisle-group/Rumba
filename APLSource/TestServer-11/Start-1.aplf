@@ -14,10 +14,10 @@
      s.LogRumba←1
      s.LogHTTPToSession←1
      s.Secure←1
-     x509←⎕NEW ##.DRC.X509Cert
      tf←##.AcreConfig.ProjectFolder,'Assets/Runtime/TestCertificates/server/'
-     s.X509←0⊃x509.ReadCertFromFile tf,'localhost-cert.pem'
-     s.X509.KeyOrigin←'DER'(tf,'localhost-key.pem')
+     s.PublicCertFile←tf,'localhost-cert.pem'
+     s.PrivateKeyFile←tf,'localhost-key.pem'
+     s.CertType←'DER'
      s.Context←⎕THIS
      _←s ##.Core.Start 0
      s

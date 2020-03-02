@@ -1,0 +1,10 @@
+[DATA]:index=''
+
+# MaxNoOfThreads
+
+Applies to:{.prefix}
+
+Server{.info}
+
+Defaults to 1000. This means that when 1000 requests are simultaneously processed then any additional request are refused 
+and an error 503 ("Service Unavailable") is returned.

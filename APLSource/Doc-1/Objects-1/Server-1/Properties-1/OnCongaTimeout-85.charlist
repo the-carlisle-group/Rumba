@@ -8,6 +8,7 @@ The OnCongaTimeout property specifies a call back function to be called at every
 This function is expected to exist in the namespace or object instance defined by the →[Context]
 property. This callback may be the name of a method of some class.
 
-The right argument to the function is the →[##.##.Server] object provided by the server. The result
-of the callback should be 0.
+The right argument provided to the function is a →[##.##.Server] object. 
+
+The result of the callback should be 0.
 

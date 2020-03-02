@@ -1,0 +1,11 @@
+[DATA]:index=''
+
+# QuitEvent
+
+Applies to:{.prefix}
+
+Server{.info}
+
+A positive integer that defaults to 9876. This event will be send to the root when the server shuts down.
+
+An application programmer can attach a handler to this and therefore react appropriately to a shutdown.

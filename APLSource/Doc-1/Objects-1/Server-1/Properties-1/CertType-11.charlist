@@ -1,0 +1,14 @@
+[DATA]:index=''
+
+# CertType
+
+Applies to:{.prefix}
+
+Server{.info}
+
+If →[Secure] is 1 then this must become either "DER" or "PEM" while →[PublicCertFile] and →[PrivateKeyFile]
+must all be set as well.
+
+For details see the Conga documentation.
+
+The older →[X509] property is now deprecated.

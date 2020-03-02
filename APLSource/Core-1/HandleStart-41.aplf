@@ -2,5 +2,5 @@
      s←⍺
      f←⍺.OnStart
      f≡'':0
-     (⍎f)⍺
+     (s.Context⍎f)⍺
  }

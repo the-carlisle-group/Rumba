@@ -15,4 +15,3 @@ server related files, appropriately organized into  various subfolders.
 
 The default value for Folder is the empty string, and in this case no folder is created or
 accessed. In addition, there will be no logging of server requests.
-

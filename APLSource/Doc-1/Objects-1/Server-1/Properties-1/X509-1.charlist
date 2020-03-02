@@ -2,6 +2,18 @@
 
 # X509
 
+Applies to:{.prefix}
+
+Server{.info}
+
+**Note:** This is now deprecated; use instead:
+
+* →[PublicCertFile]
+* →[PrivateKeyFile]
+* →[CertType]
+
+---
+
 When →[Secure] is 1 then this must hold an instance of the X509Cert class (which is part of Conga) created from
 a certificate file.
 

@@ -6,4 +6,5 @@
      z←f x
  :Else
      z←ErrorInApplication x
+     x.Connection.Server.Stats.OnRequestErrors+←1
  :EndTrap

@@ -6,6 +6,7 @@ Server{.info}
 
 The DisplayRequests property provides for the display of the request and response in the Dyalog APL
 session. The default value is 0, for no display. When set to 1, Rumba displays the request and
-response in the session after the response has been sent back to the client. Note  that this
-greatly slows down the server, and should only be used for educational or debugging purposes.
+response in the session after the response has been sent back to the client. 
+
+Note  that this greatly slows down the server, and should only be used for educational or debugging purposes.
 

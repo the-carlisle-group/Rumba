@@ -16,8 +16,11 @@
      s.DisplayRequests←1
      s.Port←443
      s.Secure←1
-     s.X509←↑##.Conga.X509Cert.ReadCertFromFile pp,'TestCertificates/server/server-cert.pem'
-     s.X509.KeyOrigin←'DER'(pp,'TestCertificates/server/server-key.pem')
+    ⍝s.X509←↑##.Conga.X509Cert.ReadCertFromFile pp,'TestCertificates/server/server-cert.pem'   ⍝ Now...
+    ⍝s.X509.KeyOrigin←'DER'(pp,'TestCertificates/server/server-key.pem')                       ⍝ ...deprecated
+     s.PublicCertFile←pp,'TestCertificates/server/server-cert.pem'
+     s.PrivateKeyFile←pp,'TestCertificates/server/server-key.pem'
+     s.CertType←'DER'
      _←s ##.Core.Start 0
      s
  }0

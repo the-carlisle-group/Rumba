@@ -1,0 +1,16 @@
+[DATA]:index=''
+
+# OnStart
+
+Applies to:{.prefix}
+
+Server{.info}
+
+This function is expected to exist in the namespace or object instance defined by the →[Context] property. 
+This callback may be the name of a method of some class.
+ 
+The function will be called once when the server is started.
+
+The right argument provided to the function is a →[##.##.Server] object. 
+
+The result of the callback should be 0.

@@ -5,4 +5,4 @@ Applies to:{.prefix}
 Server{.info}
 
 The Port property specifies the port the server should listen on.
-
+Defaults to 8080.

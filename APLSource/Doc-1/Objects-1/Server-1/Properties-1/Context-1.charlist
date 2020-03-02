@@ -4,6 +4,6 @@ Applies to:{.prefix}
 
 Server{.info}
 
-The Context property specifies a namespace or object instance in which the →[OnRequest] call back
-function should execute.
+The Context property specifies a namespace or object instance in which the call back
+functions (→[OnRequest], →[OnHeader], →[OnStart], →[OnCongaTimeout]) should be executed.
 

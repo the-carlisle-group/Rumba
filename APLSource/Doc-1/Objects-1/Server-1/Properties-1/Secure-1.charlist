@@ -2,6 +2,11 @@
 
 # Secure
 
-Boolean that defaults to 0. Set this to enforce secure connections (hhtps).
+Applies to:{.prefix}
 
-Note that if this is 1 then →[X509] must be set.
+Server{.info}
+
+Boolean that defaults to 0. Set this to enforce secure connections (HTTPS).
+
+Note that if this is 1 then →[PublicCertFile], →[PrivateKeyFile] and →[CertType] must be set;
+the older →[X509] property is now deprecated.

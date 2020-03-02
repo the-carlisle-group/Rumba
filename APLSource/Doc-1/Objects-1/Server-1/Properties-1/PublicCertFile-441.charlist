@@ -1,0 +1,13 @@
+[DATA]:index=''
+
+# PublicCertFiles
+
+Applies to:{.prefix}
+
+Server{.info}
+
+If →[Secure] is 1 then this must be the name of a file that holds a certificate.
+
+Note that →[CertType] and →[PrivateKeyFile] must all be set as well.
+
+The older →[X509] property is now deprecated.

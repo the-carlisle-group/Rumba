@@ -1,0 +1,15 @@
+[DATA]:index=''
+
+# LogHTTPToSession
+
+Applies to:{.prefix}
+
+Server{.info}
+
+Boolean that defaults to 0. In case it is 1 all HTTP requests are reported to the session with these pieces of information:
+
+* IP address
+* Port number
+* Status code
+* Method
+* URI

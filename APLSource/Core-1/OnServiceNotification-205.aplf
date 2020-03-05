@@ -8,6 +8,8 @@
      s←sa=1                               ⍝ Stop
      d←sa=5                               ⍝ Shutdown
      ~∨/p c s d:f ss                      ⍝ Send it back
+     _←{⎕NQ'#'⍵.ContinueEvent}⍣c⊣⍺        ⍝ Send "Continue" event if appropriate
+     _←{⎕NQ'#'⍵.PauseEvent}⍣p⊣⍺           ⍝ Send "Pause" event if appropriate
      ⍺.Paused←p∨s∨d                       ⍝ Pause if pause or stop or shutdown
      _←⎕DL 10×s                           ⍝ Wait 10 seconds in case of Stop
      ss[3 4 5 6]×←~s                      ⍝ If stop, zero out

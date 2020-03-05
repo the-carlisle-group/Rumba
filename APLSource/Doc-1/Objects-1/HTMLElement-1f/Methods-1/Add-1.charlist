@@ -18,4 +18,3 @@ child element of X, with content Y[1], is created and returned. If Y[0] is blank
 is added to the element X which is returned.
 
 R is an HTMLElement object.
-

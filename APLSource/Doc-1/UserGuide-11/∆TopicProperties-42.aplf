@@ -17,7 +17,7 @@
 ⍝ [;3] developmentOnly flag; 1=the corresponding node does not show in user mode.
      r←0 4⍴''
      r⍪←'Introduction' '' 1 0
-     r⍪←'ServerSideRequestsAndResponses' 'On the Server' 1 0
+     r⍪←'On_the_Server' '' 1 0
      r⍪←'ClientSideRequestsAndResponses' 'On the Client' 1 0
      r⍪←'BuildingHTMLPages' 'Building HTML Web Pages' 1 0
      r⍪←'ConditionalRequests' 'Conditional Requests' 1 0

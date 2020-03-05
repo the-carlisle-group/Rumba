@@ -2,7 +2,8 @@
      n←5⌈⍵
      c←##.Core.NewClient 0
      q←##.Core.NewRequest¨n⍴0
-     q.URI←⊂'/HelloWorld'
+     q.URI←⊂'/Crash'
      r←c ##.Core.SendAndReceive q
+     ~∧/∨/¨'<h1>500: Internal Server Error</h1>'∘⍷¨r.Content:1
      0
  }

@@ -1,0 +1,18 @@
+[DATA]:index=''
+
+# Running as a Windows Service
+
+In case Rumba is running as a Windows Service no action needs to be taken: Rumba will tell the  
+[SCM](https://en.wikipedia.org/wiki/Service_Control_Manager) (Service Control Manager) when it
+is started and when it will stop, and it will act appropriately when a "Pause" command comes 
+from the SCM. The effect of "Pause" is that Rumba does not accept further request events and 
+will reject them with "503 Service Unavailable".
+
+However, Windows Services are expected to write messages to the Windows Event Log. While that 
+is easy for the "Start" and the "Stop" events, it's a bit trickier for the "Pause" and the 
+"Continue" event because these are handled by Rumba while running, so the application layer 
+that takes advantage of Rumba is never going to be told about them.
+
+For this very reason Rumba sends a "PauseEvent" event (9877 by default) or a "ContinueEvent"
+(9878 by default) to the root. It is then up to the application programmer to associate a 
+handler with these events and take appropriate action like writing to the Windows Event Log.

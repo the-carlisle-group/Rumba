@@ -1,8 +1,8 @@
  r←{rf}StartTestServer dummy;LXwas;WSIDwas;tempWSID;cl;q;exe;cmd;_
-⍝ Starts a separate instance of Dyalog and starts a test server within that instance.
-⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running service.
+⍝ Starts a separate instance of Dyalog (RunTime) and starts a test server within that instance.
+⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running server.
 ⍝ *** For a RIDE the Conga DLLs must be available in the TEMP directory!
-⍝ *** This function temporarily changes ⎕lX and ⎕WSID.
+⍝ *** This function changes ⎕LX and ⎕WSID but only temporarily.
  rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
  r←1
 

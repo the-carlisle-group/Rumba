@@ -1,0 +1,9 @@
+[DATA]:index=''
+
+# PauseEvent
+
+An integer that defaults to 9877. 
+
+In case the SCM sends a "Pause" command to the application Rumba sends a PauseEvent to #.
+
+For a discussion how this event can be put to good use see →[*.Running_as_a_Windows_Service].

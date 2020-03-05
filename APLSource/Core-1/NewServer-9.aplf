@@ -16,7 +16,6 @@
      s.LogConga←0
      s.LogHTTPToSession←0
      s.LogFileTie←0
-     s.LogFolder←''
      s.MaxNoOfThreads←1000
      sc rf←StatusCodeRegistry 0
      s.StatusCodes←sc
@@ -25,6 +24,8 @@
      s.ServiceTimeout←100
      s.Paused←0
      s.QuitEvent←9876
+     s.PauseEvent←9877
+     s.ContinueEvent←9878
      s.DisplayRequests←0
      s.Trap←1
      s.UpstreamServers←⍬

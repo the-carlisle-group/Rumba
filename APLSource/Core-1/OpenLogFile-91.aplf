@@ -5,9 +5,9 @@
      f≡'':0
      fixPath←{{'/'=¯1↑⍵:¯1↓⍵ ⋄ ⍵}'/'@('\'=⊢)⍵}
      f←fixPath f
-     _←CreateFolder f
-     rf←CreateFolder f,'/Rumba'
-     lf←CreateFolder rf,'/Log'
+     _←{CreateFolder ⍵}⍣(~⎕NEXISTS f)⊣f                     ⍝ The check with ⎕NEXISTS is needed to circumvent...
+     rf←{CreateFolder ⍵}⍣(~⎕NEXISTS f,'/Rumba')⊣f,'/Rumba'  ⍝ ...the Dyalog bug <01714 from 2020-03-03.
+     lf←{CreateFolder ⍵}⍣(~⎕NEXISTS rf,'/Log')⊣rf,'/Log'    ⍝ Might be caused by a user who uses a junction link to point to the correct folder.
      fn←lf,'/log.txt'
      22::fn ⎕NCREATE 0
      fn ⎕NTIE 0

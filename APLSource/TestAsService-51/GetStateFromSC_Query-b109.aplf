@@ -3,10 +3,9 @@
 ⍝ ← the value of the key word
 ⍝ Example:
 ⍝ GetStateFromSC_Query
-     A←#.CarlisleGroup.Rumba.APLTreeUtils
      b←∨/¨'STATE'∘⍷¨⍵
      0=+/b:''
      st←(b⍳1)⊃⍵
-     0∊⍴st:''
-     1⊃' 'A.Split A.dmb 1⊃':'A.Split st
+     0=≢st:''
+     1⊃{⎕ML←3 ⋄ (' '≠⍵)⊂⍵}' ',{⍵↓⍨1+⍵⍳':'}st
  }

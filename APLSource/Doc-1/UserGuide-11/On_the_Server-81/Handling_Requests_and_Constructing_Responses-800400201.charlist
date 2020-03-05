@@ -1,0 +1,95 @@
+# Handling Requests and Constructing Responses
+
+The NewServer function creates a new server:
+
+~~~
+      s←NewServer 0
+~~~
+
+The server may be started up at this point, and will respond to administrative requests, but usually
+some properties will be set to configure its operation. For example, the Folder property specifies
+where files and subfolders will be stored:
+
+~~~
+      s.Folder←'c:MyRumbaServer'
+~~~
+
+The LogHTTP property can turn logging on:
+
+~~~
+      s.LogHTTP←1
+~~~
+
+And the OnRequest property specifies a callback that handles requests:
+
+~~~
+      s.OnRequest←'OnRumbaRequest'
+~~~
+
+The Start method starts the Server listening on the default port:
+
+~~~
+      r←s Start 0
+~~~
+
+Implementing a website or HTTP API in Rumba requires writing the OnRequest callback function. This
+function must return a Rumba Response object. Rumba supplies the right argument which is the
+request message. The simplest implementation of this function might be:
+
+~~~
+      OnRumbaRequest←{
+          ⍝ ⍵ ←→ (Request) Message
+          ⍝ ← ←→ Response
+          r←#.Carlisle.Rumba.Core.NewResponse ⍵
+          r.Content←'Hello World'
+          r
+     }
+~~~
+
+This returns 'Hello World' for any requests, regardless of the HTTP method or URL.
+
+In general, the OnRequest callback function analyzes the request message and constructs an
+appropriate response. Consider a simple web site which responds only to a GET on the URL /HelloWorld:
+
+~~~
+      OnRumbaRequest←{
+          ⍝ ⍵ ←→ (Request) Message
+          ⍝ ← ←→ Response
+          ⍵.URL≢'/HelloWorld':⍵ Rumba.Core.Respond 404
+          r←#.Carlisle.Rumba.Core.NewResponse ⍵
+          d←#.Carlisle.Rumba.HTML.NewHTMLDocument 0
+          _←d.Add'h1' 'Hello world!'
+          r.Content←d
+          r
+     }
+~~~
+
+Any non-trivial website or API will generally perform a detailed analysis of the request message,
+and the OnRequest callback will need to delegate work to a hierarchy of sub-functions in order to
+stay manageable and maintainable. It is useful to first break out requests by method type:
+
+~~~
+      OnRumbaRequest←{
+          ⍝ ⍵ ←→ (Request) Message
+          ⍝ ← ←→ Response
+          m←⍵.Method
+          m≡'GET':GET ⍵
+          m≡'POST':POST ⍵
+          m≡'PUT':PUT ⍵
+          m≡'DELETE':DELETE ⍵
+          ⍵ Rumba.Core.SendResponse 404
+     }
+~~~
+
+Each of these subfunctions GET, POST, PUT and DELETE, will then analyze the remainder of the
+request including the URL, headers, and content, to whatever degree necessary, in order to
+construct a response. This will usually require many more subfunctions to stay manageable.
+
+The result of the →[*.Server.Properties.OnRequest] callback must be a
+→[*.Objects.Response] object, created with the NewResponse function. The NewResponse method takes
+the Request message as its right argument. Creating a response appropriate for the request
+requires setting Response properties. The →[*.Objects.Response.Properties.StatusCode] property is
+the three-digit HTTP status code. This defaults to 200. The
+→[*.Objects.Response.Properties.ReasonPhrase] property is the HTTP reason phrase. If this
+property is not set, or is set to an empty vector, Rumba will supply the standard HTTP reason
+phrase for the specified status code.

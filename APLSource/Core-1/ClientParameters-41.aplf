@@ -1,0 +1,12 @@
+ ClientParameters←{
+     p←⊂'Name' ''
+     p,←⊂'Address'⍺.Host
+     p,←⊂'Port'⍺.Port
+     p,←⊂'Mode' 'Text'
+     ~⍺.Secure:p
+     ⍺.X509←⎕NEW DRC.X509Cert
+     p,←⊂'X509'⍺.X509
+     p,←⊂'SSLValidation'⍺.TLSFlag
+     p,←⊂'Priority'⍺.TLSPriority
+     p
+ }

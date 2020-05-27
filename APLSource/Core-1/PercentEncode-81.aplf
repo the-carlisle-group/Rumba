@@ -1,15 +1,32 @@
  PercentEncode←{
-⍝ By default everything in ⍵ is encoded.
-⍝ You may change this default behaviour by specifying the glyphs you don't want to have encoded via ⍺.
-⍝ Examples:
-⍝ 'abc%20%2B%25123%2F%26' ←                             PercentEncode 'abc +%123/&'
-⍝ 'abc%20+%25123%2F%26'   ← '+'                         PercentEncode 'abc +%123/&'
-⍝ 'abc%20+%25123/&'       ← ((GenDelims 0),SubDelims 0) PercentEncode 'abc +%123/&'
+     ⍝ ⍺ ←→ Chars to NOT encode (For example, '?/' when encoding the query string
+     ⍝ ⍵ ←→ String
+     ⍝ ← ←→ Percent encoded string
      ⍺←''
-     z←⍵
-     d←'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',⍺
-     b←~z∊d
-     ∧/~b:z
+     b←~⍵∊⍺,'-._~',⎕D,⎕A,ToLower ⎕A
+     ~∨/b:⍵
      r←b{0=⍺:⍵ ⋄ ,'%',⊃2 ToHexadecimal'UTF-8'⎕UCS ⍵}¨⍵
      ⊃,/r
+
+⍝  ORIG
+⍝ PercentEncode←{
+⍝⍝ By default everything in ⍵ is encoded.
+⍝⍝ You may change this default behaviour by specifying the glyphs you don't want to have encoded via ⍺.
+⍝⍝ Examples:
+⍝⍝ 'abc%20%2B%25123%2F%26' ←                             PercentEncode 'abc +%123/&'
+⍝⍝ 'abc%20+%25123%2F%26'   ← '+'                         PercentEncode 'abc +%123/&'
+⍝⍝ 'abc%20+%25123/&'       ← ((GenDelims 0),SubDelims 0) PercentEncode 'abc +%123/&'
+⍝     ⍺←''
+⍝     z←⍵
+⍝     d←'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',⍺
+⍝     b←~z∊d
+⍝     ∧/~b:z
+⍝     r←b{0=⍺:⍵ ⋄ ,'%',⊃2 ToHexadecimal'UTF-8'⎕UCS ⍵}¨⍵
+⍝     ⊃,/r
+⍝ }
+⍝
+
+
+
+
  }

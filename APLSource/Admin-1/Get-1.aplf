@@ -1,0 +1,15 @@
+ Get←{
+     ⍝ WORK IN PROGRESS
+     R←##.Rumba
+     u←R.
+
+     ⍝ https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699
+     s←(↑⍸'//'∊⍵)↑⍵
+
+     c←##.Core.NewClient 0
+     c.Secure←1
+     c.Host←'www.googleapis.com'
+     q←##.Core.NewRequest 0
+     q.URI←'/books/v1/volumes?q=isbn:9780674990845'⍝ 04422844861'
+     c ##.Core.SendAndReceive q
+ }

@@ -1,15 +1,13 @@
  TestPutAndGetString←{
-     c←##.Core.NewClient 0
-     q←##.Core.NewRequest 0
-     q.URI←'/Strings/Mercury'
+     c←R.NewClient 0
+     q←R.NewRequest'/Strings/Mercury'
      q.Method←'PUT'
      q.Content←'Closest planet to the Sun'
-     r←c ##.Core.SendAndReceive q
-     c2←##.Core.NewClient 0
-     q2←##.Core.NewRequest 0
-     q2.URI←'/Strings/Mercury'
+     r←c R.SendAndReceive q
+     c2←R.NewClient 0
+     q2←R.NewRequest'/Strings/Mercury'
      q2.Method←'GET'
-     r2←c ##.Core.SendAndReceive q2
+     r2←c R.SendAndReceive q2
      q.Content≢GetContent r2:1
      0
  }

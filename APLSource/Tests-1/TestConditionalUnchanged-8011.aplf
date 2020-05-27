@@ -1,47 +1,42 @@
  TestConditionalUnchanged←{
      ⍝ ***********************************
      ⍝ Get a resource that will NOT change
-     c←##.Core.NewClient 0
-     q←##.Core.NewRequest 0
-     q.URI←'/ConditionalUnchanged'
+     c←R.NewClient 0
+     q←R.NewRequest'/ConditionalUnchanged'
      q.Method←'GET'
-     r←c ##.Core.SendAndReceive q
+     r←c R.SendAndReceive q
      ⍝ Use Etag: Should NOT execute the GET, as the item has not changed.
-     c2←##.Core.NewClient 0
-     q2←##.Core.NewRequest 0
-     q2.URI←'/ConditionalUnchanged'
+     c2←R.NewClient 0
+     q2←R.NewRequest'/ConditionalUnchanged'
      q2.Method←'GET'
-     q2.Headers,←⊂'If-None-Match'(r ##.Core.GetHeaderValue'ETag')
-     r2←c2 ##.Core.SendAndReceive q2
+     q2.Headers,←⊂'If-None-Match'(r R.GetHeaderValue'ETag')
+     r2←c2 R.SendAndReceive q2
      r2.StatusCode≠304:1
      r2.ReasonPhrase≢'Not Modified':1
      r2.Content≢'':1
      ⍝ Use ETag: Should execute the GET. as the item has NOT changed:
-     c3←##.Core.NewClient 0
-     q3←##.Core.NewRequest 0
-     q3.URI←'/ConditionalUnchanged'
+     c3←R.NewClient 0
+     q3←R.NewRequest'/ConditionalUnchanged'
      q3.Method←'GET'
-     q3.Headers,←⊂'If-Match'(r ##.Core.GetHeaderValue'ETag')
-     r3←c3 ##.Core.SendAndReceive q3
+     q3.Headers,←⊂'If-Match'(r R.GetHeaderValue'ETag')
+     r3←c3 R.SendAndReceive q3
      r3.StatusCode≠200:1
      '/ConditionalUnchanged'≢GetContent r3:1
      ⍝ Use Last_Modified, Should NOT Execute the GET as the item has not changed.
-     c4←##.Core.NewClient 0
-     q4←##.Core.NewRequest 0
-     q4.URI←'/ConditionalUnchanged'
+     c4←R.NewClient 0
+     q4←R.NewRequest'/ConditionalUnchanged'
      q4.Method←'GET'
-     q4.Headers,←⊂'If-Modified-Since'(r ##.Core.GetHeaderValue'Last-Modified')
-     r4←c4 ##.Core.SendAndReceive q4
+     q4.Headers,←⊂'If-Modified-Since'(r R.GetHeaderValue'Last-Modified')
+     r4←c4 R.SendAndReceive q4
      r4.StatusCode≠304:1
      r4.ReasonPhrase≢'Not Modified':1
      r4.Content≢'':1
      ⍝ Use Last-Modified: Should execute the GET. as the item has not changed:
-     c5←##.Core.NewClient 0
-     q5←##.Core.NewRequest 0
-     q5.URI←'/ConditionalUnchanged'
+     c5←R.NewClient 0
+     q5←R.NewRequest'/ConditionalUnchanged'
      q5.Method←'GET'
-     q5.Headers,←⊂'If-Unmodified-Since'(r ##.Core.GetHeaderValue'Last-Modified')
-     r5←c5 ##.Core.SendAndReceive q5
+     q5.Headers,←⊂'If-Unmodified-Since'(r R.GetHeaderValue'Last-Modified')
+     r5←c5 R.SendAndReceive q5
      r5.StatusCode≠200:1
      '/ConditionalUnchanged'≢GetContent r5:1
      ⍝ OK

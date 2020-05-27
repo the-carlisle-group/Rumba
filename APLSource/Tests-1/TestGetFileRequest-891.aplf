@@ -1,11 +1,10 @@
  TestGetFileRequest←{
-     c←##.Core.NewClient 0
-     q←##.Core.NewRequest 0
-     q.URI←'/FileDownload'
-     r←c ##.Core.SendAndReceive q
+     c←R.NewClient 0
+     q←R.NewRequest'/FileDownload'
+     r←c R.SendAndReceive q
      r.ContentType.ContentType≢'text/plain':1
      path←##.AcreConfig.ProjectFolder,'Assets/Development/samplefile.txt'
      ~⎕NEXISTS path:1
-     r.Content≢##.Core.ReadUTF8 path:1     ⍝ local and remote content does not match
+     r.Content≢R.ReadUTF8 path:1     ⍝ local and remote content does not match
      0
  }

@@ -3,7 +3,7 @@
      ⍝ r ←→ Response
      h←##.HTML
      s←⍵.Connection.Server
-     d←BuildTemplate'Log'⍵.URI
+     d←BuildTemplate'Log'⍵.RequestTarget
      m←↑d h.GetElementsByType'main'
      fn←¯4↓¨1 ##.Core.GetFileNames s.Folder,'/Rumba/Log'
      l←fn{⍺('/Rumba/Log/',⍵)}¨fn

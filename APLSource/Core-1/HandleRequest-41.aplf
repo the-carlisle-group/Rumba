@@ -9,7 +9,7 @@
      r.Close←~IsPersistent m
      _←SendResponse r
      m.ResponseSent←1
-     c.MessageLog,←⊂m.Method m.URI r.StatusCode
+     c.MessageLog,←⊂m.Method m.RequestTarget r.StatusCode
      _←s LogHTTPToSession r
      _←UpdateStats r
      _←Log r

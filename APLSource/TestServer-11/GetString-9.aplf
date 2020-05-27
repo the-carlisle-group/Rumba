@@ -1,5 +1,5 @@
  GetString←{
-     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.RequestTarget
      s←⍵.Connection.Server
      v←s.Strings⍎n
      r←##.Core.NewResponse ⍵

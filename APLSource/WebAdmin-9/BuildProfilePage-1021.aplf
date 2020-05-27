@@ -3,7 +3,7 @@
      ⍝ r ←→ Response
      h←##.HTML
      s←⍵.Connection.Server
-     d←BuildTemplate'Profile'⍵.URI
+     d←BuildTemplate'Profile'⍵.RequestTarget
      me←↑d ##.HTML.GetElementsByType'main'
      ps pt←2↑⎕PROFILE'state'
      on←'active'≡ps

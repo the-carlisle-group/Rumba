@@ -1,0 +1,8 @@
+ ExecuteCallback←{
+     ⍝ ⍺ ←→ Server
+     ⍝ ⍵ ←→ Function name
+     ⍝ ← ←→ Result of callback
+     ⍵≡'':0
+     ⍝ 0::  Check for any error
+     (⍺.Context⍎⍵)⍺
+ }

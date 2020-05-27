@@ -1,13 +1,14 @@
  NewClient←{
-    ⍝ Public Static Method
-    ⍝ ⍵ ←→ 0
-    ⍝ ← ←→ Client
+     ⍝ Public Static Method
+     ⍝ ⍵ ←→ 0 | '' | URI Object | URI String
+     ⍝ ← ←→ Client
      c←⎕NS''
      c.Version←'HTTP/1.1'
      c.Host←''
      c.Port←443
-     c.CongaTimeout←5000                    ⍝ Milli-seconds
-     c.ClientTimeout←30                     ⍝ Seconds
+     c.Secure←1
+     c.CongaTimeout←5000   ⍝ Milli-seconds
+     c.ClientTimeout←30    ⍝ Seconds
      c.Name←''
      c.State←0
      c.LastActivityTime←0
@@ -19,9 +20,13 @@
      c.Class←'Client'
      c.MessageType←'Response'
      c.Folder←''
-     c.Secure←1
      c.TLSFlag←32                           ⍝ 32=Do not validate Certs
      c.TLSPriority←'NORMAL:!CTYPE-OPENPGP'
-     c.X509←⎕NEW ##.Conga.X509Cert          ⍝ Defaults to anonymous client Cert
+     c.X509←0 ⍝ ⎕NEW ##.Conga.X509Cert      ⍝ Defaults to anonymous client Cert
+     (0≡⍵)∨0=≢⍵:c
+     u←{9=⎕NC'⍵':⍵ ⋄ ParseURI ⍵}⍵
+     c.Host←u.Host
+     c.Secure←u.Scheme≡'https'
+     c.Port←c.Secure{⍵>0:⍵ ⋄ ⍺⊃80 443}↑1⊃⎕VFI u.Port
      c
  }

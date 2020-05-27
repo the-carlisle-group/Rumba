@@ -2,7 +2,7 @@
      s←⎕NS''
      s.Name←''
      s.Folder←''
-     s.Port←8080
+     s.Port←443
      s.Address←''
      s.CongaTimeout←5000
      s.IdleTimeout←30
@@ -23,18 +23,18 @@
      s.Version←'HTTP/1.1'
      s.ServiceTimeout←100
      s.Paused←0
-     s.QuitEvent←9876
-     s.PauseEvent←9877
-     s.ContinueEvent←9878
+     s.OnStopSCM←''
+     s.OnPauseSCM←''
+     s.OnContinueSCM←''
      s.DisplayRequests←0
      s.Trap←1
      s.UpstreamServers←⍬
      s.Stats←InitStats 0
-     s.Secure←0
-     s.X509←0               ⍝ Now deprecated: use PublicCertFile, PrivateKeyFile and CertType instead
-     s.PublicCertFile←''
-     s.PrivateKeyFile←''
-     s.CertType←''          ⍝ DER or PEM
+     s.Secure←1
+     s.PublicCertFile←'localhost-cert.pem'
+     s.PrivateKeyFile←'localhost-key.pem'
+     s.X509←0
+     s.CertType←'DER'
      s.TLSFlag←64
      s
  }

@@ -3,7 +3,7 @@
      ⍝ r ←→ Response
      h←##.HTML
      s←⍵.Connection.Server
-     d←BuildTemplate'Gateway'⍵.URI
+     d←BuildTemplate'Gateway'⍵.RequestTarget
      m←↑d h.GetElementsByType'main'
      r←##.Core.NewResponse ⍵
      r.Content←d

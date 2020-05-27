@@ -1,7 +1,6 @@
  GetDrudgeReport←{
      ⍺←'www.drudgereport.com'
      c←##.Core.NewClient 0
-     c.Port←80
      c.Host←⍺
      q←##.Core.NewRequest 0
      c ##.Core.SendAndReceive q

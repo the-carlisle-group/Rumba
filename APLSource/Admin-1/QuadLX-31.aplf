@@ -1,12 +1,11 @@
  QuadLX←{
+     ##.(Tests.R←⍎AcreConfig.API)
      t←⊂'⍝ ******************************'
      t,←⊂'⍝ ****** Welcome to Rumba ******'
      t,←⊂'⍝ ******************************'
-     t,←⊂'⍝ For documentation:'
-     t,←⊂'      #.CarlisleGroup.Rumba.Admin.StartHelp 0'
      t,←⊂'⍝ To start the test server:'
-     t,←⊂'      #.CarlisleGroup.Rumba.TestServer.Start 0'
+     t,←⊂'      #.Rumba.TestServer.Start 0'
      t,←⊂'⍝ To run the tests (do this in a second Rumba/APL session):'
-     t,←⊂'      #.CarlisleGroup.Rumba.Admin.RunTests 0'
+     t,←⊂'      #.Rumba.Admin.RunTests 0'
      ⊃t
  }

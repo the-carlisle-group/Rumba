@@ -16,7 +16,7 @@
  cl←#.GetCommandLineArgs                    ⍝ Current command line
  q←{'"',⍵,'"'}                              ⍝ Quote stuff
  exe←↑cl                                    ⍝ The interpreter
- exe←(exe↑⍨'Dyalog.exe'{1⍳⍨⍺⍷⍵}exe),'Dyalogrt.exe'
+ exe←(exe↑⍨'dyalog.exe'{1⍳⍨⍺⍷⍵}exe),'dyalogrt.exe'
  cmd←⊂q exe                                 ⍝
  cmd,←⊂q tempWSID                           ⍝ The workspace
  cmd,←⊂'maxws=32MB'

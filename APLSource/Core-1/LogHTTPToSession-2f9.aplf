@@ -4,6 +4,6 @@
      ~⍺.LogHTTPToSession:0
      m←⍵.Message
      ts←GetCurrentUTCHttpDate''
-     ⎕←ts,': ',m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.URI
+     ⎕←ts,': ',m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.RequestTarget
      0
  }

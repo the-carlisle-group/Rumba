@@ -1,6 +1,0 @@
- BuildPackage←{                                       ⍝
-     lx←'#.CarliseGroup.Rumba.Admin.QuadLX 0'
-     ps←#.CarlisleGroup.Rumba
-     _←lx #.CarlisleGroup.AcreTools.BuildPackage ps
-     0
- }

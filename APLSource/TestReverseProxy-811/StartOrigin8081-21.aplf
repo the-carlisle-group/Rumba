@@ -1,5 +1,5 @@
  StartOrigin8081←{
-     #.S←StartOrigin 8081(GetTestDir,'/RumbaReverseProxyTest/Origin8081')
+     #.S←StartOrigin 8081(##.Tests.GetTestDir,'/RumbaReverseProxyTest/Origin8081')
      ⎕←'⍝ #.S ←→ This is Origin Server on port 8081'
      1
  }

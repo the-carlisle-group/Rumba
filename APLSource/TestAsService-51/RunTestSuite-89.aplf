@@ -1,4 +1,5 @@
  RunTestSuite←{
+     ##.(Tests.R←⍎AcreConfig.API)
      f←##.Core.ntbs ##.Tests.⎕NL 3
      f←('Test'∘{⍺≡(≢⍺)↑⍵}¨f)/f
      f~←⊂'Test_ServerShutdown'  ⍝ Don't run this when server is running as a service

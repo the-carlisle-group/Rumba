@@ -1,12 +1,13 @@
  BuildLogFilePage←{
      ⍝ ⍵ ←→ Request Message
      ⍝ r ←→ Response
-     ('.txt'≡¯4↑⍵.URI):##.Core.ServeFile ⍵
+     u←⍵.RequestTarget
+     ('.txt'≡¯4↑u):##.Core.ServeFile ⍵
      h←##.HTML
      s←⍵.Connection.Server
-     d←BuildTemplate(↑⌽⍵.Segments)⍵.URI
+     d←BuildTemplate(↑⌽⍵.Segments)u
      me←↑d h.GetElementsByType'main'
-     fn←s.Folder,⍵.URI,'.txt'
+     fn←s.Folder,u,'.txt'
      m←##.Core.ReadCommonLogFormat fn
      cn←'IP' 'User-Identifier' 'User-Id' 'DateTime' 'RequestLine' 'StatusCode' 'Size'
      cs←⎕NS¨(≢cn)⍴⊂''
@@ -15,7 +16,7 @@
      cs.Class←'tc' 'tc' 'tc' 'tc' 'tc' 'nc' 'nc'
      i←me h.NewSectionTable'Log Entries'cs
      f←me h.NewSectionForm'Download' 'safe'
-     a←f.Form h.NewDownloadButton'Download'(⍵.URI,'.txt')'filename.txt'
+     a←f.Form h.NewDownloadButton'Download'(u,'.txt')'filename.txt'
      r←##.Core.NewResponse ⍵
      r.Content←d
      r

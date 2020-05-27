@@ -2,7 +2,7 @@
      s←⍵.Connection.Server
      q←NewRequest 0
      q.Method←⍵.Method
-     q.URI←⍵.URI
+     q.RequestTarget←⍵.RequestTarget
      q.Headers←{(~(0⊃¨⍵)∊⊂'connection')/⍵}⍵.Headers
      q.Content←⍵.Content
      u←s.UpstreamServers

@@ -18,7 +18,7 @@
      c←⍺.Connection.Server.Cache
      ⍝ Remove Age header before putting in cache
 
-     e←⍺.URI ⍵.SecondaryCacheKey ⍵.KeyHeader ⍵.VaryHeader ⍵.Headers ⍵.Content 0 ⍵.ResponseTime 0 fl ia
+     e←⍺.RequestTarget ⍵.SecondaryCacheKey ⍵.KeyHeader ⍵.VaryHeader ⍵.Headers ⍵.Content 0 ⍵.ResponseTime 0 fl ia
      c.CacheMatrix←c.CacheMatrix⍪e
      ⍵
  }

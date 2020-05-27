@@ -1,5 +1,6 @@
  ErrorInConnection←{
      ⍝ ⍵ ←→ Connection
+     ⍵.Server.Stats.OnConnectionErrors+←1
      e←'Connection Error: ',⍕2↑⎕DMX.DM
      e CloseConnection ⍵
  }

@@ -1,12 +1,11 @@
  Test_ServerShutdown←{
-     c←##.Core.NewClient 0
+     c←R.NewClient 0
      c.ClientTimeout←3
-     q←##.Core.NewRequest 0
-     q.URI←'/ShutdownTestServer'
+     q←R.NewRequest'/ShutdownTestServer'
      q.Method←'GET'
-     _←c ##.Core.Send q
-     c←##.Core.NewClient 0
+     _←c R.Send q
+     c←R.NewClient 0
      345::0
-     _←c ##.Core.Send q
+     _←c R.Send q
      0
  }

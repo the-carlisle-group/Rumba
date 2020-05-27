@@ -1,23 +1,23 @@
  TestSecureGetRequest←{
-     _←##.Core.InitConga''
-     c←##.Core.NewClient 0
+     _←R.InitConga''
+     c←R.NewClient 0
      c.Port←443
      c.Secure←1
      c.Host←'www.carlislegroup.com'
-     q←##.Core.NewRequest''
-     r←c ##.Core.SendAndReceive q
+     q←R.NewRequest''
+     r←c R.SendAndReceive q
      r.ContentLength≠≢r.Content:1
      0=∨/'</html>'⍷r.Content:1
-     q.URI←'/Admin'
-     r←c ##.Core.SendAndReceive q
+     q.RequestTarget←'/Admin'
+     r←c R.SendAndReceive q
      r.ContentLength≠≢r.Content:1
      0=∨/'</html>'⍷r.Content:1
      c.Host←'github.com'
-     q.URI←'/'
-     r←c ##.Core.SendAndReceive q
+     q.RequestTarget←'/'
+     r←c R.SendAndReceive q
      r.ContentLength≠≢r.Content:1
-     q.URI←'/Admin'
-     r←c ##.Core.SendAndReceive q
+     q.RequestTarget←'/Admin'
+     r←c R.SendAndReceive q
      r.ContentLength≠≢r.Content:1
      0
  }

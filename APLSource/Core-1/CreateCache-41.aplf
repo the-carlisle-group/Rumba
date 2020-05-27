@@ -1,12 +1,12 @@
  CreateCache←{
      ⍝ ⍺ ←→ Server
      c←⎕NS''
-     n←'URI' 'SecondaryCacheKey' 'KeyHeader'
+     n←'RequestTargt' 'SecondaryCacheKey' 'KeyHeader'
      n,←'VaryHeader' 'Headers'
      n,←'Content' 'Hit' 'ResponseTime' 'Invalid'
      n,←'FreshnessLifetime' 'InitialAge'
      c.ColumnNames←n
-     c.URI←0
+     c.RequestTarget←0
      c.SecondaryCacheKey←1
      c.VaryHeader←2
      c.KeyHeader←3

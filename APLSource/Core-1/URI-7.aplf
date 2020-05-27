@@ -1,0 +1,4 @@
+ URI←{
+     9=⎕NC'⍵':ComposeURI ⍵
+     ParseURI ⍵
+ }

@@ -3,9 +3,9 @@
      ns←⍎'##.Doc',∊'.',¨2↓⍵.Segments
      c←(↓ns.⎕NL 9 3)~¨' '
      s←⍵.Connection.Server
-     d←BuildTemplate(↑⌽⍵.Segments)⍵.URI
+     d←BuildTemplate(↑⌽⍵.Segments)⍵.RequestTarget
      m←↑d h.GetElementsByType'main'
-     v←⍵.URI∘,¨'/',¨c
+     v←⍵.RequestTarget∘,¨'/',¨c
      _←m h.NewSectionLinks'Topics'(↓⍉⊃c v)
      r←##.Core.NewResponse ⍵
      r.Content←d

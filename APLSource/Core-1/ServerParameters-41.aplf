@@ -1,0 +1,15 @@
+ ServerParameters←{
+     p←⊂'Name'⍺.Name
+     p,←⊂'Port'⍺.Port
+     p,←⊂'Mode' 'Text'
+     p,←⊂'Address'⍺.Address
+     ~⍺.Secure:p
+     c←ResolveServerCert ⍺.PublicCertFile
+     k←ResolveServerCert ⍺.PrivateKeyFile
+     MyX509←⎕NEW DRC.X509Cert        ⍝ Do we need this?
+     x509←0⊃MyX509.ReadCertFromFile c
+     x509.KeyOrigin←⍺.CertType k     ⍝ Is cert type needed?
+     p,←⊂'X509'x509
+     p,←⊂'SSLValidation'⍺.TLSFlag
+     p
+ }

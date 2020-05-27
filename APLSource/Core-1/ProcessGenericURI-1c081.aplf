@@ -2,6 +2,8 @@
     ⍝ ⍵ ←→ Generic URI string
     ⍝ ← ←→ Generic URI space
     ⍝ RFC 3986
+     OBSOLETE
+
      f←{2↑⍵,⊂''}
      s←⎕NS''
      s.URI←⍵

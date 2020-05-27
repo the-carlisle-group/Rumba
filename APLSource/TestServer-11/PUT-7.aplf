@@ -1,5 +1,5 @@
  PUT←{
-     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.RequestTarget
      p≡'Strings':PutString ⍵
      break
  }

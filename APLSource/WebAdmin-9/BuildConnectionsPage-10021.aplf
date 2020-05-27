@@ -4,7 +4,7 @@
      h←##.HTML
      Add←##.HTML.Add
      s←⍵.Connection.Server
-     d←BuildTemplate'Connections'⍵.URI
+     d←BuildTemplate'Connections'⍵.RequestTarget
      c←##.Core.GetConnections s
      v←⊂'Name'c.Name
      v,←⊂'Peer Address'(c.PeerAddress)
@@ -14,7 +14,7 @@
      v,←⊂'Messages Handled'(⍕¨≢¨c.MessageLog)
      v,←⊂'Tid'(⍕¨c.Tid)
      cs←⎕NS¨(≢v)⍴⊂''
-     cs.RowLinks←⊂⍵.URI∘,¨'/',¨c.Name
+     cs.RowLinks←⊂⍵.RequestTarget∘,¨'/',¨c.Name
      cs.HeaderValue←0⊃¨v
      cs.BodyValues←1⊃¨v
      cs.Class←'tc' 'tc' 'tc' 'tc' 'tc' 'nc' 'nc'

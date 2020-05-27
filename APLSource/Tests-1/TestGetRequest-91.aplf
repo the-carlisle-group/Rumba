@@ -1,8 +1,7 @@
  TestGetRequest←{
-     c←##.Core.NewClient 0
-     q←##.Core.NewRequest 0
-     q.URI←'/HelloWorld'
-     r←c ##.Core.SendAndReceive q
+     c←R.NewClient 0
+     q←R.NewRequest'/HelloWorld'
+     r←c R.SendAndReceive q
      '/HelloWorld'≢GetContent r:1
      r.ContentLength≠≢r.Content:1
      0

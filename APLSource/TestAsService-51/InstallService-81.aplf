@@ -7,7 +7,7 @@
  rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
 
  LXwas←⎕LX
- ⎕LX←'#.CarlisleGroup.Rumba.TestAsService.LX'
+ ⎕LX←'#.Rumba.TestAsService.LX'
  WSIDwas←⎕WSID
  tempWSID←⎕WSID←(739⌶0),'/',servicename
  0 ⎕SAVE ⎕WSID
@@ -16,7 +16,7 @@
  cl←#.GetCommandLineArgs                    ⍝ Current command line
  q←{'"',⍵,'"'}                              ⍝ Quote stuff
  exe←↑cl                                    ⍝ The interpreter
- exe←(exe↑⍨'Dyalog.exe'{1⍳⍨⍺⍷⍵}exe),'Dyalogrt.exe'
+ exe←(exe↑⍨'dyalog.exe'{1⍳⍨⍺⍷⍵}exe),'Dyalogrt.exe'
  cmd←⊂q exe                                 ⍝
  cmd,←⊂q tempWSID                           ⍝ The workspace
  cmd,←⊂'APL_ServiceInstall=',servicename    ⍝ Tell the interpreter to install the service

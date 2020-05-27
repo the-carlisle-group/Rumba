@@ -1,5 +1,5 @@
  POST←{
-     u←⍵.URI
+     u←⍵.RequestTarget
      u≡'/Rumba/Profile':PostToProfile ⍵
      u≡'/Rumba/Log':PostToLog ⍵
      ⍵ ##.Core.Respond 404

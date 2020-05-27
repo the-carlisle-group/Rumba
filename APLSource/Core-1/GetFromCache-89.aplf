@@ -6,7 +6,7 @@
      ⍵.CacheControl.NoStore:0
      c←⍵.Connection.Server.Cache
      b←~c.CacheMatrix[;c.Invalid]
-     i←{⍵/⍳⍴⍵}b∧c.CacheMatrix[;c.URI]∊⊂⍵.URI
+     i←{⍵/⍳⍴⍵}b∧c.CacheMatrix[;c.RequestTarget]∊⊂⍵.RequestTarget
      0=≢i:0
      kh vh←c.CacheMatrix[↑i;c.KeyHeader c.VaryHeader]
      sk←⍵.Headers ComputeCacheKey kh vh

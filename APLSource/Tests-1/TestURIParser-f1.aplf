@@ -1,6 +1,6 @@
  TestURIParser←{
-     cms←{s←⎕NS'' ⋄ s.URI←⍵ ⋄ s}
-     f←##.Core.ProcessURI
+     cms←{s←⎕NS'' ⋄ s.RequestTarget←⍵ ⋄ s}
+     f←R.ProcessRequestTarget
      ⍝ Test
      m←cms'/Level1'
      m←f m

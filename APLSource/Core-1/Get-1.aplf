@@ -1,0 +1,6 @@
+ Get←{
+     u←ParseURI ⍵
+     c←NewClient u
+     q←NewRequest u.Resource
+     c SendAndReceive q
+ }

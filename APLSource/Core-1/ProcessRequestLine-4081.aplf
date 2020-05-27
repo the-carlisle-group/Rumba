@@ -5,7 +5,7 @@
      ⍵.HeadRequest←m≡'HEAD'
      ⍵.Safe←(⊂m)∊'HEAD' 'GET'
      ⍵.Method←⍵.HeadRequest⊃m'GET'
-     ⍵.URI←u
+     ⍵.RequestTarget←u
      ⍵.Version←v
      ⍵.VersionNumber←↑1⊃⎕VFI↑⌽{('/'≠⍵)⊂⍵}v
      ⍵

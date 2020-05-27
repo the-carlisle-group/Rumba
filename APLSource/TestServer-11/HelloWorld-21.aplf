@@ -6,6 +6,6 @@
      r.Headers,←⊂'cache-control' 'max-age=120'
      r.StatusCode←200
      r.ReasonPhrase←'OK'
-     r.Content←⍵.URI
+     r.Content←⍵.RequestTarget
      r
  }

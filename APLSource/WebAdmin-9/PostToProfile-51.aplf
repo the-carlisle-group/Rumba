@@ -12,6 +12,6 @@
      }0
      r←##.Core.NewResponse ⍵
      r.StatusCode←303
-     r.Location←⍵.URI
+     r.Location←⍵.RequestTarget
      r
  }

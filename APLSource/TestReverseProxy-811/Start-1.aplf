@@ -3,7 +3,7 @@
      s.Trap←1
      s.UpstreamServers←##.Core.NewUpstreamServer¨{'localhost'⍵}¨8081+⍳3
      s.Port←8080
-     s.Folder←GetTestDir,'/RumbaReverseProxyTest/ReverseProxy8080'
+     s.Folder←##.Tests.GetTestDir,'/RumbaReverseProxyTest/ReverseProxy8080'
      s.LogHTTP←1
      s.LogHTTPToSession←1
      s.DisplayRequests←0

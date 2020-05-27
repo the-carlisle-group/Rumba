@@ -2,7 +2,7 @@
      ⍝ ⍺ ←→ Client
      ⍝ ⍵ ←→ Request
      t←⍵.Method
-     t,←' ',EncodeBlanks ⍵.URI
+     t,←' ',EncodeBlanks ⍵.RequestTarget
      t,←' ',⍺.Version{⍵≡'':⍺ ⋄ ⍵}⍵.Version
      ⍵.CompressedContent←(EncodeGzip⍣⍵.Compress)⍵.Content
      _←⍺ DefaultRequestHeaders ⍵

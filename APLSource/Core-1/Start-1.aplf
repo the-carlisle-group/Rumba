@@ -4,27 +4,13 @@
      _←InitConga''
      _←s HandleStart 0  ⍝ Handle failure!
      s.Connections←⎕NS''
-     v←⊂'Name's.Name
-     v,←⊂'Port's.Port
-     v,←⊂'Mode' 'Text'
-     v,←⊂'Address's.Address
-     v←s{0=⍺.Secure:⍵ ⋄ 0≡⍺.X509:⍵ ⋄ ⍵,('X509'⍺.X509)('SSLValidation'⍺.TLSFlag)}v   ⍝ Supported for the time being but deprecated
-     X509←s∘{
-         0=⍺.Secure:⍵
-         0∊≢¨⍺.(PublicCertFile PrivateKeyFile CertType):⍵
-         MyX509←⎕NEW ##.DRC.X509Cert
-         x509←0⊃MyX509.ReadCertFromFile ⍺.PublicCertFile
-         x509.KeyOrigin←s.(CertType PrivateKeyFile)
-         ⍵,('X509'x509)('SSLValidation'⍺.TLSFlag)
-     }
-     v←X509 v
      _←DRC.Close s.Name
-     rc sn←2↑DRC.Srv v
-     cs←##.DRC.Error rc
+     p←s ServerParameters 0
+     rc sn←2↑DRC.Srv p
+     cs←DRC.Error rc
      0≠rc:⎕SIGNAL⊂('EN' 11)('ENX'rc)('EM'(1⊃cs))('Message'(2⊃cs))
      s.Name←sn
      #.onServiceNotification←'OnServiceNotification'⍺
-     _←'#'⎕WS'Event's.QuitEvent 1
      s.LogFileTie←OpenLogFile ⍺
      _←s LogRumba'Server started'
      s.Tid←ServerLoop&s

@@ -7,7 +7,7 @@
      n←2⊃⍵.Segments
      c←{6::0 ⋄ s.Connections⍎⍵}n
      c=0:⍵ Respond 404
-     d←BuildTemplate(↑⌽⍵.Segments)⍵.URI
+     d←BuildTemplate(↑⌽⍵.Segments)⍵.RequestTarget
      me←↑d h.GetElementsByType'main'
      _←me h.NewSectionDelete'Delete (Kill) this connection.'
      m←↓⍉⊃c.MessageLog

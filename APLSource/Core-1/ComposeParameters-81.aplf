@@ -1,0 +1,6 @@
+ ComposeParameters←{
+     ⍺←''
+     0=≢⍵:''
+     n v←↓⍉⍺ PercentEncode¨⍵
+     ↑,/n{⍺,'=',⍵}¨v
+ }

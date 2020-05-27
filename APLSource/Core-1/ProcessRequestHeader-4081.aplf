@@ -2,7 +2,7 @@
      ⍝ ⍵ ←→ Message
      ⍵.Type≢'Request':⍵
      _←ProcessRequestLine ⍵
-     _←ProcessURI ⍵
+     _←ProcessRequestTarget ⍵
      _←ProcessContentTypeHeader ⍵
      _←ProcessCacheControlHeader ⍵
      ⍵.Expect100←'100-continue'≡⍵ GetHeaderValue'Expect'

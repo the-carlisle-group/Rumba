@@ -1,0 +1,20 @@
+ ParseURI_Orig←{
+     ⍝ ⍵ ←→ Message
+     ⍝ OLD OBSOLETE VERSION.
+⍝ BUT CALLED BY FLIPDB! Replace in FlipDB With  ProcessURI
+     u←⍵
+     r←⎕NS''
+     r.URI←⍵
+     i j←u⍳'?#'
+     r.Path←(i⌊j)↑u
+     r.Query←(0⌈j-i)↑i↓u
+     r.Fragment←j↓u
+     s←{('/'≠⍵)⊂⍵}r.Path
+     k←s⍳¨';'
+     r.Segments←PercentDecode¨k↑¨s
+     m←k↓¨s
+     r.MatrixStrings←m
+     r.MatrixParameters←ParseParameters¨1↓¨m
+     r.QueryParameters←'&'ParseParameters 1↓r.Query
+     r
+ }

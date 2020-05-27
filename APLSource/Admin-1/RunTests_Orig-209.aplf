@@ -1,0 +1,19 @@
+ RunTests_Orig←{
+ ⍝ No need to start a test server "manually": is done automatically by this function since 2020-02-01
+ ⍝ Note that the function `Test_ServerShutdown` is part of the test
+ ⍝ suite and will be executed as the last test due to the "_" its name.
+ ⍝ That's a must because, as the name tells, it will shut down the test server.
+ ⍝ ⍺ is optional and defaults to 0. If 1 the test server will wait for a RIDE on port 4502.
+     ##.(Tests.R←⍎AcreConfig.API)
+     ⍺←0
+     rideFlag←⍺
+     ⍝ rideFlag StartTestServer ⍬:'Could not start server'
+     ⍝ _←##.Core.InitConga''
+     f←'T'##.Tests.⎕NL ¯3
+     b←RunTest¨f
+     tf←+/b
+     r←⊂'Tests run: ',⍕≢b
+     r,←⊂'Passed: ',⍕+/~b
+     r,←⊂'Failed: ',⍕+/b
+     ⊃r
+ }

@@ -1,8 +1,8 @@
  TestPercentEncodeDecode←{
      data←'세계 안녕하세요 ,, 어떻게 당신은?'   ⍝ Contains two consecutive commas and one "?" (last char, sometimes invisible)
-     data≢##.Core.{PercentDecode PercentEncode ⍵}data:1
-     data←##.Core.((GenDelims 0(,SubDelims 0)))
-     '%3A%2F%3F%23%5B%5D%40'≢0 ##.Core.PercentEncode data:1
-     'blue+light blue Yellow'≢##.Core.PercentDecode(##.Core.PercentEncode'blue+light blue'),'+Yellow':1
+     data≢R.{PercentDecode PercentEncode ⍵}data:1
+     data←R.((GenDelims 0(,SubDelims 0)))
+     '%3A%2F%3F%23%5B%5D%40'≢0 R.PercentEncode data:1
+     'blue+light blue Yellow'≢R.PercentDecode(R.PercentEncode'blue+light blue'),'+Yellow':1
      0
  }

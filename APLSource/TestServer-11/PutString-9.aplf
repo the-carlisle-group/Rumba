@@ -1,5 +1,5 @@
  PutString←{
-     p n←2↑{(⍵≠'/')⊂⍵}⍵.URI
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.RequestTarget
      s←⍵.Connection.Server
      _←n{s.Strings⍎⍺,'←⍵'}⍵.Content
      r←##.Core.NewResponse ⍵

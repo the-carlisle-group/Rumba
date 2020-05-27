@@ -1,9 +1,9 @@
  FileDownload←{
-     path←#.CarlisleGroup.Rumba.AcreConfig.ProjectFolder
-     path,←'Assets/Development/samplefile.txt'
+     p←##.AcreConfig.ProjectFolder
+     f←p,'Assets/Development/samplefile.txt'
      r←##.Core.NewResponse ⍺
      r.IsFile←1
-     r.FilePath←path
+     r.FilePath←f
      r.ContentType←'text/plain'
      r
  }

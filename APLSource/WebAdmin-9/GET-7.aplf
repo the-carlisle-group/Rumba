@@ -1,7 +1,7 @@
  GET←{
      ⍝ ⍵ ←→ Request Message
      ⍝ ← ←→ Response
-     u←⍵.URI
+     u←⍵.RequestTarget
      u≡'/Rumba':BuildHomePage ⍵
      u≡'/Rumba/Log':BuildLogPage ⍵
      u≡'/Rumba/Profile':BuildProfilePage ⍵

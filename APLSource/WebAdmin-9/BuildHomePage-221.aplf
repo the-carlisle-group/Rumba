@@ -2,7 +2,7 @@
      ⍝ ⍵ ←→ Request Message
      ⍝ r ←→ Response
      s←⍵.Connection.Server
-     d←BuildTemplate'Home'⍵.URI
+     d←BuildTemplate'Home'⍵.RequestTarget
      h←##.HTML
      m←d h.GetElementByType'main'
      l←⊂'/Log' '/Rumba/Log'

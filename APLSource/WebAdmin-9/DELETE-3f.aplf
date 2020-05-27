@@ -1,5 +1,5 @@
  DELETE←{
-     u←⍵.URI
+     ⍝ u←⍵.URI   ????
      'Connections'≡1⊃⍵.Segments:DeleteConnection ⍵
      ⍵ Respond 400
  }

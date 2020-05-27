@@ -1,4 +1,3 @@
  CreateFolder←{
-     ok←1 ⎕MKDIR ⍵
-     ⍵
+     ⍵⊣2 ⎕MKDIR ⍵
  }

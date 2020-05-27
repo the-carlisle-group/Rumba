@@ -16,3 +16,4 @@ that takes advantage of Rumba is never going to be told about them.
 For this very reason Rumba sends a "PauseEvent" event (9877 by default) or a "ContinueEvent"
 (9878 by default) to the root. It is then up to the application programmer to associate a 
 handler with these events and take appropriate action like writing to the Windows Event Log.
+

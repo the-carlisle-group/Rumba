@@ -1,18 +1,29 @@
  ParseURI←{
-     ⍝ ⍵ ←→ Message
-     u←⍵
-     r←⎕NS''
-     r.URI←⍵
-     i j←u⍳'?#'
-     r.Path←(i⌊j)↑u
-     r.Query←(0⌈j-i)↑i↓u
-     r.Fragment←j↓u
-     s←{('/'≠⍵)⊂⍵}r.Path
+     ⍝ ⍺ ←→ Result Space
+     ⍝ ⍵ ←→ URI
+     fos←{¯2↑(⊂''),⍵⊆⍨~<\⍺=⍵}
+     bos←{2↑(⍵⊆⍨~<\⍺=⍵),⊂''}
+     ⍺←⎕NS''
+     ⍺.URI←⍵
+     i←↑⍸'://'⍷⍵
+     ⍺.Scheme←i↑⍵
+     ⍺.AuthRes←⍵↓⍨i+3×i≠0
+     ⍺.Authority←⍺.AuthRes↑⍨⍺.AuthRes⍳'/'
+     ⍺.Resource←⍺.AuthRes↓⍨≢⍺.Authority
+     ⍺.UserInfo r←'@'fos ⍺.Authority
+     ⍺.(Host Port)←':'bos r
+     ⍺.(Subdomain Domain)←'.'fos ⍺.Host
+     ⍺.TLD←↑⌽'.'bos ⍺.Domain
+     i j←⍺.Resource⍳'?#'
+     ⍺.Path←(i⌊j)↑⍺.Resource
+     ⍺.Query←(0⌈j-i+1)↑(i+1)↓⍺.Resource
+     ⍺.Fragment←(j+1)↓⍺.Resource
+     s←{('/'≠⍵)⊂⍵}⍺.Path
      k←s⍳¨';'
-     r.Segments←PercentDecode¨k↑¨s
-     m←k↓¨s
-     r.MatrixStrings←m
-     r.MatrixParameters←ParseParameters¨1↓¨m
-     r.QueryParameters←'&'ParseParameters 1↓r.Query
-     r
+     ⍺.Segments←PercentDecode¨k↑¨s
+     m←(k+1)↓¨s
+     ⍺.MatrixParameters←ParseParameters¨m
+     ⍺.QueryParameters←'&'ParseParameters ⍺.Query
+     ⍺.Display←{{⍵,⍪⍎¨⍵}⎕NL ¯2}
+     ⍺
  }

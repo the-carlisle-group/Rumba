@@ -1,10 +1,9 @@
  TestPostEmptyBody←{
-     c←##.Core.NewClient 0
-     q←##.Core.NewRequest 0
-     q.URI←'/HelloWorld'
+     c←R.NewClient 0
+     q←R.NewRequest'/HelloWorld'
      q.Method←'POST'
      q.Headers,←⊂'ContentType' 'application/x-www-form-urlencoded'
-     r←c ##.Core.SendAndReceive q
+     r←c R.SendAndReceive q
      r.StatusCode≠404:1
      0
  }

@@ -5,9 +5,11 @@
      r←⎕NS''
      r.Version←''
      r.Method←'GET'
-     r.URI←,'/'
      r.Headers←''
      r.Content←''
      r.Compress←0
+     r.RequestTarget←,'/'
+     (⍵≡0)∨0=≢⍵:r
+     r.RequestTarget←,⍵
      r
  }

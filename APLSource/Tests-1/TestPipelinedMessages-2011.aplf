@@ -1,13 +1,13 @@
  TestPipelinedMessages←{
      ⍺←0
-     c←##.Core.NewClient 0
+     c←R.NewClient 0
      c.LogCongaEvents←⍺
      c.LogMessages←⍺
-     qv←##.Core.NewRequest¨3⍴0           ⍝ Three requests
-     qv.URI←'/HelloWorld?Delay='∘,¨'210' ⍝ 2 sec, 1 sec, 0 sec delay
-     _←c ##.Core.Send¨qv                 ⍝ Pipeline 'em
-     rv←c ##.Core.Receive¨qv
-     qv.URI≢GetContent¨rv:1
-     _←c ##.Core.Close 0
+     qv←R.NewRequest¨3⍴0           ⍝ Three requests
+     qv.RequestTarget←'/HelloWorld?Delay='∘,¨'210' ⍝ 2 sec, 1 sec, 0 sec delay
+     _←c R.Send¨qv                 ⍝ Pipeline 'em
+     rv←c R.Receive¨qv
+     qv.RequestTarget≢GetContent¨rv:1
+     _←c R.Close 0
      0
  }

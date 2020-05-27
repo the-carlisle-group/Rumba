@@ -1,10 +1,11 @@
  GetDesiredURL←{
-     ~⍵.BrowserPost:⍵.URI
-     0=⍵.ContentLength:⍵.URI
+     u←⍵.RequestTarget
+     ~⍵.BrowserPost:u
+     0=⍵.ContentLength:u
      u1←⍵ GetFormValue'urlpart1'
-     u1≡'':⍵.URI
+     u1≡'':u
      u2←⍵ GetFormValue'urlpart2'
      ⍵.DesiredURL←u1
-     u2≡'':⍵.URI
+     u2≡'':u
      u1,'/',u2
  }

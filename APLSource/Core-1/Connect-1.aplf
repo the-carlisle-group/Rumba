@@ -5,15 +5,8 @@
      ⍝ ← ←→ 0
      ⍺.State=1:0
      _←InitConga''
-
-     args←⍬
-     args,←⊂'Name' ''
-     args,←⊂'Address'⍺.Host
-     args,←⊂'Port'⍺.Port
-     args,←⊂'Mode' 'Text'
-     args←⍺{0=⍺.Secure:⍵ ⋄ ⍵,('X509'⍺.X509)('SSLValidation'⍺.TLSFlag)('Priority'⍺.TLSPriority)}args
-
-     rc cn←2↑DRC.Clt args
+     p←⍺ ClientParameters 0
+     rc cn←2↑DRC.Clt p
      rc≠0:⎕SIGNAL/CongaError rc
      ⍺.Name←cn
      ⍺.LogFileTie←OpenLogFile ⍺

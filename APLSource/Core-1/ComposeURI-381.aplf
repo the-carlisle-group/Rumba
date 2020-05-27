@@ -1,0 +1,17 @@
+ ComposeURI←{
+     ⍝ Inverse of ParseURI
+     ⍝ ⍵ ←→ URI space
+     ⍝ ← ←→ URI string
+     ctf←{(0<≢⍵)/⍵,⍺}
+     ctb←{(0<≢⍵)/⍺,⍵}
+     r←'://'ctf ⍵.Scheme
+     r,←'@'ctf ⍵.UserInfo
+     r,←⍵.Host
+     r,←':'ctb ⍵.Port
+     s←PercentEncode¨⍵.Segments
+     m←ComposeParameters¨⍵.MatrixParameters
+     r,←∊'/',¨s,¨';'ctb¨m
+     r,←'?'ctb'/?'ComposeParameters ⍵.QueryParameters
+     r,←'#'ctb ⍵.Fragment
+     r
+ }

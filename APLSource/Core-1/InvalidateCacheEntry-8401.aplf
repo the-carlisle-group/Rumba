@@ -5,7 +5,7 @@
      ⍺.Safe:0
      ~⍵.StatusClass∊2 3:0
      c←⍺.Connection.Server.Cache
-     b←c.CacheMatrix[;c.URI]∊⊂⍺.URI
+     b←c.CacheMatrix[;c.RequestTarget]∊⊂⍺.RequestTarget
      c.CacheMatrix[b/⍳⍴b;c.Invalid]←1
      0
  }

@@ -13,11 +13,6 @@
      s.LogConga←1
      s.LogRumba←1
      s.LogHTTPToSession←1
-     s.Secure←1
-     tf←##.AcreConfig.ProjectFolder,'Assets/Runtime/TestCertificates/server/'
-     s.PublicCertFile←tf,'localhost-cert.pem'
-     s.PrivateKeyFile←tf,'localhost-key.pem'
-     s.CertType←'DER'
      s.Context←⎕THIS
      _←s ##.Core.Start 0
      s

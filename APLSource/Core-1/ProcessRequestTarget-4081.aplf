@@ -1,6 +1,6 @@
- ProcessURI←{
+ ProcessRequestTarget←{
      ⍝ ⍵ ←→ Message
-     u←⍵.URI
+     u←⍵.RequestTarget
      i j←u⍳'?#'
      ⍵.Path←(i⌊j)↑u
      ⍵.Query←(0⌈j-i+1)↑(i+1)↓u

@@ -1,8 +1,0 @@
-# URI
-
-Applies to:{.prefix}
-
-Request{.info}
-
-This property specifies to the URI of the request. It defaults to "/"
-

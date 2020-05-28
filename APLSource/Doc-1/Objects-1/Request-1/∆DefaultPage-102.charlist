@@ -1,8 +1,0 @@
-# Request Object
-
-The Request object is a client-side object that represents an HTTP request to be sent to a server.
-
-A new request is created using the static →[Methods.NewRequest] method. Various properties are then
-specified, and the request is sent to the server using the →[##.Client.Methods.Send] method of the
-client object.
-

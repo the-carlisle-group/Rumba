@@ -1,9 +1,0 @@
-# ReasonPhrase
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The ResasonPhrase property is the reason phrase on the response line. It is only provided for
-response messages. It is a character vector.
-

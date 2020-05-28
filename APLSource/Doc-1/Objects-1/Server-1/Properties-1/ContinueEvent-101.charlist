@@ -1,9 +1,0 @@
-[DATA]:index=''
-
-# ContinueEvent
-
-An integer that defaults to 9878. 
-
-In case the SCM sends a "Continue" command to the application Rumba sends a ContinueEvent to #.
-
-For a discussion how this event can be put to good use see →[*.Running_as_a_Windows_Service].

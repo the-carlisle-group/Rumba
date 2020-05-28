@@ -1,9 +1,0 @@
-# QueryParameters
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The QueryParameters property is a 2-column matrix of the query string parameter names and values.
-The names and values are percent-decoded. It is only provided for request messages.
-

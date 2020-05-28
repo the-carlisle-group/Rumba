@@ -1,7 +1,0 @@
-# HTTP Status Code Registry
-
-HTTP status codes and default reason phrases are stored in the Core.StatusCodeRegistry function. It
-is provided here for reference only. There is no need to call this function directly.
-
-⍎⍎#.CarlisleGroup.Rumba.Doc.GetFunctionBody 'StatusCodeRegistry'⍎⍎
-

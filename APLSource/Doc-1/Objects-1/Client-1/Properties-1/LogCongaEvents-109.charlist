@@ -1,9 +1,0 @@
-# LogCongaEvents Property
-
-Applies to:{.prefix}
-
-Client{.info}
-
-The LogCongaEvents property specifies whether or not Conga events on the client are logged to the
-APL session. It defaults to 0.
-

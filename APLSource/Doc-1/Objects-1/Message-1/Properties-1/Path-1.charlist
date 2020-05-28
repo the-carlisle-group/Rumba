@@ -1,8 +1,0 @@
-# Path
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The Path property is the path component of the URI. It is only provided for request messages.
-

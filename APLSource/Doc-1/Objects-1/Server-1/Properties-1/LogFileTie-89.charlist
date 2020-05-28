@@ -1,9 +1,0 @@
-[DATA]:index=''
-
-# LogFileTie
-
-Applies to:{.prefix}
-
-Server{.info}
-
-Read-only property that is either 0 or holds the tie number of the log file: a negative integer.

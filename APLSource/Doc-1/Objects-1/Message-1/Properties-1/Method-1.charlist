@@ -1,9 +1,0 @@
-# Method
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The Method property is the method on the request line. It is only provided for request messages. It
-is a character vector.
-

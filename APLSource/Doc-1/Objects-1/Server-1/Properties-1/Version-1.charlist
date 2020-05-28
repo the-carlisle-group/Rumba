@@ -1,9 +1,0 @@
-[DATA]:index=''
-
-# Version
-
-Applies to:{.prefix}
-
-Server{.info}
-
-Character vector that carries the supported version of HTTP in the format "HTTP/x.y".

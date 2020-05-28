@@ -1,9 +1,0 @@
-# UTF8
-
-Applies to:{.prefix}
-
-Response{.info}
-
-The UTF8 property specifies whether or not UTF-8 encoding should be applied to the →[Content]
-property. It defaults to 1.
-

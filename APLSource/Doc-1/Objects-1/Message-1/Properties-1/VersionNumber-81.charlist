@@ -1,9 +1,0 @@
-# VersionNumber
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The VersionNumber property is the HTTP version from the message start line. It is numeric, and does
-not contain the "HTTP/" part of the version.
-

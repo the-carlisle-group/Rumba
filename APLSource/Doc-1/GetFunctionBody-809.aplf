@@ -1,9 +1,0 @@
- GetFunctionBody←{
- ⍝ Used to get the body of any function in Rumba.Core into a help page.
- ⍝ Returns a <pre> HTML block: that's the only way to make it code.
-     ns←⍵
-     fnsName←⍺
-     body←##.Core.⎕NR fnsName~''''
-     (0⊃body)←'<pre><code>',0⊃body
-     body,⊂'</code></pre>'
- }

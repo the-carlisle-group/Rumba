@@ -1,8 +1,0 @@
-# Query
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The Query property is the query component of the URI. It is only provided for request messages.
-

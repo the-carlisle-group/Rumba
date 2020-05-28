@@ -1,8 +1,0 @@
-# Version
-
-Applies to:{.prefix}
-
-Message{.info}
-
-The Version property is the HTTP version from the message start line. It is text vector.
-

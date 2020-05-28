@@ -1,8 +1,0 @@
-# NewHMTLDocument Method
-
-~~~
-R←NewHTMLDocument X
-~~~
-
-This method creates a new HTMLDocument object. X is 0.
-

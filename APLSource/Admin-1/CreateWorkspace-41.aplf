@@ -1,0 +1,11 @@
+ CreateWorkspace←{
+     ⍝ ⍺ ←→ ⎕LX
+     ⍝ ⍵ ←→ FQP of workspace file
+     p←##.AcreConfig.ProjectFolder
+     l←⊂']acre.openproject ',p
+     l,←⊂'⎕LX←''',⍺,''''
+     l,←⊂'0 ⎕SAVE ''',⍵,''''
+     l,←⊂'⎕OFF 99'
+     r←ExecuteAPL l
+     0
+ }

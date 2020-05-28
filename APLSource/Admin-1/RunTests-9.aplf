@@ -1,6 +1,6 @@
  RunTests←{
      ##.(Tests.R←⍎AcreConfig.API)
-     f←'T'##.Tests.⎕NL ¯3
+     f←('T'##.Tests.⎕NL ¯3)~⊂'Test_ServerShutdown'
      b←RunTest¨f
      tf←+/b
      r←⊂'Tests run: ',⍕≢b

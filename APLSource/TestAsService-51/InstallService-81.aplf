@@ -1,18 +1,12 @@
- r←{rf}InstallService servicename;cmd;cl;q;f;z;i;maxWait;success;exe;LXwas;WSIDwas;tempWSID
+ r←{rf}InstallService servicename;cmd;cl;q;f;z;i;maxWait;success;exe;tempWSID
 ⍝ Installs Rumba as a service.
 ⍝ If the right argument "servicename" is empty it defaults to the result of fns `DefaultServiceName`.
 ⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running service.
 ⍝ *** This function temporarily changes ⎕lX and ⎕WSID.
  servicename←GetServiceName servicename
  rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
-
- LXwas←⎕LX
- ⎕LX←'#.Rumba.TestAsService.LX'
- WSIDwas←⎕WSID
  tempWSID←⎕WSID←(739⌶0),'/',servicename
- 0 ⎕SAVE ⎕WSID
- ⎕WSID←WSIDwas
- ⎕LX←LXwas
+ '#.Rumba.TestAsService.LX'##.Admin.CreateWorkspace tempWSID
  cl←#.GetCommandLineArgs                    ⍝ Current command line
  q←{'"',⍵,'"'}                              ⍝ Quote stuff
  exe←↑cl                                    ⍝ The interpreter

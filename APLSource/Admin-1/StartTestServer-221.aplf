@@ -1,18 +1,13 @@
- r←{rf}StartTestServer dummy;LXwas;WSIDwas;tempWSID;cl;q;exe;cmd;_
+ r←{rf}StartTestServer dummy;lx;tempWSID;cl;q;exe;cmd;_
 ⍝ Starts a separate instance of Dyalog (RunTime) and starts a test server within that instance.
 ⍝ The optional left argument defaults to 0. 1 allows one to RIDE into the running server.
 ⍝ *** For a RIDE the Conga DLLs must be available in the TEMP directory!
 ⍝ *** This function changes ⎕LX and ⎕WSID but only temporarily.
  rf←{0<⎕NC ⍵:⍎⍵ ⋄ 0}'rf'                    ⍝ RIDE flag
  r←1
-
- LXwas←⎕LX
- ⎕LX←'#.CarlisleGroup.Rumba.TestServer.Start ⍬ ⋄ ⎕DQ ''.'''
- WSIDwas←⎕WSID
- tempWSID←⎕WSID←(739⌶0),'/Rumba_Testserver'
- 0 ⎕SAVE ⎕WSID
- ⎕WSID←WSIDwas
- ⎕LX←LXwas
+ tempWSID←(739⌶0),'/Rumba_Testserver'
+ lx←'#.Rumba.TestServer.Start ⍬ ⋄ ⎕DQ ''''.'''''
+ lx CreateWorkspace tempWSID
  cl←#.GetCommandLineArgs                    ⍝ Current command line
  q←{'"',⍵,'"'}                              ⍝ Quote stuff
  exe←↑cl                                    ⍝ The interpreter

@@ -22,6 +22,7 @@
      Encode2Flags←{1↓⌽(10⍴2)⊤+/⍵}
      (FULL RIDE REPORT_SC_MSG INIT_CONGA)←4↑Encode2Flags ⍺
      servicename←GetServiceName ⍵
+     _←('delete ',servicename)RunAsAdmin'sc'
      z←⎕CMD'sc query ',servicename
      f←0=+/'The specified service does not exist as an installed service.'⍷∊z
      f:'The service is currently either installed or running (or both).'⎕SIGNAL 11

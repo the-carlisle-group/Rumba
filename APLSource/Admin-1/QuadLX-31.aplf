@@ -4,7 +4,7 @@
      t,←⊂'⍝ ****** Welcome to Rumba ******'
      t,←⊂'⍝ ******************************'
      t,←⊂'⍝ To start the test server:'
-     t,←⊂'      #.Rumba.TestServer.Start 0'
+     t,←⊂'      S←#.Rumba.TestServer.Start 0'
      t,←⊂'⍝ To run the tests (do this in a second Rumba/APL session):'
      t,←⊂'      #.Rumba.Admin.RunTests 0'
      ⊃t

@@ -1,4 +1,5 @@
  StartServer←{
+     OBSOLETE
      p←⍵
      s←##.Core.NewServer 0
      s.OnStart←p.OnStart

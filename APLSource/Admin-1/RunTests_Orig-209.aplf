@@ -7,8 +7,7 @@
      ##.(Tests.R←⍎AcreConfig.API)
      ⍺←0
      rideFlag←⍺
-     ⍝ rideFlag StartTestServer ⍬:'Could not start server'
-     ⍝ _←##.Core.InitConga''
+     rideFlag StartTestServer ⍬:'Could not start server'
      f←'T'##.Tests.⎕NL ¯3
      b←RunTest¨f
      tf←+/b

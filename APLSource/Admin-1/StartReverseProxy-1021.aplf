@@ -1,10 +1,10 @@
  StartReverseProxy←{
      f←ExecuteAPL
      e←']acreTOOLS.openproject c:\APLProjects\Rumba'
-     _←f e'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8081 0'
-     _←f e'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8082 0'
-     _←f e'#.CarlisleGroup.Rumba.TestReverseProxy.StartOrigin8083 0'
-     _←f e'#.CarlisleGroup.Rumba.TestReverseProxy.Start'
+     _←f e'#.Rumba.TestReverseProxy.StartOrigin8081 0'
+     _←f e'#.Rumba.TestReverseProxy.StartOrigin8082 0'
+     _←f e'#.Rumba.TestReverseProxy.StartOrigin8083 0'
+     _←f e'#.Rumba.TestReverseProxy.Start'
      ⎕←'Waiting 5 seconds for servers to start...'
      _←⎕DL 5
      0

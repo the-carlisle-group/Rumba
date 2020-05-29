@@ -8,7 +8,6 @@
      l←⊂'/Log' '/Rumba/Log'
      l,←⊂'/Connections' '/Rumba/Connections'
      l,←(s.ServerType≠0)/⊂'/Gateway' '/Rumba/Gateway'
-     l,←⊂'/Documentation' '/Rumba/Documentation'
      n←m h.NewSectionLinks'Links'l
 
      ⍝ Extract this, use for origin server too.
@@ -30,15 +29,6 @@
 
      f.class←⊂'fieldstyle2'
      f.Input.readonly←⊂'readonly'
-
-
-
-
-
-
-
-
-
 
      r←##.Core.NewResponse ⍵
      r.Content←d

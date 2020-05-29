@@ -3,6 +3,5 @@
      v,←⊂'Log' '/Rumba/Log'
      v,←⊂'Connections' '/Rumba/Connections'
      v,←⊂'Gateway' '/Rumba/Gateway'
-     v,←⊂'Documentation' '/Rumba/Documentation'
      v
  }

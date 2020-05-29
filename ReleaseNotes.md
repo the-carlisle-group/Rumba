@@ -1,4 +1,22 @@
-# Rumba Release 0.1.6                    
+# Rumba Release 0.1.7                    
+1. Remove documentaton menu and pages from web admin
+2. Add NewURI as a synonym for ParseURI
+3. Remove obsolete function Admin.StartServer
+4. Move documentation to wiki
+5. Touch up testing framework
+6. Issues #21, #22, #23, #24, #25, #27 and #.28
+7. Update README.md
+8. Latest change to GetCongaDllPath withdrawn
+9. GetCongaDllPath now checks the current dir first, then the project folder
+10. SCM events added plus some improvements
+11. X509 server property replaced by new properties, help improved and a couple of bug fixes
+12. Help pages added for Certificates; Test server now RIDEable
+13. Bug fix in Core.LogHTTPToSession
+14. Tests for WindowsServices are back
+15. Help system updated and typos fixed
+16. Formatting corrected and ]ADOC-compatible info added
+
+# Rumba Release 0.1.6 2019-10-14 15:06:56
 1. Update acre config file
 
 # Rumba Release 0.1.5 2019-10-09 13:39:51

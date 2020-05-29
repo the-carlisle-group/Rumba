@@ -1,11 +1,3 @@
  NewURI←{
-     s←⎕NS''
-     0<≢⍵:ParseURI ⍵
-     s.Path←''
-     s.Query←''
-     s.Fragment←''
-     s.Segments←''
-     s.MatrixParameters←''
-     s.QueryParameters←''
-     s
+     ParseURI ⍵
  }

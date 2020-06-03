@@ -2,7 +2,6 @@
      0=≢⍵:0 2⍴⊂''
      ⍺←';'
      p←(⍺≠⍵)⊂⍵
-     ~'='∊⊃,/p:346 ⎕SIGNAL⍨'Bad request (invalid matrix parameter definition)'
      m←⊃{2↑((~<\⍵='=')⊂⍵),⊂''}¨p
      PercentDecode¨m
  }

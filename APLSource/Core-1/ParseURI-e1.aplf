@@ -16,7 +16,9 @@
      ⍺.TLD←↑⌽'.'bos ⍺.Domain
      i j←⍺.Resource⍳'?#'
      ⍺.Path←(i⌊j)↑⍺.Resource
+     ⍺.IsQuery←i<≢⍺.Resource
      ⍺.Query←(0⌈j-i+1)↑(i+1)↓⍺.Resource
+     ⍺.IsFragment←j<≢⍺.Resource
      ⍺.Fragment←(j+1)↓⍺.Resource
      s←{('/'≠⍵)⊂⍵}⍺.Path
      k←s⍳¨';'

@@ -1,4 +1,8 @@
-# Rumba Release 0.1.7                    
+# Rumba Release 0.1.8                    
+1. Remove improper error guard from ParseParameters
+2. Add IsQuery and IsFragment to ParseURI
+
+# Rumba Release 0.1.7 2020-05-29 08:25:44
 1. Remove documentaton menu and pages from web admin
 2. Add NewURI as a synonym for ParseURI
 3. Remove obsolete function Admin.StartServer

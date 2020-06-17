@@ -5,6 +5,7 @@ arc,application/octet-stream,.arc,Archive document (multiple files embedded)
 avi,video/x-msvideo,.avi,AVI: Audio Video Interleave
 azw,application/vnd.amazon.ebook,.azw,Amazon Kindle eBook format
 bin,application/octet-stream,.bin,Any kind of binary data
+bmp,image/bmp,.bmp,Bitmap image
 bz,application/x-bzip,.bz,BZip archive
 bz2,application/x-bzip2,.bz2,BZip2 archive
 csh,application/x-csh,.csh,C-Shell script
@@ -33,6 +34,7 @@ oga,audio/ogg,.oga,OGG audio
 ogv,video/ogg,.ogv,OGG video
 ogx,application/ogg,.ogx,OGG
 pdf,application/pdf,.pdf,Adobe Portable Document Format (PDF)
+png,image/png,.png,PNG Image
 ppt,application/vnd.ms-powerpoint,.ppt,Microsoft PowerPoint
 rar,application/x-rar-compressed,.rar,RAR archive
 rtf,application/rtf,.rtf,Rich Text Format (RTF)

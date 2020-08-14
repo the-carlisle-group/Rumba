@@ -1,0 +1,8 @@
+ TestGetCurrentUTCHttpDate←{
+     ⍝ Validate formatting characters are in the result
+     t←##.Core.GetCurrentUTCHttpDate''
+     'GMT'≢¯3↑t:1
+     ','≠3⊃t:1
+     2≠+/t=':':1
+     0
+ }

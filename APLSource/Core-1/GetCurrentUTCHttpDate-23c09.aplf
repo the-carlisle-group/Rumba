@@ -1,3 +1,11 @@
  GetCurrentUTCHttpDate←{
-     1⊃##.DRC.GetProp'.' 'HttpDate'
+     isWin←'W'=0 0⊃'.'⎕WG'APLVersion'
+     ~isWin:1⊃##.DRC.GetProp'.' 'HttpDate'
+     ⍝ On Windows use .NET.  Avoid opening a socket on conga dll loa
+     ⍝ when none is required.  Prevents firewall warnings.
+     _net←⎕NS''
+     _net.⎕USING←,⊂'System'
+     _net.DateTime.UtcNow.ToString(,⊂'r')
+     ⍝ Format "r" is RFC1123
+     ⍝ https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings#RFC1123
  }

@@ -1,4 +1,8 @@
-# Rumba Release 0.1.8                    
+# Rumba Release 0.1.9                    
+1. GetCurrentUTCHTTPDate use .NET on Windows
+2. Added new image mime types to lookup file
+
+# Rumba Release 0.1.8 2020-06-10 16:05:35
 1. Remove improper error guard from ParseParameters
 2. Add IsQuery and IsFragment to ParseURI
 

@@ -1,5 +1,6 @@
  Start←{
      ⍝ ⍺ ←→ Server
+     ⍺←NewServer ⍵
      s←⍺
      _←InitConga''
      _←s HandleStart 0  ⍝ Handle failure!
@@ -15,5 +16,6 @@
      _←s LogRumba'Server started'
      s.Tid←ServerLoop&s
      s.StartTime←QTSToSeconds QTS
-     StartUpstreamServers s
+     _←StartUpstreamServers s
+     s
  }

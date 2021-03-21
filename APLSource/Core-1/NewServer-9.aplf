@@ -1,13 +1,14 @@
  NewServer←{
+     ⍝ ⍵ ←→ 0, '', or Site/Service Folder
      s←⎕NS''
+     s.Folder←{0≡⍵:'' ⋄ ⍵}⍵
      s.Name←''
-     s.Folder←''
-     s.Port←443
+     s.Port←80
      s.Address←''
      s.CongaTimeout←5000
      s.IdleTimeout←30
      s.OnStart←''
-     s.OnRequest←''
+     s.OnRequest←'ServeStaticSite'
      s.OnHeader←''
      s.OnCongaTimeout←''
      s.Context←⎕THIS
@@ -30,7 +31,7 @@
      s.Trap←1
      s.UpstreamServers←⍬
      s.Stats←InitStats 0
-     s.Secure←1
+     s.Secure←0
      s.PublicCertFile←'localhost-cert.pem'
      s.PrivateKeyFile←'localhost-key.pem'
      s.X509←0

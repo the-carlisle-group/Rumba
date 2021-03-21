@@ -2,11 +2,11 @@
      ⍝ ⍺ ←→ Optional 404 Response
      ⍝ ⍵ ←→ Request
      ⍺←⍵ Respond 404 1
-     fn←⍵.Connection.Server.Folder,⍵.RequestTarget
-     ~FileExists fn:⍺
+     e n←DefaultRequestFile ⍵
+     ~e:⍺
      r←NewResponse ⍵
      r.UTF8←0
-     r.Content←ReadBytes fn
-     r.ContentType←FilenameToContentType fn
+     r.Content←ReadBytes n
+     r.ContentType←FilenameToContentType n
      r
  }

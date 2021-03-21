@@ -1,0 +1,12 @@
+ DefaultRequestFile←{
+     ⍝ ⍵ ←→ Request Message
+     ⍝ ← ←→ Target exists, Defaulted Target Name
+     t←⍵.RequestTarget
+     d←⍵.Connection.Server.Folder
+     f←d,t,(t≡,'/')/'index.html'
+     e←FileExists f
+     e:e f
+     p n x←⎕NPARTS f
+     x≢'':e f
+     {(FileExists ⍵)⍵}f,'.html'
+ }

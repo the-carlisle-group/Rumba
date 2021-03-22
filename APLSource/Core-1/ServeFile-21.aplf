@@ -1,12 +1,15 @@
  ServeFile←{
      ⍝ ⍺ ←→ Optional 404 Response
      ⍝ ⍵ ←→ Request
+     ⍝ ← ←→ Response
      ⍺←⍵ Respond 404 1
-     e n←DefaultRequestFile ⍵
+     e n x←DefaultRequestFile ⍵
      ~e:⍺
      r←NewResponse ⍵
      r.UTF8←0
      r.Content←ReadBytes n
-     r.ContentType←FilenameToContentType n
+     s←⍵.Connection.Server
+     t←(s.MimeLookup⊂x)⊃s.MimeTypes
+     r.ContentType←t
      r
  }

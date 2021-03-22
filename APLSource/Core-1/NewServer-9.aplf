@@ -18,9 +18,9 @@
      s.LogHTTPToSession←0
      s.LogFileTie←0
      s.MaxNoOfThreads←1000
-     sc rf←StatusCodeRegistry 0
-     s.StatusCodes←sc
-     s.ReasonPhrases←rf
+     s.(StatusCodes ReasonPhrases)←StatusCodeRegistry 0
+     s.(MimeTypes MimeExts)←MimeRegistry 0
+     s.(MimeLookup←MimeExts∘⍳)
      s.Version←'HTTP/1.1'
      s.ServiceTimeout←100
      s.Paused←0

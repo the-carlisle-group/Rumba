@@ -1,4 +1,8 @@
-# Rumba Release 0.1.9                    
+# Rumba Release 0.1.10                    
+1. Refactor MIME type lookup
+2. Implement issue #34, issue #35 and issue #36
+
+# Rumba Release 0.1.9 2020-08-14 10:45:03
 1. GetCurrentUTCHTTPDate use .NET on Windows
 2. Added new image mime types to lookup file
 

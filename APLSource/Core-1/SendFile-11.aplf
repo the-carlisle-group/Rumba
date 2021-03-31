@@ -1,25 +1,20 @@
  SendFile←{
-     ⍝ ⍵ ←→ Request
+     ⍝ ⍵ ←→ Response
      ⍝ Send file using Conga 3.0 native send file utility.
      ⍝ Process uses C worker thread and should be no blocking.
      m←⍵.Message
      c←m.Connection
      s←c.Server
-     n←s.Name,'.',c.Name
      ⍵.ContentLength←2 ⎕NINFO ⍵.FilePath
-
      _←DefaultResponseHeaders ⍵
      h←ComposeHeaders ⍵
-
      rp←GetReasonPhrase ⍵
      t←s.Version
      t,←' ',⍕⍵.StatusCode
      t,←' ',rp
      ⍵.ComposedStartLine←t
      nh←~m.HeadRequest
-     res←t,h,CrLf,CrLf
-
-     _←DRC.Send n(res ⍵.FilePath)⍵.Close
-     c.LastSendTime←QTS
-     0
+     r←t,h,CrLf,CrLf
+     d←m.HeadRequest⊃(r ⍵.FilePath)r
+     c ServerSend d ⍵.Close
  }

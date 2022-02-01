@@ -1,4 +1,7 @@
-# Rumba Release 0.1.10                    
+# Rumba Release 0.1.11                    
+1. Fix HEAD requests for files (Issue #37)
+
+# Rumba Release 0.1.10 2021-03-22 09:11:39
 1. Refactor MIME type lookup
 2. Implement issue #34, issue #35 and issue #36
 

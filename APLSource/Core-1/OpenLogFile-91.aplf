@@ -1,6 +1,7 @@
  OpenLogFile←{
      ⍝ ⍵ ←→ Server or Client
      ⍝ ← ←→ Tie Number
+     ∧/~⍵.(LogHTTP LogRumba LogConga):0
      f←⍵.Folder
      f≡'':0
      fixPath←{{'/'=¯1↑⍵:¯1↓⍵ ⋄ ⍵}'/'@('\'=⊢)⍵}

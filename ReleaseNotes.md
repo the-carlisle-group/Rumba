@@ -1,4 +1,7 @@
-# Rumba Release 0.1.11                    
+# Rumba Release 0.1.12                    
+1. Do not create/open log file if not logging
+
+# Rumba Release 0.1.11 2022-02-01 16:14:54
 1. Fix HEAD requests for files (Issue #37)
 
 # Rumba Release 0.1.10 2021-03-22 09:11:39

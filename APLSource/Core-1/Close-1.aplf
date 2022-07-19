@@ -1,12 +1,13 @@
  Close←{
-    ⍝ Public Instance Method
-    ⍝ ⍺ ←→ Client
-    ⍝ ⍵ ←→ 0
-    ⍝ ← ←→ 0
+     ⍝ Public Instance Method
+     ⍝ ⍺ ←→ Client
+     ⍝ ⍵ ←→ 0
+     ⍝ ← ←→ 0
      _←DRC.Close ⍺.Name
-     _←⎕TKILL ⍺.Tid
      ⍺.State←0
      ⍺.Name←''
      ⍺.Messages←⍬
+     0=⍺.⎕NC'Tid':0
+     _←⎕TKILL ⍺.Tid
      0
  }

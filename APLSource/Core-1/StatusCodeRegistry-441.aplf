@@ -34,6 +34,7 @@
      r,←⊂415 'Unsupported Media Type'
      r,←⊂416 'Requested Range Not Satisfiable'
      r,←⊂417 'Expectation Failed'
+     r,←⊂422 'Unprocessable Entity'
      r,←⊂426 'Upgrade Required'
      r,←⊂500 'Internal Server Error'
      r,←⊂501 'Not Implemented'

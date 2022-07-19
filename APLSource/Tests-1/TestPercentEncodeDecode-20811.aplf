@@ -4,5 +4,6 @@
      data←R.((GenDelims 0(,SubDelims 0)))
      '%3A%2F%3F%23%5B%5D%40'≢0 R.PercentEncode data:1
      'blue+light blue Yellow'≢R.PercentDecode(R.PercentEncode'blue+light blue'),'+Yellow':1
+     ' ⍳'≢R.PercentDecode'+%E2%8D%B3':1
      0
  }

@@ -1,14 +1,7 @@
  CongaError←{
-⍝ ⍵ ← Conga return code.
-⍝ ← 1. If rc can be found in DRC.ErrorTable[;0]:
-⍝      * If not empty the long error message is returned.
-⍝      * Otherwise the error abbreviation is returned.
-⍝   2. If ⍵ cannot be found in DRC.ErrorTable  (345 'Unknown Conga error')  is returned.
-⍝ The function can be used in constructs like:
-⍝ ⎕signal/CongaError rc
-     rc←⍵
-     se←345     ⍝ Error to be signalled
-     (abbr long)←(##.DRC.Error rc)[1 2]
-     0∊⍴long:abbr se
-     long se
+     ⍝ ⍵ ←→ Conga return code.
+     ⍝ ← ←→ Suitable argument for ⎕SIGNAL
+     (s l)←(##.DRC.Error ⍵)[1 2]
+     m←l,(0=≢l)/s
+     ⊂('EN' 345)('ENX'⍵)('Message'm)
  }

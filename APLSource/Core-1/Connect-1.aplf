@@ -7,7 +7,7 @@
      _←InitConga''
      p←⍺ ClientParameters 0
      rc cn←2↑DRC.Clt p
-     rc≠0:⎕SIGNAL/CongaError rc
+     rc≠0:⎕SIGNAL CongaError rc
      ⍺.Name←cn
      ⍺.LogFileTie←OpenLogFile ⍺
      _←⍺ LogRumba'Connect'

@@ -4,6 +4,8 @@
      ⍵.Version←0⊃m
      ⍵.StatusCode←↑1⊃⎕VFI 1⊃m
      ⍵.StatusClass←⌊⍵.StatusCode÷100
+     ⍵.ReasonPhrase←''
+     2=≢m:⍵
      ⍵.ReasonPhrase←↑{⍺,' ',⍵}/2↓m
      ⍵
  }

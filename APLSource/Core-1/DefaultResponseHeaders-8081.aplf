@@ -1,17 +1,18 @@
- DefaultResponseHeaders←{
-     ⍝ ⍵ ←→ Response
-     ⍝ ← ←→ ⍵
-     ce←⍵.Chunked
-     h←⊂'Date'(GetCurrentUTCHttpDate'')
-     h,←⊂'Server' 'Rumba'
-     h,←⍵.Close/⊂'Connection' 'close'
-     h,←(~ce)/⊂'Content-Length'(⍕⍵.ContentLength)
-     h,←ce/⊂'Transfer-Encoding' 'chunked'
-     b←(⍵.ContentLength>0)∧~⍵.Chunked
-     h,←b/⊂'Content-Type'⍵.ContentType
-     h,←(0<≢⍵.Location)/⊂'Location'⍵.Location
-     h,←(0<≢⍵.ETag)/⊂'ETag'⍵.ETag
-     h,←(0≠⍵.LastModified)/⊂'Last-Modified'(FloatToHTTPDate ⍵.LastModified)
-     ⍵.DefaultHeaders←h
-     ⍵
- }
+ r←DefaultResponseHeaders x;ce;h;b
+ ⍝ x ←→ Response
+ ⍝ r ←→ x
+ ⍝ This is a TRAD function due to bug Mantis 17/19300
+ ⍝ It should be OK to be a dfn in v19.
+ ce←x.Chunked
+ h←⊂'Date'(GetCurrentUTCHttpDate'')
+ h,←⊂'Server' 'Rumba'
+ h,←x.Close/⊂'Connection' 'close'
+ h,←(~ce)/⊂'Content-Length'(⍕x.ContentLength)
+ h,←ce/⊂'Transfer-Encoding' 'chunked'
+ b←(x.ContentLength>0)∧~x.Chunked
+ h,←b/⊂'Content-Type'x.ContentType
+ h,←(0<≢x.Location)/⊂'Location'x.Location
+ h,←(0<≢x.ETag)/⊂'ETag'x.ETag
+ h,←(0≠x.LastModified)/⊂'Last-Modified'(FloatToHTTPDate x.LastModified)
+ x.DefaultHeaders←h
+ r←x

@@ -7,7 +7,7 @@
      gzip←⍵.Compress∧~⍺.Secure
      h,←gzip/⊂'Content-Encoding' 'gzip'
      h,←⊂'Accept-Encoding'(gzip⊃'identity' 'gzip')   ⍝ identify = force no encoding!
-     pm←(⊂⍵.Method)∊'PUT' 'POST'
+     pm←(⊂⍵.Method)∊'PUT' 'POST' 'PATCH'
      h,←pm/⊂'Content-Length'(⍕≢⍵.CompressedContent)
      ⍵.DefaultHeaders←h
      ⍵

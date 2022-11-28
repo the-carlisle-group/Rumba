@@ -1,0 +1,5 @@
+ PATCH←{
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.RequestTarget
+     p≡'Strings':PatchString ⍵
+     break
+ }

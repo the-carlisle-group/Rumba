@@ -1,0 +1,9 @@
+ PatchString←{
+     p n←2↑{(⍵≠'/')⊂⍵}⍵.RequestTarget
+     s←⍵.Connection.Server
+     v←(s.Strings⍎n),' ',⍵.Content
+     _←n{s.Strings⍎⍺,'←⍵'}v
+     r←##.Core.NewResponse ⍵
+     r.StatusCode←204
+     r
+ }

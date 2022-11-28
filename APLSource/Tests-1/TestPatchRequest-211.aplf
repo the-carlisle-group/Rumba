@@ -1,0 +1,19 @@
+ TestPatchRequest←{
+     c←R.NewClient 0
+     q←R.NewRequest'/Strings/Earth'
+     q.Method←'PUT'
+     q.Content←'Third rock from the sun.'
+     r←c R.SendAndReceive q
+
+     q2←R.NewRequest'/Strings/Earth'
+     q2.Method←'PATCH'
+     q2.Content←'The blue planet.'
+     r2←c R.SendAndReceive q2
+     r2.StatusCode≢204:0
+
+     q3←R.NewRequest'/Strings/Earth'
+     r3←c R.SendAndReceive q3
+     (q.Content,' ',q2.Content)≢GetContent r3:1
+
+     0
+ }

@@ -4,7 +4,9 @@
  ⍝ x ←→ Connection
  :Trap x.Server.Trap/0
      _←{
-         e d←⊃⎕TGET ⍵.Tid
+         t←⎕TGET ⍵.Tid
+         0=≢t:∇ ⍵
+         e d←⊃t
          d≡1119:'1119'CloseConnection ⍵
          e≢'Block':e CloseConnection ⍵
          ⍵.LastReceiveTime←QTS

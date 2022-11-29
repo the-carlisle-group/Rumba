@@ -2,8 +2,6 @@
     ⍝ ⍺ ←→ Server
     ⍝ ⍵ ←→ Response
      ~⍺.LogHTTPToSession:0
-     m←⍵.Message
-     ts←GetCurrentUTCHttpDate''
-     ⎕←ts,': ',m.Connection.PeerAddress,' ',⍕⍺.Port':'⍵.StatusCode m.Method m.RequestTarget
+     ⎕←¯2↓CreateLogEntry ⍵
      0
  }

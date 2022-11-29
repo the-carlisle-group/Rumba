@@ -7,5 +7,5 @@
      ⍝ _←⎕DL 1
      _←⍺ ##.Core.PutChunk'chunked message'
      _←⍺ ##.Core.PutChunk''          ⍝ Must have to end the message
-     0
+     1:z←0
  }

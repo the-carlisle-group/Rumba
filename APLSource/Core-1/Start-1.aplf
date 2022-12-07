@@ -2,6 +2,8 @@
      ⍝ ⍺ ←→ Server
      ⍺←NewServer ⍵
      s←⍺
+     s.LogFileTie←OpenLogFile ⍺
+     _←s LogRumba'Server starting'
      _←InitConga''
      _←s HandleStart 0  ⍝ Handle failure!
      s.Connections←⎕NS''
@@ -12,10 +14,9 @@
      0≠rc:⎕SIGNAL⊂('EN' 11)('ENX'rc)('EM'(1⊃cs))('Message'(2⊃cs))
      s.Name←sn
      #.onServiceNotification←'OnServiceNotification'⍺
-     s.LogFileTie←OpenLogFile ⍺
-     _←s LogRumba'Server started'
      s.Tid←ServerLoop&s
-     s.StartTime←QTSToSeconds QTS
      _←StartUpstreamServers s
+     s.StartTime←QTSToSeconds QTS
+     _←s LogRumba'Server started'
      s
  }

@@ -1,6 +1,6 @@
  ErrorInRumba←{
      ⍝ ⍵ ←→ Server
      e←'Rumba Error: ',⍕2↑⎕DMX.DM
-     _←⍵ LogRumba'Rumba Error: ',e
-     ⎕OFF
+     _←⍵ LogRumba e
+     ⎕OFF 55
  }

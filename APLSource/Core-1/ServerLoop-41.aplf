@@ -1,7 +1,7 @@
  {z}←ServerLoop x
  ⍝ ⍵ ←→ a Server space
  ⎕TNAME←'Rumba Server Loop'
- :Trap x.Trap/0
+ :Trap (x.Trap∧IsRideSession 0)/0
      z←{
          _←ServerWait ⍵
          ∇ ⍵

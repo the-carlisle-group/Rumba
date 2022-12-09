@@ -6,6 +6,7 @@
      m.Stream←''
      m.Header←''
      m.Content←''
+     m.ProcessedContent←''
      m.HeaderComplete←0
      m.ContentComplete←0
      m.Chunked←0

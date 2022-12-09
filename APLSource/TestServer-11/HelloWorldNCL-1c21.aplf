@@ -1,0 +1,11 @@
+ HelloWorldNCL←{
+     d←⍵ ##.Core.GetQueryParameter'Delay'
+     d←5⌊0⌈↑1⊃⎕VFI(⍕d),' 0'
+     _←⎕DL d
+     r←##.Core.NewResponse ⍵
+     r.NoContentLengthHeader←1
+     r.StatusCode←200
+     r.ReasonPhrase←'OK'
+     r.Content←'No content length header in the response'
+     r
+ }

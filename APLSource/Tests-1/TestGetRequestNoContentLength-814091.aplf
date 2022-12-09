@@ -1,0 +1,7 @@
+ TestGetRequestNoContentLength←{
+     c←R.NewClient 0
+     q←R.NewRequest'/HelloWorldNoContentLength'
+     r←c R.SendAndReceive q
+     'No content length header in the response'≢GetContent r:1
+     0
+ }

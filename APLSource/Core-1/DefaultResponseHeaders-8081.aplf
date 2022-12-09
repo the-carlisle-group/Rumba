@@ -1,4 +1,4 @@
- r←DefaultResponseHeaders x;ce;h;b
+ r←DefaultResponseHeaders x;ce;h;b;c
  ⍝ x ←→ Response
  ⍝ r ←→ x
  ⍝ This is a TRAD function due to bug Mantis 17/19300
@@ -7,7 +7,8 @@
  h←⊂'Date'(GetCurrentUTCHttpDate'')
  h,←⊂'Server' 'Rumba'
  h,←x.Close/⊂'Connection' 'close'
- h,←(~ce)/⊂'Content-Length'(⍕x.ContentLength)
+ c←~x.NoContentLengthHeader
+ h,←(c∧~ce)/⊂'Content-Length'(⍕x.ContentLength)
  h,←ce/⊂'Transfer-Encoding' 'chunked'
  b←(x.ContentLength>0)∧~x.Chunked
  h,←b/⊂'Content-Type'x.ContentType

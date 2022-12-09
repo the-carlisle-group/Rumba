@@ -8,6 +8,7 @@
      u≡'/CongaConnections':GetCongaConnections ⍵
      u≡,'/':HelloWorld ⍵
      ⍵.Path≡'/HelloWorld':HelloWorld ⍵
+     ⍵.Path≡'/HelloWorldNoContentLength':HelloWorldNCL ⍵
      ⍵.Path≡'/Crash':.
      u≡'/ChunkedTest1':⍵ ChunkedTest1 0
      u≡'/ConditionalChanged':GetConditionalChanged ⍵

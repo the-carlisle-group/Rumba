@@ -17,5 +17,6 @@
      r.UTF8←1
      r.IsFile←0
      r.FilePath←''
+     r.NoContentLengthHeader←0
      r
  }

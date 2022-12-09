@@ -2,6 +2,7 @@
      ⍝ ⍵ ←→ Message
      ⍵.ContentComplete:⍵
      ⍵.Chunked:GatherChunkedContent ⍵
+     (⍵.Type≡'Response')∧~⍵.HaveContentLength:⍵
      l←⍵.ContentLength
      ⍵.ContentComplete←l≤≢⍵.Stream
      ~⍵.ContentComplete:⍵

@@ -1,0 +1,7 @@
+ CloseDelimited←{
+     0=≢⍺.Messages:'Server closed connection'⎕SIGNAL 345
+     m←↑⍺.Messages
+     m.Content←m.Stream
+     m.ResponseTime←QTSToSeconds QTS
+     m
+ }

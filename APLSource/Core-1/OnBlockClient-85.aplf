@@ -3,14 +3,11 @@
      ⍝ ⍵ ←→ Conga Event and Data
      e d←⍵
      l←e≡'BlockLast'
-     ⍝ Refactor with below
-     l∧0=≢d:0⊣(¯2 ⎕TPUT ⎕TID)⊣⍺.State←2
+     l∧0=≢d:⍺ LastBlock 0
      v←⍺.Messages
      i←v.ContentComplete⍳0
      m←i⊃v
      cm←d GatherResponseMessage m
      ~l:0
-     _←¯2 ⎕TPUT ⎕TID
-     ⍺.State←2                  ⍝ 0 New client, 1 connected, 2 closed
-     0
+     ⍺ LastBlock 0
  }

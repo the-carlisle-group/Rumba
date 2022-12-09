@@ -1,0 +1,5 @@
+ LastBlock←{
+     _←¯2 ⎕TPUT ⎕TID
+     ⍺.State←2
+     0
+ }

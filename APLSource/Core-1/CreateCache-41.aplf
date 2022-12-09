@@ -1,7 +1,7 @@
  CreateCache←{
      ⍝ ⍺ ←→ Server
      c←⎕NS''
-     n←'RequestTargt' 'SecondaryCacheKey' 'KeyHeader'
+     n←'RequestTarget' 'SecondaryCacheKey' 'KeyHeader'
      n,←'VaryHeader' 'Headers'
      n,←'Content' 'Hit' 'ResponseTime' 'Invalid'
      n,←'FreshnessLifetime' 'InitialAge'

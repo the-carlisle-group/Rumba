@@ -1,8 +1,7 @@
- r←d GatherRequestMessage m;⎕TRAP
+ r←d GatherRequestMessage m
 ⍝ ⍺ ←→  Datablock
 ⍝ ⍵ ←→  Message
 ⍝ ← ←→  0 or more Completed Messages
- ⎕TRAP←(346 'C' 'SendBadRequest m') ⍝ (0 'N')
  r←d{
      ⍵.Stream,←⍺
      0=≢⍵.Stream:⍬

@@ -1,4 +1,25 @@
-# Rumba Release 0.1.12                    
+# Rumba Release 0.1.13                    
+1. Fix issue #41
+2. Cleanup
+3. Fix issue 11
+4. Fix issue #11
+5. Fix typo (Issue #38)
+6. Enhancement to error trapping (Issue # 44)
+7. Fix issue #15, no content-length in response
+8. Add failing client-side test for no content length in response
+9. Remove obsolete FileExists function
+10. Start server logging as soon as possible (Issue #39)
+11. Fix issue #42
+12. Fix issue #54
+13. Fix issue #56
+14. Fix issue #55
+15. Fix issue #47
+16. Fix issue #50
+17. Fix issue #49
+18. Fix issue #53, percent decoding
+19. Fix issue #52, missing status code 422 (Unprocessable Entity)
+
+# Rumba Release 0.1.12 2022-04-19 11:41:29
 1. Do not create/open log file if not logging
 
 # Rumba Release 0.1.11 2022-02-01 16:14:54

@@ -1,4 +1,7 @@
-# Rumba Release 0.1.13                    
+# Rumba Release 0.1.14                    
+1. Add RootName properties to client and server objects (Issue #45) to be passed through to Conga.Init
+
+# Rumba Release 0.1.13 2022-12-12 09:46:37
 1. Fix issue #41
 2. Cleanup
 3. Fix issue 11

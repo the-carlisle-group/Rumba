@@ -7,7 +7,7 @@
      cs←s.Connections
      c←(cs⍎n)⊣n cs.⎕NS''
      c.Server←s
-     c.PeerAddress←1 1⊃DRC.GetProp(s.Name,'.',n)'PeerAddr'
+     c.PeerAddress←1 1⊃⍺.DRC.GetProp(s.Name,'.',n)'PeerAddr'
      c.Name←n
      c.Buffer←0
      c.Class←'Connection'

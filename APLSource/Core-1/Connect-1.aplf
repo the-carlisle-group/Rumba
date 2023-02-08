@@ -4,10 +4,10 @@
      ⍝ ⍵ ←→ 0
      ⍝ ← ←→ 0
      ⍺.State=1:0
-     _←InitConga''
+     ⍺.DRC←InitConga ⍺.RootName
      p←⍺ ClientParameters 0
-     rc cn←2↑DRC.Clt p
-     rc≠0:⎕SIGNAL CongaError rc
+     rc cn←2↑⍺.DRC.Clt p
+     rc≠0:⎕SIGNAL ⍺ CongaError rc
      ⍺.Name←cn
      ⍺.LogFileTie←OpenLogFile ⍺
      _←⍺ LogRumba'Connect'

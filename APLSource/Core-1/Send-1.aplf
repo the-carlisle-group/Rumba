@@ -9,7 +9,7 @@
      m.Request←⍵
      m.RequestTime←QTSToSeconds QTS ⍝ Or after send?
      ⍺.Messages,←m
-     rc←DRC.Send ⍺.Name(rh,rb)0
+     rc←⍺.DRC.Send ⍺.Name(rh,rb)0
      ⍝ Here??  What is the difference?
      ⍝ m.RequestTime←QTSToSeconds QTS
      ⍺.LastActivityTime←QTS

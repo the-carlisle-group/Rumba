@@ -4,7 +4,7 @@
      ⍺←''
      s←⍵.Server
      cn←s.Name,'.',⍵.Name
-     _←DRC.Close cn
+     _←s.DRC.Close cn
      _←s LogRumba'Closed connection: ',cn,' ',⍺
      ExpungeConnection ⍵
  }

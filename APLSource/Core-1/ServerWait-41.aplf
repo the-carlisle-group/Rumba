@@ -1,6 +1,6 @@
  ServerWait←{
      s←⍵
-     r←DRC.Wait s.Name s.CongaTimeout
+     r←s.DRC.Wait s.Name s.CongaTimeout
      _←s LogConga r
      rc←↑r
      100=rc:s OnServerTimeout 0

@@ -1,9 +1,6 @@
  InitConga←{
-     ⍺←0
-     initConga←⍺
-     (~initConga)∧9=⎕NC'##.DRC':0
-     path←GetCongaDllPath''
-     ##.DRC←path ##.Conga.Init''
-     ##.Conga.X509Cert.LDRC←##.DRC
-     0
+     p←GetCongaDllPath''
+     r←p ##.Conga.Init ⍵
+     ##.Conga.X509Cert.LDRC←r
+     r
  }

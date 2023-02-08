@@ -9,6 +9,7 @@
      c.Secure←1
      c.CongaTimeout←5000   ⍝ Milli-seconds
      c.ClientTimeout←30    ⍝ Seconds
+     c.RootName←''
      c.Name←''
      c.State←0
      c.LastActivityTime←0

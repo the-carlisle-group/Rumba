@@ -3,7 +3,7 @@
      ⍝ ⍺ ←→ Client
      ⍝ ⍵ ←→ 0
      ⍝ ← ←→ 0
-     _←DRC.Close ⍺.Name
+     _←⍺.DRC.Close ⍺.Name
      ⍺.State←0
      ⍺.Name←''
      ⍺.Messages←⍬

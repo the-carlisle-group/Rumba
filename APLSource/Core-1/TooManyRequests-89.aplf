@@ -9,6 +9,6 @@
      n←⍵
      cn←s.Name,'.',n
      _←⍺ LogRumba'Close connection: ',cn,' (too busy)'
-     _←DRC.Close cn
+     _←s.DRC.Close cn
      0
  }

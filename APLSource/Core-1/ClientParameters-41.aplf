@@ -4,7 +4,7 @@
      p,←⊂'Port'⍺.Port
      p,←⊂'Mode' 'Text'
      ~⍺.Secure:p
-     ⍺.X509←⎕NEW DRC.X509Cert
+     ⍺.X509←⎕NEW ⍺.DRC.X509Cert
      p,←⊂'X509'⍺.X509
      p,←⊂'SSLValidation'⍺.TLSFlag
      p,←⊂'Priority'⍺.TLSPriority

@@ -2,7 +2,8 @@
      ⍝ ⍵ ←→ 0, '', or Site/Service Folder
      s←⎕NS''
      s.Folder←{0≡⍵:'' ⋄ ⍵}⍵
-     s.Name←'Server0'
+     s.RootName←''
+     s.Name←''
      s.Port←80
      s.Address←''
      s.CongaTimeout←5000

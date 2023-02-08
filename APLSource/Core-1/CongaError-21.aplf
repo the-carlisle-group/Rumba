@@ -1,7 +1,8 @@
  CongaError←{
+     ⍝ ⍺ ←→ Client
      ⍝ ⍵ ←→ Conga return code.
      ⍝ ← ←→ Suitable argument for ⎕SIGNAL
-     (s l)←(##.DRC.Error ⍵)[1 2]
+     (s l)←(⍺.DRC.Error ⍵)[1 2]
      m←l,(0=≢l)/s
      ⊂('EN' 345)('ENX'⍵)('Message'm)
  }

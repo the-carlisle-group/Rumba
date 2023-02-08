@@ -1,6 +1,6 @@
  ClientWait←{
      ⍝ ⍵ ←→ Client Connection
-     r←DRC.Wait ⍵.Name ⍵.CongaTimeout
+     r←⍵.DRC.Wait ⍵.Name ⍵.CongaTimeout
      _←⍵ LogConga r
      rc←↑r
      rc=100:OnClientTimeout ⍵

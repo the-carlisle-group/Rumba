@@ -4,13 +4,13 @@
      s←⍺
      s.LogFileTie←OpenLogFile ⍺
      _←s LogRumba'Server starting'
-     _←InitConga''
+     s.DRC←InitConga ⍺.RootName
      _←s HandleStart 0  ⍝ Handle failure!
      s.Connections←⎕NS''
-     _←DRC.Close s.Name
+     _←s.DRC.Close s.Name
      p←s ServerParameters 0
-     rc sn←2↑DRC.Srv p
-     cs←DRC.Error rc
+     rc sn←2↑s.DRC.Srv p
+     cs←s.DRC.Error rc
      0≠rc:⎕SIGNAL⊂('EN' 11)('ENX'rc)('EM'(1⊃cs))('Message'(2⊃cs))
      s.Name←sn
      #.onServiceNotification←'OnServiceNotification'⍺

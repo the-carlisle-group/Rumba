@@ -10,10 +10,10 @@
      m.Request←⍵
      ⍺.Messages,←m
      ⍺.Expect100←1              ⍝ For timeout,
-     rc←DRC.Send ⍺.Name h 0
+     rc←⍺.DRC.Send ⍺.Name h 0
      m←⍺ Receive 0
      ⍺.Expect100←0              ⍝ For timeout
      m.StatusCode≠100:m⊣⍺.Messages←''
-     rc←DRC.Send ⍺.Name b 0
+     rc←⍺.DRC.Send ⍺.Name b 0
      ⍺ Receive 0
  }

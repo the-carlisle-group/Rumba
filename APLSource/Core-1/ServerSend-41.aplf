@@ -4,7 +4,7 @@
      d c←⍵
      s←⍺.Server
      n←s.Name,'.',⍺.Name
-     _←DRC.Send n d c
+     _←s.DRC.Send n d c
      ⍺.LastSendTime←QTS
      0
  }

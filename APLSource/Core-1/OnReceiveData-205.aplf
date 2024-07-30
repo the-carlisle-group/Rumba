@@ -1,0 +1,5 @@
+ OnReceiveData←{
+     ⍝ ⍵ ←→ DRC.Wait Result
+     c e d←⍵
+     e d ⎕TPUT c.Tid       ⍝ WaitForDataHTTP
+ }

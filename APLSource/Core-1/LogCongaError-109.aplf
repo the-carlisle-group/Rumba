@@ -1,0 +1,10 @@
+ LogCongaError←{
+     ⍝ ⍺ ←→ Server or Client
+     ⍝ ⍵ ←→ Result of DRC.Wait
+     ⍝ ← ←→ 0
+     t←⍺.LogFileTie
+     ~⍺.LogCongaErrors∧t<0:0
+     d←'Conga error: ',(⍕⍵),CrLf
+     _←d ⎕NAPPEND t
+     0
+ }

@@ -6,11 +6,13 @@
      s.MaxNoOfThreads<⍴⎕TCNUMS ⍺.Tid:⍺ TooManyRequests n
      cs←s.Connections
      c←(cs⍎n)⊣n cs.⎕NS''
+     c.Websocket←0
      c.Server←s
      c.PeerAddress←1 1⊃⍺.DRC.GetProp(s.Name,'.',n)'PeerAddr'
      c.Name←n
      c.Buffer←0
      c.Class←'Connection'
+     c.Type←'Rumba'
      c.MessageType←'Request'
      c.LogHTTP←s.LogHTTP
      c.Messages←,NewMessage c

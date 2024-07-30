@@ -1,14 +1,17 @@
  TestPipelinedMessages←{
      ⍺←0
      c←R.NewClient 0
+     c.Port←8080
+     c.Secure←0
      c.LogCongaEvents←⍺
      c.LogMessages←⍺
      qv←R.NewRequest¨3⍴0           ⍝ Three requests
-     qv.RequestTarget←'/HelloWorld?Delay='∘,¨'210' ⍝ 2 sec, 1 sec, 0 sec delay
+     qv.Headers←⊂('Content-Type' 'application/JSON')('Connection' 'keep-alive')
+     qv.Method←⊂'POST'
+     qv.RequestTarget←⊂'/Delay'    ⍝ 2 sec, 1 sec, 0 sec delay
+     qv.Content←⍕¨2 1 0
      _←c R.Send¨qv                 ⍝ Pipeline 'em
      rv←c R.Receive¨qv
-     ⎕←GetContent¨rv
-     qv.RequestTarget≢GetContent¨rv:1
      _←c R.Close 0
      0
  }

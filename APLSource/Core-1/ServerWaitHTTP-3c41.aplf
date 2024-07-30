@@ -1,0 +1,20 @@
+ ServerWaitHTTP←{
+     s←⍵
+     s.ConnectionOnly:ServerWaitHTTPConnectionOnly ⍵
+     r←s.DRC.Wait s.Name s.CongaTimeout
+     0≠↑r:s LogCongaError r
+     _←s LogConga r
+     (z o e d)←r
+     n←12↓o
+     c←s GetConnectionSpace n
+     ⍝ CHANGE 1
+     ⍝ e≡'WSReceive':s OnWSReceive c d ⍝ Now in WaitForDataHTTPCase
+     e≡'WSUpgrade':s OnWSUpgrade c d
+     e≡'Connect':s OnConnect n
+     e≡'Closed':s OnClosed c
+     e≡'Error':s OnError c
+     e≡'Timeout':s OnServerTimeout 0
+     e≡'HTTPFail':s OnHTTPFail c d
+     e≡'HTTPError':s OnHTTPError c d
+     OnReceiveData c e d              ⍝ All regular data events WaitForDataHTTP
+ }

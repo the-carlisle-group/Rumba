@@ -1,0 +1,4 @@
+ CopyConga←{
+     9=##.⎕NC'Conga':0
+     'Conga'##.⎕CY ⍵
+ }

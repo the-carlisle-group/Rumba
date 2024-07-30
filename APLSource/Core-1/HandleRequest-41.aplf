@@ -1,23 +1,20 @@
- r←HandleRequest m;c;s;_
- ⍝ m ←→ Message
- ⍝ This is a TRAD function due to bug Mantis 17/19300
- ⍝ It should be OK to be a dfn in v19.
- r←0
- →(m=0)/0
- c←m.Connection
- s←c.Server
- m.Tid←⎕TID
- r←ExecuteRequestHandler m
- r.Close←~IsPersistent m
- _←SendResponse r
- m.ResponseSent←1
- c.MessageLog,←⊂m.Method m.RequestTarget r.StatusCode
- _←s LogHTTPToSession r
- _←UpdateStats r
- _←Log r
- _←DisplayRequestResponse r
- :If r.Close
-     ExpungeConnection c
- :Else
+ HandleRequest←{
+     ⍝ ⍵ ←→ Message
+     m←⍵
+     m=0:0
+     c←m.Connection
+     s←c.Server
+     m.Tid←⎕TID
+     r←ExecuteRequestHandler m
+     r.Close←~IsPersistent m
+     _←SendResponse r
+     m.ResponseSent←1
+     c.MessageLog,←⊂m.Method m.RequestTarget r.StatusCode
+     _←s LogHTTPToSession r
+     _←UpdateStats r
+     _←Log r
+     _←DisplayRequestResponse r
+     r.Close:ExpungeConnection c
      c.Messages←1↓c.Messages
- :EndIf
+     0
+ }

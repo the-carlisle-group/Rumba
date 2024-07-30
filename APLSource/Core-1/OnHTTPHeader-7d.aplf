@@ -1,0 +1,13 @@
+ OnHTTPHeader←{
+     c d←⍵
+     m←NewMessage c
+     c.Messages←,m
+     c.Message←m
+     m.Header←d
+     m.HeaderComplete←1
+     _←ProcessHeader m
+     _←HandleHeader m
+     m.ContentLength>0:0
+     m.ContentComplete←1
+     HandleRequest m
+ }

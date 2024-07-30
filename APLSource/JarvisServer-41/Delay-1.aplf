@@ -1,0 +1,6 @@
+ Delay←{
+     ⎕←'Got request for arg',⍵
+     _←⎕DL ⍵
+     'This is result for arg ',⍕⍵
+     ⍝(⍕⎕TS),':',⍕⎕DL ⍵
+ }

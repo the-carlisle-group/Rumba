@@ -1,0 +1,4 @@
+ OnClosed←{
+     ⍵=0:0
+     ExpungeConnection ⍵
+ }

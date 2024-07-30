@@ -1,0 +1,4 @@
+ GetConnectionSpace←{
+     9≠⍺.Connections.⎕NC ⍵:0
+     ⍺.Connections⍎⍵
+ }

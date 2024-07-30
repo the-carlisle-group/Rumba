@@ -1,0 +1,30 @@
+ r←HandleRequest_Trad m;c;s;_
+ ⍝ m ←→ Message
+ ⍝ This is a TRAD function due to bug Mantis 17/19300
+ ⍝ It should be OK to be a dfn in v19.
+ r←0
+ →(m=0)/0
+ ⍝ ⎕←'Before hold: ',⍕⎕TID,m.StartLine
+ ⍝ :Hold m.Connection.Name
+   ⍝  ⎕←'In the hold: ',⍕⎕TID,m.StartLine
+
+
+
+ c←m.Connection
+ s←c.Server
+ m.Tid←⎕TID
+ r←ExecuteRequestHandler m
+ r.Close←~IsPersistent m
+ _←SendResponse r
+ m.ResponseSent←1
+ c.MessageLog,←⊂m.Method m.RequestTarget r.StatusCode
+ _←s LogHTTPToSession r
+ _←UpdateStats r
+ _←Log r
+ _←DisplayRequestResponse r
+ :If r.Close
+     ExpungeConnection c
+ :Else
+     c.Messages←1↓c.Messages
+ :EndIf
+ ⍝ :EndHold

@@ -2,6 +2,7 @@
      ⍝ ⍵ ←→ Connection
      s←⍵.Server
      _←s.Connections.⎕EX ⍵.Name
+     s.UseCongaHTTP:0
      _←⎕TKILL ⍵.Tid
      0
  }

@@ -1,0 +1,7 @@
+ HandleCongaHTTPRequest←{
+     c←⍵.Connection
+     l←c.LastMessageTid
+     c.LastMessageTid←⎕TID
+     _←{⍵∊⎕TNUMS:⎕TSYNC ⍵ ⋄ 0}l
+     HandleRequest ⍵
+ }

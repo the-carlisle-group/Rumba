@@ -1,0 +1,7 @@
+ WaitForDataHTTPLoop←{
+     t←⎕TGET ⍵.Tid
+     e d←⊃t
+     _←⍵ WaitForDataHTTPCase e d
+     ⍵.LastReceiveTime←QTS
+     ∇ ⍵
+ }

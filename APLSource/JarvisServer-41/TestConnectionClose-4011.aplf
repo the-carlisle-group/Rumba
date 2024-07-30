@@ -1,0 +1,15 @@
+ TestConnectionClose←{
+     ⍺←0
+     c←R.NewClient 0
+     c.Port←8080
+     c.Secure←0
+     c.LogCongaEvents←⍺
+     c.LogMessages←⍺
+     r←R.NewRequest 0
+     r.Headers←,⊂'Content-Type' 'application/JSON'
+     r.Method←'POST'
+     r.RequestTarget←'/Delay'
+     r.Content←⍕2
+     z←c R.SendAndReceive r
+     z.Content
+ }

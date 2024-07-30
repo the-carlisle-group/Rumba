@@ -3,8 +3,7 @@
  ⎕TNAME←'Rumba Server Loop'
  :Trap (x.Trap∧IsRideSession 0)/0
      z←{
-         _←ServerWait ⍵
-         ∇ ⍵
+         ∇ ⍵⊣ServerWait ⍵
      }x
  :Else
      ErrorInRumba x

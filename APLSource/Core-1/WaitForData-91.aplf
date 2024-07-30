@@ -1,21 +1,25 @@
  WaitForData x;_
- ⎕TNAME←'Rumba Wait For Data'
- x.Tid←⎕TID
- ⍝ x ←→ Connection
- :Trap x.Server.Trap/0
-     _←{
-         t←⎕TGET ⍵.Tid
-         0=≢t:∇ ⍵
-         e d←⊃t
-         d≡1119:'1119'CloseConnection ⍵
-         e≢'Block':e CloseConnection ⍵
-         ⍵.LastReceiveTime←QTS
-         m←↑⌽⍵.Messages
-         cm←d GatherRequestMessage m
-         _←HandleRequest¨cm
-         ∇ ⍵
-     }x
+ :If x.Server.UseCongaHTTP
+     WaitForDataHTTP x
  :Else
-     _←ErrorInConnection x
-     x.Connection.Server.Stats.OnConnectionErrors+←1
- :EndTrap
+     ⎕TNAME←'Rumba Wait For Data'
+     x.Tid←⎕TID
+ ⍝ x ←→ Connection
+     :Trap x.Server.Trap/0
+         _←{
+             t←⎕TGET ⍵.Tid
+             0=≢t:∇ ⍵
+             e d←⊃t
+             d≡1119:'1119'CloseConnection ⍵
+             e≢'Block':e CloseConnection ⍵
+             ⍵.LastReceiveTime←QTS
+             m←↑⌽⍵.Messages
+             cm←d GatherRequestMessage m
+             _←HandleRequest¨cm
+             ∇ ⍵
+         }x
+     :Else
+         _←ErrorInConnection x
+         x.Connection.Server.Stats.OnConnectionErrors+←1
+     :EndTrap
+ :EndIf

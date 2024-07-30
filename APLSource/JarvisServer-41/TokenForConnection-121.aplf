@@ -1,0 +1,6 @@
+ r←TokenForConnection conx
+    ⍝ return token for connection name (CONnnnnnnnn)
+ r←1+⊃⊃(//)⎕VFI conx∩⎕D
+ :If 0≠TokenBase ⍝ if ⎕TALLOC is available...
+     r←⍎,('<',(⍕TokenBase),'.>,ZI8')⎕FMT r
+ :EndIf

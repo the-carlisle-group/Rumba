@@ -1,0 +1,6 @@
+ OnHTTPChunk←{
+     c d←⍵
+     m←c.Message
+     m.Content,←d
+     0
+ }

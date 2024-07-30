@@ -1,0 +1,9 @@
+ WaitForDataHTTPCase←{
+     e d←⍵
+     e≡'WSReceive':OnWSReceive ⍺ d
+     e≡'HTTPHeader':OnHTTPHeader ⍺ d
+     e≡'HTTPBody':OnHTTPBody ⍺ d
+     e≡'HTTPChunk':OnHTTPChunk ⍺ d
+     e≡'HTTPTrailer':OnHTTPTrailer ⍺ d
+     0
+ }

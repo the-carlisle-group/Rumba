@@ -1,0 +1,9 @@
+ OnHTTPFail←{
+     ⍝ From the Conga Ref Manual:
+     ⍝ 6.2.5 Event: HTTPFail
+     ⍝ The HTTPFail event occurs if Conga cannot parse the data received for an
+     ⍝ HTTPHeader, HTTPChunk or HTTPTrailer event. In this situation, the unparsable
+     ⍝ data is returned as a character vector in the data element of the event.
+     c d←⍵
+     'HTTPFail'CloseConnection c
+ }

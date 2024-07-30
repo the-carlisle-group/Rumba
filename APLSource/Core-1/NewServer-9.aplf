@@ -12,10 +12,13 @@
      s.OnRequest←'ServeStaticSite'
      s.OnHeader←''
      s.OnCongaTimeout←''
+     s.OnWebSocketUgrade←''
+     s.OnWebSocketReceive←''
      s.Context←⎕THIS
      s.LogHTTP←0
      s.LogRumba←0
      s.LogConga←0
+     s.LogCongaErrors←0
      s.LogHTTPToSession←0
      s.LogFileTie←0
      s.MaxNoOfThreads←1000
@@ -38,5 +41,7 @@
      s.X509←0
      s.CertType←'DER'
      s.TLSFlag←64
+     s.UseCongaHTTP←0
+     s.ConnectionOnly←0
      s
  }

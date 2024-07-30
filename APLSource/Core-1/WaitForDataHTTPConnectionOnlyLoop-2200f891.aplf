@@ -1,0 +1,11 @@
+ WaitForDataHTTPConnectionOnlyLoop←{
+     c←⍵
+     s←⍵.Server
+     r←s.DRC.Wait(s.Name,'.',c.Name)s.CongaTimeout
+     0≠↑r:s LogCongaError r
+     _←s LogConga r
+     (z o e d)←r
+     _←c WaitForDataHTTPConnectionOnlyCase e d
+     ⍵.LastReceiveTime←QTS
+     ∇ ⍵
+ }

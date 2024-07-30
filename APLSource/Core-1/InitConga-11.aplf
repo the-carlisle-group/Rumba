@@ -1,6 +1,8 @@
  InitConga←{
      p←GetCongaDllPath''
+     _←CopyConga p,'/conga.dws'
      r←p ##.Conga.Init ⍵
+     _←r.SetProp'.' 'EventMode' 1
      ##.Conga.X509Cert.LDRC←r
      r
  }

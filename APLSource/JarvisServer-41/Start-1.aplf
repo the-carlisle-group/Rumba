@@ -1,0 +1,8 @@
+ Start←{
+    ⍝ Do this first:
+    ⍝ ]load c:\Jarvis\Jarvis
+     s←⎕NEW Jarvis
+     s.CodeLocation←⎕THIS
+     s.Port←8080
+     s.Start
+ }

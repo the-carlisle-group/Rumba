@@ -1,12 +1,17 @@
  ServerWait←{
      s←⍵
+     s.UseCongaHTTP:ServerWaitHTTP ⍵
      r←s.DRC.Wait s.Name s.CongaTimeout
+     0≠↑r:s LogCongaError r
      _←s LogConga r
-     rc←↑r
-     100=rc:s OnServerTimeout 0
-     rc≢0:.
-     cn←1⊃{('.'≠⍵)⊂⍵}1⊃r
-     (e d)←r[2 3]
-     e≡'Connect':s OnConnect cn
-     s OnBlockServer cn e d
+     (z o e d)←r
+     n←12↓o
+     c←s GetConnectionSpace n
+     e≡'Block':s OnBlockServer c e d
+     e≡'BlockLast':s OnBlockServer c e d   ⍝ WaitForData
+     e≡'Connect':s OnConnect n
+     e≡'Closed':s OnClosed c
+     e≡'Error':s OnError c
+     e≡'Timeout':s OnServerTimeout 0
+     0
  }

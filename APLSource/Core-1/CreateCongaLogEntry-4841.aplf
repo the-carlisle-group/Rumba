@@ -1,12 +1,10 @@
  CreateCongaLogEntry←{
-    ⍝ ⍵ ←→ Result of DRC.Wait
-    ⍝ ← ←→ Log entry
+     ⍝ ⍵ ←→ Result of DRC.Wait
+     ⍝ ← ←→ Log entry
      rc←↑⍵
-     rc=100:''
      t←'Conga: '
      (rc≠0)∨(4≠≢⍵):t,(⍕⍵),CrLf
      d←3⊃⍵
-     1119≡d:t,(⍕⍵),CrLf
      b←' [',(⍕≢d),' bytes]'
      t,(⍕3↑⍵),b,CrLf
  }

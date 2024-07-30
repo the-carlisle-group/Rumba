@@ -2,12 +2,14 @@
      ⍝ ⍵ ←→ Server
      c←GetConnections ⍵
      0=≢c:0
+     c←c/⍨~c.Websocket
+     0=≢c:0
      lr←0 QTSToSeconds¨c.LastReceiveTime
      ls←0 QTSToSeconds¨c.LastSendTime
      ct←QTSToSeconds QTS
      b←⍵.IdleTimeout<ct-lr⌈ls
      m←c.Messages
-     or←∨/¨1=m.ContentComplete+m.ResponseSent
+     or←{0=≢⍵:0 ⋄ ∨/1=⍵.ContentComplete+⍵.ResponseSent}¨m
      i←b∧~or
      ~∨/i:0
      'Idle'∘CloseConnection¨i/c

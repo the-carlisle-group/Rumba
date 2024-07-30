@@ -1,0 +1,9 @@
+ OnHTTPError←{
+     ⍝ From the Conga reference manual:
+     ⍝ 6.2.6 Event: HTTPError
+     ⍝ The HTTPError event occurs when the connection is closed during the receipt of an
+     ⍝ HTTP header, leaving the header portion of the HTTP message incomplete. In this
+     ⍝ situation, the received data is returned in the data element of the event.
+     c d←⍵
+     'HTTPError'CloseConnection c
+ }

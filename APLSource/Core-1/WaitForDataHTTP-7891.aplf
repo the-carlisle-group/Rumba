@@ -1,0 +1,8 @@
+ WaitForDataHTTP←{
+     ⍝ ⍵ ←→ Connection
+     ⎕TNAME←'Connection thread: ',⍵.Name
+     ⍵.Tid←⎕TID
+     ⍵.Server.Trap/0::ErrorInConnection ⍵
+     ⍵.Server.ConnectionOnly:WaitForDataHTTPConnectionOnlyLoop ⍵
+     WaitForDataHTTPLoop ⍵
+ }

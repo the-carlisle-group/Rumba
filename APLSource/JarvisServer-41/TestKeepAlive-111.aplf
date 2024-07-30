@@ -1,0 +1,23 @@
+ TestKeepAlive←{
+     ⍺←0
+     c←R.NewClient 0
+     c.Port←8080
+     c.Secure←0
+     c.LogCongaEvents←⍺
+     c.LogMessages←⍺
+     r←R.NewRequest 0
+     r.Headers←('Content-Type' 'application/JSON')('Connection' 'keep-alive')
+     r.Method←'POST'
+     r.RequestTarget←'/Delay'
+     r.Content←⍕1
+     _←c R.Send r
+     z1←c R.Receive 0
+     r.Content←⍕2
+     _←c R.Send r
+     z2←c R.Receive 0
+     r.Content←⍕3
+     _←c R.Send r
+     z3←c R.Receive 0
+     _←c R.Close 0
+     (z1 z2 z3).Content
+ }

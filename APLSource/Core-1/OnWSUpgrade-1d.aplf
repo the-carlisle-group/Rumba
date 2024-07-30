@@ -1,0 +1,7 @@
+ OnWSUpgrade←{
+     ⍝ ⍺ ←→ Server
+     c d←⍵
+     c.Websocket←1
+     ⍺.OnWebSocketUpgrade≡'':0
+     0
+ }

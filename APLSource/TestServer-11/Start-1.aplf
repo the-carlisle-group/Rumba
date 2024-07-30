@@ -1,6 +1,10 @@
  Start←{
+     ⍝ ⍺ ←→ Flag to use CongaHTTP, Use Connection Only
+     ⍺←0 0
      rc←{3502⌶1}⍣(∨/'RIDE_INIT=SERVE:'⍷2 ⎕NQ #'GetCommandLine')⊣⍬ ⍝ Enable Ride when it was specified on command line
      s←##.Core.NewServer 0
+     ⍝ s.Trap←0
+     s.(UseCongaHTTP ConnectionOnly)←2↑⍺
      s.Port←443
      s.Secure←1
      _←'Strings's.⎕NS''
@@ -11,6 +15,7 @@
      s.LogHTTP←1
      s.LogConga←1
      s.LogRumba←1
+     s.LogCongaErrors←1
      s.LogHTTPToSession←1
      s.Context←⎕THIS
      _←s ##.Core.Start 0

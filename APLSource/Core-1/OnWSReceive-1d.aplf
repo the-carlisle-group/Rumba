@@ -1,0 +1,11 @@
+ OnWSReceive←{
+     ⍝ ⍺ ←→ Server
+     c d←⍵                            ⍝ Connection, Socket data
+     s←c.Server
+     s.OnWebSocketReceive≡'':0
+     m←0⊃d                            ⍝ Collect till no more...
+     ⍝.... Message Text , need to check sd[1 2] also and accumulate
+     ⍝ ↓↓↓ #.Abacus.Main.OnWSReceiveRumba
+     _←(s.Context⍎s.OnWebSocketReceive)c m
+     0
+ }

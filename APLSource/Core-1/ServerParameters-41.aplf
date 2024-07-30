@@ -1,8 +1,10 @@
  ServerParameters←{
      p←⊂'Name'⍺.Name
      p,←⊂'Port'⍺.Port
-     p,←⊂'Mode' 'Text'
+     p,←⊂'Mode'(⍺.UseCongaHTTP⊃'Text' 'http')
      p,←⊂'Address'⍺.Address
+     p,←⍺.UseCongaHTTP/⊂'Options' 1
+
      ~⍺.Secure:p
      c←ResolveServerCert ⍺.PublicCertFile
      k←ResolveServerCert ⍺.PrivateKeyFile

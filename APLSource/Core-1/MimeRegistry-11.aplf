@@ -1,6 +1,5 @@
  MimeRegistry←{
-     f←##.AcreConfig.ProjectFolder
-     n←f,'Assets/Runtime/mime.csv'
+     n←GetProjectPath'/Assets/Runtime/mime.csv'
      t x←↓⍉(0⊃⎕CSV n ⍬ ⍬ 1)[;1 2]
      (t,⊂'text/plain')x
  }

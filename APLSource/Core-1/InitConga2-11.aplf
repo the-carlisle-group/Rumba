@@ -1,4 +1,0 @@
- InitConga2←{
-     p←GetCongaDllPath''
-     p ##.Conga.Init ⍵
- }

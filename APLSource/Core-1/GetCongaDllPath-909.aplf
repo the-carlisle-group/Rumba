@@ -1,6 +1,5 @@
  GetCongaDllPath←{
-     path←##.AcreConfig.ProjectFolder,'Assets/Runtime/Conga'
-     path←⍵{0≠≢⍺:⍺ ⋄ ⍵}path
+     path←{GetProjectPath'/Assets/Runtime/Conga'}⍣(0=≢⍵)⊢⍵
      ~⎕NEXISTS path:('Folder not accessible: ',path)⎕SIGNAL 22
      path
  }

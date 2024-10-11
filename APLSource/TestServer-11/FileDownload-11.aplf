@@ -1,6 +1,5 @@
  FileDownload←{
-     p←##.AcreConfig.ProjectFolder
-     f←p,'Assets/Development/samplefile.txt'
+     f←GetProjectPath'/Assets/Development/samplefile.txt'
      r←##.Core.NewResponse ⍺
      r.IsFile←1
      r.FilePath←f

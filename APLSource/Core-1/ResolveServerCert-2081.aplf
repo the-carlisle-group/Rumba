@@ -1,6 +1,5 @@
  ResolveServerCert←{
      ∨/'\/'∊⍵:⍵
-     pf←##.AcreConfig.ProjectFolder
-     cf←pf,'Assets/Runtime/TestCertificates/server/'
+     cf←GetProjectPath'/Assets/Runtime/TestCertificates/server/'
      cf,⍵
  }

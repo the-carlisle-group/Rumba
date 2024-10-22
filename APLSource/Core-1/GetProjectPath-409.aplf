@@ -1,0 +1,13 @@
+ GetProjectPath←{
+     add←⍵
+     path←''
+     path←{##.AcreConfig.ProjectFolder}⍣(↑0<##.⎕NC'AcreConfig')⊢path    ⍝ ##.AcreConfig rules if it exists
+     path←{##.TatinVars.HOME}⍣(↑0<##.⎕NC'TatinVars.HOME')⊢path          ⍝ ##.TatinVars.HOME rules if it exists
+     path←{##.##.TatinVars.HOME}⍣(↑0<##.##.⎕NC'TatinVars.HOME')⊢path    ⍝ In case it has an API
+     path←{⎕WSID,'/'}⍣(0=≢path)⊢path                                    ⍝ Workpace path rules
+     path←{↑1 ⎕NPARTS''}⍣(~⎕NEXISTS path)⊢path                          ⍝ Current dir rules
+     path←(-1×(¯1↑path)∊'/\')↓path
+     path{⍺,((~'/\'∊⍨¯1↑⍺)/'/'),⍵}←add                                  ⍝ Add ⍵ if not empty
+     ~⎕NEXISTS path:('Folder not accessible: ',path)⎕SIGNAL 22          ⍝ Must exist
+     path
+ }

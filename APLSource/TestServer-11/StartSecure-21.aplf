@@ -1,6 +1,6 @@
  z←StartSecure
  z←{
-     pp←##.AcreConfig.ProjectFolder,'Files/'
+     pp←GetProjectPath'/Files/'
      _←##.⎕EX'DRC'
      _←##.Core.InitConga''
  ⍝    _←##.DRC.SetProp'.' 'RootCertDir'(pp,'TestCertificates/ca')

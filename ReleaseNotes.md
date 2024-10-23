@@ -1,4 +1,10 @@
-# Rumba Release 0.1.14                    
+# Rumba Release 0.1.15                    
+1. Added: GetProjectPath
+2. Update README.md
+3. Update README.md
+4. Add options for Conga HTTP mode, websockets, and ConnctionOnly property
+
+# Rumba Release 0.1.14 2023-02-08 15:02:53
 1. Add RootName properties to client and server objects (Issue #45) to be passed through to Conga.Init
 
 # Rumba Release 0.1.13 2022-12-12 09:46:37

@@ -4,8 +4,7 @@
      0≠↑r:s LogCongaError r
      _←s LogConga r
      (z o e d)←r
-     ⎕←e
-     n←12↓o
+     n←{⍵↓⍨1+⍵⍳'.'}o
      e≡'Connect':s OnConnect n
      e≡'Timeout':0
      e≡'Error':0

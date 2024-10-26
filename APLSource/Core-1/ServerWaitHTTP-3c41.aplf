@@ -5,7 +5,7 @@
      0≠↑r:s LogCongaError r
      _←s LogConga r
      (z o e d)←r
-     n←12↓o
+     n←{⍵↓⍨1+⍵⍳'.'}o
      c←s GetConnectionSpace n
      ⍝ CHANGE 1
      ⍝ e≡'WSReceive':s OnWSReceive c d ⍝ Now in WaitForDataHTTPCase

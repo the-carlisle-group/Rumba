@@ -5,7 +5,7 @@
      0≠↑r:s LogCongaError r
      _←s LogConga r
      (z o e d)←r
-     n←12↓o
+     n←{⍵↓⍨1+⍵⍳'.'}o
      c←s GetConnectionSpace n
      e≡'Block':s OnBlockServer c e d
      e≡'BlockLast':s OnBlockServer c e d   ⍝ WaitForData

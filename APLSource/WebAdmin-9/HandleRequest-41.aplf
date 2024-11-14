@@ -1,6 +1,6 @@
  HandleRequest←{
      ⍝ ⍵ ←→ Request Message
-     m←⍵.DesiredMethod
+     m←⍵.Method
      m≡'GET':GET ⍵
      m≡'POST':POST ⍵
      m≡'DELETE':DELETE ⍵

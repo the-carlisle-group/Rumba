@@ -4,6 +4,5 @@
      m.Content←d
      m.ContentComplete←1
      _←ProcessContent m
-     _←PostProcessContent m  ⍝ Get rid of this crap!
      HandleRequest m
  }

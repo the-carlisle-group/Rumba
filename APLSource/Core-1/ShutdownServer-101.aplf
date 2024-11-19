@@ -1,0 +1,5 @@
+ ShutdownServer←{
+    ⍝ ⍺ ←→ Server
+     _←⍺.DRC.Close ⍺.Name
+     'Server shutdown'
+ }

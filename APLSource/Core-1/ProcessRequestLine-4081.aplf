@@ -6,6 +6,7 @@
      ⍵.Safe←(⊂m)∊'HEAD' 'GET'
      ⍵.Method←⍵.HeadRequest⊃m'GET'
      ⍵.RequestTarget←u
+     ⍵.URI←ParseURI u
      ⍵.Version←v
      ⍵.VersionNumber←↑1⊃⎕VFI↑⌽{('/'≠⍵)⊂⍵}v
      ⍵

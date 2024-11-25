@@ -1,5 +1,6 @@
  ToUpper←{
      ⍝ ⍵ ←→ Character Array
      ⍝ ← ←→ Converted to upper case
-     1(819⌶)⍵
+     2::1(819⌶)⍵     ⍝ 819 is not available in Dyalog v20.0 anymore
+     1 ⎕C ⍵
  }

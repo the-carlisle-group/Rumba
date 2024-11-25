@@ -1,5 +1,6 @@
  ToLower←{
      ⍝ ⍵ ←→ Character Array
      ⍝ ← ←→ Converted to lower case
-     (819⌶)⍵
+     2::0(819⌶)⍵    ⍝ 819 is not available in Dyalog v20.0 anymore
+     ¯3 ⎕C ⍵
  }

@@ -1,10 +1,12 @@
  NewSectionDelete←{
      ⍝ ⍺ ←→ Optional Parent
-     ⍝ ⍵ ←→ Caption
+     ⍝ ⍵ ←→ Caption URL
      ⍺←0
-     s←⍺ NewSectionForm ⍵'unsafe'
+     c u←⍵
+     s←⍺ NewSectionForm c'unsafe'
      f←s.Form
-     _←f NewHiddenInput'httpmethod' 'DELETE'
-     _←f NewCommand'Delete'
+     b←f NewCommand'Delete'
+     b.hx_delete←u
+     ⍝ b.hx_swap←'none'   ⍝ Needed?
      s
  }

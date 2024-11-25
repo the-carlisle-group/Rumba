@@ -9,7 +9,7 @@
      c=0:⍵ Respond 404
      d←BuildTemplate(↑⌽⍵.Segments)⍵.RequestTarget
      me←↑d h.GetElementsByType'main'
-     _←me h.NewSectionDelete'Delete (Kill) this connection.'
+     _←me h.NewSectionDelete'Delete (Kill) this connection.'⍵.RequestTarget
      m←↓⍉⊃c.MessageLog
      v←⊂'Method'(0⊃m)
      v,←⊂'URI'(1⊃m)

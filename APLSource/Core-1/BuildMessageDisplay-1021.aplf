@@ -7,6 +7,9 @@
      t,←⊂' Computed content length: ',⍕≢m.Content
      t,←⊂⍕⊃m.Headers
      t,←⊂''
+     t,←⊂' Content:'
+     t,←⊂m.Content
+     t,←⊂''
      t,←⊂' Response: ',r.ComposedStartLine
      t,←⊂⍕⊃r.ComposedHeaders
      d←↓0 1 0 disp⍪t

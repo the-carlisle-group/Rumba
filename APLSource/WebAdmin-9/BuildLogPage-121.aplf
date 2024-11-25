@@ -5,7 +5,7 @@
      s←⍵.Connection.Server
      d←BuildTemplate'Log'⍵.RequestTarget
      m←↑d h.GetElementsByType'main'
-     fn←¯4↓¨1 ##.Core.GetFileNames s.Folder,'/Rumba/Log'
+     fn←1⊃¨⎕NPARTS ##.Core.GetFileNames s.Folder,'/Rumba/Log'
      l←fn{⍺('/Rumba/Log/',⍵)}¨fn
      _←m h.NewSectionLinks'Log Files'l
      s←m h.NewSectionForm'Archive current log file' 'safe'

@@ -10,7 +10,6 @@
      _←GatherContent ⍵
      ~⍵.ContentComplete:⍬
      _←ProcessContent ⍵
-     _←PostProcessContent ⍵
      c←⍵.Connection
      n←NewMessage c
      c.Messages,←n

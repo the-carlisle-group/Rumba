@@ -5,6 +5,11 @@
      d←BuildTemplate'Home'⍵.RequestTarget
      h←##.HTML
      m←d h.GetElementByType'main'
+
+
+
+
+
      l←⊂'/Log' '/Rumba/Log'
      l,←⊂'/Connections' '/Rumba/Connections'
      l,←(s.ServerType≠0)/⊂'/Gateway' '/Rumba/Gateway'
@@ -14,6 +19,17 @@
      rt←{⍕∊⍵{⍺ ⍵}¨'days' 'hours' 'minutes'}3↑0 24 60 60⊤(##.Core.QTSToSeconds ##.Core.QTS)-s.StartTime
      p←s.Stats
      fm←m h.NewSectionInfo'Server Stats'
+
+     ⍝ The Details Section
+     fm.Panel.id←'stats'
+     fm.Panel.open←'open'
+     fm.Panel.hx_get←⍵.RequestTarget
+     fm.Panel.hx_swap←'outerHTML'
+     fm.Panel.hx_trigger←'every 5s'
+     fm.Panel.hx_select←'#stats'
+
+
+
      f←fm.SectionContent h.NewTextField'ServerType' 'Server Type's.ServerTypeDesc
      f.class←'fieldstyle2'
      f,←fm.SectionContent h.NewTextField'StartTime' 'Start Time'(##.Core.QTSToHTTPDate ##.Core.SecondsToQTS s.StartTime)

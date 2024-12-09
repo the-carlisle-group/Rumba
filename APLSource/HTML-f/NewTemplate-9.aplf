@@ -8,10 +8,15 @@
      n.id←'mainmenu'
      _←n NewLink¨⍵.Menu
      _←h NewBreadCrumbs ⍵.URL
-     _←b Add'main'
+     m←b Add'main'
+     m.id←'main-content'
      p←b Add'p'
      p.class←'forceclear'
      f←b Add'footer'
      _←f Add'p'⍵.Footer
+     db←b Add'dialog'
+     db.id←'MainDialog'
+     db2←b Add'dialog'
+     db2.id←'MessageBox'
      d
  }

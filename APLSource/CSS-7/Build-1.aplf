@@ -12,6 +12,7 @@
      s,←fieldstyle1 p
      s,←fieldstyle2 p
      s,←fieldstyle3 p
+     s,←editjson p
      s,←downloadbutton p
      s,←commandbutton p
      s,←table p

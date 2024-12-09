@@ -3,6 +3,7 @@
      c l←⍵
      s←⍺ NewSection c'links'
      s.class←'links'
+     s.Panel.open←'open'
      n←s.Panel Add'nav'
      n.class←'sectioncontent'
      0=≢l:n

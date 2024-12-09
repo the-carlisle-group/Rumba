@@ -18,7 +18,7 @@
      _←StartUpstreamServers s
      s.StartTime←QTSToSeconds QTS
      _←s LogRumba'Server started'
-     ~s.RunAsWindowsServer:s
+     ~s.RunAsWindowsService:s
      #.onServiceNotification←'OnServiceNotification'⍺
      s
  }

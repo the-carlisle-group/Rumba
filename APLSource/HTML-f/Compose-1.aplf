@@ -1,6 +1,7 @@
  Compose←{
      ⍺←0
      0=80|⎕DR ⍵:⍵
+     0=⍵.⎕NC'Type':#.Abacus.Main.DOM2HTML ⍵
      nl←⎕UCS 13 10
      ab←{'<',⍵,'>'}
      at←ComposeAttributes ⍵

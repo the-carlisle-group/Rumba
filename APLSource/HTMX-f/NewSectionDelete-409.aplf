@@ -3,7 +3,7 @@
      ⍝ ⍵ ←→ Caption URL
      ⍺←0
      c u←⍵
-     s←⍺ A.New c'unsafe'
+     s←⍺ NewSectionForm c'unsafe'
      f←s.Form
      b←f NewCommand'Delete'
      b.hx_delete←u

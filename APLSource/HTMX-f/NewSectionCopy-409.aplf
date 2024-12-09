@@ -2,7 +2,7 @@
      ⍝ ⍺ ←→ Optional Parent Element
      ⍝ ⍵ ←→ Caption, source URL, target URL (parent)
      ⍺←0
-     s←⍺ A.New(0⊃⍵)'action safe'
+     s←⍺ NewSectionForm(0⊃⍵)'action safe'
      f←s.Form
      _←f NewHiddenInput'httpmethod' 'PUT'
      _←f NewHiddenInput'href'(1⊃⍵)

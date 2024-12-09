@@ -4,7 +4,7 @@
      s←⍺ NewSection c'links'
      s.class←'links'
      s.Panel.open←'open'
-     n←s.Panel Add'nav'
+     n←s.Panel A.New'nav'
      n.class←'sectioncontent'
      0=≢l:n
      _←n NewLink¨l

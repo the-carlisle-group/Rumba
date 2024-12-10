@@ -22,14 +22,14 @@
          s←⊂'.logoletterleft'
          s,←⊂'display' 'inline-block'
          s,←⊂'transform' 'rotate(-2deg)'
-         s,←⊂'margin-left' '-.25em'
+         s,←⊂'margin-left' '-.25rem'
          s
      }⍵
      s,←⊂{
          s←⊂'.logoletterright'
          s,←⊂'display' 'inline-block'
          s,←⊂'transform' 'rotate(2deg)'
-         s,←⊂'margin-left' '-.25em'
+         s,←⊂'margin-left' '-.25rem'
          s
      }⍵
 

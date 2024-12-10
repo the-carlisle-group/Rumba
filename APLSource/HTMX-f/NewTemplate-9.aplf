@@ -9,7 +9,7 @@
      _←n NewLink¨⍵.Menu
      _←h NewBreadCrumbs ⍵.URL
      m←b A.New'main'
-     m.id←'main-content'
+     m.id←'MainContent'
      p←b A.New'p'
      p.class←'forceclear'
      f←b A.New'footer'

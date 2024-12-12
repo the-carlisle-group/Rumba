@@ -1,7 +1,0 @@
- GetElementsByName←{
-     0=80|⎕DR ⍺:''
-     e←0≠⍺.⎕NC'name'
-     n←⍺{⍵:⍺.name ⋄ ''}e
-     n≡⍵:⍺
-     ∊⍺.Content ∇¨⊂⍵
- }

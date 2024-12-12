@@ -1,17 +1,15 @@
  BuildLogo←{
      l←⍺
-     h←##.HTML
-     Add←h.Add
-     s←l Add'span'(,'R')
+     s←l A.New'span'(,'R')
      s.class←'logoletterleft logolettergreen'
-     s←l Add'span'(,'u')
+     s←l A.New'span'(,'u')
      s.class←'logoletterright logoletterblue'
-     s←l Add'span'(,'m')
+     s←l A.New'span'(,'m')
      s.class←'logoletterleft logoletterred'
-     s←l Add'span'(,'b')
+     s←l A.New'span'(,'b')
      s.class←'logoletterright logoletteryellow'
-     s←l Add'span'(,'a')
+     s←l A.New'span'(,'a')
      s.class←'logoletterleft logolettergreen'
-     _←l Add'p' 'Server Administrator'
+     _←l A.New'p' 'Server Administrator'
      l
  }

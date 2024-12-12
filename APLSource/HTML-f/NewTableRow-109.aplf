@@ -1,6 +1,0 @@
- NewTableRow←{
-     ⍺←0
-     tr←⍺ Add NewHTMLElement'tr'
-     _←tr Add¨{'td'⍵}¨⍵
-     tr
- }

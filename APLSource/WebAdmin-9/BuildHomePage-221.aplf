@@ -3,23 +3,15 @@
      ⍝ r ←→ Response
      s←⍵.Connection.Server
      d←BuildTemplate'Home'⍵.RequestTarget
-     h←##.HTML
-     m←d h.GetElementByType'main'
-
-
-
-
-
+     m←A.GetMain d
      l←⊂'/Log' '/Rumba/Log'
      l,←⊂'/Connections' '/Rumba/Connections'
      l,←(s.ServerType≠0)/⊂'/Gateway' '/Rumba/Gateway'
-     n←m h.NewSectionLinks'Links'l
-
+     n←m H.NewSectionLinks'Links'l
      ⍝ Extract this, use for origin server too.
      rt←{⍕∊⍵{⍺ ⍵}¨'days' 'hours' 'minutes'}3↑0 24 60 60⊤(##.Core.QTSToSeconds ##.Core.QTS)-s.StartTime
      p←s.Stats
-     fm←m h.NewSectionInfo'Server Stats'
-
+     fm←m H.NewSectionInfo'Server Stats'
      ⍝ The Details Section
      fm.Panel.id←'stats'
      fm.Panel.open←'open'
@@ -30,18 +22,18 @@
 
 
 
-     f←fm.SectionContent h.NewTextField'ServerType' 'Server Type's.ServerTypeDesc
+     f←fm.SectionContent H.NewTextField'ServerType' 'Server Type's.ServerTypeDesc
      f.class←'fieldstyle2'
-     f,←fm.SectionContent h.NewTextField'StartTime' 'Start Time'(##.Core.QTSToHTTPDate ##.Core.SecondsToQTS s.StartTime)
-     f,←fm.SectionContent h.NewTextField'RunTime' 'Run Time'rt
+     f,←fm.SectionContent H.NewTextField'StartTime' 'Start Time'(##.Core.QTSToHTTPDate ##.Core.SecondsToQTS s.StartTime)
+     f,←fm.SectionContent H.NewTextField'RunTime' 'Run Time'rt
      f.Input.readonly←⊂'readonly'
-     f←fm.SectionContent h.NewTextField'GETs' 'GET Requests'(⍕p.GETs)
-     f,←fm.SectionContent h.NewTextField'HEADs' 'HEAD Requests'(⍕p.HEADs)
-     f,←fm.SectionContent h.NewTextField'POSTs' 'POST Requests'(⍕p.POSTs)
-     f,←fm.SectionContent h.NewTextField'PUTs' 'PUT Requests'(⍕p.PUTs)
-     f,←fm.SectionContent h.NewTextField'DELETEs' 'DELETE Requests'(⍕p.DELETEs)
-     f,←fm.SectionContent h.NewTextField'CacheHits' 'Cache Hits'(s.IsCache⊃'n/a'(⍕p.CacheHits))
-     f,←fm.SectionContent h.NewTextField'CacheHitsPct' 'Cache Hit Percentage'(s.IsCache⊃'n/a'(,'F5.2'⎕FMT 100×p.CacheHits÷p.SafeRequests))
+     f←fm.SectionContent H.NewTextField'GETs' 'GET Requests'(⍕p.GETs)
+     f,←fm.SectionContent H.NewTextField'HEADs' 'HEAD Requests'(⍕p.HEADs)
+     f,←fm.SectionContent H.NewTextField'POSTs' 'POST Requests'(⍕p.POSTs)
+     f,←fm.SectionContent H.NewTextField'PUTs' 'PUT Requests'(⍕p.PUTs)
+     f,←fm.SectionContent H.NewTextField'DELETEs' 'DELETE Requests'(⍕p.DELETEs)
+     f,←fm.SectionContent H.NewTextField'CacheHits' 'Cache Hits'(s.IsCache⊃'n/a'(⍕p.CacheHits))
+     f,←fm.SectionContent H.NewTextField'CacheHitsPct' 'Cache Hit Percentage'(s.IsCache⊃'n/a'(,'F5.2'⎕FMT 100×p.CacheHits÷p.SafeRequests))
 
      f.class←⊂'fieldstyle2'
      f.Input.readonly←⊂'readonly'

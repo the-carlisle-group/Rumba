@@ -1,15 +1,13 @@
  BuildConnectionPage←{
      ⍝ ⍵ ←→ Request Message
      ⍝ r ←→ Response
-     h←##.HTML
-     Add←##.HTML.Add
      s←⍵.Connection.Server
      n←2⊃⍵.Segments
      c←{6::0 ⋄ s.Connections⍎⍵}n
      c=0:⍵ Respond 404
      d←BuildTemplate(↑⌽⍵.Segments)⍵.RequestTarget
-     me←↑d h.GetElementsByType'main'
-     _←me h.NewSectionDelete'Delete (Kill) this connection.'⍵.RequestTarget
+     me←A.GetMain d
+     _←me H.NewSectionDelete'Delete (Kill) this connection.'⍵.RequestTarget
      m←↓⍉⊃c.MessageLog
      v←⊂'Method'(0⊃m)
      v,←⊂'URI'(1⊃m)
@@ -18,7 +16,7 @@
      cs.HeaderValue←0⊃¨v
      cs.BodyValues←1⊃¨v
      cs.Class←'tc' 'tc' 'tc'
-     _←me h.NewSectionTable'Completed Messages'cs
+     _←me H.NewSectionTable'Completed Messages'cs
      r←##.Core.NewResponse ⍵
      r.Content←d
      r

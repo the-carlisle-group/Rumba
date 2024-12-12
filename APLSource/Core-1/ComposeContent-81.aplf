@@ -1,6 +1,6 @@
  ComposeContent←{
     ⍝ ⍵ ←→ Response
-     9≠⍵.⎕NC'Content':⍵
+     326≠⎕DR ⍵.Content:⍵
      ⍵.Content←#.Abacus.Main.DOM2HTML ⍵.Content
      ⍝ ⍵.Content←##.HTML.Compose ⍵.Content
      ⍵

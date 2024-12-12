@@ -1,5 +1,0 @@
- GetElementsByType←{
-     0=80|⎕DR ⍺:''
-     ⍺.Type≡⍵:⍺
-     ∊⍺.Content ∇¨⊂⍵
- }

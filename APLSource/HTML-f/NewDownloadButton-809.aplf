@@ -1,8 +1,0 @@
- NewDownloadButton←{
-     ⍺←0
-     l←⍺ NewHTMLElement'a'(0⊃⍵)
-     l.href←1⊃⍵
-     l.download←2⊃⍵
-     l.class←'downloadbutton'
-     l
- }

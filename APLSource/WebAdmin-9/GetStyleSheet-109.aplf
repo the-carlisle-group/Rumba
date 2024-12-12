@@ -1,6 +1,6 @@
  GetStyleSheet←{
      r←##.Core.NewResponse ⍵
-     r.Content←##.CSS.Build''
+     r.Content←#.Abacus.HTMX.CSS.Build''
      r.ContentType←'text/css; charset=utf-8'
      r
  }

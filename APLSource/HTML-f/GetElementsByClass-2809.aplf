@@ -1,7 +1,0 @@
- GetElementsByClass←{
-     0=80|⎕DR ⍺:''
-     e←0≠⍺.⎕NC'class'
-     n←⍺{⍵:⍺.class ⋄ ''}e
-     n≡⍵:⍺
-     ∊⍺.Content ∇¨⊂⍵
- }

@@ -1,8 +1,6 @@
  BuildConnectionsPage←{
      ⍝ ⍵ ←→ Request Message
      ⍝ r ←→ Response
-     h←##.HTML
-     Add←##.HTML.Add
      s←⍵.Connection.Server
      d←BuildTemplate'Connections'⍵.RequestTarget
      c←##.Core.GetConnections s
@@ -18,8 +16,8 @@
      cs.HeaderValue←0⊃¨v
      cs.BodyValues←1⊃¨v
      cs.Class←'tc' 'tc' 'tc' 'tc' 'tc' 'nc' 'nc'
-     m←d h.GetElementByType'main'
-     _←m h.NewSectionTable'Connections'cs
+     m←d A.GetMain d
+     _←m H.NewSectionTable'Connections'cs
      r←##.Core.NewResponse ⍵
      r.Content←d
      r

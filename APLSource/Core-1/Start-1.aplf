@@ -1,5 +1,8 @@
  Start←{
      ⍝ ⍺ ←→ Server
+     #.Abacus.HTMX.A←#.Abacus.Main
+     ##.WebAdmin.A←#.Abacus.Main
+     ##.WebAdmin.H←#.Abacus.HTMX
      ⍺←NewServer ⍵
      s←⍺
      s.LogFileTie←OpenLogFile ⍺

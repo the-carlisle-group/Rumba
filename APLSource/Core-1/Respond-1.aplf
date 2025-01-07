@@ -6,12 +6,13 @@
      r←NewResponse ⍺
      r.StatusCode←c
      ~b:r
-     h←##.HTML
+     H←#.Abacus.HTMX
+     A←#.Abacus.Main
      p←##.Core.GetReasonPhrase r
      r.ReasonPhrase←p
-     d←h.NewHTMLDocument 0
-     b←d h.Add'body'
-     _←b h.Add'h1'((⍕c),': ',p)
+     d←H.NewHTMLDocument 0
+     b←d A.New'body'
+     _←b A.New'h1'((⍕c),': ',p)
      r.Content←d
      r
  }

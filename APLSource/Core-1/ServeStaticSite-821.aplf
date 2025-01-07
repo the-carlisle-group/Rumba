@@ -1,7 +1,7 @@
  ServeStaticSite←{
      ⍝ ⍵ ←→ Request Message
      ⍝ ← ←→ Response
-     m←⍵.DesiredMethod
+     m←⍵.Method
      m≡'GET':ServeFile ⍵
      ⍵ Respond 405 1
  }

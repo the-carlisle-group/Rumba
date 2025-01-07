@@ -1,8 +1,20 @@
-# Rumba Release 0.1.16
+# Rumba Release 0.1.16                    
+1. HTMX changes
+2. Move HTML and CSS stuff to Abacus
+3. More work on old HTML
+4. More work on old HTML conversion
+5. Begin conversion of old HTML and CSS construction to Abacus
+6. Small changes in HTML
 
-1. `819⌶` replaced by `⎕C` 
+# Rumba Release notes amended 2024-11-25 10:01:47
+1. Version number increaded
+2. Make Rumba ready for 20.0: 819⌶ ==> ⎕C
+3. Make running as windows service explicit with server parameter
+4. Fix Windows specfic file operation
+5. Begin htmx integration
+6. Split expression for Server.Connection updated in three functions ServerWait*
 
-# Rumba Release 0.1.15                    
+# Rumba Release 0.1.15 2024-10-23 07:28:06
 1. Added: GetProjectPath
 2. Update README.md
 3. Update README.md
@@ -153,4 +165,3 @@
 38. Changes
 39. Added Files Folder
 40. Initial commit
-

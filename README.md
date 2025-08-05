@@ -1,6 +1,6 @@
 # Rumba
 
-Rumba is an HTTP/1.1 web server and client libary written in Dyalog APL.
+Rumba is an HTTP/1.1 web server and client library written in Dyalog APL.
 
 See the wiki for user documentation.
 

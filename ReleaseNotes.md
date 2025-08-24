@@ -1,4 +1,10 @@
-# Rumba Release 0.1.16                    
+# Rumba Release 0.1.17                    
+1. Move mime registry from file to variable
+2. Fix tests
+3. Update README.md
+4. Move to quadC
+
+# Rumba Release 0.1.16 2025-01-07 14:40:59
 1. HTMX changes
 2. Move HTML and CSS stuff to Abacus
 3. More work on old HTML

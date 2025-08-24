@@ -1,5 +1,4 @@
  MimeRegistry←{
-     n←GetProjectPath'/Assets/Runtime/mime.csv'
-     t x←↓⍉(0⊃⎕CSV n ⍬ ⍬ 1)[;1 2]
+     t x←↓⍉(0⊃⎕CSV MimeRegistryData'S'⍬ 1)[;1 2]
      (t,⊂'text/plain')x
  }

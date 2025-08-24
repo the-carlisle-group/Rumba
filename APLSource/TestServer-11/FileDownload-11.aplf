@@ -1,5 +1,5 @@
  FileDownload←{
-     f←GetProjectPath'/Assets/Development/samplefile.txt'
+     f←##.Core.GetProjectPath'/Assets/Development/samplefile.txt'
      r←##.Core.NewResponse ⍺
      r.IsFile←1
      r.FilePath←f

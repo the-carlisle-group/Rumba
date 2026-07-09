@@ -4,7 +4,8 @@
      q.Method←'HEAD'
      r←c R.SendAndReceive q
      r.ContentType.ContentType≢'text/plain':1
-     r.ContentLength≠554:1
+     noOfBytes←2 ⎕NINFO ##.Core.GetProjectPath'/Assets/Development/samplefile.txt'
+     r.ContentLength≠noOfBytes:1     
      r.Content≢'':1
      0
  }
